@@ -1,0 +1,25 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "ir.dabacenter.publicresources",
+    "sha256_cert_fingerprints":
+    ["79:69:FF:64:07:99:57:A9:B3:B2:97:2F:70:17:06:57:FD:06:71:65:07:5F:92:F6:57:D3:8E:5D:05:AB:72:19"]
+  }
+},
+{
+  "relation": ["delegate_permission/common.get_login_creds"],
+  "target": {
+    "namespace": "web",
+    "site": "https://tolidat.ir"
+  }
+},
+{
+  "relation": ["delegate_permission/common.get_login_creds"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "ir.dabacenter.publicresources",
+    "sha256_cert_fingerprints":
+    ["79:69:FF:64:07:99:57:A9:B3:B2:97:2F:70:17:06:57:FD:06:71:65:07:5F:92:F6:57:D3:8E:5D:05:AB:72:19"]
+  }
+}]

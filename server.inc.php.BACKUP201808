@@ -1,0 +1,60 @@
+<?php
+/*error_reporting(E_ALL);
+ini_set('error_display',0);
+error_reporting(0);*/
+
+session_start();
+define("DS", DIRECTORY_SEPARATOR);
+define("DB_TYPE","mysqli");
+// define("DB_HOST","localhost");
+// define("DB_USER","root");
+// define("DB_PASSWORD","");
+// define("DB_DATABASE","tolidat");
+define("DB_HOST","172.20.0.60");
+define("DB_USER","tolidat");
+define("DB_PASSWORD","jVHDIoJkHO");
+define("DB_DATABASE","tolidat");
+define("ROOT_DIR",dirname(__FILE__) ."/");
+
+define("SUB_FOLDER","");
+
+define("RELA_DIR","http://".$_SERVER['HTTP_HOST']."/".SUB_FOLDER."");
+
+define("PRODUCT_IMAGE",RELA_DIR . "templates/images/product/product_image/");
+define("PRODUCT_IMAGE_ROOT",ROOT_DIR . "templates/images/product/product_image/");
+
+//Company Information Address
+define("COMPANY_ADDRESS",RELA_DIR . "statics/images/company/");
+define("COMPANY_ADDRESS_ROOT",ROOT_DIR . "statics/images/company/");
+define("DEFULT_LOGO_ADDRESS",RELA_DIR . "templates/template_fa/assets/images/placeholder.png");
+
+define("STATIC_ROOT_DIR",ROOT_DIR . "statics");
+define("STATIC_RELA_DIR",RELA_DIR . "statics");
+
+//Company Event
+define("EVENT_ADDRESS", ROOT_DIR . "statics/images/event/");
+define("RELATIVE_EVENT_ADDRESS", RELA_DIR . "statics/images/event/");
+
+define("FINAL_ORDER_MSG","ﺍﺯ ﺥﺭیﺩ ﺶﻣﺍ ﻢﺘﺷکﺭیﻡ");
+
+
+define("IMAGES_ROOT_DIR",ROOT_DIR . "statics/images/");
+define("IMAGES_RELA_DIR",RELA_DIR . "statics/images/");
+
+
+
+define("SMTP_SERVER","mail.decornama.com");
+define("SMTP_USERNAME","ads@decornama.com");
+define("SMTP_PASSWORD","decornamarps64");
+define("SMTP_SENDER","DECORNAMA");
+
+
+//define("SMTP_PASSWORD","123789456");
+/*define("SMTP_PASSWORD","123456");
+define("SMTP_SERVER","mail.dabacenter.ir");
+define("SMTP_SENDER","Tolidat");
+define("SMTP_USERNAME","m.malekloo@dabacenter.ir");*/
+
+date_default_timezone_set('Asia/Tehran');
+define("GAPI_KEY","AIzaSyByLaTkeVQQX6Tuxn7gIFAVpCFHYfZAbEU");
+

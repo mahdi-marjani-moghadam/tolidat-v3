@@ -1,0 +1,207 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>سایت اجتماعی تولیدات</title>
+    <!-- meta viewport for initial scale in all device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=1">
+    <link rel="shortcut icon" href="http://tolidi.ir/templates/template_fa/assets/images/logo2.png">
+    <!-- normalize css -->
+    <link rel="stylesheet" href="http://tolidi.ir/templates/template_fa/assets/css/normalize.css">
+    <!-- font-awesome css -->
+    <link href="http://tolidi.ir/templates/template_fa/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- bootstrap core -->
+    <link rel="stylesheet" href="http://tolidi.ir/templates/template_fa/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="http://tolidi.ir/templates/template_fa/bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="http://tolidi.ir/templates/template_fa/bower_components/Keyboard-master/dist/css/keyboard.min.css">
+    <!-- select2 css -->
+    <link type="text/css" rel="stylesheet" href=" http://tolidi.ir/templates/template_fa/assets/css/jquery.mmenu.all.css"/>
+    <!--slider pro-->
+    <link rel="stylesheet" href="http://tolidi.ir/templates/template_fa/bower_components/slider-pro/dist/css/slider-pro.min.css">
+    <!-- custom css style -->
+    <link rel="stylesheet" href="http://tolidi.ir/templates/template_fa/assets/css/style.css?v=1.0.0">
+    <!-- custom responsive css style -->
+    <link rel="stylesheet" href="http://tolidi.ir/templates/template_fa/assets/css/responsive.css">
+    <link rel="stylesheet" href="http://tolidi.ir/templates/template_fa/bower_components/iziToast-master/dist/css/iziToast.min.css">
+    <script type="text/javascript" src="http://tolidi.ir/templates/template_fa/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="http://tolidi.ir/templates/template_fa/assets/js/modernizr.custom.js"></script>
+    <script>
+        var baseURL = "http://tolidi.ir/";
+    </script>
+</head>
+<!--<div class="overWhite">-->
+<body>
+<!-- header that contains logo and socials icon and navigation menus -->
+<header class="pageHeader transition">
+    <!-- navbar that contains navigation menus -->
+    <div class="topNav center-block transition">
+        <div class="logoContainer center-block noSelect logo1">
+            <a href="http://tolidi.ir/">
+                <img class="center-block" src="http://tolidi.ir/templates/template_fa/assets/images/logo3.png" alt="#">
+            </a>
+        </div><!-- /end of logo container -->
+        <div class="total center-block">
+            <div class="plus transition">
+                <a class="marker" title="درخواست ثبت تولیدی"> <i class="fa fa-user" aria-hidden="true"></i>
+                    <a class="profile3" href="http://tolidi.ir/login">ورود <span class="slash">/</span></a>
+                    <a class="register" href="http://tolidi.ir/register">عضویت</a>
+                </a>
+            </div>
+            <div id="js-hamburger" class="hamburger transition">
+                <span class="first"></span> <span class="second"></span> <span class="third"></span>
+            </div>
+            <div class="menu-content boxBorder roundCorner transition">
+                <ul class="nav-menu">
+                    <li>
+                        <a class=" text-ultralight transition active" href="http://tolidi.ir/">خانه</a>
+                    </li>
+                    <li><a class=" text-ultralight transition" href="http://tolidi.ir/news">اخبار</a></li>
+                    <li><a class=" text-ultralight transition" href="http://tolidi.ir/laws">قوانین و مقررات</a></li>
+                    <li><a class=" text-ultralight transition" href="http://tolidi.ir/aboutus">درباره ما</a></li>
+                    <li><a class=" text-ultralight transition" href="http://tolidi.ir/contactus">ارتباط با ما</a>
+                    </li>
+                </ul>
+            </div>
+            <!--end of hamburger menu-->
+        </div>
+        <form class="search-bar" method="post" id="searchParam">
+            <div class="btn-group select">
+                <button type="button" class="btn btn-default dropdown-toggle btn-select" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    تولیدی<i class="fa fa-angle-down transition"></i>
+                </button>
+                <ul class="dropdown-menu searchType">
+                    <li><a data-value="تولیدی" href="#">تولیدی</a></li>
+                </ul>
+                <select name="type" id="type" class="hidden">
+                    <option value="تولیدی" >تولیدی</option>
+                </select>
+            </div>
+            <div class="keyboard-container-search-bar">
+                <input type="text" name="q" id="q" class="place keyboard" placeholder="کلیدواژه ..." value="">
+                <img class="icon hidden-xs hidden-sm" src="http://tolidi.ir/templates/template_fa/assets/images/keyboard.png" alt="Persian On Screen Keyboard">
+            </div>
+            <button class="submit text-large"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+    </div>
+</header><!-- /end of header -->
+<section class="container noPadding mainContainer">
+    <link rel="stylesheet" href="http://tolidi.ir/templates/template_fa/bower_components/slider-pro/dist/css/slider-pro.min.css">
+    <section class="container noPadding mainContainer">
+        <div class="container boxContainer main-login-container forgot-email boxBorder">
+            <header class="text-right">
+                <div class="center-block text-right">
+ثبت گذرواژه جدید                </div>
+            </header>
+            <div class="content">
+                <p class="text-center"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> لطفا نام حساب کاربری را برای بازیابی رمز عبور خود وارد نمایید.  </p>
+                <div class="row xxsmallSpace"></div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3 login-container login-border ">
+                        <div class="login-edit">
+                            <form action="/login/sendEmail" method="post" name="form1" id="form1" role="form" novalidate="novalidate" data-toggle="validator">
+                                <div class="form-group errorHandler-login errorHandler eror has-feedback mt">
+                                    <input value="" name="name" id="name" lang="fa" type="text" class=" form-control center-block noPadding" required data-error="گذرواژه جدید را وارد نمایید" placeholder="گذر واژه جدید">
+                                </div>
+                                <div class="form-group errorHandler-login errorHandler eror has-feedback mt">
+                                    <input value="" name="name1" id="name1" lang="fa" type="text" class=" form-control center-block noPadding" required data-error="تکرار گذرواژه جدید را وارد نمایید" placeholder="تکرار گذرواژه جدید">
+                                </div>
+                                <div class="row xxxsmallSpace"></div>
+                                <button type="button" class="successClick btn btn-success" data-izitoast>ثبت</button>
+                                <!--
+                                 <button type="submit" class=" btn btn-default btn-success  text-center text-ultralight text-white center-block mt1 roundCorner disabled" data-izitoast> ثبت</button>
+                                -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="http://tolidi.ir/templates/template_fa/bower_components/slider-pro/dist/js/jquery.sliderPro.min.js"></script>
+</section>
+<!-- footer of website -->
+<footer id="mainFooter">
+    <!-- /end of separator -->
+    <div class="row xxsmallSpace"></div>
+    <div class="container noPadding padding">
+        <div class="threePartInfo center-block clear">
+        </div>
+    </div>
+    <!-- copyright container -->
+    <div class="copyRightContainer container text-center text-black noPadding">
+        <div class="row noPadding">
+            <div class="col-xs-12 col-sm-1 col-md-1 noPadding pull-right">
+                <a href="http://tolidi.ir/">
+                    <img src="http://tolidi.ir/templates/template_fa/assets/images/logo3.png" alt="#">
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-5 col-md-5 paddingRL pull-right">
+                <div class="pull-right title1">
+                    <p class="text-ultralight">سایت تولیدات، زمینه مشارکت و معرفی انواع تولیدی ها و اصناف را فراهم می کند.</p>
+                    <p class=" text-right text-ultralight">Tolidat.ir All rights reserved &copy; 2016 </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2 noPadding pull-right">
+                <ul class="list-inline1">
+                    <li><a class=" text-ultralight transition" href="http://tolidi.ir/news">اخبار</a></li>
+                    <li><a class=" text-ultralight transition" href="http://tolidi.ir/law">قوانین و مقررات</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2 noPadding pull-right">
+                <ul class="list-inline1">
+                    <li><a class=" text-ultralight transition" href="http://tolidi.ir/aboutus">درباره ما</a></li>
+                    <li><a class=" text-ultralight transition" href="http://tolidi.ir/contactus">ارتباط با ما</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2 noPadding pull-left">
+                <div class="socialContainer title2 pull-left">
+                    <ul class="list-inline">
+                        <li class="facebook pull-left roundCornerFull transition"><a class="text-white text-center roundCornerFull" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="twitter pull-left roundCornerFull transition"><a class="text-white text-center roundCornerFull" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="googlePlus pull-left roundCornerFull transition"><a class="text-white text-center roundCornerFull" href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="instagram pull-left roundCornerFull transition"><a class="text-white text-center roundCornerFull" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- /end of copyright container -->
+
+</footer><!-- /end of footer of website -->
+<script src="http://tolidi.ir/templates/template_fa/assets/js/classie.js"></script>
+<script type="text/javascript" src="http://tolidi.ir/templates/template_fa/assets/js/jquery.mmenu.all.min.js"></script>
+<!-- bootstap core js -->
+<script src="http://tolidi.ir/templates/template_fa/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- select2 js -->
+<!--on screen keyboard-->
+<script type="text/javascript" src="http://tolidi.ir/templates/template_fa/bower_components/Keyboard-master/dist/js/jquery.keyboard.min.js"></script>
+<script type="text/javascript" src="http://tolidi.ir/templates/template_fa/bower_components/Keyboard-master/dist/layouts/keyboard-layouts-microsoft.min.js"></script>
+<!-- slider pro js -->
+<script type="text/javascript" src="http://tolidi.ir/templates/template_fa/bower_components/slider-pro/dist/js/jquery.sliderPro.min.js"></script>
+<!-- custom js -->
+<script type="text/javascript" src="http://tolidi.ir/templates/template_fa/assets/js/validator.min.js"></script>
+<script type="text/javascript" src="http://tolidi.ir/templates/template_fa/bower_components/iziToast-master/dist/js/iziToast.min.js"></script>
+
+<script src="http://tolidi.ir/templates/template_fa/assets/js/search.js"></script>
+<script src="http://tolidi.ir/templates/template_fa/assets/js/script.js"></script>
+</body>
+<!--</div>
+--></html>
+<!--<script>
+    // success
+    $('.successClick').click(function () {
+        iziToast.success({
+            title: '',
+            message: 'گذر واژه جدید شما با موفقیت ثبت شد!',
+            position: 'topCenter',
+            transitionIn: 'fadeInUp',
+            transitionOut: 'fadeOut'
+        });
+    });
+</script>-->
