@@ -80,6 +80,8 @@
 <p class="error"><?php echo $list['validate']['msg'] ?></p>
 
 <script>
+    
+
     $.iziToastError = function(msg) {
         iziToast.settings({
             onOpen: function(e) {}

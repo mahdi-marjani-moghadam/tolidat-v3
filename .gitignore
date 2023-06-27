@@ -28,3 +28,4 @@ node_modules
 .lh
 sitemap.xml
 .gitlab-ci.yml
+admin/COMPANY_ADDRESS_ROOT/product/*

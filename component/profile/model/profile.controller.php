@@ -112,7 +112,7 @@ class profileController
             ->first();
 
         if (!is_object($packageUsage)) {
-            redirectPage(RELA_DIR . "profile/successPayment","پکیج فعال ندارید");
+            // redirectPage(RELA_DIR . "profile/successPayment","پکیج فعال ندارید");
         }
 
         $company = new memberCompanyController();

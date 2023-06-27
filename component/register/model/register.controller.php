@@ -112,6 +112,9 @@ class registerController
     public function showRegisterForm($_input)
     {
         // dd($_input);
+        $_input['company_type'] = $_input['company_type'] ?? 1;
+        $_input['step'] = $_input['step'] ?? 2;
+
         if (!empty($_input)) {
             foreach ($_input as $key => $value) {
                 $_input[$key] = convertToEnglish($value);
@@ -135,8 +138,7 @@ class registerController
         // dd(unserialize($_SESSION['step']));
 
         //    dd($stepForm);
-        //        print_r_debug($_input);
-        //  dd(($_SESSION));
+        // dd($_input);
         // dd($stepForm);
         switch ($_input['step']) {
             case 2:
@@ -172,6 +174,7 @@ class registerController
                 break;
 
             case 4:
+                
                 // company info ,licence, national_id
                 $export = $this->stepFour($stepForm, $_input);
                 $export['seo']['title'] = ' ثبت نام، مرحله ۴';
@@ -249,7 +252,7 @@ class registerController
                 }
             }
         }
-
+        
         // dd($errors);
         if (!empty($errors)) {
             // dd('22222');
@@ -274,9 +277,10 @@ class registerController
                 // dd($register);
                 // send sms when send_token fill
                 if (is_object($register)) {
-                    if ($register->phone != $stepForm->data['2']['phone']) {
+                    // dd($register->phone.' '.$stepForm->data[2]['phone']);
+                    if ($register->phone != $stepForm->data[2]['phone']) {
                         $register->key = $this->generateCode();
-                        $register->phone = $stepForm->data['2']['phone'];
+                        $register->phone = $stepForm->data[2]['phone'];
                         $register->save();
                         $this->sendTokenTo($_input, $register->key);
                     }
@@ -294,6 +298,7 @@ class registerController
 
         $token = decrypt($stepForm->sendToken, 1212) / 5664;
         $sendToken = send_token::find($token);
+        
         $registerType = $this->getRegisterType($_input);
         // dd($sendToken->key.'='.strtoupper(convertToEnglish($stepForm->data['3']['token'])));
         // dd(($stepForm));
@@ -305,6 +310,7 @@ class registerController
             $stepForm->setTemplate('registerLegalStep');
             $stepForm->save();
         } else if ($registerType == 'registerLegalStep') {
+           
             if (!isset($stepForm->data['4'])) {
                 $export['data'] = $this->getCompanyInformation($stepForm);
             }
@@ -314,12 +320,12 @@ class registerController
                 $export['licence']['licence_name'] = empty($export['licence']['licence_type_name']) ?
                     $this->getLiceceName($export['licence']['licence_type']) : $export['licence']['licence_type_name'];
             }
+            
         } else if ($registerType == 'registerRealStep') {
             if (!isset($stepForm->data['4'])) {
                 $export['data'] = $this->getLicenceInformation($stepForm);
             }
         }
-
         return $export;
     }
 
@@ -327,17 +333,18 @@ class registerController
     {
         $this->checkStep($stepForm);
 
-        if (isset($stepForm->data['4'])) {
-            if ($stepForm->data['1']['company_type'] == 1) {
-                $errors = $this->validateStepFourLegal($stepForm->data['4']);
-            } else {
-                $errors = $this->validateStepFourReal($stepForm->data['4']);
-                if (!empty($errors)) {
-                    $stepForm->setTemplate('registerRealStep');
-                }
-            }
-        }
+        // if (isset($stepForm->data['4'])) {
+        //     if ($stepForm->data['1']['company_type'] == 1) {
+        //         $errors = $this->validateStepFourLegal($stepForm->data['4']);
+        //     } else {
+        //         $errors = $this->validateStepFourReal($stepForm->data['4']);
+        //         if (!empty($errors)) {
+        //             $stepForm->setTemplate('registerRealStep');
+        //         }
+        //     }
+        // }
 
+        
         if (!empty($errors)) {
             $stepForm->setStep($_input['step'] - 1);
             $stepForm->save();
@@ -361,9 +368,9 @@ class registerController
     {
         $this->checkStep($stepForm);
 
-        if (isset($stepForm->data['5'])) {
-            $errors = $this->validateStepFive($stepForm->data['5']);
-        }
+        // if (isset($stepForm->data['5'])) {
+        //     $errors = $this->validateStepFive($stepForm->data['5']);
+        // }
 
         if (!empty($errors)) {
             $stepForm->setStep($_input['step'] - 1);
@@ -447,10 +454,10 @@ class registerController
 
         // $stepForm->data['7']['username'] = 'mahdimarjani21';
 
-        if (array_key_exists(7, $stepForm->data) &&  isset($stepForm->data[7])) {
-            $errors = $this->validateStepSeven($stepForm->data['7']);
-        }
-
+        // if (array_key_exists(7, $stepForm->data) &&  isset($stepForm->data[7])) {
+        //     $errors = $this->validateStepSeven($stepForm->data['7']);
+        // }
+        
         if (!$errors) {
 
 
@@ -498,6 +505,7 @@ class registerController
             $export['validate'] = $errors;
             return $export;
         }
+        
     }
 
     public function showTemplate($stepForm, $export)
@@ -521,7 +529,7 @@ class registerController
         $export['logo'] = $this->getLogo($export['data']);
         $export['packages'] = $this->getMainPackage();
         $export['extra_packages'] = $this->getExtraPackage();
-        
+
         $this->template($export, $export['msg']);
         die();
     }
@@ -1361,6 +1369,7 @@ class registerController
                 $result = $this->call($input['phone'], $code);
                 return $result;
             case 1:
+                // dd(1);
                 $code = "کد فعالسازی شما در تولیدات : " . $code;
                 $result = $this->sendSMS($input['phone'], $code);
                 return $result;
@@ -1380,6 +1389,7 @@ class registerController
         $input = $stepForm->data[2];
         $token = decrypt($stepForm->sendToken, 1212) / 5664;
         $register = send_token::find($token);
+        // dd($register);
         if (!is_object($register)) {
             $result['msg'] = 'ارسال کد با مشکل مواجه شد دوباره تلاش فرمایید';
             $result['result'] = -1;
@@ -1392,15 +1402,17 @@ class registerController
             echo json_encode($result);
             die();
         }
+        
         $token = $this->generateCode();
 
         $register->key = $token;
         $register->date = strftime('%Y-%m-%d %H:%M:%S', time());
         $register->count = $register->count + 1;
         $result = $register->save();
-
+        // dd($result);
         if ($result['result'] == 1) {
             $result = $this->sendTokenTo($input, $token);
+            dd($result);
             echo json_encode($result);
             die();
         }
@@ -1505,7 +1517,7 @@ class registerController
             $stepForm->setStep(1);
             $stepForm->save();
         }
-        return;
+        return true;
     }
 
     /**
