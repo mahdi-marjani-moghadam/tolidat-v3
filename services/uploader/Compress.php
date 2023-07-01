@@ -91,18 +91,22 @@ class Compress
         $destination_extension = null;
 
         try {
-
+            
             //If not found the file
             if (empty($this->file_url) && !file_exists($this->file_url)) {
                 throw new Exception('Please inform the image!');
                 return false;
             }
-
+            
             //Get image width, height, mimetype, etc..
             $image_data = getimagesize($this->file_url);
+            
+            // echo $this->file_url;
 
             list($oldWidth, $oldHeight, $image_type) = $image_data;
-
+            // dd($image_data);
+            // dd($this->file_url);
+            // dd(IMAGETYPE_JPEG);
             switch ($image_type) {
                 case IMAGETYPE_PNG:
                     $type = 'png';
@@ -119,13 +123,14 @@ class Compress
 
             //Set MimeType on variable
             $image_mime = $image_data['mime'];
-
+            // dd($image_mime);
             //Verifiy if the file is a image
             if (!in_array($image_mime, $array_img_types)) {
                 throw new Exception('Please send a image!');
                 return false;
             }
-
+            // dd(33);
+            
             //Get file size
             $image_size = filesize($this->file_url);
 
@@ -146,7 +151,7 @@ class Compress
                 throw new Exception('Please inform the quality!');
                 return false;
             }
-
+            
             $image_extension = pathinfo($this->file_url, PATHINFO_EXTENSION);
             //Verify if is sended a destination file name with extension
             $destination_extension = pathinfo($this->new_name_image, PATHINFO_EXTENSION);
@@ -165,7 +170,7 @@ class Compress
                     $this->destination = $this->destination . '/';
                 }
             }
-
+            
             $max = max($oldWidth, $oldHeight);
             if ($max == $oldWidth) {
                 $width2 = $newWidth;
@@ -185,11 +190,13 @@ class Compress
                 }
             }
 
+            // dd(55);
+
             //Create a new jpg image
             $new_image = $this->createNewImage($type);
 
             $new_image_resize = imagecreatetruecolor($newWidth, $newHeight);
-
+            
             // allocate a color for thumbnail
             $backgroundColor = imagecolorallocate($new_image_resize, 255, 255, 255);
             imagefill($new_image_resize, 0, 0, $backgroundColor);
@@ -214,9 +221,12 @@ class Compress
             if ($newHeight - $height2 != 0) {
                 $y = ($newHeight - $height2) / 2;
             }
+            
+            // dd(66);
 
             imagecopyresampled($new_image_resize, $new_image, $x, $y, 0, 0, $width2, $height2, $image_data['0'], $image_data['1']);
             $this->imageSave($type, $new_image_resize);
+            // dd(33);
 
         } catch
         (Exception $ex) {
@@ -271,7 +281,7 @@ class Compress
                 $this->set_quality(90);
             }
         }
-
+        
         $this->set_file_url($file);
         $this->set_destination($destination);
 

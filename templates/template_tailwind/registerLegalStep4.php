@@ -54,53 +54,57 @@
                     <form action="/register/?step=5" method="post" name="form1" id="form1" role="form">
 
                         <div>
+                            <div class=' flex  justify-center'>
 
+                                <button name="step_4" type="submit" id="test" class=" left-6 mb-5  flex justify-center py-2 px-8 border border-transparent text-sm font-medium rounded-md text-white bg-blue-400 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600           btn btn-success btn-sm reg-btn-n">
+                                    اطلاعات مجموعه را بعد از ثبت نام پر میکنم، ادامه ثبت نام </button>
+                            </div>
                             <div class="grid grid-cols-12 gap-6">
                                 <!-- <div class="col-span-12 sm:col-span-6">
                                     <div class="relative">
                                         <label for="national_id" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">شناسه ملی شرکت</label>
-                                        <input name="national_id" type="text" value="<?php echo $list['data']['national_id'] ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="national_id" tabindex="4" maxlength="11" oninvalid="setCustomValidity('لطفا شناسه ملی را وارد نمایید')" oninput="setCustomValidity('')" dir="ltr" required>
+                                        <input name="national_id" type="text" value="< ?php echo $list['data']['national_id'] ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="national_id" tabindex="4" maxlength="11" oninvalid="setCustomValidity('لطفا شناسه ملی را وارد نمایید')" oninput="setCustomValidity('')" dir="ltr" required>
                                     </div>
                                 </div> -->
                                 <div class="col-span-12 sm:col-span-6">
                                     <div class="relative">
                                         <label for="company_name" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">نام مجموعه</label>
-                                        <input name="company_name" type="text" value="<?php echo  $list['data']['company_name'] ?>" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="company_name" maxlength="50" minlength="1" tabindex="1" autofocus oninvalid="setCustomValidity('لطفا نام کامل ثبتی مجموعه خود را وارد نمائید')" oninput="setCustomValidity('')" >
+                                        <input name="company_name" type="text" value="<?php echo  $list['data']['company_name'] ?>" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="company_name" maxlength="50" minlength="1" tabindex="1" autofocus oninvalid="setCustomValidity('لطفا نام کامل ثبتی مجموعه خود را وارد نمائید')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
 
                                 <div class="col-span-12 sm:col-span-6">
                                     <div class="relative">
                                         <label for="registration_number" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">شماره ثبت مجموعه</label>
-                                        <input name="registration_number" type="number" value="<?php echo  $list['data']['registration_number'] ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="registration_number" maxlength="50" minlength="1" tabindex="2" oninvalid="setCustomValidity('لطفاشماره ثبت مربوط به مجموعه خود را وارد نمائید')" oninput="setCustomValidity('')" dir="ltr" >
+                                        <input name="registration_number" type="number" value="<?php echo  $list['data']['registration_number'] ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="registration_number" maxlength="50" minlength="1" tabindex="2" oninvalid="setCustomValidity('لطفاشماره ثبت مربوط به مجموعه خود را وارد نمائید')" oninput="setCustomValidity('')" dir="ltr">
                                     </div>
                                 </div>
 
                                 <div class="col-span-12 sm:col-span-6">
                                     <div class="relative">
                                         <label for="registration_date" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">تاریخ تأسیس مجموعه</label>
-                                        <input name="registration_date" type="text" value="<?php echo  $list['data']['registration_date'] ?>" class="datePicker mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="registration_date" maxlength="11" tabindex="3" oninvalid="setCustomValidity('لطفا تاریخ تأسیس مجموعه را انتخاب نمایید')" valid="setCustomValidity('')" >
+                                        <input name="registration_date" type="text" value="<?php echo  $list['data']['registration_date'] ?>" class="datePicker mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="registration_date" maxlength="11" tabindex="3" oninvalid="setCustomValidity('لطفا تاریخ تأسیس مجموعه را انتخاب نمایید')" valid="setCustomValidity('')">
                                     </div>
                                 </div>
 
                                 <div class="col-span-12 sm:col-span-6">
                                     <div class="relative">
                                         <label for="coordinator_name" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">نام کامل ثبتی مدیرعامل مجموعه را وارد نمائید</label>
-                                        <input name="maneger_name" type="text" value="<?php echo  $list['data']['maneger_name'] ?>" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="coordinator_name" tabindex="4" minlength="3" oninvalid="setCustomValidity('نام کامل ثبتی مدیرعامل مجموعه را وارد نمائید')" oninput="setCustomValidity('')" >
+                                        <input name="maneger_name" type="text" value="<?php echo  $list['data']['maneger_name'] ?>" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="coordinator_name" tabindex="4" minlength="3" oninvalid="setCustomValidity('نام کامل ثبتی مدیرعامل مجموعه را وارد نمائید')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
 
                                 <div class="col-span-12">
                                     <div class="relative">
                                         <label for="description" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">زمینه فعالیت مجموعه</label>
-                                        <textarea name="description" id="description" type="text" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" data-error="لطفا فعالیت مجموعه را وارد نمایید" tabindex="5" minlength="2" oninvalid="setCustomValidity('نام کامل ثبتی مدیرعامل مجموعه را وارد نمائید')" oninput="setCustomValidity('')" ><?php echo  $list['data']['description'] ?></textarea>
+                                        <textarea name="description" id="description" type="text" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" data-error="لطفا فعالیت مجموعه را وارد نمایید" tabindex="5" minlength="2" oninvalid="setCustomValidity('نام کامل ثبتی مدیرعامل مجموعه را وارد نمائید')" oninput="setCustomValidity('')"><?php echo  $list['data']['description'] ?></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-span-12 sm:col-span-6">
                                     <div class="relative">
                                         <label for="personality_type" class="block text-sm text-tolidatColor after:content-['*'] after:ml-0.5 after:text-red-500">نوع شخصیت حقوقی را انتخاب نمایید</label>
-                                        <select name="personality_type" id="personality_type" class="form-control w-full rounded-none border-r-0 border-t-0 border-l-0 mt-1" tabindex="6" oninvalid="setCustomValidity('لطفا نوع شخصیت حقوقی را انتخاب نمایید')" oninput="setCustomValidity('')" >
+                                        <select name="personality_type" id="personality_type" class="form-control w-full rounded-none border-r-0 border-t-0 border-l-0 mt-1" tabindex="6" oninvalid="setCustomValidity('لطفا نوع شخصیت حقوقی را انتخاب نمایید')" oninput="setCustomValidity('')">
                                             <option value="">نوع شخصیت حقوقی</option>
                                             <?php foreach ($list['personalityType'] as $personalityType) { ?>
                                                 <option value="<?php echo $personalityType['Personality_type_id'] ?>" <?php if ($list['data']['personality_type'] == $personalityType['Personality_type_id']) {

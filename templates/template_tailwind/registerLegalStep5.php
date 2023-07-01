@@ -312,6 +312,12 @@
                     <form action="/register/?step=6" method="post" name="form1" id="form1" role="form">
 
                         <div>
+                        <div class=' flex  justify-center'>
+
+<button name="step_4" type="submit" id="test" class=" left-6 mb-5  flex justify-center py-2 px-8 border border-transparent text-sm font-medium rounded-md text-white bg-blue-400 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600           btn btn-success btn-sm reg-btn-n">
+    اطلاعات مجموعه را بعد از ثبت نام پر میکنم، ادامه ثبت نام </button>
+</div>
+
                             <div class="grid grid-cols-12 gap-6">
 
                                 <div class="col-span-12 sm:col-span-6">
