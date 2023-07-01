@@ -1684,7 +1684,7 @@ function sendSMS($username = '', $code)
     $parameters['password'] = $Password;
     $parameters['to'] = $val;
     $parameters['from'] = $senderNumber;
-    $parameters['text'] = $Note;
+    $parameters['text'] = $Note."\n لغو11";
     $parameters['isflash'] = false;
 
     // dd($parameters);
