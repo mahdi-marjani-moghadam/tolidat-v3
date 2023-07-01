@@ -1695,7 +1695,7 @@ function sendSMS($username = '', $code)
         $sms_client = new SoapClient($URL, array('encoding' => 'UTF-8'));
         $sent = $sms_client->SendSimpleSMS2($parameters);
         $res = $sent->SendSimpleSMS2Result;
-        dd($res);
+        // dd($res);
         
     } catch (Exception $e) {
         dd($e);
