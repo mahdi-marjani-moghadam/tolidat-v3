@@ -3820,7 +3820,7 @@ class adminCompanyController
 
         $other['5'] = [
             'formatter' => function ($list) {
-                return $list['name'] . ' ' . $list['family'] . ' ' . $list['mobile'] . ' - ' . $list['code'].$list['number'];
+                return $list['name'] . ' ' . $list['family'] . ' ' . $list['mobile'] . ' - ' . $list['code'] . $list['number'];
             },
         ];
 
@@ -3973,12 +3973,21 @@ class adminCompanyController
         if (is_object($resultCompany_d)) {
             if ($resultCompany_d->package_status == '1') {
                 $member = new adminEditorMemberController();
-                $resultMember = $member->getMemberInformationById($resultCompany_d->Company_d_id);
+                $resultMember = $member->getMemberInformationById($resultCompany_d->company_id);
+                // dd($resultMember);
                 if (is_object($resultMember)) {
                     $export['editorInfo']['name'] = $resultMember->name;
                     $export['editorInfo']['family'] = $resultMember->family;
                     $export['editorInfo']['mobile'] = $resultMember->phone;
                     $export['editorInfo']['company_d_id'] = $resultMember->company_d_id;
+                } else {
+                    // $member2 = new adminMemberModel;
+
+                    $member2 = adminMemberModel::getBy_company_id($resultCompany_d->company_id)->first();
+
+                    $export['editorInfo']['name'] = $member2->name;
+                    $export['editorInfo']['family'] = $member2->family;
+                    $export['editorInfo']['mobile'] = $member2->mobile;
                 }
             } else {
                 include_once ROOT_DIR . 'component/login/admin/model/admin.login.controller.php';
@@ -4637,7 +4646,7 @@ www.tolidat.ir/c/{$fields['company_id']}";
         $memberObject->company_d_id = $newCompanyDraftObject->Company_d_id;
         // todo: bug
         $memberObject->company_id = ($memberObject->company_id == '') ? $newCompanyObject->Company_id : $memberObject->company_id;
-        if(!is_numeric($memberObject->company_id)){
+        if (!is_numeric($memberObject->company_id)) {
             $memberObject->company_id = $newCompanyDraftObject->Company_d_id;
         }
         $memberObject->save();
@@ -5158,6 +5167,7 @@ www.tolidat.ir/c/{$fields['company_id']}";
         $newCompanyDraftObject->national_id = convertToEnglish($fields['national_id']);
         $newCompanyDraftObject->refresh_date = strftime('%Y-%m-%d %H:%M:%S', time());
         $newCompanyDraftObject->confirm_date = strftime('%Y-%m-%d %H:%M:%S', time());
+        $newCompanyDraftObject->old_priority = ($newCompanyDraftObject->old_priority == '') ? 0 : $newCompanyDraftObject->old_priority;
         $newCompanyDraftObject->save();
 
         //------> Insert New Company in c_phones Table
@@ -5864,8 +5874,8 @@ www.tolidat.ir/c/{$fields['company_id']}";
             $newLicenceObject->licence_number = ($LicenceObject->licence_number == '') ? 0 : $LicenceObject->licence_number;
             $newLicenceObject->description = $fields['licence_description'];
             $newLicenceObject->image = ($imageName == '') ? '' : $imageName;
-            $newLicenceObject->issuence_date = ($fields['issuence_date'] == '')? date('Y-m-d') : convertJToGDate($fields['issuence_date']);
-            $newLicenceObject->expiration_date = ($fields['expiration_date'] == '')? date('Y-m-d') : convertJToGDate($fields['expiration_date']);
+            $newLicenceObject->issuence_date = ($fields['issuence_date'] == '') ? date('Y-m-d') : convertJToGDate($fields['issuence_date']);
+            $newLicenceObject->expiration_date = ($fields['expiration_date'] == '') ? date('Y-m-d') : convertJToGDate($fields['expiration_date']);
             $newLicenceObject->exporter_refrence = $fields['exporter_refrence'];
             $newLicenceObject->date = strftime('%Y-%m-%d %H:%M:%S', time());
             $newLicenceObject->status = 0;
