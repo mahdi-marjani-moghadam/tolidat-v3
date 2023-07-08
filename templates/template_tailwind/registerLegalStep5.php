@@ -285,7 +285,7 @@
 <div class="container mx-auto py-8 px-4">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="Breadcrumb">
-        <a class="home-icon" href="<?php echo RELA_DIR ?>"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <a class="home-icon" href="<?php echo RELA_DIR ?>"><i class="fa fa-home" aria-hidden="true"></i></a>
             <i class="fa slash-left fa-angle-left" aria-hidden="true"></i>
             <a class="container-address" href="<?php echo RELA_DIR . "register" ?>"><span>ثبت نام</span></a>
             <i class="fa slash-left fa-angle-left" aria-hidden="true"></i>
@@ -312,18 +312,18 @@
                     <form action="/register/?step=6" method="post" name="form1" id="form1" role="form">
 
                         <div>
-                        <div class=' flex  justify-center'>
+                            <div class=' flex  justify-center'>
 
-<button name="step_4" type="submit" id="test" class=" left-6 mb-5  flex justify-center py-2 px-8 border border-transparent text-sm font-medium rounded-md text-white bg-blue-400 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600           btn btn-success btn-sm reg-btn-n">
-    اطلاعات مجموعه را بعد از ثبت نام پر میکنم، ادامه ثبت نام </button>
-</div>
+                                <button name="step_4" type="submit" id="test" class=" left-6 mb-5  flex justify-center py-2 px-8 border border-transparent text-sm font-medium rounded-md text-white bg-blue-400 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600           btn btn-success btn-sm reg-btn-n">
+                                    اطلاعات مجموعه را بعد از ثبت نام پر میکنم، ادامه ثبت نام </button>
+                            </div>
 
                             <div class="grid grid-cols-12 gap-6">
 
                                 <div class="col-span-12 sm:col-span-6">
                                     <div class="relative typing">
                                         <label for="province" class="block text-sm text-tolidatColor after:content-['*'] after:ml-0.5 after:text-red-500">لطفا استان را انتخاب نمایید</label>
-                                        <select name="state_id" id="province" class="form-control w-full rounded-none border-r-0 border-t-0 border-l-0 mt-1" tabindex="1" oninvalid="setCustomValidity('لطفا استان را انتخاب نمایید')" oninput="setCustomValidity('')" >
+                                        <select name="state_id" id="province" class="form-control w-full rounded-none border-r-0 border-t-0 border-l-0 mt-1" tabindex="1" oninvalid="setCustomValidity('لطفا استان را انتخاب نمایید')" oninput="setCustomValidity('')">
                                             <option value="0">انتخاب استان</option>
                                             <?php foreach ($list['personalityType'] as $personalityType) { ?>
                                                 <option value="<?php echo $personalityType['Personality_type_id'] ?>" <?php foreach ($list['province'] as $province) { ?> <option value="<?php echo $province['province_id'] ?>" <?php if ($list['data']['state_id'] == $province['province_id']) {
@@ -341,7 +341,7 @@
                                 <div class="col-span-12 sm:col-span-6">
                                     <div class="relative typing">
                                         <label for="city" class="block text-sm text-tolidatColor after:content-['*'] after:ml-0.5 after:text-red-500">لطفا شهرستان را انتخاب نمایید</label>
-                                        <select name="city_id" id="city" class="form-control w-full rounded-none border-r-0 border-t-0 border-l-0 mt-1" tabindex="2" oninvalid="setCustomValidity('لطفا شهرستان را انتخاب نمایید')" oninput="setCustomValidity('')" >
+                                        <select name="city_id" id="city" class="form-control w-full rounded-none border-r-0 border-t-0 border-l-0 mt-1" tabindex="2" oninvalid="setCustomValidity('لطفا شهرستان را انتخاب نمایید')" oninput="setCustomValidity('')">
                                             <option value="0">انتخاب شهرستان</option>
                                             <?php foreach ($list['city'] as $city) { ?>
                                                 <option value="<?php echo $city['City_id'] ?>" <?php if ($list['data']['city_id'] == $city['City_id']) {
@@ -357,42 +357,42 @@
                                 <div class="col-span-12">
                                     <div class="relative textarea">
                                         <label for="address" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">آدرس</label>
-                                        <textarea name="address" id="address" type="text" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="3" oninvalid="setCustomValidity('لطفا آدرس را وارد نمایید')" oninput="setCustomValidity('')" ><?php echo $list['data']['address'] ?></textarea>
+                                        <textarea name="address" id="address" type="text" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="3" oninvalid="setCustomValidity('لطفا آدرس را وارد نمایید')" oninput="setCustomValidity('')"><?php echo $list['data']['address'] ?></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-span-12 sm:col-span-6">
                                     <div class="relative">
                                         <label for="phone" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">شماره تلفن ثابت</label>
-                                        <input name="phone" id="phone" type="text" value="<?php echo ($list['data']['phone']) ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" maxlength="8" tabindex="4" pattern="^[0-9۰-۹]{3,}$" oninvalid="setCustomValidity('لطفا شماره تلفن ثابت را وارد نمایید')" oninput="setCustomValidity('')" dir="ltr" >
+                                        <input name="phone" id="phone" type="text" value="<?php echo ($list['data']['phone']) ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" maxlength="8" tabindex="4" pattern="^[0-9۰-۹]{3,}$" oninvalid="setCustomValidity('لطفا شماره تلفن ثابت را وارد نمایید')" oninput="setCustomValidity('')" dir="ltr">
                                     </div>
                                 </div>
 
                                 <div class="col-span-6 sm:col-span-3">
                                     <div class="relative">
                                         <label for="code" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">کد شهر</label>
-                                        <input name="code" id="code" type="text" value="<?php echo ($list['data']['code']) ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" maxlength="5" tabindex="5" max="99999" pattern="^[0-9۰-۹]{3,}$" oninvalid="setCustomValidity('کد کد شهر خود وارد شود')" oninput="setCustomValidity('')" dir="ltr" >
+                                        <input name="code" id="code" type="text" value="<?php echo ($list['data']['code']) ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" maxlength="5" tabindex="5" max="99999" pattern="^[0-9۰-۹]{3,}$" oninvalid="setCustomValidity('کد کد شهر خود وارد شود')" oninput="setCustomValidity('')" dir="ltr">
                                     </div>
                                 </div>
 
                                 <div class="col-span-6 sm:col-span-3">
                                     <div class="relative">
                                         <label for="postal_code" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">کد پستی</label>
-                                        <input name="postal_code" id="postal_code" type="text" value="<?php echo ($list['data']['postal_code']) ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" maxlength="10" tabindex="6" max="9999999999" pattern="^[0-9۰-۹]{3,}$" oninvalid="setCustomValidity('کد کد پستی خود وارد شود')" oninput="setCustomValidity('')" dir="ltr" >
+                                        <input name="postal_code" id="postal_code" type="text" value="<?php echo ($list['data']['postal_code']) ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" maxlength="10" tabindex="6" max="9999999999" pattern="^[0-9۰-۹]{3,}$" oninvalid="setCustomValidity('کد کد پستی خود وارد شود')" oninput="setCustomValidity('')" dir="ltr">
                                     </div>
                                 </div>
 
                                 <div class="col-span-12 sm:col-span-6">
                                     <div class="relative">
                                         <label for="website" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">آدرس وب سایت</label>
-                                        <input name="website" id="website" type="text" value="<?php echo ($list['data']['website']) ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="7" placeholder="برای مثال:  www.tolidat.ir" oninvalid="setCustomValidity('آدرس وب سایت خود را وارد نمایید')" oninput="setCustomValidity('')" dir="ltr" >
+                                        <input name="website" id="website" type="text" value="<?php echo ($list['data']['website']) ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="7" placeholder="برای مثال:  www.tolidat.ir" oninvalid="setCustomValidity('آدرس وب سایت خود را وارد نمایید')" oninput="setCustomValidity('')" dir="ltr">
                                     </div>
                                 </div>
 
                                 <div class="col-span-12 sm:col-span-6">
                                     <div class="relative">
                                         <label for="email" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">ایمیل</label>
-                                        <input name="email" id="email" type="email" value="<?php echo ($list['data']['email']) ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="8" placeholder="برای مثال: info@tolidat.ir" oninvalid="setCustomValidity('ایمیل خود را وارد نمایید')" oninput="setCustomValidity('')" dir="ltr" >
+                                        <input name="email" id="email" type="email" value="<?php echo ($list['data']['email']) ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="8" placeholder="برای مثال: info@tolidat.ir" oninvalid="setCustomValidity('ایمیل خود را وارد نمایید')" oninput="setCustomValidity('')" dir="ltr">
                                     </div>
                                 </div>
                             </div>
@@ -494,7 +494,17 @@
 <p class="error"><?php echo $list['validate']['msg'] ?></p>
 <script>
     var packageType = parseInt(window.localStorage.getItem('packageType'));
-    if (packageType == NaN) {packageType = 5; }
+    // console.log(packageType);
+    <?php if ($_SERVER['HTTP_HOST'] == 'tolidat.ir') : ?>
+        if (!packageType) {
+            packageType = 5; // master
+        }
+    <?php else : ?>
+        if (!packageType) {
+            packageType = 6; // local
+        }
+    <?php endif; ?>
+    // console.log(packageType);
     $('.maxCanSelected').val(packageType);
     $('.package_type').val(packageType);
 </script>
