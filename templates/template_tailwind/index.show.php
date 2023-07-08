@@ -105,9 +105,15 @@
                 </h1>
 
                 <div class="justify-center flex  md:justify-start p-1   mr-5 mt-14 h-10 relative">
+                    <?php if($member):?>
                     <a href="<?php echo RELA_DIR ?>register" class="cta-home-register w-40 py-0 px-4 text-center border border-transparent   rounded text-white bg-tolidatColor hover:bg-orange-600 focus:outline-none">
                         ثبت نام
                     </a>
+                    <?php else: ?>
+                        <a href="<?php echo RELA_DIR ?>profile" class="cta-home-register w-40 py-0 px-4 text-center border border-transparent   rounded text-white bg-tolidatColor hover:bg-orange-600 focus:outline-none">
+                         حساب کاربری
+                    </a>
+                    <?php endif; ?>
                 </div>
                 <div class="grid items-center gap-y-16  grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 container mx-auto mt-9 mb-8">
 

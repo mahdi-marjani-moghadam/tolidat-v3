@@ -30,8 +30,8 @@ class CategoryCompany extends looeic
                 CategoryCompany::query($sql)->getlist();
             } catch (PDOException $e) {
                 get_caller(__FUNCTION__);
-                echo $sql;
-                echo "Error: " . $e->getMessage() . 'company id:' . $this->company->Company_id;
+                echo $sql.'<br>';
+                echo "Error: " . $e->getMessage();
                 dd('');
             }
         } else {
