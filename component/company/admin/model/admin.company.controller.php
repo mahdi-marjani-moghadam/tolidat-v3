@@ -4636,6 +4636,9 @@ www.tolidat.ir/c/{$fields['company_id']}";
         $memberObject->phone = $fields['editor_mobile'];
         $memberObject->company_d_id = $newCompanyDraftObject->Company_d_id;
         $memberObject->company_id = ($memberObject->company_id == '') ? $newCompanyObject->Company_id : $memberObject->company_id;
+        if(!is_numeric($memberObject->company_id)){
+            $memberObject->company_id = $newCompanyDraftObject->Company_d_id;
+        }
         $memberObject->save();
 
         return;
