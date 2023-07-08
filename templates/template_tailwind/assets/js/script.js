@@ -1078,8 +1078,10 @@ $(document).ready(function () {
                     selectedCatArr.push($obj.val);
                 } else {
                     if (iziParentModal !== undefined) {
+                        console.log(11);
                         $.iziToastError('ماکسیمم دسته بندی مجاز انتخاب شده است<br> ابتدا یکی از دسته بندی های انتخاب شده را حذف کرده سپس گزینه جدید را اضافه نمایید', iziParentModal);
                     } else {
+                        console.log(2);
                         $.iziToastError('ماکسیمم دسته بندی مجاز انتخاب شده است<br> ابتدا یکی از دسته بندی های انتخاب شده را حذف کرده سپس گزینه جدید را اضافه نمایید', '.izi-container');
                     }
 

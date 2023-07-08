@@ -494,6 +494,7 @@
 <p class="error"><?php echo $list['validate']['msg'] ?></p>
 <script>
     var packageType = parseInt(window.localStorage.getItem('packageType'));
+    if (packageType == NaN) {packageType = 5; }
     $('.maxCanSelected').val(packageType);
     $('.package_type').val(packageType);
 </script>
