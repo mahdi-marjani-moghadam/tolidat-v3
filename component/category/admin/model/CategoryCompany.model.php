@@ -26,11 +26,17 @@ class CategoryCompany extends looeic
         $resultCategory = $resultCategory['export']['list'];
         if (count($category_id) == 0) {
             try {
-                $sql = "delete from category_company where company_id = " . $this->company->Company_id;
-                CategoryCompany::query($sql)->getlist();
+                $cat = CategoryCompany::getBy_company_id($this->company->Company_id)->get();
+                if ($cat['export']['recordsCount'] > 0) {
+                    foreach ($cat['export']['list'] as $category) {
+                        $category->delete();
+                    }
+                }
+                // $sql = "delete from category_company where company_id = " . $this->company->Company_id;
+                // CategoryCompany::query($sql)->get();
             } catch (PDOException $e) {
                 get_caller(__FUNCTION__);
-                echo $sql.'<br>';
+                echo $sql . '<br>';
                 echo "Error: " . $e->getMessage();
                 dd('');
             }
