@@ -4635,6 +4635,7 @@ www.tolidat.ir/c/{$fields['company_id']}";
         $memberObject->family = $fields['editor_family'];
         $memberObject->phone = $fields['editor_mobile'];
         $memberObject->company_d_id = $newCompanyDraftObject->Company_d_id;
+        // todo: bug
         $memberObject->company_id = ($memberObject->company_id == '') ? $newCompanyObject->Company_id : $memberObject->company_id;
         if(!is_numeric($memberObject->company_id)){
             $memberObject->company_id = $newCompanyDraftObject->Company_d_id;
@@ -5863,7 +5864,7 @@ www.tolidat.ir/c/{$fields['company_id']}";
             $newLicenceObject->licence_number = ($LicenceObject->licence_number == '') ? 0 : $LicenceObject->licence_number;
             $newLicenceObject->description = $fields['licence_description'];
             $newLicenceObject->image = ($imageName == '') ? '' : $imageName;
-            $newLicenceObject->issuence_date = ($fields['issuence_date'] == '')? date('Y-md') : convertJToGDate($fields['issuence_date']);
+            $newLicenceObject->issuence_date = ($fields['issuence_date'] == '')? date('Y-m-d') : convertJToGDate($fields['issuence_date']);
             $newLicenceObject->expiration_date = convertJToGDate($fields['expiration_date']);
             $newLicenceObject->exporter_refrence = $fields['exporter_refrence'];
             $newLicenceObject->date = strftime('%Y-%m-%d %H:%M:%S', time());
