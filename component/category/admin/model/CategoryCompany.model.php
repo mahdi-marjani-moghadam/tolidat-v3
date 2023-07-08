@@ -36,7 +36,7 @@ class CategoryCompany extends looeic
                 // CategoryCompany::query($sql)->get();
             } catch (PDOException $e) {
                 get_caller(__FUNCTION__);
-                echo $sql . '<br>';
+                // echo $sql . '<br>';
                 echo "Error: " . $e->getMessage();
                 dd('');
             }
