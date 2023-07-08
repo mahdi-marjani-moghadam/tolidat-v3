@@ -5865,7 +5865,7 @@ www.tolidat.ir/c/{$fields['company_id']}";
             $newLicenceObject->description = $fields['licence_description'];
             $newLicenceObject->image = ($imageName == '') ? '' : $imageName;
             $newLicenceObject->issuence_date = ($fields['issuence_date'] == '')? date('Y-m-d') : convertJToGDate($fields['issuence_date']);
-            $newLicenceObject->expiration_date = convertJToGDate($fields['expiration_date']);
+            $newLicenceObject->expiration_date = ($fields['expiration_date'] == '')? date('Y-m-d') : convertJToGDate($fields['expiration_date']);
             $newLicenceObject->exporter_refrence = $fields['exporter_refrence'];
             $newLicenceObject->date = strftime('%Y-%m-%d %H:%M:%S', time());
             $newLicenceObject->status = 0;
