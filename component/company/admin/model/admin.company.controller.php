@@ -5182,6 +5182,7 @@ www.tolidat.ir/c/{$fields['company_id']}";
         $newPhoneObject->date = strftime('%Y-%m-%d %H:%M:%S', time());
         $newPhoneObject->status = 1;
         $newPhoneObject->isMain = 1;
+        $newPhoneObject->branch_id = ($newPhoneObject->branch_id == '') ? 0 : $newPhoneObject->branch_id;
         $newPhoneObject->save();
 
         //------> Edit c_phones_d Table
