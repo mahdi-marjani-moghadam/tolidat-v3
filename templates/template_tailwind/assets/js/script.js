@@ -1435,7 +1435,7 @@ $(document).ready(function () {
 
             options = {
                 restore: false,
-                viewMode: 1,
+                viewMode: 0,
                 preview: '.img-preview',
                 crop: function (e) {
                     $dataX.val(Math.round(e.x));
