@@ -105,7 +105,7 @@
                 </h1>
 
                 <div class="justify-center flex  md:justify-start p-1   mr-5 mt-14 h-10 relative">
-                    <?php if($member):?>
+                    <?php if($information_company == null):?>
                     <a href="<?php echo RELA_DIR ?>register" class="cta-home-register w-40 py-0 px-4 text-center border border-transparent   rounded text-white bg-tolidatColor hover:bg-orange-600 focus:outline-none">
                         ثبت نام
                     </a>
