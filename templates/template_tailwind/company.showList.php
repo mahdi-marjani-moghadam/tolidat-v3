@@ -565,79 +565,200 @@
         </div>
 
         <!-------------------------------- showGrid and listView -------------------------------->
-        <?php if (!isset($list['type']) || $list['type'] == 'تولیدی') { ?>
-            <?php foreach ($list['list']['company'] as $key => $value) { ?>
-                <div class="w-full rounded-md pt-4 bg-gray-50 mb-4 border-gray-200 border-2">
+        <?php if (!isset($list['type']) || $list['type'] == 'تولیدی') {
+            $i = 1;
+        ?>
+            <?php foreach ($list['list']['company'] as $key => $value) {
 
-                    <a class="" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
-                        <h3 class="text-xl font-bold text-gray-700 px-4 block"><?php echo ($value['company_name'] != "" ? $value['company_name'] : "-"); ?></h3>
-                    </a>
 
-                    <div class="px-4">
-                        <div class="pt-3 border-b-2 border-tolidatColor opacity-25"></div>
-                    </div>
 
-                    <div class="px-4">
-                        <div class="grid grid-cols-1 md:grid-cols-9 lg:grid-cols-9 gap-y-4 mt-4">
+                if ($i++ == 1) :
+            ?>
+                    <div class="w-full rounded-md pt-4 bg-gray-50 mb-4 shadow-lg  ">
 
-                            <div class="md:col-span-2 lg:col-span-2">
-                                <a class="w-1/2 md:w-full block float-right" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
-                                    <img src="<?php echo (($value['logo']['image']['0'] && file_exists(COMPANY_ADDRESS_ROOT . $key . "/logo/140.140." . $value['logo']['image']['0'])) ? COMPANY_ADDRESS . $key . "/logo/140.140." . $value['logo']['image']['0'] :  DEFULT_LOGO_ADDRESS); ?>" alt="" class="w-full border-2 rounded-md border-gray-200">
-                                </a>
+                        <a class="" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
+                            <h3 class="text-xl font-bold text-gray-700 px-4 block"><?php echo ($value['company_name'] != "" ? $value['company_name'] : "-"); ?></h3>
+                        </a>
 
-                                <div class="h-full w-1/2 flex md:hidden justify-center items-center">
-                                    <div class="" role="progressbar" aria-valuenow="<?php echo ($value['priority']) ?>" aria-valuemin="0" aria-valuemax="100" style="--value:<?php echo ($value['priority']) ?>; --size:5rem; --fg:hsl(<?php echo ($value['priority']) ?>deg,70%,50%)"></div>
-                                </div>
+                        <div class="px-4">
+                            <div class="pt-3 border-b-2 border-tolidatColor opacity-25"></div>
+                        </div>
 
-                            </div>
+                        <div class="px-4">
+                            <div class="grid grid-cols-1 md:grid-cols-9 lg:grid-cols-9 gap-y-4 mt-4">
 
-                            <div class="md:col-span-7 lg:col-span-6 px-4 justify-between flex flex-col">
-                                <p class="max-h-36 leading-7  overflow-hidden text-sm  mb-7	md:mb-2">
-                                    <?php echo ($value['description'] != "" ? $value['description'] : "-"); ?>
-                                </p>
-
-                                <div class="text-center md:text-right mb-4">
-                                    <a class="w-40 mt-4 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-tolidatColor hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
-                                        مشاهده بیشتر
+                                <div class="md:col-span-2 lg:col-span-2">
+                                    <a class="w-1/2 md:w-full block float-right" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
+                                        <img src="<?php echo (($value['logo']['image']['0'] && file_exists(COMPANY_ADDRESS_ROOT . $key . "/logo/140.140." . $value['logo']['image']['0'])) ? COMPANY_ADDRESS . $key . "/logo/140.140." . $value['logo']['image']['0'] :  DEFULT_LOGO_ADDRESS); ?>" alt="" class="w-full border-2 rounded-md border-gray-200">
                                     </a>
-                                </div>
-                            </div>
 
-                            <div class="md:col-span-12 lg:col-span-1 hidden md:flex justify-center">
-                                <div class="" role="progressbar" aria-valuenow="<?php echo ($value['priority']) ?>" aria-valuemin="0" aria-valuemax="100" style="--value:<?php echo ($value['priority']) ?>; --size:5rem; --fg:hsl(<?php echo ($value['priority']) ?>deg,70%,50%)"></div>
+                                    <div class="h-full w-1/2 flex md:hidden justify-center items-center">
+                                        <div class="" role="progressbar" aria-valuenow="<?php echo ($value['priority']) ?>" aria-valuemin="0" aria-valuemax="100" style="--value:<?php echo ($value['priority']) ?>; --size:5rem; --fg:hsl(<?php echo ($value['priority']) ?>deg,70%,50%)"></div>
+                                    </div>
+
+                                </div>
+
+                                <div class="md:col-span-7 lg:col-span-7 px-4 justify-between flex flex-col">
+                                    <p class="max-h-36 leading-7  overflow-hidden text-sm  mb-7	md:mb-2">
+                                        <?php echo ($value['description'] != "" ? $value['description'] : "-"); ?>
+                                    </p>
+
+                                    <div class="text-center md:text-right mb-4">
+                                        <a class="w-40 mt-4 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-tolidatColor hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
+                                            مشاهده بیشتر
+                                        </a>
+
+
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
+
+                        <div>
+
+                            <?php
+                            // get company products
+                            $resultProduct = c_product::getBy_company_id($value['Company_id'])->where('status', '=', 1)->limit(3)->getList();
+                            if ($resultProduct['export']['recordsCount'] > 0) {
+                                $product_list = $resultProduct['export']['list'];
+                            }
+
+
+
+                            if (isset($product_list)) : ?>
+                                <div class="border-2 my-4 rounded bg-gray-50">
+
+                                    <div id="products" class="px-3 pt-3 pb-2 text-header searchBox1 bestProduct  fullWidth container-product-Grouping productGrid">
+                                        <div class="content">
+                                            <ul class="product-list grid-view text-center grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                                <?php foreach ($product_list as $pkey => $fields) : ?>
+                                                    <li class="group ">
+                                                        <div class="product-group border p-2 rounded  bg-white ">
+
+                                                            <div class="product-item-img flex h-24 justify-center">
+                                                                <img data-title="محصولات" class="" loading='lazy' src="<?php echo (strlen($fields['image']) > 0 && file_exists(COMPANY_ADDRESS_ROOT . $fields['company_id'] . '/product/150.150.' . $fields['image']) ? COMPANY_ADDRESS . $fields['company_id'] . '/product/150.150.' . $fields['image'] : DEFULT_PRODUCT_ADDRESS); ?>">
+                                                            </div>
+
+                                                            <div class="product-content pull-right rtl">
+                                                                <div class="text-right displayBlock displayBlock-content">
+                                                                    <h3 class="text-tolidatColor">
+                                                                        <?php echo $fields['title'] ?>
+                                                                    </h3>
+                                                                </div>
+
+
+
+                                                                <a href="<?php echo  RELA_DIR . 'product/show/' . $fields['Product_id'] . "/" . cleanUrl($fields['title']) ?>" class="text-tolidatColor inline-flex items-center md:mb-2 lg:mb-0       ">
+                                                                    <svg class="w-4 h-4 ml-1" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                                        <path d="M5 12h14"></path>
+                                                                        <path d="M12 5l7 7-7 7"></path>
+                                                                    </svg>
+                                                                    مشاهده بیشتر
+                                                                </a>
+
+                                                                <!-- <button class="show-more bg-tolidatColor text-white px-3 rounded-full">مشاهده بیشتر</button> -->
+                                                            </div>
+
+                                                        </div>
+                                                    </li>
+                                                <?php endforeach ?>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="bg-gray-200  mt-4 rounded-b-md flex items-center px-4 gap-2 ">
+
+                            <p class="flex text-sm items-center justify-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-tolidatColor" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <a class="" href="<?php echo  RELA_DIR . "search/type/تولیدی/province/" . $list['list']['searchProvince'][$value['state_id']]['name'] ?>"><?php echo  $list['list']['searchProvince'][$value['state_id']]['name'] ?></a>
+
+                            </p>
+
+                        </div>
+
                     </div>
+                <?php else : ?>
+                    <div class="w-full rounded-md pt-4 bg-gray-50 mb-4   ">
 
-                    <div class="bg-gray-200  mt-4 rounded-b-md flex items-center px-4 gap-2 ">
+                        <a class="" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
+                            <h3 class="text-xl font-bold text-gray-700 px-4 block"><?php echo ($value['company_name'] != "" ? $value['company_name'] : "-"); ?></h3>
+                        </a>
 
-                        <p class="flex text-sm items-center justify-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-tolidatColor" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            <a class="" href="<?php echo  RELA_DIR . "search/type/تولیدی/province/" . $list['list']['searchProvince'][$value['state_id']]['name'] ?>"><?php echo  $list['list']['searchProvince'][$value['state_id']]['name'] ?></a>
-                        </p>
+                        <div class="px-4">
+                            <div class="pt-3 border-b-2 border-tolidatColor opacity-25"></div>
+                        </div>
 
-                        <p class="flex flex-wrap text-sm items-center justify-start">
-                            <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-tolidatColor" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="px-4">
+                            <div class="grid grid-cols-1 md:grid-cols-9 lg:grid-cols-9 gap-y-4 mt-4">
+
+                                <div class="md:col-span-2 lg:col-span-2">
+                                    <a class="w-1/2 md:w-full block float-right" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
+                                        <img src="<?php echo (($value['logo']['image']['0'] && file_exists(COMPANY_ADDRESS_ROOT . $key . "/logo/140.140." . $value['logo']['image']['0'])) ? COMPANY_ADDRESS . $key . "/logo/140.140." . $value['logo']['image']['0'] :  DEFULT_LOGO_ADDRESS); ?>" alt="" class="w-full border-2 rounded-md border-gray-200">
+                                    </a>
+
+                                    <div class="h-full w-1/2 flex md:hidden justify-center items-center">
+                                        <div class="" role="progressbar" aria-valuenow="<?php echo ($value['priority']) ?>" aria-valuemin="0" aria-valuemax="100" style="--value:<?php echo ($value['priority']) ?>; --size:5rem; --fg:hsl(<?php echo ($value['priority']) ?>deg,70%,50%)"></div>
+                                    </div>
+
+                                </div>
+
+                                <div class="md:col-span-7 lg:col-span-6 px-4 justify-between flex flex-col">
+                                    <p class="max-h-36 leading-7  overflow-hidden text-sm  mb-7	md:mb-2">
+                                        <?php echo ($value['description'] != "" ? $value['description'] : "-"); ?>
+                                    </p>
+
+                                    <div class="text-center md:text-right mb-4">
+                                        <a class="w-40 mt-4 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-tolidatColor hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
+                                            مشاهده بیشتر
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="md:col-span-12 lg:col-span-1 hidden md:flex justify-center">
+                                    <div class="" role="progressbar" aria-valuenow="<?php echo ($value['priority']) ?>" aria-valuemin="0" aria-valuemax="100" style="--value:<?php echo ($value['priority']) ?>; --size:5rem; --fg:hsl(<?php echo ($value['priority']) ?>deg,70%,50%)"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-200  mt-4 rounded-b-md flex items-center px-4 gap-2 ">
+
+                            <p class="flex text-sm items-center justify-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-tolidatColor" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <a class="" href="<?php echo  RELA_DIR . "search/type/تولیدی/province/" . $list['list']['searchProvince'][$value['state_id']]['name'] ?>"><?php echo  $list['list']['searchProvince'][$value['state_id']]['name'] ?></a>
+                            </p>
+
+                            <p class="flex flex-wrap text-sm items-center justify-start">
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-tolidatColor" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                             </svg> -->
-                            <?php $count = count($value['category_title']) ?>
-                            <?php foreach ($value['category_title'] as $cat_id => $category) : ?>
-                                <a class="border border-tolidatColor m-1 text-xs rounded-full px-3 sm:px-2 py-1" href="<?php echo  RELA_DIR . "company/type/تولیدی/category/" . $cat_id ?>">
-                                    <?php echo $category;
-                                    echo ($count > 1 ? " , " : "");
-                                    $count-- ?>
-                                </a>
-                            <?php endforeach; ?>
+                                <?php $count = count($value['category_title']) ?>
+                                <?php foreach ($value['category_title'] as $cat_id => $category) : ?>
+                                    <a class="border border-tolidatColor m-1 text-xs rounded-full px-3 sm:px-2 py-1" href="<?php echo  RELA_DIR . "company/type/تولیدی/category/" . $cat_id ?>">
+                                        <?php echo $category;
+                                        echo ($count > 1 ? " , " : "");
+                                        $count-- ?>
+                                    </a>
+                                <?php endforeach; ?>
 
 
-                        </p>
+                            </p>
+
+                        </div>
 
                     </div>
-
-                </div>
+                <?php endif; ?>
             <?php } ?>
         <?php } else { ?>
             <?php foreach ($list['list']['c_products'] as $key => $value) { ?>

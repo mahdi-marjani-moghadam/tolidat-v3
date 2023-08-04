@@ -33,7 +33,7 @@ if (!function_exists('view')) {
 if (!function_exists('dd')) {
     function dd($val, $die = true)
     {
-        echo '<pre style="direction: ltr; background:black; color:greenyellow;  margin-bottom:1em;" >';
+        echo '<pre style="direction: ltr !important; text-align:left; background:black; color:greenyellow;  margin-bottom:1em;" >';
         print_r($val);
         echo '</pre>';
 
