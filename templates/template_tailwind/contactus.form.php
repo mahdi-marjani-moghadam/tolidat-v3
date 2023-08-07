@@ -8,13 +8,13 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-9  pull-right">
                 <div class="gap-x-3 flex flex-col">
-                    <span class="text-gray-500"><i class="fa fa-map-marker text-danger"></i> آدرس : </span> فلکه دوم صادقیه بلوار فردوس شرق خیابان ولیعصر خیابان رز غربی پلاک 7 واحد 3
+                    <span class="text-gray-500"><i class="fa fa-map-marker text-danger"></i> آدرس : </span> سعادت آباد
                     <br>
                     <br>
                     <span class="text-gray-500 hidden"><i class="fa fa-phone text-danger"></i> شماره تلفن: <br>
                         برای اطلاع از نحوه ثبت نام و شرایط فروش با ما تماس بگیرید
                         <span class="text-black" dir="ltr">
-                            <a class="bg-lime-500 text-white  rounded-full px-5 py-1 mt-2 inline-block" id="cta-tolidat-phone" href="tel:02144048527"><i class="fa fa-phone"></i> 021-44048527</a>
+                            <a class="bg-lime-500 text-white  rounded-full px-5 py-1 mt-2 inline-block" id="cta-tolidat-phone" href="tel:02191692243"><i class="fa fa-phone"></i> 021-91692243</a>
 
                         </span></span>
                 </div>
