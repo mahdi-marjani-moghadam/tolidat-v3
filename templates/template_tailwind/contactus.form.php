@@ -11,7 +11,7 @@
                     <span class="text-gray-500"><i class="fa fa-map-marker text-danger"></i> آدرس : </span> سعادت آباد
                     <br>
                     <br>
-                    <span class="text-gray-500 hidden"><i class="fa fa-phone text-danger"></i> شماره تلفن: <br>
+                    <span class="text-gray-500 "><i class="fa fa-phone text-danger"></i> شماره تلفن: <br>
                         برای اطلاع از نحوه ثبت نام و شرایط فروش با ما تماس بگیرید
                         <span class="text-black" dir="ltr">
                             <a class="bg-lime-500 text-white  rounded-full px-5 py-1 mt-2 inline-block" id="cta-tolidat-phone" href="tel:02191692243"><i class="fa fa-phone"></i> 021-91692243</a>
