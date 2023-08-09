@@ -448,7 +448,7 @@
                                                 </span>
                                                 <span class="close-filter-container">
                                                     <a href="#" name="a_category" title="<?php echo  $list['list']['searchItem']['category'][$a]['title'] ?>">
-                                                        <i class="fa text-red-700 font-bold" name="category[]" id="<?php echo  $list['list']['searchItem']['category'][$a]['url'] ?>" title="<?php echo  $list['list']['searchItem']['category'][$a]['title'] ?>">X </i>
+                                                        <i class="fa not-italic  bg-red-700 text-white inline-block w-5 h-5 rounded-full " name="category[]" id="<?php echo  $list['list']['searchItem']['category'][$a]['url'] ?>" title="<?php echo  $list['list']['searchItem']['category'][$a]['title'] ?>">X </i>
                                                     </a>
                                                 </span>
                                             </div>
@@ -465,7 +465,7 @@
                                         </span>
                                         <span class="close-filter-container">
                                             <a href="#" name="b_category" title="<?php echo  $list['list']['searchItem']['category'][$a]['title'] ?>">
-                                                <i class="fa text-red-700 font-bold" name="category[]" id="<?php echo $list['list']['searchItem']['category'][$a]['url'] ?>" title="<?php echo  $list['list']['searchItem']['category'][$a]['title'] ?>"> X</i>
+                                                <i class="fa not-italic  bg-red-700 text-white inline-block w-5 h-5 rounded-full" name="category[]" id="<?php echo $list['list']['searchItem']['category'][$a]['url'] ?>" title="<?php echo  $list['list']['searchItem']['category'][$a]['title'] ?>"> X</i>
                                             </a>
                                         </span>
                                     </div>
