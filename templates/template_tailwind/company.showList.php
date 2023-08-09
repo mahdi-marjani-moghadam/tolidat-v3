@@ -574,7 +574,7 @@
 
                 if ($i++ == 1) :
             ?>
-                    <div class="w-full rounded-md pt-4 bg-gray-50 mb-4 shadow-lg  ">
+                    <div class="w-full rounded-md pt-4 bg-gray-50 border-4 border-b mb-4 shadow-lg  ">
 
                         <a class="" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
                             <h3 class="text-xl font-bold text-gray-700 px-4 block"><?php echo ($value['company_name'] != "" ? $value['company_name'] : "-"); ?></h3>
@@ -626,9 +626,20 @@
                             }
 
 
+                            $addressResult = c_addresses::getBy_company_id($value['Company_id'])->first();
+                            if (is_object($addressResult)) {
+                                $address = $addressResult->fields;
+                            }
+
+                            $phoneResult = c_phones::getBy_company_id($value['Company_id'])->first();
+                            if (is_object($phoneResult)) {
+                                $phone = $phoneResult->fields;
+                            }
+
+
 
                             if (isset($product_list)) : ?>
-                                <div class="border-2 my-4 rounded bg-gray-50">
+                                <div class=" my-4 rounded bg-gray-50">
 
                                     <div id="products" class="px-3 pt-3 pb-2 text-header searchBox1 bestProduct  fullWidth container-product-Grouping productGrid">
                                         <div class="content">
@@ -637,13 +648,13 @@
                                                     <li class="group ">
                                                         <div class="product-group border p-2 rounded  bg-white ">
 
-                                                            <div class="product-item-img flex h-24 justify-center">
+                                                            <div class="product-item-img flex h-28 justify-center">
                                                                 <img data-title="محصولات" class="" loading='lazy' src="<?php echo (strlen($fields['image']) > 0 && file_exists(COMPANY_ADDRESS_ROOT . $fields['company_id'] . '/product/150.150.' . $fields['image']) ? COMPANY_ADDRESS . $fields['company_id'] . '/product/150.150.' . $fields['image'] : DEFULT_PRODUCT_ADDRESS); ?>">
                                                             </div>
 
                                                             <div class="product-content pull-right rtl">
-                                                                <div class="text-right displayBlock displayBlock-content">
-                                                                    <h3 class="text-tolidatColor">
+                                                                <div class=" displayBlock displayBlock-content">
+                                                                    <h3 class="">
                                                                         <?php echo $fields['title'] ?>
                                                                     </h3>
                                                                 </div>
@@ -655,7 +666,7 @@
                                                                         <path d="M5 12h14"></path>
                                                                         <path d="M12 5l7 7-7 7"></path>
                                                                     </svg>
-                                                                    مشاهده بیشتر
+                                                                    مشاهده محصول
                                                                 </a>
 
                                                                 <!-- <button class="show-more bg-tolidatColor text-white px-3 rounded-full">مشاهده بیشتر</button> -->
@@ -672,17 +683,22 @@
                             <?php endif; ?>
                         </div>
 
-                        <div class="bg-gray-200  mt-4 rounded-b-md flex items-center px-4 gap-2 ">
+                        <div class="pb-4  mt-4 rounded-b-md  items-center px-4 gap-2 ">
 
-                            <p class="flex text-sm items-center justify-start">
+                            <p class="flex  items-center justify-start">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-tolidatColor" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
-                                <a class="" href="<?php echo  RELA_DIR . "search/type/تولیدی/province/" . $list['list']['searchProvince'][$value['state_id']]['name'] ?>"><?php echo  $list['list']['searchProvince'][$value['state_id']]['name'] ?></a>
-
+                                <!-- <a class="" href="< ?php echo  RELA_DIR . "search/type/تولیدی/province/" . $list['list']['searchProvince'][$value['state_id']]['name'] ?>">
+                                    < ?php echo  $list['list']['searchProvince'][$value['state_id']]['name'] ?>
+                                </a> -->
+                                <?php echo $address['address'] ?>
                             </p>
 
+                            <p class="pt-2">
+                                تلفن: <?php echo $phone['code'] . $phone['number'] ?>
+                            </p>
                         </div>
 
                     </div>
