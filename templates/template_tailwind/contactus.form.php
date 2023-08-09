@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-9  pull-right">
                 <div class="gap-x-3 flex flex-col">
-                    <span class="text-gray-500"><i class="fa fa-map-marker text-danger"></i> آدرس : </span> سعادت آباد
+                    <span class="text-gray-500"><i class="fa fa-map-marker text-danger"></i> آدرس : </span> سعادت آباد، میدان کاج، سرو شرقی،‌علامه طبابایی شمال، کوچه ۱۶ غربی
                     <br>
                     <br>
                     <span class="text-gray-500 "><i class="fa fa-phone text-danger"></i> شماره تلفن: <br>
@@ -108,7 +108,7 @@
                     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
                     <script>
                         var map = L.map('map', {
-                            center: [35.717993, 51.329152],
+                            center: [35.780427, 51.378308],
                             zoom: 16,
                             scrollWheelZoom: false
                         });
@@ -117,7 +117,7 @@
                         }).addTo(map);
 
 
-                        L.marker([35.717993, 51.329152]).addTo(map)
+                        L.marker([35.780427, 51.378308]).addTo(map)
                             // .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
                             .openPopup();
                     </script>
