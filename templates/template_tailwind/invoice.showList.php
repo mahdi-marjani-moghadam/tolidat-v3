@@ -58,7 +58,7 @@
 
                         <div class="w-full sm:w-1/2">
                             <i class="fa fa-calendar" aria-hidden="true"></i>
-                            <span class="">اعتبار پکیج: یک ساله</span>
+                            <span class="">اعتبار پکیج: <?php echo $list['period'];?> ماهه</span>
                         </div>
 
                         <div class="w-full sm:w-1/2 mt-4 sm:mt-0">

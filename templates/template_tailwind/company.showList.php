@@ -1076,7 +1076,8 @@
                             <?php foreach ($list['articles_list'] as $id => $field) : ?>
                                 <div dir="rtl" class="items-stretch">
                                     <div class="h-full  grid grid-cols-3 rounded-lg  border-2">
-                                        <a href="<?php echo RELA_DIR . 'article/' . $field['Article_id'] ?>" class="flex p-2">
+                                        
+                                        <a href="<?php echo RELA_DIR . 'article/' . $field['Article_id']. "/" . urlencode($field['title']) ?>" class="flex p-2">
                                             <img class="w-28 object-center self-center rounded-md" src="<?php echo ((isset($field['image']) && file_exists(STATIC_ROOT_DIR . '/images/article/90.90.' . $field['image'])) ? STATIC_RELA_DIR . '/images/article/90.90.' . $field['image'] : DEFULT_PRODUCT_ADDRESS) ?>" alt="<?php echo  $field['brif_description'] ?>">
                                         </a>
                                         <div class="px-3 py-2 col-span-2">

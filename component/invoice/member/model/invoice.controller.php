@@ -92,7 +92,7 @@ class MemberInvoiceController
         $export['startdate'] = $packageUsage['export']['list']['0']['start_date'];
         $export['expiredate'] = $packageUsage['export']['list']['0']['expiredate'];
         $export['show_profile_menu'] = 1;
-
+        
         $this->fileName = 'member.invoice.show.php';
         $this->template($export);
         die();
@@ -117,7 +117,9 @@ class MemberInvoiceController
                 $export['active-package-upgarde'] = true;
             } else {
                 $export['invoice'][$invoice->Invoice_id]['start_date'] = $invoice->date;
-                $export['invoice'][$invoice->Invoice_id]['expire_date'] = date('Y-m-d', strtotime("+1 years", strtotime(substr($invoice->date, 0, 10))));
+                $package = Package::find($invoice->package_id);
+                
+                $export['invoice'][$invoice->Invoice_id]['expire_date'] = date('Y-m-d', strtotime("+{$package->period} months", strtotime(substr($invoice->date, 0, 10))));
                 $export['active-package-upgarde'] = false;
             }
         }

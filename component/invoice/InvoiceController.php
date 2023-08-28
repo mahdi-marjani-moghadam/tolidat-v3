@@ -72,6 +72,7 @@ class InvoiceController
         $export = $fields;
         $export['packagetype'] = $package['packagetype'];
         $export['package_class'] = package::getPackageClass($package['packagetype']);
+        $export['period'] = $package['period'];
         $export['show_profile_menu'] = 1;
         $this->fileName = 'invoice.showList.php';
         $this->template($export, $msg);
@@ -140,6 +141,7 @@ class InvoiceController
         $export = $invoice->fields;
         $export['packagetype'] = $package['packagetype'];
         $export['package_class'] = package::getPackageClass($package['packagetype']);
+        $export['period'] = $package['period'];
         $this->fileName = 'invoice.showList.php';
         $this->template($export);
         die();

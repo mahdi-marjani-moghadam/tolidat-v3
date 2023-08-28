@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: daba
@@ -75,7 +76,11 @@ class adminOnlinePaymentController
         $export['invoice_id'] = $invoiceModel->Invoice_id;
         $export['company_id'] = $invoiceModel->company_id;
         $export['start_date'] = strftime('%Y-%m-%d %H:%M:%S', time());
-        $export['expiredate'] = date('Y-m-d', strtotime("+1 years", strtotime(substr($export['start_date'], 0, 10))));
+
+     
+        // todo: expiredate package
+        $package = Package::find($invoiceModel->package_id);
+        $export['expiredate'] = date('Y-m-d', strtotime("+{$package->period} months", strtotime(substr($export['start_date'], 0, 10))));
 
         $packageUsage = new adminpackageUsageModel();
         $packageUsage->setFields($export);
@@ -83,7 +88,6 @@ class adminOnlinePaymentController
         if ($result['result'] == -1) {
             $msg = 'اطلاعات ذخیره نشد';
             redirectPage(RELA_DIR . 'admin/index.php?component=invoice', $msg);
-
         }
         $invoiceModel->status = 5;
         $result = $invoiceModel->save();
@@ -245,7 +249,7 @@ class adminOnlinePaymentController
         }
 
         $logs->limit($searchFields['limit']['start'], $searchFields['limit']['length']);
-//        $c = $logs->getList(); dd($logs);
+        //        $c = $logs->getList(); dd($logs);
 
         $result['payment'] = $logs->getList();
         $result['totalRecord'] = $totalRecord;

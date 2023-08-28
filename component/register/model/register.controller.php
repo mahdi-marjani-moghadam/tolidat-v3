@@ -878,6 +878,7 @@ class registerController
 
         $package = package::find($stepForm->data['6']['package_type']);
         $fields['package_status'] = ($package->price == 0 || $package->price == '') ? 1 : 2;
+        $fields['package_period'] = $package->period;
 
         if ($input->data['4']['issuence_date'] == '') {
             $input->data['4']['issuence_date'] = convertDate(date('Y-m-d H:i:s'));
@@ -1037,6 +1038,7 @@ class registerController
         }
 
         //        $fields['startdate'] = strftime('%Y-%m-%d %H:%M:%S', time());
+        // todo: expiredate package
         //        $fields['expiredate'] = date('Y-m-d', strtotime("+1 years", strtotime(substr($fields['startdate'], 0, 10))));
         $fields['package_id'] = $package->Package_id;
         $fields['date'] = strftime('%Y-%m-%d %H:%M:%S', time());

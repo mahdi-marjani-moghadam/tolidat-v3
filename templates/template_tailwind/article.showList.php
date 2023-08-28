@@ -64,7 +64,7 @@
                         <header><?php echo (strlen($fields['title']) ? $fields['title'] : "-"); ?></header>
                     </a>
 
-                    <div class="item text-center" data-articleID="<?php echo  $fields['Article_id']; ?>">
+                    <div class="item text-center" data-articleID="< ?php echo  $fields['Article_id']; ?>">
 
                         <div class="logoContainer center-block fullWidth">
                             <a href="<?php echo ($url); ?>" class="fullWidth displayBlock" name="f_display_block" title="<?php echo  $fields['title'] ?>">
