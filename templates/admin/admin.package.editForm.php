@@ -82,6 +82,15 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
+                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="period">ماه  :</label>
+                                    <div class="col-xs-12 col-sm-8 pull-right">
+                                        <input type="text" class="form-control set-font-latin" name="period" id="period" autocomplete="off" required value="<?php echo  $list['period'] ?>">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <div class="form-group">
                                     <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="product">تعداد محصول :</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control set-font-latin" name="product" id="product" autocomplete="off" required value="<?php echo  $list['product'] ?>">
