@@ -135,7 +135,7 @@
                                 <div class="form-group">
                                     <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="date">تاریخ :</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
-                                        <input type="text" class="form-control date" name="date" id="date">
+                                        <input type="text" value="<?php echo convertDate(date('Y-m-d')) ?>" class="form-control date" name="date" id="date">
                                     </div>
                                 </div>
                             </div>
