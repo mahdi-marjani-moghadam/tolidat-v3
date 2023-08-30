@@ -60,6 +60,7 @@
                         <th>ردیف</th>
                         <th>main</th>
                         <th>نوع پکیج</th>
+                        <th>ماه</th>
                         <th>تعداد محصول</th>
                         <th>تعداد دسته بندی</th>
                         <th>تعداد کلمات کلیدی</th>
@@ -82,6 +83,7 @@
                                 <td><?php echo $fields['Package_id']; ?></td>
                                 <td><?php echo $fields['main']; ?></td>
                                 <td><?php echo $fields['packagetype']; ?></td>
+                                <td><?php echo $fields['period']; ?></td>
                                 <td><?php echo $fields['product']; ?></td>
                                 <td><?php echo $fields['category']; ?></td>
                                 <td><?php echo $fields['keyword']; ?></td>
