@@ -616,7 +616,7 @@ class categoryController
     public function check()
     {
         $c = (new category)
-            ->select('category.title', 'category.Category_id', 'count(article.Article_id)')
+            ->select('category.title', 'category.Category_id', 'count(article.Article_id) as articles')
             ->leftJoin('article', 'article.category_id', '=', 'category.Category_id')
             ->groupBy('category.Category_id')
             ->getList();
