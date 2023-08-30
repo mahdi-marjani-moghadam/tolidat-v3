@@ -287,6 +287,7 @@ class categoryController
         }
     }
 
+
     public function showLevelOneCategory()
     {
         $result['topLayer'] = true;
@@ -369,7 +370,7 @@ class categoryController
         $i = 0;
         $categories = (isset($result['categoryLevelTwo'])) ? $result['categoryLevelTwo'] : $result['category'];
         $name = (isset($result['categoryLevelTwo'])) ? 'categoryLevelTwo' : 'category';
-        
+
 
         // dd($categories);
         foreach ($categories as $category) {
@@ -608,5 +609,19 @@ class categoryController
     {
         $result = $this->service_get($input);
         Response::json($result, 'get', 200);
+    }
+
+
+    // check category artoiicle with crm
+    public function check()
+    {
+        $c = (new category)
+            ->select('category.title', 'category.Category_id', 'count(article.Article_id)')
+            ->leftJoin('article', 'article.category_id', '=', 'category.Category_id')
+            ->groupBy('category.Category_id')
+            ->getList();
+
+        echo json_encode($c['export']['list']);
+        die();
     }
 }

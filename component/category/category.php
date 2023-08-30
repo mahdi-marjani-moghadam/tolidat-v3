@@ -18,6 +18,9 @@ switch ($PARAM[1]) {
     case "all" :
         $categoryController->index($PARAM['2']);
         break;
+    case "check":
+        $categoryController->check();
+        break;
     default:
         $categoryController->showList();
         break;
