@@ -620,7 +620,8 @@ class categoryController
             ->leftJoin('article', 'article.category_id', '=', 'category.Category_id')
             ->groupBy('category.Category_id')
             ->getList();
-
+        // dd($c);
+        header('Content-Type: application/json; charset=utf-8');
         echo json_encode($c['export']['list']);
         die();
     }
