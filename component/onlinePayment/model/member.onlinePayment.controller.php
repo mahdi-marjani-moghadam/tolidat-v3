@@ -61,11 +61,12 @@ class onlinePaymentController
         if (RELA_DIR == 'https://tolidat.ir') {
             $this->_merchantID = '10370175'; // main 
             $this->_merchantPass = '5128755';
-            $this->_initpayment = 'https://sep.shaparak.ir/Payments/InitPayment.asmx?WSDL';
+            // $this->_initpayment = 'https:// /Payments/InitPayment.asmx?WSDL';
+            $this->_initpayment = 'https://sep.shaparak.ir/Payments/InitPayment.asmx';
             $this->_payment = 'https://sep.shaparak.ir/Payment.aspx';
             $this->_referencepayment = 'https://acquirer.samanepay.com/payments/referencepayment.asmx?WSDL';
         } else {
-            $this->_merchantID = 'TS9sdvlX-gtlhtZ'; // main 
+            $this->_merchantID = 'TS9sdvlX-gtlhtZ'; // test 
             $this->_merchantPass = 'user134753457';
             $this->_initpayment = 'https://sandbox.banktest.ir/saman/sep.shaparak.ir/payments/initpayment.asmx?wsdl';
             $this->_payment = 'https://sandbox.banktest.ir/saman/sep.shaparak.ir/payment.aspx';
