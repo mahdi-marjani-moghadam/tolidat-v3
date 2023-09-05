@@ -1005,7 +1005,7 @@ class companyController
     {
         $result = company::getAll()
             ->where('status', '=', -1)
-            ->andWhere('DATE(registration_date)', '>=', date('Y-m-d',strtotime("-1 days")))
+            ->andWhere('DATE(register_date)', '>=', date('Y-m-d'))
             ->getList();
         // dd(date('Y-m-d',strtotime("-1 days")));
         if ($result['export']['recordsCount'] == 0) {
