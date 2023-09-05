@@ -1005,9 +1005,9 @@ class companyController
     {
         $result = company::getAll()
             ->where('status', '=', -1)
-            ->andWhere('DATE(registration_date)', '>=', date('Y-m-d'))
+            ->andWhere('DATE(registration_date)', '>=', date('Y-m-d',strtotime("-1 days")))
             ->getList();
-        // dd($result);
+        // dd(date('Y-m-d',strtotime("-1 days")));
         if ($result['export']['recordsCount'] == 0) {
             header('HTTP/1.0 404 Not Found');
         }
