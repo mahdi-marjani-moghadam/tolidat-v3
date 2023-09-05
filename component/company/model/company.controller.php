@@ -1005,9 +1005,12 @@ class companyController
     {
         $result = company::getAll()
             ->where('status', '=', -1)
-            ->andWhere('DATE(registration_date)', '>=', 'CURDATE()')
+            ->andWhere('DATE(registration_date)', '>=', date('Y-m-d'))
             ->getList();
-        
+        // dd($result);
+        if ($result['export']['recordsCount'] == 0) {
+            header('HTTP/1.0 404 Not Found');
+        }
         header('Content-Type: application/json; charset=utf-8');
         echo json_encode($result['export']['list']);
         die();
