@@ -74,8 +74,11 @@ if (isset($PARAM[0]) and $PARAM[1] == 'ajaxSearch') {
 if (is_numeric($PARAM[1])) {
     //short link 
     $companyController->showDetail($PARAM[1], true);
-    
+} else if ($PARAM[1] == 'new-company') {
+    $companyController->newCompany();
+
 } else if (isset($PARAM[0]) and $PARAM[0] == $_SESSION['city'] and empty($_POST)) {
+
     // doesnt use
     dd('Error Not found 80!');
     $fields['limit']['start'] = (isset($page)) ? ($page - 1) * PAGE_SIZE : '0';
@@ -95,7 +98,7 @@ if (is_numeric($PARAM[1])) {
 } elseif ($PARAM[1] != 'Detail' and empty($_POST) and $PARAM[3] != 'all') {
 
     // Landing page 
-    
+
 
     unset($_SESSION['companyBreadcrumb']);
     unset($_SESSION['productBreadcrumb']);
@@ -126,10 +129,10 @@ if (is_numeric($PARAM[1])) {
 
     // redirect 301 old category url
     $oldCategory = array_search('category', $PARAM);
-    if($oldCategory){
+    if ($oldCategory) {
         $catSlug = (new category)->getCategorySlug($PARAM[$oldCategory + 1]);
-        
-        header("Location: /company/c/".$catSlug , 301);
+
+        header("Location: /company/c/" . $catSlug, 301);
     }
 
     // convert slug to id
@@ -149,10 +152,9 @@ if (is_numeric($PARAM[1])) {
     }
     $fields['limit']['start'] = (isset($page)) ? ($page - 1) * PAGE_SIZE : '0';
     $fields['limit']['length'] = PAGE_SIZE;
-    
-    
+
+
     $companyController->showALL($fields);
-    
 } elseif (isset($PARAM[2]) and $PARAM[1] == 'Detail' and empty($_POST)) {
     $companyController->showDetail($PARAM[2]);
 } elseif (isset($PARAM[0]) and $PARAM[1] == 'editWikiAjax' and $PARAM[2] == 'address' and !empty($_POST)) {
@@ -165,6 +167,6 @@ if (is_numeric($PARAM[1])) {
 } elseif (isset($PARAM[0]) and $PARAM[1] == 'editWiki' and $PARAM[2] == 'phone' and !empty($_POST)) {
     $companyController->eidtCompanyPhone($_POST);
 } elseif (isset($PARAM[1]) and $PARAM[3] == "all") {
-    
+
     $companyController->showALLFeature($PARAM[1], $PARAM[2]);
 }

@@ -1000,4 +1000,16 @@ class companyController
 
         return $url;
     }
+
+    function newCompany()
+    {
+        $result = company::getAll()
+            ->where('status', '=', -1)
+            ->andWhere('DATE(registration_date)', '>=', 'CURDATE()')
+            ->getList();
+        
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($result['export']['list']);
+        die();
+    }
 }
