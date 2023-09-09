@@ -41,11 +41,13 @@ if (isset($_REQUEST['lang'])) {
     $_SESSION['lang'] = $_REQUEST['lang'];
     //$_REQUEST['currency']==$_SESSION['currency'];
 }
+// echo $_SESSION['lang'];
+// die();
 
 if ($_SESSION['lang'] == "" || !isset($_SESSION['lang']) || $_SESSION['lang'] != 'en') {
     $_SESSION['lang'] = 'fa'; // WEBSITE_LANGUAGE;
 }
-$_SESSION['lang'] = 'fa'; // WEBSITE_LANGUAGE;
+// $_SESSION['lang'] = 'fa'; // WEBSITE_LANGUAGE;
 
 $lang = $_SESSION['lang'];
 
@@ -64,7 +66,7 @@ $dataStack = new dataStack();
 
 //include(ROOT_DIR . "model/admin.class.php");
 
-global $admin_info, $member_info;
+global $admin_info, $member_info, $lang;
 //$admin = new admin();
 
 //$admin_info = $admin->checkLogin();

@@ -27,6 +27,7 @@ class Breadcrumb
 
     public function trail()
     {
+        global $lang;
 
         if (isset($_SESSION['city'])) {
             $homeLink = $_SESSION['city'];
@@ -35,17 +36,21 @@ class Breadcrumb
         }
 
         $trail_string  = '<div class="Breadcrumb">';
-        $trail_string .= '<a class="home-icon text-gray-800" alt="تولیدات" title="تولیدات" href="'.RELA_DIR.$homeLink.'"><i class="fa fa-home" aria-hidden="true"></i> تولیدات </a>';
+
+
+        $site = ($lang == 'fa') ? 'تولیدات' : 'Tolidat';
+
+        $trail_string .= '<a class="home-icon text-gray-800" alt="' . $site . '" title="' . $site . '" href="' . RELA_DIR . $homeLink . '"><i class="fa fa-home" aria-hidden="true"></i> ' . $site . ' </a>';
 
         foreach ($this->_trail as $key => $value) {
             if ($value['hasLink']) {
                 if (strpos($value['link'], 'https://') !== false) {
-                    $trail_string .= '> <a class="text-gray-800" href="'.$value['link'].'"><span>'.$value['title'].'</span></a>';
+                    $trail_string .= '> <a class="text-gray-800" href="' . $value['link'] . '"><span>' . $value['title'] . '</span></a>';
                 } else {
-                    $trail_string .= '> <a class="container-address" href="'.RELA_DIR.$value['link'].'"><span>'.$value['title'].'</span></a>';
+                    $trail_string .= '> <a class="container-address" href="' . RELA_DIR . $value['link'] . '"><span>' . $value['title'] . '</span></a>';
                 }
             } else {
-                $trail_string .= ' > <span>'.$value['title'].'</span>';
+                $trail_string .= ' > <span>' . $value['title'] . '</span>';
             }
         }
 

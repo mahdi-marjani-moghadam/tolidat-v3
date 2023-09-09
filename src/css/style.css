@@ -11,7 +11,7 @@
 }
 
 @layer base {
-  @font-face {
+  /* @font-face {
     font-family: Samim;
     font-weight: normal;
     src: url(./../fonts/samim/Samim.eot), url(./../fonts/samim/Samim.woff) format("woff"),
@@ -42,7 +42,7 @@
     src: url(./../fonts/vazir/Vazir-Bold-FD.eot?#iefix) format("embedded-opentype"),
       url(./../fonts/vazir/Vazir-Bold-FD.woff2) format("woff2"), url(./../fonts/vazir/Vazir-Bold-FD.woff) format("woff"),
       url(./../fonts/vazir/Vazir-Bold-FD.ttf) format("truetype");
-  }
+  } */
 
   .form-control {
     @apply border-2 rounded focus:ring-tolidatColor;

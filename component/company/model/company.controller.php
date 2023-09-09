@@ -282,7 +282,7 @@ class companyController
         //                $breadcrumb->add($value['title'], 'company/' . $value['Category_id'] . '/1', true);
         //            }
         //        }
-        $breadcrumb->add('کمپانی ها', RELA_DIR . 'company', true);
+        $breadcrumb->add('Companies ', RELA_DIR . 'company', true);
         if ($fields['c']) $breadcrumb->add($fields['c'], RELA_DIR . 'company/c/' . $fields['c'], true);
         if ($fields['province'] || $fields['city']) $breadcrumb->add(($fields['province'] ?? '') . ($fields['city'] ?? ''));
         if ($fields['q']) $breadcrumb->add($fields['q']);
