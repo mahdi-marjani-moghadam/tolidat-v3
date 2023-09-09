@@ -32,13 +32,13 @@
                     <form id="editprofile" class="edit-profile" enctype="multipart/form-data" action="/profile/edit" method="POST" data-toggle="validator">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
-                                <input name="meta_keyword" type="text" id="name" data-error="کلید واژه مورد نظر را تایپ نمایید" placeholder="کلید واژه مورد نظر را تایپ نمایید" value="<?= $list['meta_keyword'] ?>" data-role="tagsinput">
+                                <input name="meta_keyword" type="text" id="name" data-error="کلید واژه مورد نظر را تایپ نمایید" placeholder="کلید واژه مورد نظر را تایپ نمایید" value="<?php echo  $list['meta_keyword'] ?>" data-role="tagsinput">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group mb">
                                 <label for="company_name">نام شرکت</label>
-                                <input class="form-control" data-error="لطفا نام شرکت را وارد نمایید" type="text" name="company_name" id="company_name" value="<?= $list['company_name'] ?>" required>
+                                <input class="form-control" data-error="لطفا نام شرکت را وارد نمایید" type="text" name="company_name" id="company_name" value="<?php echo  $list['company_name'] ?>" required>
                             </div>
 
                             <!-- separator -->
@@ -46,7 +46,7 @@
 
                             <div class="form-group mb">
                                 <label for="maneger_name">نام مدیر</label>
-                                <input class="form-control" data-error="لطفا نام مدیر را وارد نمایید" type="text" name="maneger_name" id="maneger_name" value="<?= $list['maneger_name'] ?>" required>
+                                <input class="form-control" data-error="لطفا نام مدیر را وارد نمایید" type="text" name="maneger_name" id="maneger_name" value="<?php echo  $list['maneger_name'] ?>" required>
                             </div>
 
                             <?php if ($list['company_type'] == 1) : ?>
@@ -55,8 +55,8 @@
                                         <option value="0">نوع شخصیت حقوقی را انتخاب نمایید</option>
                                         <?php foreach ($list['personalityType'] as $personalityType) { ?>
                                             <option value="<?php echo $personalityType['Personality_type_id'] ?>" <?php if ($list['personality_type'] == $personalityType['Personality_type_id']) {
-                                                echo "selected";
-                                            } ?>>
+                                                                                                                        echo "selected";
+                                                                                                                    } ?>>
                                                 <?php echo $personalityType['type'] ?>
                                             </option>
                                         <?php } ?>
@@ -74,8 +74,8 @@
                                     <option value="0">استان را انتخاب نمایید...</option>
                                     <?php foreach ($list['province'] as $province) { ?>
                                         <option value="<?php echo $province['province_id'] ?>" <?php if ($list['state_id'] == $province['province_id']) {
-                                            echo "selected";
-                                        } ?>>
+                                                                                                    echo "selected";
+                                                                                                } ?>>
                                             <?php echo $province['name'] ?>
                                         </option>
                                     <?php } ?>
@@ -88,8 +88,8 @@
                                     <option value="0">شهرستان را انتخاب نمایید...</option>
                                     <?php foreach ($list['city'] as $city) { ?>
                                         <option value="<?php echo $city['City_id'] ?>" <?php if ($list['city_id'] == $city['City_id']) {
-                                            echo "selected";
-                                        } ?>>
+                                                                                            echo "selected";
+                                                                                        } ?>>
                                             <?php echo $city['name'] ?>
                                         </option>
                                     <?php } ?>
@@ -119,7 +119,7 @@
                                     <header><i class="fa fa-bars" aria-hidden="true"></i>دسته بندی ها</header>
                                 </div>
                                 <div class="mmenuHolder active">
-                                    <nav class="menu  mm-opened" data-placeholder="جستجو در دسته بندی ها" data-title="دسته بندی تولیدی ها"><?= $list['category']; ?>
+                                    <nav class="menu  mm-opened" data-placeholder="جستجو در دسته بندی ها" data-title="دسته بندی تولیدی ها"><?php echo  $list['category']; ?>
                                 </div>
                             </div>
 
@@ -133,7 +133,7 @@
                                 </ul>
                             </div>
                             <input type="hidden" class="maxCanSelected" value="<?php echo $information_company['packageCategoryCount'] ?>">
-                            <input type="hidden" class="selectedCategories" value="<?= $list['category_id']; ?>">
+                            <input type="hidden" class="selectedCategories" value="<?php echo  $list['category_id']; ?>">
 
                             <!-- separator -->
                             <div class="row xxxsmallSpace"></div>
@@ -143,7 +143,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group mb">
                                 <label for="description">فعالیت شرکت</label>
-                                <textarea data-error="لطفا فعالیت شرکت را شرح دهید" type="text" name="description" id="description" rows="5" required><?= $list['description'] ?></textarea>
+                                <textarea data-error="لطفا فعالیت شرکت را شرح دهید" type="text" name="description" id="description" rows="5" required><?php echo  $list['description'] ?></textarea>
                             </div>
 
                             <!-- separator -->
@@ -151,7 +151,7 @@
 
                             <div class="form-group mb">
                                 <label for="video_script">اسکریپت ویدیو</label>
-                                <textarea class="form-control" data-error="لطفا اسکریپت ویدیو خود را وارد کنید" type="text" name="video_script" id="video_script" rows="5"><?= $list['video_script'] ?></textarea>
+                                <textarea class="form-control" data-error="لطفا اسکریپت ویدیو خود را وارد کنید" type="text" name="video_script" id="video_script" rows="5"><?php echo  $list['video_script'] ?></textarea>
                             </div>
                         </div>
 
@@ -159,17 +159,17 @@
                         <div class="row xxsmallSpace"></div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            <label><?= $list['catalog'] ?></label>
+                            <label><?php echo  $list['catalog'] ?></label>
                             <?php if ($list['catalog'] != '') : ?>
-                                <input type="checkbox" name="deleteCatalog">  حذف کاتالوگ قبلی
+                                <input type="checkbox" name="deleteCatalog"> حذف کاتالوگ قبلی
                             <?php endif; ?>
                             <label>کاتالوگ خود را آپلود کنید</label>
                             <div class="form-group">
                                 <input type="file" name="catalog" data-buttonText="Your label here.">
                             </div>
                         </div>
-                        <input name="company_type" type="hidden" value="<?= $list['company_type'] ?>">
-                        <input name="Company_d_id" type="hidden" value="<?= $list['Company_d_id'] ?>">
+                        <input name="company_type" type="hidden" value="<?php echo  $list['company_type'] ?>">
+                        <input name="Company_d_id" type="hidden" value="<?php echo  $list['Company_d_id'] ?>">
                         <button type="submit" class="submit mb center-block btn-block btn button-default show-more btn-login text-center text-ultralight transition" tabindex="4">
                             ثبت
                         </button>
@@ -182,10 +182,25 @@
     </div>
 
     <script>
+        $.iziToastError = function(msg) {
+            iziToast.settings({
+                onOpen: function(e) {}
+            });
+            iziToast.show({
+                title: 'خطا',
+                color: 'red',
+                icon: 'fa fa-times-circle',
+                iconColor: 'red',
+                rtl: true,
+                position: 'topCenter',
+                timeout: 10000,
+                message: msg
+            });
+        };
         $(window).load(function() {
-            var max_meta_keyword = '<?php echo $list['max_meta_keyword']?>';
+            var max_meta_keyword = '<?php echo $list['max_meta_keyword'] ?>';
             var categoryCheckBoxes = $('input[name="category_id[]"]');
-            var category_id = '<?=$list['category_id'];?>';
+            var category_id = '<?php echo $list['category_id']; ?>';
             var categoriesArray = category_id.split(',');
 
             categoriesArray = $.map(categoriesArray, function(item) {
@@ -193,22 +208,23 @@
             });
 
             $.each(categoriesArray, function(i, v) {
-                $('.categoryContainer').find('input[value="' + v+ '"]').prop('checked', true);
-            });/*
+                $('.categoryContainer').find('input[value="' + v + '"]').prop('checked', true);
+            });
+            /*
 
-            for (var i = 0; i < categoryCheckBoxes.length; i++) {
-                if (categoriesArray.indexOf(categoryCheckBoxes[i].value) != -1) {
+                        for (var i = 0; i < categoryCheckBoxes.length; i++) {
+                            if (categoriesArray.indexOf(categoryCheckBoxes[i].value) != -1) {
 
-                    categoryCheckBoxes[i].checked = true;
-                }
-            }*/
+                                categoryCheckBoxes[i].checked = true;
+                            }
+                        }*/
 
             $.fillSelectedCategories($obj = {});
 
             $('[data-role="tagsinput"]').tagsinput({
                 maxTags: max_meta_keyword
             });
-            $("#editprofile").keypress(function (e) {
+            $("#editprofile").keypress(function(e) {
                 if (e.which == 13) {
                     var tagName = e.target.tagName.toLowerCase();
 
@@ -218,13 +234,15 @@
                 }
             });
 
-            $('#state_id').on('change', function () {
+            $('#state_id').on('change', function() {
                 var province_id = $(this).val();
                 $('#city_id').empty();
-                $.post('/city/getCityByProvinceID', {province_id: province_id}, function (data) {
+                $.post('/city/getCityByProvinceID', {
+                    province_id: province_id
+                }, function(data) {
                     var result = $.parseJSON(data);
                     $('#city_id').append('<option value="0">شهرستان را انتخاب نمایید...</option>');
-                    $.each(result, function (key, value) {
+                    $.each(result, function(key, value) {
                         $('#city_id').append($('<option>', {
                             value: value.City_id,
                             text: value.name

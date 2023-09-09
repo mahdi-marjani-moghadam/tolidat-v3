@@ -27,18 +27,15 @@
     <!-- Nav tabs -->
     <ul class="branch nav nav-tabs " role="tablist">
         <?php foreach ($list as $key => $value) : ?>
-            <li <?php echo($key == 0 ? 'class="active"' : ''); ?> role="presentation">
-                <a href="<?php echo "#branch" . $value['Branch_id'] ?>" aria-controls="" role="tab"
-                        data-toggle="tab"><?php echo $value['branch_name']; ?>
+            <li <?php echo ($key == 0 ? 'class="active"' : ''); ?> role="presentation">
+                <a href="<?php echo "#branch" . $value['Branch_id'] ?>" aria-controls="" role="tab" data-toggle="tab"><?php echo $value['branch_name']; ?>
                 </a>
                 <?php if ($key != 0) { ?>
                     <div class="kebabMenu">
                         <a><i class="icon-kebab-menu" aria-hidden="true"></i></a>
                         <ul class="kebab-menu-content roundCorner boxBorder">
-                            <li><a class="link-edit editBranchs" data-value="<?php echo $value['Branch_id']; ?>"><i
-                                            class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a></li>
-                            <li><a class="link-trash deleteBranch" data-value="<?php echo $value['Branch_id']; ?>"><i
-                                            class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a></li>
+                            <li><a class="link-edit editBranchs" data-value="<?php echo $value['Branch_id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a></li>
+                            <li><a class="link-trash deleteBranch" data-value="<?php echo $value['Branch_id']; ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a></li>
                         </ul>
                     </div>
 
@@ -52,22 +49,19 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <?php foreach ($list as $key => $value) : ?>
-            <div role="tabpanel" class="tab-pane noPadding <?php echo($key == 0 ? "active" : ''); ?> "
-                    id="<?php echo "branch" . $value['Branch_id'] ?>" data-value="<?php echo $value['Branch_id']; ?>">
+            <div role="tabpanel" class="tab-pane noPadding <?php echo ($key == 0 ? "active" : ''); ?> " id="<?php echo "branch" . $value['Branch_id'] ?>" data-value="<?php echo $value['Branch_id']; ?>">
                 <div class="row xxsmallSpace"></div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 pull-right mb5">
                         <!--address-->
                         <div data-intro="افزودن آدرس" class="contentPro contentPro-address whiteBg roundCorner address mb5 boxBorder">
                             <h3>
-                                <button data-intro="افزودن آدرس" type="button"
-                                        class="btn btn-sm pull-left add-btnPro add-btnPro-info addModalAddress"
-                                        data-toggle="modal" data-target="">
+                                <button data-intro="افزودن آدرس" type="button" class="btn btn-sm pull-left add-btnPro add-btnPro-info addModalAddress" data-toggle="modal" data-target="">
                                     <i class="fa fa-plus transition bc-color-lightGreen1" aria-hidden="true"></i>
                                 </button>
                                 <span class="title">آدرس</span>
                             </h3>
-                            <?php if (isset($value['address']) && count($value['address'])): ?>
+                            <?php if (isset($value['address']) && count($value['address'])) : ?>
                                 <div class="content-scroll add-address">
                                     <?php foreach ($value['address'] as $id => $fields) : ?>
                                         <div class="col-xs-12 col-sm-6 col-md-6 pull-right remove-address" data-value="<?php echo $fields['Addresses_d_id'] ?>">
@@ -88,11 +82,10 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
-                            <?php else: ?>
+                            <?php else : ?>
                                 <div class="add-address"></div>
                                 <div class="notRecord">
-                                    <img class="empty-img center-block"
-                                         src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
+                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
                                     <p class="empty-text">اطلاعاتی موجود نیست!</p>
                                 </div>
                             <?php endif; ?>
@@ -100,32 +93,22 @@
                         <!--email-->
                         <div data-intro="تیتر شعب" class="contentPro contentPro-address whiteBg roundCorner email mb5 boxBorder">
                             <h3>
-                                <button data-intro="تیتر شعب" type="button"
-                                        class="btn btn-sm pull-left add-btnPro add-btnPro-info addModalEmail"
-                                        data-toggle="modal" data-target="">
+                                <button data-intro="تیتر شعب" type="button" class="btn btn-sm pull-left add-btnPro add-btnPro-info addModalEmail" data-toggle="modal" data-target="">
                                     <i class="fa fa-plus transition bc-color-lightGreen1" aria-hidden="true"></i>
                                 </button>
                                 <span class="title">ایمیل</span>
                             </h3>
-                            <?php if (isset($value['email']) && count($value['email'])): ?>
+                            <?php if (isset($value['email']) && count($value['email'])) : ?>
                                 <div class="content-scroll add-email">
                                     <?php foreach ($value['email'] as $id => $fields) : ?>
-                                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right remove-email"
-                                             data-value="<?php echo $fields['Emails_d_id'] ?>">
-                                            <div class="container-input<?php echo ($fields['status'] == 1) ? '' : ' disable' ?> transition  roundCorner"
-                                                 data-toggle="tooltip" data-placement="bottom"
-                                                 title="">
+                                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right remove-email" data-value="<?php echo $fields['Emails_d_id'] ?>">
+                                            <div class="container-input<?php echo ($fields['status'] == 1) ? '' : ' disable' ?> transition  roundCorner" data-toggle="tooltip" data-placement="bottom" title="">
                                                 <div class="kebabMenu">
                                                     <a><i class="icon-kebab-menu" aria-hidden="true"></i></a>
                                                     <ul class="kebab-menu-content roundCorner boxBorder">
-                                                        <li><a class="link-edit editEmail"
-                                                               data-value="<?php echo $fields['Emails_d_id'] ?>"><i
-                                                                        class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a>
+                                                        <li><a class="link-edit editEmail" data-value="<?php echo $fields['Emails_d_id'] ?>"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a>
                                                         </li>
-                                                        <li><a class="link-trash deleteEmail"
-                                                               data-value="<?php echo $fields['Emails_d_id'] ?>"><i
-                                                                        class="fa fa-trash-o"
-                                                                        aria-hidden="true"></i><span>حذف</span></a>
+                                                        <li><a class="link-trash deleteEmail" data-value="<?php echo $fields['Emails_d_id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -136,11 +119,10 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
-                            <?php else: ?>
+                            <?php else : ?>
                                 <div class="add-email"></div>
                                 <div class="notRecord">
-                                    <img class="empty-img center-block"
-                                         src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
+                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
                                     <p class="empty-text">اطلاعاتی موجود نیست!</p>
                                 </div>
                             <?php endif; ?>
@@ -148,32 +130,22 @@
                         <!--social-->
                         <div data-intro="تیتر شعب" class="contentPro contentPro-address whiteBg roundCorner social mb5 boxBorder">
                             <h3>
-                                <button data-intro="تیتر شعب" type="button"
-                                        class="btn btn-sm pull-left add-btnPro add-btnPro-info addModalSocial"
-                                        data-toggle="modal" data-target="">
+                                <button data-intro="تیتر شعب" type="button" class="btn btn-sm pull-left add-btnPro add-btnPro-info addModalSocial" data-toggle="modal" data-target="">
                                     <i class="fa fa-plus transition bc-color-lightGreen1" aria-hidden="true"></i>
                                 </button>
                                 <span class="title">شبکه اجتماعی</span>
                             </h3>
-                            <?php if (isset($value['social']) && count($value['social'])): ?>
+                            <?php if (isset($value['social']) && count($value['social'])) : ?>
                                 <div class="content-scroll add-social">
                                     <?php foreach ($value['social'] as $id => $fields) : ?>
-                                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right remove-social"
-                                             data-value="<?php echo $fields['Socials_d_id'] ?>">
-                                            <div class="container-input<?php echo ($fields['status'] == 1) ? '' : ' disable' ?> transition  roundCorner"
-                                                 data-toggle="tooltip" data-placement="bottom"
-                                                 title="">
+                                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right remove-social" data-value="<?php echo $fields['Socials_d_id'] ?>">
+                                            <div class="container-input<?php echo ($fields['status'] == 1) ? '' : ' disable' ?> transition  roundCorner" data-toggle="tooltip" data-placement="bottom" title="">
                                                 <div class="kebabMenu">
                                                     <a><i class="icon-kebab-menu" aria-hidden="true"></i></a>
                                                     <ul class="kebab-menu-content roundCorner boxBorder">
-                                                        <li><a class="link-edit editSocial"
-                                                               data-value="<?php echo $fields['Socials_d_id'] ?>"><i
-                                                                        class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a>
+                                                        <li><a class="link-edit editSocial" data-value="<?php echo $fields['Socials_d_id'] ?>"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a>
                                                         </li>
-                                                        <li><a class="link-trash deleteSocial"
-                                                               data-value="<?php echo $fields['Socials_d_id'] ?>"><i
-                                                                        class="fa fa-trash-o"
-                                                                        aria-hidden="true"></i><span>حذف</span></a>
+                                                        <li><a class="link-trash deleteSocial" data-value="<?php echo $fields['Socials_d_id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -184,11 +156,10 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
-                            <?php else: ?>
+                            <?php else : ?>
                                 <div class="add-social"></div>
                                 <div class="notRecord">
-                                    <img class="empty-img center-block"
-                                         src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
+                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
                                     <p class="empty-text">اطلاعاتی موجود نیست!</p>
                                 </div>
                             <?php endif; ?>
@@ -196,35 +167,24 @@
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 pull-right mb5">
                         <!--website-->
-                        <div data-intro="تیتر شعب"
-                             class="contentPro contentPro-address whiteBg roundCorner website mb5 boxBorder">
+                        <div data-intro="تیتر شعب" class="contentPro contentPro-address whiteBg roundCorner website mb5 boxBorder">
                             <h3>
-                                <button data-intro="تیتر شعب" type="button"
-                                        class="btn btn-sm pull-left add-btnPro add-btnPro-info addModalWebsite"
-                                        data-toggle="modal" data-target="">
+                                <button data-intro="تیتر شعب" type="button" class="btn btn-sm pull-left add-btnPro add-btnPro-info addModalWebsite" data-toggle="modal" data-target="">
                                     <i class="fa fa-plus transition bc-color-lightGreen1" aria-hidden="true"></i>
                                 </button>
                                 <span class="title">وب سایت</span>
                             </h3>
-                            <?php if (isset($value['website']) && count($value['website'])): ?>
+                            <?php if (isset($value['website']) && count($value['website'])) : ?>
                                 <div class="content-scroll add-website">
                                     <?php foreach ($value['website'] as $id => $fields) : ?>
-                                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right remove-website"
-                                             data-value="<?php echo $fields['Websites_d_id'] ?>">
-                                            <div class="container-input<?php echo ($fields['status'] == 1) ? '' : ' disable' ?> transition  roundCorner"
-                                                 data-toggle="tooltip" data-placement="bottom"
-                                                 title="">
+                                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right remove-website" data-value="<?php echo $fields['Websites_d_id'] ?>">
+                                            <div class="container-input<?php echo ($fields['status'] == 1) ? '' : ' disable' ?> transition  roundCorner" data-toggle="tooltip" data-placement="bottom" title="">
                                                 <div class="kebabMenu">
                                                     <a><i class="icon-kebab-menu" aria-hidden="true"></i></a>
                                                     <ul class="kebab-menu-content roundCorner boxBorder">
-                                                        <li><a class="link-edit editWebsite"
-                                                               data-value="<?php echo $fields['Websites_d_id'] ?>"><i
-                                                                        class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a>
+                                                        <li><a class="link-edit editWebsite" data-value="<?php echo $fields['Websites_d_id'] ?>"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a>
                                                         </li>
-                                                        <li><a class="link-trash deleteWebsite"
-                                                               data-value="<?php echo $fields['Websites_d_id'] ?>"><i
-                                                                        class="fa fa-trash-o"
-                                                                        aria-hidden="true"></i><span>حذف</span></a>
+                                                        <li><a class="link-trash deleteWebsite" data-value="<?php echo $fields['Websites_d_id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -235,11 +195,10 @@
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
-                            <?php else: ?>
+                            <?php else : ?>
                                 <div class="add-website"></div>
                                 <div class="notRecord">
-                                    <img class="empty-img center-block"
-                                         src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
+                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
                                     <p class="empty-text">اطلاعاتی موجود نیست!</p>
                                 </div>
                             <?php endif; ?>
@@ -247,48 +206,37 @@
                         <!--phone-->
                         <div data-intro="تیتر شعب" class="contentPro contentPro-address whiteBg roundCorner phone mb5 boxBorder">
                             <h3>
-                                <button data-intro="تیتر شعب" type="button"
-                                        class="btn btn-sm pull-left add-btnPro add-btnPro-info addModalPhone"
-                                        data-toggle="modal" data-target="">
+                                <button data-intro="تیتر شعب" type="button" class="btn btn-sm pull-left add-btnPro add-btnPro-info addModalPhone" data-toggle="modal" data-target="">
                                     <i class="fa fa-plus transition bc-color-lightGreen1" aria-hidden="true"></i>
                                 </button>
                                 <span class="title">شماره تماس</span>
                             </h3>
-                            <?php if (isset($value['phone']) && count($value['phone'])): ?>
+                            <?php if (isset($value['phone']) && count($value['phone'])) : ?>
                                 <div class="content-scroll add-phone">
                                     <?php foreach ($value['phone'] as $id => $fields) : ?>
-                                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right remove-phone"
-                                             data-value="<?php echo $fields['Phones_d_id'] ?>">
-                                            <div class="container-input<?php echo ($fields['status'] == 1) ? '' : ' disable' ?> transition  roundCorner"
-                                                 data-toggle="tooltip" data-placement="bottom"
-                                                 title="">
+                                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right remove-phone" data-value="<?php echo $fields['Phones_d_id'] ?>">
+                                            <div class="container-input<?php echo ($fields['status'] == 1) ? '' : ' disable' ?> transition  roundCorner" data-toggle="tooltip" data-placement="bottom" title="">
                                                 <div class="kebabMenu">
                                                     <a><i class="icon-kebab-menu" aria-hidden="true"></i></a>
                                                     <ul class="kebab-menu-content roundCorner boxBorder">
-                                                        <li><a class="link-edit editPhone"
-                                                               data-value="<?php echo $fields['Phones_d_id'] ?>"><i
-                                                                        class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a>
+                                                        <li><a class="link-edit editPhone" data-value="<?php echo $fields['Phones_d_id'] ?>"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a>
                                                         </li>
-                                                        <li><a class="link-trash deletePhone"
-                                                               data-value="<?php echo $fields['Phones_d_id'] ?>"><i
-                                                                        class="fa fa-trash-o"
-                                                                        aria-hidden="true"></i><span>حذف</span></a>
+                                                        <li><a class="link-trash deletePhone" data-value="<?php echo $fields['Phones_d_id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>
                                                 <span class="span-title"><?php echo $fields['subject'] ?></span>
-                                                <span class="span-report rtl"><?php echo (strlen($fields['code']) ? $fields['code'] .' - ' : '').$fields['number']; ?></span>
-                                                <span class="span-report rtl"><?php echo $fields['value'].' '.$fields['state'] ?></span>
+                                                <span class="span-report rtl"><?php echo (strlen($fields['code']) ? $fields['code'] . ' - ' : '') . $fields['number']; ?></span>
+                                                <span class="span-report rtl"><?php echo $fields['value'] . ' ' . $fields['state'] ?></span>
                                                 <span class="submit-msg"><?php echo ($fields['status'] == 1) ? '&#10004; تایید شده' : '&#10006; تایید نشده' ?></span>
                                             </div>
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
-                            <?php else: ?>
+                            <?php else : ?>
                                 <div class="add-phone"></div>
                                 <div class="notRecord">
-                                    <img class="empty-img center-block"
-                                         src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
+                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
                                     <p class="empty-text">اطلاعاتی موجود نیست!</p>
                                 </div>
                             <?php endif; ?>
@@ -306,7 +254,7 @@
                                 <div class="company_map"></div>
                                 <button class="submit-map btn-block btn btn-success text-ultralight transition"><span>ثبت</span></button>
                             </div>
-                        </div>*/?>
+                        </div>*/ ?>
                     </div>
                 </div>
             </div>
@@ -481,7 +429,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group mb">
-                                <select name="social_type_id" id="select-social-type" data-input="select2" class="form-control select-social-type-class" data-error="لطفا شبکه اجتماعی را وارد نمایید" >
+                                <select name="social_type_id" id="select-social-type" data-input="select2" class="form-control select-social-type-class" data-error="لطفا شبکه اجتماعی را وارد نمایید">
                                     <option value="0" selected disabled>یکی از شبکه های اجتماعی زیر را انتخاب کنید</option>
                                     <option value="1" data-placeholder="http://t.me/example :مثال">تلگرام</option>
                                     <option value="2" data-placeholder="https://www.instagram.com/example :مثال">اینستاگرام</option>
@@ -566,7 +514,7 @@
 
                         <div class="phone_value col-xs-12 col-sm-2 col-md-2 pull-right mb">
                             <div class="form-group">
-                                <label for="value1" >هیچکدام</label>
+                                <label for="value1">هیچکدام</label>
                                 <input name="value" class="form-control" id="value1">
                             </div>
                         </div>
@@ -762,18 +710,17 @@
                             <div class="row xxsmallSpace"></div>
 
                             <div class="form-group mb">
-                                <select name="social_type_id" id="social-title2" data-input="select2"
-                                        class="form-control">
+                                <select name="social_type_id" id="social-title2" data-input="select2" class="form-control">
                                     <option>شبکه های اجتماعی</option>
                                     <?
                                     foreach ($list[0]['socials'] as $key => $value) {
-                                        ?>
-
-                                    <option value="<?= $value['Social_type_id'] ?>">
-                                        <?= $value['type'] ?>
-                                        </option><?
-                                    }
                                     ?>
+
+                                        <option value="<?php echo  $value['Social_type_id'] ?>">
+                                            <?php echo  $value['type'] ?>
+                                        </option><?
+                                                }
+                                                    ?>
                                 </select>
                             </div>
 
@@ -845,7 +792,7 @@
 
                         <div class="phone_value col-xs-12 col-sm-2 col-md-2 pull-right mb">
                             <div class="form-group">
-                                <label for="value1" >هیچکدام</label>
+                                <label for="value1">هیچکدام</label>
                                 <input name="value" class="form-control" id="value1">
                             </div>
                         </div>
@@ -894,10 +841,7 @@
                             <div class="form-group mb has-feedback center-block">
                                 <!--<i class="fa fa-user" aria-hidden="true"></i>-->
                                 <label for="coordinator_name">نام مدیر را وارد نمایید</label>
-                                <input name="maneger_name" type="text"
-                                        class="form-control fullWidth displayBlock noRadius noPadding transition"
-                                        id="coordinator_name" data-minlength="3" required
-                                        data-error="لطفا نام مدیر را وارد نمایید" tabindex="5">
+                                <input name="maneger_name" type="text" class="form-control fullWidth displayBlock noRadius noPadding transition" id="coordinator_name" data-minlength="3" required data-error="لطفا نام مدیر را وارد نمایید" tabindex="5">
                             </div>
 
                             <!-- separator -->
@@ -968,10 +912,7 @@
                             <div class="form-group mb has-feedback center-block">
                                 <!--<i class="fa fa-user" aria-hidden="true"></i>-->
                                 <label for="coordinator_name">نام مدیر را وارد نمایید</label>
-                                <input name="maneger_name" type="text"
-                                        class="form-control fullWidth displayBlock noRadius noPadding transition"
-                                        id="coordinator_name" data-minlength="3" required
-                                        data-error="لطفا نام مدیر را وارد نمایید" tabindex="5">
+                                <input name="maneger_name" type="text" class="form-control fullWidth displayBlock noRadius noPadding transition" id="coordinator_name" data-minlength="3" required data-error="لطفا نام مدیر را وارد نمایید" tabindex="5">
                             </div>
 
                             <!-- separator -->
@@ -1004,19 +945,35 @@
     </div>
 </div>
 
-<script src="<?php echo RELA_DIR ?>templates/template_fa/assets/js/companyContacts.js"></script>
+<script src="<?php echo RELA_DIR ?>templates/template_tailwind/assets/js/companyContacts.js"></script>
 <script>
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
     var $body = $('body');
-    var id = $('.branch.nav.nav-tabs li.active a').attr('href'), x, y;
+    var id = $('.branch.nav.nav-tabs li.active a').attr('href'),
+        x, y;
 
     function setPosition(id) {
         var id_x = 'x' + id.substring(1);
         var id_y = 'y' + id.substring(1);
-        x = $body.find('input[id="'+id_x+'"]').val() ? $body.find('input[id="'+id_x+'"]').val() : 35.689389;
-        y = $body.find('input[id="'+id_y+'"]').val() ? $body.find('input[id="'+id_y+'"]').val() : 51.388686;
+        x = $body.find('input[id="' + id_x + '"]').val() ? $body.find('input[id="' + id_x + '"]').val() : 35.689389;
+        y = $body.find('input[id="' + id_y + '"]').val() ? $body.find('input[id="' + id_y + '"]').val() : 51.388686;
     }
 
-    $.showMap = function (id) {
+    $.showMap = function(id) {
         setPosition(id);
         $body.find(id).find('.company_map').locationpicker({
             location: {
@@ -1030,7 +987,7 @@
             inputBinding: {
                 locationNameInput: $body.find('.us2-address')
             },
-            onchanged: function (currentLocation) {
+            onchanged: function(currentLocation) {
                 x = currentLocation.latitude;
                 y = currentLocation.longitude;
             }
@@ -1041,7 +998,7 @@
         $('.branch.nav.nav-tabs li.active a').trigger('click');
     }, 2000);
 
-    $('a[data-toggle="tab"]').on('click', function (e) {
+    $('a[data-toggle="tab"]').on('click', function(e) {
         id = $(e.target).attr('href');
 
         $('.company_map').html('');
@@ -1054,11 +1011,11 @@
     });
 
     /*button my location*/
-    $body.on('click', '.getLocation', function (e) {
+    $body.on('click', '.getLocation', function(e) {
         e.preventDefault();
 
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
+            navigator.geolocation.getCurrentPosition(function(position) {
 
                 // You can set it the plugin
                 $('.us1').locationpicker({
@@ -1066,7 +1023,7 @@
                         latitude: position.coords.latitude,
                         longitude: position.coords.longitude
                     },
-                    onchanged: function (currentLocation, radius, isMarkerDropped) {}
+                    onchanged: function(currentLocation, radius, isMarkerDropped) {}
                 });
             });
 
@@ -1078,7 +1035,7 @@
     $('#msg-success-map').hide();
     $('#msg-danger-map').hide();
 
-    $body.on('click', '.submit-map', function (e) {
+    $body.on('click', '.submit-map', function(e) {
         e.preventDefault();
 
         var branch_id = $('div.active').data('value');
@@ -1086,9 +1043,13 @@
         $.ajax({
             url: '/member/companyPositions/edit/',
             type: 'post',
-            data: {x: x, y: y, branch_id: branch_id},
+            data: {
+                x: x,
+                y: y,
+                branch_id: branch_id
+            },
             cash: false,
-            success: function (data) {
+            success: function(data) {
                 var response = $.parseJSON(data);
                 if (response.result == 1) {
                     $.iziToastSuccess(response.msg, '.iziMapAddress-container');
@@ -1106,7 +1067,7 @@
 
         $('.form-link').css('display', 'block');
 
-        switch ( $select ){
+        switch ($select) {
             case '1':
                 $show.text($dataSelect);
                 //$placeholderInput.attr("placeholder", $placeholder);
@@ -1124,12 +1085,11 @@
         }
     });
 
-    $body.on('change', '.phoneValue', function () {
+    $body.on('change', '.phoneValue', function() {
         if ($(this).val() != '') {
             $(".phone_value input").removeAttr('disabled');
             $(".phone_value label").text($(this).val());
-        }
-        else {
+        } else {
             $(".phone_value input").attr('disabled', 'disabled');
             $(".phone_value label").text('هیچکدام');
         }

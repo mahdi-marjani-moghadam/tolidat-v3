@@ -2,9 +2,9 @@
 $information_company = getInformation();
 ?>
 
-<link rel="stylesheet" href="<?php echo RELA_DIR; ?>templates/template_fa/assets/css/styleprice.css">
-<script src="<?php echo RELA_DIR; ?>templates/template_fa/assets/js/jquery.animateNumber.min.js"></script>
-<script src="<?php echo RELA_DIR; ?>templates/template_fa/assets/js/priceList.js"></script>
+<link rel="stylesheet" href="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/css/styleprice.css">
+<script src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/js/jquery.animateNumber.min.js"></script>
+<script src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/js/priceList.js"></script>
 
 <!-- separator -->
 <div class="row xxsmallSpace"></div>
@@ -101,132 +101,143 @@ $information_company = getInformation();
             </div>
             <!-- separator -->
             <div class="row xsmallSpace"></div>
-        </div>*/?>
+        </div>*/ ?>
 
-        <input class="packageType" name="package_type" type="hidden" value="<?php echo($list['valid'][array_keys($list['valid'])[0]]['Package_id']) ?>">
+        <input class="packageType" name="package_type" type="hidden" value="<?php echo ($list['valid'][array_keys($list['valid'])[0]]['Package_id']) ?>">
 
         <div class="table-responsive center-block paddingRl no-border" style="max-width: 800px !important;">
-            <table class="table table-bordered table-striped table-price">
-                <thead>
-                <tr style="height: 70px;">
-                    <th class="package">
-                        <span class="tablePackageNames">پکیج (سالیانه)</span>
-                        <hr>
-                        <span class="tableFeatures">امکانات</span>
-                    </th>
-                    <?php
-                    foreach ($list['valid'] as $package) {
-                        ?>
-                        <th class="package text-white text-center <?php echo $package['englishTitle'] ?>"><?php echo $package['packagetype']; ?></th>
-                        <?php
-                    }
-                    ?>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td class="text-right" style="width: 200px;">پروفایل شخصی</td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td class="text-right">دسته بندی</td>
-                    <?php
-                    foreach ($list['valid'] as $package) {
-                        ?>
-                        <td class="text-center text-bold text-danger"><?php echo $package['category']; ?></td>
-                        <?php
-                    }
-                    ?>
-                </tr>
-                <tr>
-                    <td class="text-right">ماژول محصول / خدمات</td>
-                    <?php
-                    foreach ($list['valid'] as $package) {
-                        ?>
-                        <td class="text-center text-bold text-danger"><?php echo $package['product']; ?></td>
-                        <?php
-                    }
-                    ?>
-                </tr>
-                <tr>
-                    <td class="text-right">ماژول سوابق و مشتریان</td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td class="text-right">ماژول نام تجاری</td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td class="text-right">ماژول افتخارات</td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td class="text-right">ماژول اخبار و رویداد</td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td class="text-right">ماژول نمایندگی / شعبه</td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td class="text-right">ماژول فرصت های شغلی</td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td class="text-right">ماژول آگهی ها</td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td class="text-right">ماژول فرم تماس</td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td class="text-right">کلمات کلیدی</td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                    <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                </tr>
-                <tr>
-                    <td rowspan="2" class="text-right text-danger text-bold" style="vertical-align: middle">قیمت نهایی (ریال)</td>
-                    <?php
-                    foreach ($list['valid'] as $package) {
-                        ?>
-                        <td class="text-center text-danger text-bold"><?php echo number_format((int)$package['price'], 0); ?></td>
-                        <?php
-                    }
-                    ?>
-                </tr>
-                <tr class="choose-button">
-                    <?php
-                    foreach ($list['valid'] as $package) {
-                        ?>
-                        <td class="text-center">
-                            <button type="submit" data-id="<?php echo $package['Package_id']; ?>" class="btn btn-block white-color choosePkg <?php echo $package['englishTitle']; ?>">انتخاب پکیج <?php echo $package['packagetype']; ?></button>
-                        </td>
-                        <?php
-                    }
-                    ?>
-                </tr>
-                </tbody>
-            </table>
+
+            <?php
+            if (count($list['valid'])) :
+            ?>
+                <table class="table table-bordered table-striped table-price">
+                    <thead>
+                        <tr style="height: 70px;">
+                            <th class="package">
+                                <span class="tablePackageNames">پکیج (سالیانه)</span>
+                                <hr>
+                                <span class="tableFeatures">امکانات</span>
+                            </th>
+                            <?php
+                            foreach ($list['valid'] as $package) {
+                            ?>
+                                <th class="package text-white text-center <?php echo $package['englishTitle'] ?>"><?php echo $package['packagetype']; ?></th>
+                            <?php
+                            }
+                            ?>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-right" style="width: 200px;">پروفایل شخصی</td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">دسته بندی</td>
+                            <?php
+                            foreach ($list['valid'] as $package) {
+                            ?>
+                                <td class="text-center text-bold text-danger"><?php echo $package['category']; ?></td>
+                            <?php
+                            }
+                            ?>
+                        </tr>
+                        <tr>
+                            <td class="text-right">ماژول محصول / خدمات</td>
+                            <?php
+                            foreach ($list['valid'] as $package) {
+                            ?>
+                                <td class="text-center text-bold text-danger"><?php echo $package['product']; ?></td>
+                            <?php
+                            }
+                            ?>
+
+                        </tr>
+                        <tr>
+                            <td class="text-right">ماژول سوابق و مشتریان</td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">ماژول نام تجاری</td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">ماژول افتخارات</td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">ماژول اخبار و رویداد</td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">ماژول نمایندگی / شعبه</td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">ماژول فرصت های شغلی</td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">ماژول آگهی ها</td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">ماژول فرم تماس</td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">کلمات کلیدی</td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                            <td class="text-center text-success"><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="text-right text-danger text-bold" style="vertical-align: middle">قیمت نهایی (ریال)</td>
+                            <?php
+                            foreach ($list['valid'] as $package) {
+                            ?>
+                                <td class="text-center text-danger text-bold"><?php echo number_format((int)$package['price'], 0); ?></td>
+                            <?php
+                            }
+                            ?>
+                        </tr>
+                        <tr class="choose-button">
+                            <?php
+                            foreach ($list['valid'] as $package) {
+                            ?>
+                                <td class="text-center">
+                                    <button type="submit" data-id="<?php echo $package['Package_id']; ?>" class="btn btn-block white-color choosePkg <?php echo $package['englishTitle']; ?>">انتخاب پکیج <?php echo $package['packagetype']; ?></button>
+                                </td>
+                            <?php
+                            }
+                            ?>
+                        </tr>
+                    </tbody>
+                </table>
+            <?php
+            endif;
+            ?>
+
+
         </div>
     </form>
 </div>

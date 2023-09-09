@@ -26,19 +26,19 @@
 <!--box dynamic-->
 <div class="row xsmallSpace"></div>
 <div class="row add-licence">
-    <?php if (isset($list['list']) && count($list['list'])): ?>
-        <?php foreach ($list['list'] as $id => $fields): ?>
-            <div class="col-xs-12 col-sm-6 col-md-4 pull-right mb5 remove-licence" data-value="<?= $fields['Licence_id'] ?>">
+    <?php if (isset($list['list']) && count($list['list'])) : ?>
+        <?php foreach ($list['list'] as $id => $fields) : ?>
+            <div class="col-xs-12 col-sm-6 col-md-4 pull-right mb5 remove-licence" data-value="<?php echo  $fields['Licence_id'] ?>">
                 <div data-intro="اضافه کردن مجوزها" class="contentPro<?php echo ($fields['status'] == 2) ? '' : ' disable' ?> whiteBg roundCorner boxBorder" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">
                     <h3>
                         <div class="kebabMenu">
                             <a><i class="icon-kebab-menu" aria-hidden="true"></i></a>
                             <ul class="kebab-menu-content roundCorner boxBorder">
                                 <li>
-                                    <a class="link-edit" data-value="<?= $fields['Licence_id'] ?>"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a>
+                                    <a class="link-edit" data-value="<?php echo  $fields['Licence_id'] ?>"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a>
                                 </li>
                                 <li>
-                                    <a class="link-trash" data-value="<?= $fields['Licence_id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a>
+                                    <a class="link-trash" data-value="<?php echo  $fields['Licence_id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -61,9 +61,9 @@
                 </div>
             </div>
         <?php endforeach; ?>
-    <?php else: ?>
+    <?php else : ?>
         <div class="notRecord">
-            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
+            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
             <p class="empty-text">اطلاعاتی موجود نیست!</p>
         </div>
     <?php endif; ?>
@@ -184,14 +184,14 @@
                             <div class="row xxxsmallSpace"></div>
                             <div class="docs-buttons">
                                 <div class="img-container upload-msg">
-                                    <img class="width image-crop img-cropper" src="<?php echo(isset($value['image']) ? COMPANY_ADDRESS . $value['Company_id'] . "/logo/" . $value['image'] : '/templates/' . CURRENT_SKIN . '/assets/images/placeholder.png'); ?>" alt="Picture">
+                                    <img class="width image-crop img-cropper" src="<?php echo (isset($value['image']) ? COMPANY_ADDRESS . $value['Company_id'] . "/logo/" . $value['image'] : '/templates/' . CURRENT_SKIN . '/assets/images/placeholder.png'); ?>" alt="Picture">
                                 </div>
                                 <label class="btn btn-success btn-block uploud-btnProCrop pull-right" for="inputImage" title="Upload image file">
                                     <input type="file" class="sr-only" id="inputImage" name="file" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
                                     <input class="result-crop" type="hidden" name="imageCropped" value="">
                                     <span class="docs-tooltip" data-animation="false" title="Import image with Blob URLs">
-                                            <span><i class="fa fa-pencil" aria-hidden="true"></i></span> <span>انتخاب تصویر</span>
-                                        </span> </label>
+                                        <span><i class="fa fa-pencil" aria-hidden="true"></i></span> <span>انتخاب تصویر</span>
+                                    </span> </label>
                                 <!-- Show the cropped image in modal -->
                                 <div class="modal fade docs-cropped" id="getCroppedCanvasModal" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" role="dialog" tabindex="-1">
                                     <div class="modal-dialog">
@@ -374,19 +374,34 @@
 </div>
 
 <script>
-    $(function () {
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
+    $(function() {
         var $body = $('body'),
             modal_edit = $('#myModal1'),
             modal_add = $('#myModal2');
 
-        $("#addLicence").on("submit", function (e) {
+        $("#addLicence").on("submit", function(e) {
             e.preventDefault();
             var form = $('.form')[0];
             var formData = new FormData(form);
 
             $('.errorHandler').text('');
             $.httpRequest('/member/licence/add/', 'post', formData)
-                .then(function (data) {
+                .then(function(data) {
                     var response = $.parseJSON(data);
                     if (response.result == -1) {
                         $.iziToastError(response.msg, '.iziAdd-container');
@@ -404,25 +419,25 @@
                             defaltLogo = response.fields.defaltLogo,
                             description = response.fields.description,
                             html = '<div class="col-xs-12 col-sm-6 col-md-4 pull-right mb5 remove-licence" data-value="' + licence_id + '">' +
-                                '<div class="contentPro disable whiteBg roundCorner boxBorder" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">' +
-                                '<h3>' +
-                                '<div class="kebabMenu">' +
-                                '<a><i class="icon-kebab-menu" aria-hidden="true"></i></a>' +
-                                '<ul class="kebab-menu-content roundCorner boxBorder">' +
-                                '<li><a class="link-edit" data-value="' + licence_id + '"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a></li>' +
-                                '<li><a class="link-trash" data-value="' + licence_id + '"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a></li>' +
-                                '</ul>' +
-                                '</div>' +
-                                '<div class="logo"><img name="image_ajax" class="boxBorder" src="' + (image_name != null ? image : defaltLogo) + '"' + ' alt=""></div>' +
-                                '<span class="title">' + title + '</span>' +
-                                '<span class="i-date"><i class="fa fa-calendar"></i>' + date + '</span>' +
-                                '</h3>' +
-                                '<div class="text">' +
-                                '<p>' + description + '</p>' +
-                                '<span class="submit-msg">&#10006; تایید نشده</span>' +
-                                '</div>' +
-                                '</div>' +
-                                '</div>';
+                            '<div class="contentPro disable whiteBg roundCorner boxBorder" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">' +
+                            '<h3>' +
+                            '<div class="kebabMenu">' +
+                            '<a><i class="icon-kebab-menu" aria-hidden="true"></i></a>' +
+                            '<ul class="kebab-menu-content roundCorner boxBorder">' +
+                            '<li><a class="link-edit" data-value="' + licence_id + '"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a></li>' +
+                            '<li><a class="link-trash" data-value="' + licence_id + '"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '<div class="logo"><img name="image_ajax" class="boxBorder" src="' + (image_name != null ? image : defaltLogo) + '"' + ' alt=""></div>' +
+                            '<span class="title">' + title + '</span>' +
+                            '<span class="i-date"><i class="fa fa-calendar"></i>' + date + '</span>' +
+                            '</h3>' +
+                            '<div class="text">' +
+                            '<p>' + description + '</p>' +
+                            '<span class="submit-msg">&#10006; تایید نشده</span>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
                         $('.add-licence').append(html);
                         $('.notRecord').remove();
                         emptyFields($('#addLicence'));
@@ -432,7 +447,7 @@
                 });
         });
 
-        $('.i-add').on('click', function (e) {
+        $('.i-add').on('click', function(e) {
             modal_add.find('select').empty();
             e.preventDefault();
             $('.errorHandler').text('');
@@ -440,10 +455,10 @@
         });
 
         function addItem() {
-            $.post('/member/licence/addAjax/', function (data) {
+            $.post('/member/licence/addAjax/', function(data) {
                 var result = $.parseJSON(data);
                 $('#licence_type').append('<option value="">نوع جواز را انتخاب نمایید...</option>');
-                $.each(result.licence_list, function (key, value) {
+                $.each(result.licence_list, function(key, value) {
                     $('#licence_type').append($('<option>', {
                         value: value.Licence_list_id,
                         text: value.name
@@ -451,7 +466,7 @@
                 });
                 $('#licence_type').append('<option value="0">غیره...</option>');
 
-                $('body').find('input[type="text"], input[type="email"], input[type="name"], input[type="password"], textarea').each(function () {
+                $('body').find('input[type="text"], input[type="email"], input[type="name"], input[type="password"], textarea').each(function() {
                     if ($(this).val().length != 0) {
                         $(this).parent().addClass('typing');
                     }
@@ -461,14 +476,14 @@
             });
         }
 
-        $("#editLicence").on("submit", function (e) {
+        $("#editLicence").on("submit", function(e) {
             e.preventDefault();
             var form = $('.form')[1];
             var formData = new FormData(form);
 
             $('.errorHandler').text('');
             $.httpRequest('/member/licence/edit/', 'post', formData)
-                .then(function (data) {
+                .then(function(data) {
                     var response = $.parseJSON(data);
                     if (response.result == -1) {
                         $.iziToastError(response.msg, '.iziEdit-container');
@@ -487,7 +502,7 @@
                             defaltLogo = response.fields.defaltLogo,
                             description = response.fields.description;
 
-                        $(".remove-licence").each(function () {
+                        $(".remove-licence").each(function() {
                             if ($(this).data('value') == licence_id_old) {
                                 $(this).data('value', licence_id);
                                 $(this).find('.link-trash').data('value', licence_id);
@@ -508,7 +523,7 @@
                 });
         });
 
-        $body.on('click', '.link-edit', function (e) {
+        $body.on('click', '.link-edit', function(e) {
             e.preventDefault();
             var $this = $(this);
             var dataID = $(this).data('value');
@@ -516,7 +531,7 @@
             editItem(dataID, $this);
         });
 
-        $body.on('click', '.link-edit', function (e) {
+        $body.on('click', '.link-edit', function(e) {
             e.preventDefault();
             var $this = $(this);
             var dataID = $(this).data('value');
@@ -526,10 +541,12 @@
 
         function editItem(dataID) {
             emptyFields($('#editLicence'));
-            $.post('/member/licence/editAjax/', {id: dataID}, function (data) {
+            $.post('/member/licence/editAjax/', {
+                id: dataID
+            }, function(data) {
                 var result = $.parseJSON(data);
                 var fields = result.fields;
-                $.each(fields, function (key, value) {
+                $.each(fields, function(key, value) {
                     if (key == 'image_tmp') {
                         modal_edit.find('[name="' + key + '"]').attr('src', value);
                     } else {
@@ -537,7 +554,7 @@
                     }
                 });
                 $('#licence_type_edit').append('<option value="">نوع جواز را انتخاب نمایید...</option>');
-                $.each(fields.licence_list, function (key, value) {
+                $.each(fields.licence_list, function(key, value) {
                     $('#licence_type_edit')
                         .append('<option value="' + value.Licence_list_id + '"' + (fields.licence_type == value.Licence_list_id ? 'selected' : '') + '>' + value.name + '</option>');
                 });
@@ -548,7 +565,7 @@
                     $('#licence-type-edit').show();
                 }
 
-                $('body').find('input[type="text"], input[type="email"], input[type="name"], input[type="password"], textarea').each(function () {
+                $('body').find('input[type="text"], input[type="email"], input[type="name"], input[type="password"], textarea').each(function() {
                     if ($(this).val().length != 0) {
                         $(this).parent().addClass('typing');
                     }
@@ -558,7 +575,7 @@
             });
         }
 
-        $body.on('click', '.link-trash', function (e) {
+        $body.on('click', '.link-trash', function(e) {
             e.preventDefault();
             var dataID = $(this).data('value'),
                 lastItem = $body.find('.remove-licence').length;
@@ -582,23 +599,29 @@
                 position: 'center',
                 message: lastItem === 1 ? "با حذف کردن این آیتم امتیاز مرتبط با این موضوع از امتیاز کل شما کسر خواهد شد" : "<p></p>",
                 buttons: [
-                    ['<button class="btn btn-success btn-sm pull-right" style="margin-left: 1em;">بله</button>', function (instance, toast) {
+                    ['<button class="btn btn-success btn-sm pull-right" style="margin-left: 1em;">بله</button>', function(instance, toast) {
 
-                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        instance.hide({
+                            transitionOut: 'fadeOut'
+                        }, toast, 'button');
                         deleteItem(dataID)
 
                     }, true],
-                    ['<button class="btn btn-danger btn-sm pull-left">انصراف</button>', function (instance, toast) {
-                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                    ['<button class="btn btn-danger btn-sm pull-left">انصراف</button>', function(instance, toast) {
+                        instance.hide({
+                            transitionOut: 'fadeOut'
+                        }, toast, 'button');
                     }]
                 ]
             });
         });
 
         function deleteItem(dataID) {
-            var postData = {id: dataID};
+            var postData = {
+                id: dataID
+            };
             $.httpRequest('/member/licence/delete/', 'post', postData, false)
-                .then(function (data) {
+                .then(function(data) {
                     var response = $.parseJSON(data);
                     if (response.result == -1) {
                         $.iziToastError(response.msg, '.izi-container');
@@ -606,7 +629,7 @@
                     if (response.result == 1) {
                         var licence_id = response.fields.Licence_id;
                         var i = 0;
-                        $(".remove-licence").each(function () {
+                        $(".remove-licence").each(function() {
                             i++;
                             if ($(this).data('value') == licence_id) {
                                 $(this).remove();
@@ -614,7 +637,7 @@
                             }
                         });
                         if (i == 1) {
-                            var image = "<?php echo RELA_DIR; ?>" + "templates/template_fa/assets/images/empty01.png";
+                            var image = "<?php echo RELA_DIR; ?>" + "templates/template_tailwind/assets/images/empty01.png";
                             var html = '<div class="notRecord">' +
                                 '<img class="empty-img center-block" src="' + image + '">' +
                                 '<p class="empty-text">اطلاعاتی موجود نیست!</p>';
@@ -625,11 +648,11 @@
         }
 
         function emptyFields($this) {
-            $this.find('input, textarea').each(function () {
+            $this.find('input, textarea').each(function() {
                 $(this).val("");
             });
-            $this.find('img').each(function () {
-                $(this).attr("src", '<?php echo RELA_DIR . "templates/template_fa/assets/images/placeholder.png" ?>');
+            $this.find('img').each(function() {
+                $(this).attr("src", '<?php echo RELA_DIR . "templates/template_tailwind/assets/images/placeholder.png" ?>');
             });
             $this.find('select').empty();
         }
@@ -638,14 +661,14 @@
         $('body #div-licence_type').hide();
         $('body #licence-type-edit').hide();
 
-        $('#licence_type').on('change', function () {
+        $('#licence_type').on('change', function() {
             if ($(this).val() == 0) {
                 $('#div-licence_type').show();
             } else {
                 $('#div-licence_type').hide();
             }
         });
-        $('#licence_type_edit').on('change', function () {
+        $('#licence_type_edit').on('change', function() {
             if ($(this).val() == 0) {
                 $('#licence-type-edit').show();
             } else {

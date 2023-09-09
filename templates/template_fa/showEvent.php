@@ -119,12 +119,12 @@
 <div class="col-md-10 blogShort">
 
     <h5>
-        <?= $list['title'] ?>
+        <?php echo  $list['title'] ?>
     </h5>
 
     <article>
         <p>
-            <?= $list['body'] ?>
+            <?php echo  $list['body'] ?>
         </p>
         <br>
     </article>

@@ -117,9 +117,9 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-1 col-md-1 pull-right rtl">
-                    <a class="link-trash" data-value="<?= $fields['Logo_d_id'] ?>" href=""> <i
+                    <a class="link-trash" data-value="<?php echo  $fields['Logo_d_id'] ?>" href=""> <i
                             class="fa fa-trash-o" aria-hidden="true"></i> </a>
-                    <a class="link-edit" data-value="<?= $fields['Logo_d_id'] ?>" href=""> <i
+                    <a class="link-edit" data-value="<?php echo  $fields['Logo_d_id'] ?>" href=""> <i
                             class="fa fa-pencil-square-o" aria-hidden="true"></i> </a>
                 </div>
             </div>
@@ -160,7 +160,7 @@
                 $(this).find('input, textarea').each(function () {
                     $(this).val("");
                 }).find('img').each(function () {
-                    $(this).attr("src", '<?php echo RELA_DIR . "templates/template_fa/assets/images/placeholder.png" ?>');
+                    $(this).attr("src", '<?php echo RELA_DIR . "templates/template_tailwind/assets/images/placeholder.png" ?>');
                 });
 
                 var dataID = $(this).data('value');

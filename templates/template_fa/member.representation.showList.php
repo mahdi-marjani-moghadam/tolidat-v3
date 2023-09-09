@@ -55,7 +55,7 @@
                         </p>
                         <p class="color-orange">
                             <?php if ($fields['confirm'] == 0) {
-                                ?>
+                            ?>
                                 <?php echo "در حال بررسی" ?>
                             <?php } ?>
                         </p>
@@ -91,7 +91,7 @@
                     <span>وضعیت</span>
                 </div>
             </div>
-            <?php foreach($list['send']['list'] as $id => $fields) : ?>
+            <?php foreach ($list['send']['list'] as $id => $fields) : ?>
                 <div class="col-xs-12 col-sm-12 col-md-12 noPadding">
                     <div class="col-xs-2 col-sm-3 col-md-3 pull-right mb noPadding">
                         <div class="row xxxsmallSpace"></div>
@@ -105,10 +105,10 @@
                         <div class="row xxxsmallSpace"></div>
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6 noPadding">
-                                <label class="label-question-no"><input type="radio" class="option-input radio center-block confirm" name="<?php echo "confirm_".$fields['Representation_id'];?>"  value=<?php echo $fields['Representation_id'];?> <?php if($fields['confirm'] == 1) echo "checked";?>>تایید</label>
+                                <label class="label-question-no"><input type="radio" class="option-input radio center-block confirm" name="<?php echo "confirm_" . $fields['Representation_id']; ?>" value=<?php echo $fields['Representation_id']; ?> <?php if ($fields['confirm'] == 1) echo "checked"; ?>>تایید</label>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6 noPadding">
-                                <label class="label-question-yes"><input type="radio" class="option-input radio center-block reject" name="<?php echo "confirm_".$fields['Representation_id'];?>"  value=<?php echo $fields['Representation_id'];?>>رد</label>
+                                <label class="label-question-yes"><input type="radio" class="option-input radio center-block reject" name="<?php echo "confirm_" . $fields['Representation_id']; ?>" value=<?php echo $fields['Representation_id']; ?>>رد</label>
                             </div>
                         </div>
                     </div>
@@ -122,8 +122,7 @@
 </div>
 
 <!--  Modal -->
-<div class="holder-modal modal-product modal fade container-floatinglabel" id="myModal2" tabindex="-1" role="dialog"
-        aria-labelledby="myModalLabel">
+<div class="holder-modal modal-product modal fade container-floatinglabel" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -135,14 +134,12 @@
                 <form id="addCode" class="form addCode" method="post" data-toggle="validator">
                     <div class="form-group">
                         <label for="representation_name">نام نمایندگی را وارد کنید</label>
-                        <input name="representation_name" type="text"
-                                class="form-control" id="representation_name" required data-error="لطفا نام نمایندگی را وارد کنید">
+                        <input name="representation_name" type="text" class="form-control" id="representation_name" required data-error="لطفا نام نمایندگی را وارد کنید">
                     </div>
                     <div class="row xxsmallSpace"></div>
                     <div class="form-group mb">
                         <label for="representation_company">کد نمایندگی را وارد کنید</label>
-                        <input name="representation_company" type="text"
-                                class="form-control" id="representation_company" required data-error="لطفا کد نمایندگی را وارد کنید">
+                        <input name="representation_company" type="text" class="form-control" id="representation_company" required data-error="لطفا کد نمایندگی را وارد کنید">
                     </div>
                     <div class="row xxxsmallSpace"></div>
                     <div class="modal-footer noPadding pt">
@@ -155,10 +152,25 @@
     </div>
 </div>
 <script>
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
     var $body = $('body'),
         modal_confirm_code = $('#myModal2');
-    $(function () {
-        $("#addCode").on("submit", function (e) {
+    $(function() {
+        $("#addCode").on("submit", function(e) {
             e.preventDefault();
             var form = $('.form')[0];
             var formData = new FormData(form);
@@ -171,7 +183,7 @@
                 cache: false,
                 contentType: false,
                 processData: false,
-                success: function (data) {
+                success: function(data) {
                     var response = $.parseJSON(data);
                     if (response.result == -1) {
                         $.iziToastError(response.msg, '.iziAdd-container');
@@ -182,10 +194,12 @@
                 }
             });
         });
-        $(".confirm").on("change", function () {
+        $(".confirm").on("change", function() {
             var $this = $(this);
             var representation_id = $this.val();
-            $.post('/member/representation/confirm', {id: representation_id}, function (data) {
+            $.post('/member/representation/confirm', {
+                id: representation_id
+            }, function(data) {
                 var response = $.parseJSON(data);
                 if (response.result == 1) {
                     $.iziToastSuccess(response.msg, '.content .izi-container');
@@ -194,10 +208,12 @@
                 }
             });
         });
-        $(".reject").on("click", function () {
+        $(".reject").on("click", function() {
             var $this = $(this);
             var representation_id = $this.val();
-            $.post('/member/representation/reject', {id: representation_id}, function (data) {
+            $.post('/member/representation/reject', {
+                id: representation_id
+            }, function(data) {
                 var response = $.parseJSON(data);
                 if (response.result == 1) {
                     $.iziToastSuccess(response.msg, '.content .izi-container');
@@ -207,7 +223,7 @@
             });
             location.reload();
         });
-        $('.deleteRepresentation').on('click', function () {
+        $('.deleteRepresentation').on('click', function() {
             var $this = $(this),
                 representation_id = $this.data('value'),
                 lastItem = $body.find('.representation_item').length;
@@ -231,11 +247,15 @@
                 position: 'center',
                 message: lastItem === 1 ? "با حذف کردن این آیتم امتیاز مرتبط با این موضوع از امتیاز کل شما کسر خواهد شد" : "<p></p>",
                 buttons: [
-                    ['<button class="btn btn-success btn-sm pull-right" style="margin-left: 1em;">بله</button>', function (instance, toast) {
+                    ['<button class="btn btn-success btn-sm pull-right" style="margin-left: 1em;">بله</button>', function(instance, toast) {
 
-                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        instance.hide({
+                            transitionOut: 'fadeOut'
+                        }, toast, 'button');
 
-                        $.post('/member/representation/delete', {id: representation_id}, function (response) {
+                        $.post('/member/representation/delete', {
+                            id: representation_id
+                        }, function(response) {
                             var data = $.parseJSON(response);
                             if (data.result == -1) {
                                 $.iziToastError(data.message, '.content .izi-container');
@@ -246,8 +266,10 @@
                         });
 
                     }, true],
-                    ['<button class="btn btn-danger btn-sm pull-left">انصراف</button>', function (instance, toast) {
-                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                    ['<button class="btn btn-danger btn-sm pull-left">انصراف</button>', function(instance, toast) {
+                        instance.hide({
+                            transitionOut: 'fadeOut'
+                        }, toast, 'button');
                     }]
                 ]
             });

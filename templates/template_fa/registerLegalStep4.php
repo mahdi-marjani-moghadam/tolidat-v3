@@ -1,462 +1,439 @@
 <link rel="Stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/cropper.css">
 <link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/persianDatepicker-default.min.css">
-<link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/bower_components/izitoast/dist/css/iziToast.min.css">
-<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/bower_components/izitoast/dist/js/iziToast.min.js"></script>
+<link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/iziToast.min.css">
+<script src='<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/script.js'></script>
+<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/iziToast.min.js"></script>
 <script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/validator.min.js"></script>
 <script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/persianDatepicker.min.js"></script>
 <script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/cropper.min.js"></script>
+<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/jquery-ui.js"></script>
 
-<section class="container noPadding">
-    <!-- boxContainer -->
-    <div class="boxContainer reg-container">
-        <div class="row noMargin">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="Breadcrumb">
-                    <a class="home-icon" href="<?php echo RELA_DIR ?>">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                    </a>
-                    <i class="fa slash-left fa-angle-left" aria-hidden="true"></i>
-                    <a class="container-address" href="<?php echo RELA_DIR . "register" ?>">
-                        <span>ثبت نام</span></a>
-                    <i class="fa slash-left fa-angle-left" aria-hidden="true"></i>
-                    <a class="container-destination"><span>مرحله : 3</span></a>
-                </div>
-            </div>
+<style>
+    .pdp-default {
+        top: 48px !important;
+        right: 0 !important;
+        left: inherit !important;
+    }
+
+    .pdp-default {
+        max-width: 250px;
+    }
+</style>
+
+<div class="container mx-auto py-8 px-4">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="Breadcrumb">
+            <a class="home-icon" href="<?php echo RELA_DIR ?>">
+                <i class="fa fa-home" aria-hidden="true"></i>
+            </a>
+            <i class="fa slash-left fa-angle-left" aria-hidden="true"></i>
+            <a class="container-address" href="<?php echo RELA_DIR . "register" ?>">
+                <span>ثبت نام</span></a>
+            <i class="fa slash-left fa-angle-left" aria-hidden="true"></i>
+            <a class="container-destination"><span>مرحله : 4</span></a>
         </div>
-        <div class="registerPage container-floatinglabel center-block whiteBg boxBorder roundCorner boxContainer">
-            <header>
-                <div class="">اطلاعات درخواستی را با دقت وارد نمایید</div>
-                <span class="title-badge">مرحله</span>
-                <a class="container-badge" href="#">
-                    <div class="badge">3 از 6</div>
-                </a>
-            </header>
+    </div>
+</div>
 
-            <div class="content">
-                <div class="izi-container"></div>
-                <form action="" method="post" name="form1" id="form1" role="form" novalidate="novalidate"
-                      data-toggle="validator">
-                    <!-- separator -->
-                    <div class="row xxsmallSpace"></div>
-                    <div class="row">
-                        
-                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                            <div class="form-group has-feedback center-block">
-                                <i class="fa fa-id-card-o" aria-hidden="true"></i>
-                                <i class="fa fa-question" aria-hidden="true" data-placement="top" data-trigger="hover"
-                                   data-toggle="popover" title="" data-content=" لطفا نام کامل ثبتی مجموعه خود را وارد نمائید"
-                                   data-original-title="نام مجموعه"></i>
-                                <label for="company_name">نام مجموعه</label>
-                                <input name="company_name" type="text" value="<?= $list['data']['company_name'] ?>"
-                                       class="form-control fullWidth displayBlock noRadius noPadding transition"
-                                       id="company_name" data-minlength="1" data-error="لطفا نام کامل ثبتی مجموعه خود را وارد نمائید."
-                                       tabindex="1" required>
+<div class="container mx-auto py-8 px-4">
+    <section class="noPadding">
+        <div class="shadow rounded-md overflow-hidden               boxContainer reg-container">
+            <div class="registerPage container-floatinglabel center-block whiteBg boxBorder roundCorner boxContainer relative">
+
+                <div class="flex flex-col-reverse sm:flex-row items-center px-6 py-2 shadow">
+                    <span class="block text-center sm:text-justify">اطلاعات درخواستی را با دقت وارد نمایید</span>
+                    <a class="justify-items-end mx-auto ml-auto sm:ml-0 mb-2 sm:mb-0 border-2 rounded-3xl border-tolidatColor px-2        container-badge" href="#">
+                        <div class="badge"><span class="title-badge">مرحله</span> 4 از 7 </div>
+                    </a>
+                </div>
+
+                <div class="p-6 content">
+
+                    <div class="izi-container"></div>
+
+                    <form action="/register/?step=5" method="post" name="form1" id="form1" role="form">
+
+                        <div>
+                            <div class=' flex  justify-center'>
+
+                                <button name="step_4" type="submit" id="test" class=" left-6 mb-5  flex justify-center py-2 px-8 border border-transparent text-sm font-medium rounded-md text-white bg-blue-400 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600           btn btn-success btn-sm reg-btn-n">
+                                    اطلاعات مجموعه را بعد از ثبت نام پر میکنم، ادامه ثبت نام </button>
                             </div>
+                            <div class="grid grid-cols-12 gap-6">
+                                <!-- <div class="col-span-12 sm:col-span-6">
+                                    <div class="relative">
+                                        <label for="national_id" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">شناسه ملی شرکت</label>
+                                        <input name="national_id" type="text" value="< ?php echo $list['data']['national_id'] ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="national_id" tabindex="4" maxlength="11" oninvalid="setCustomValidity('لطفا شناسه ملی را وارد نمایید')" oninput="setCustomValidity('')" dir="ltr" required>
+                                    </div>
+                                </div> -->
+                                <div class="col-span-12 sm:col-span-6">
+                                    <div class="relative">
+                                        <label for="company_name" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">نام مجموعه</label>
+                                        <input name="company_name" type="text" value="<?php echo  $list['data']['company_name'] ?>" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="company_name" maxlength="50" minlength="1" tabindex="1" autofocus oninvalid="setCustomValidity('لطفا نام کامل ثبتی مجموعه خود را وارد نمائید')" oninput="setCustomValidity('')">
+                                    </div>
+                                </div>
 
-                            <!-- separator -->
-                            <div class="row xxxsmallSpace"></div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                            <div class="form-group has-feedback center-block">
-                                <i class="fa fa-registered" aria-hidden="true"></i>
-                                <i class="fa fa-question" aria-hidden="true" data-placement="top" data-trigger="hover"
-                                   data-toggle="popover" title="" data-content="لطفا شماره ثبت مربوط به مجموعه خود را وارد نمائید."
-                                   data-original-title="شماره ثبت مجموعه"></i>
-                                <label for="registration_number">شماره ثبت مجموعه</label>
-                                <input name="registration_number" type="number"
-                                       value="<?= $list['data']['registration_number'] ?>"
-                                       class="form-control fullWidth displayBlock noRadius noPadding transition set-font-latin"
-                                       id="registration_number" data-minlength="1"
-                                       data-error="لطفاشماره ثبت مربوط به مجموعه خود را وارد نمائید." tabindex="2" autofocus required>
-                            </div>
-                        </div>
-                    </div>
+                                <div class="col-span-12 sm:col-span-6">
+                                    <div class="relative">
+                                        <label for="registration_number" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">شماره ثبت مجموعه</label>
+                                        <input name="registration_number" type="number" value="<?php echo  $list['data']['registration_number'] ?>" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="registration_number" maxlength="50" minlength="1" tabindex="2" oninvalid="setCustomValidity('لطفاشماره ثبت مربوط به مجموعه خود را وارد نمائید')" oninput="setCustomValidity('')" dir="ltr">
+                                    </div>
+                                </div>
 
-                    <!-- separator -->
-                    <div class="row xxxsmallSpace"></div>
+                                <div class="col-span-12 sm:col-span-6">
+                                    <div class="relative">
+                                        <label for="registration_date" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">تاریخ تأسیس مجموعه</label>
+                                        <input name="registration_date" type="text" value="<?php echo  $list['data']['registration_date'] ?>" class="datePicker mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="registration_date" maxlength="11" tabindex="3" oninvalid="setCustomValidity('لطفا تاریخ تأسیس مجموعه را انتخاب نمایید')" valid="setCustomValidity('')">
+                                    </div>
+                                </div>
 
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                            <div class="form-group has-feedback center-block">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <label for="registration_date">تاریخ تأسیس مجموعه</label>
-                                <input name="registration_date" value="<?= $list['data']['registration_date'] ?>"
-                                       type="text"
-                                       class="form-control datePicker fullWidth displayBlock noRadius noPadding transition"
-                                       id="registration_date" data-error="لطفا تاریخ تأسیس مجموعه را انتخاب نمایید"
-                                       required tabindex="3">
-                            </div>
+                                <div class="col-span-12 sm:col-span-6">
+                                    <div class="relative">
+                                        <label for="coordinator_name" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">نام کامل ثبتی مدیرعامل مجموعه را وارد نمائید</label>
+                                        <input name="maneger_name" type="text" value="<?php echo  $list['data']['maneger_name'] ?>" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" id="coordinator_name" tabindex="4" minlength="3" oninvalid="setCustomValidity('نام کامل ثبتی مدیرعامل مجموعه را وارد نمائید')" oninput="setCustomValidity('')">
+                                    </div>
+                                </div>
 
-                            <!-- separator -->
-                            <div class="row xxxsmallSpace"></div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                            <div class="form-group has-feedback center-block">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <i class="fa fa-question" aria-hidden="true" data-placement="top" data-trigger="hover"
-                                   data-toggle="popover" title="" data-content="نام کامل ثبتی مدیرعامل مجموعه را وارد نمائید."
-                                   data-original-title="نام مدیر"></i>
-                                <label for="coordinator_name">نام کامل ثبتی مدیرعامل مجموعه را وارد نمائید.</label>
-                                <input name="maneger_name" type="text" value="<?= $list['data']['maneger_name'] ?>"
-                                       class="form-control fullWidth displayBlock noRadius noPadding transition"
-                                       id="coordinator_name" data-minlength="3"
-                                       data-error="نام کامل ثبتی مدیرعامل مجموعه را وارد نمائید." tabindex="4" required>
-                            </div>
-                        </div>
-                    </div>
+                                <div class="col-span-12">
+                                    <div class="relative">
+                                        <label for="description" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">زمینه فعالیت مجموعه</label>
+                                        <textarea name="description" id="description" type="text" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" data-error="لطفا فعالیت مجموعه را وارد نمایید" tabindex="5" minlength="2" oninvalid="setCustomValidity('نام کامل ثبتی مدیرعامل مجموعه را وارد نمائید')" oninput="setCustomValidity('')"><?php echo  $list['data']['description'] ?></textarea>
+                                    </div>
+                                </div>
 
-                    <!-- separator -->
-                    <div class="row xxxsmallSpace"></div>
-
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group has-feedback center-block textarea">
-                                <i class="fa fa-briefcase" aria-hidden="true"></i>
-                                <i class="fa fa-question" aria-hidden="true" data-placement="top" data-trigger="hover"
-                                   data-toggle="popover" title=""
-                                   data-content="زمینه فعالیت خود را جهت استفاده از امکانات SEO و جستجوی بهتر در موتورهای جستجو به صورت جامع بنویسید."
-                                   data-original-title="زمینه فعالیت شرکت"></i>
-                                <label for="description">زمینه فعالیت مجموعه</label>
-                                <textarea name="description" type="text"
-                                          class="form-control fullWidth displayBlock noRadius noPadding transition"
-                                          id="description" data-minlength="2"
-                                          data-error="لطفا فعالیت مجموعه را وارد نمایید" tabindex="5"
-                                          required><?= $list['data']['description'] ?></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- separator -->
-                    <div class="row xxxsmallSpace"></div>
-
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                            <div class="form-group has-feedback center-block">
-                                <div class="row xxxsmallSpace"></div>
-                                <div class="form-group has-feedback center-block">
-                                    <label for="personality_type">نوع شخصیت حقوقی را انتخاب نمایید</label>
-                                    <select name="personality_type" id="personality_type" class="form-control"
-                                            tabindex="6" data-error="لطفا نوع شخصیت حقوقی را انتخاب نمایید" required>
-                                        <option value="">نوع شخصیت حقوقی</option>
-                                        <?php foreach ($list['personalityType'] as $personalityType) { ?>
-                                            <option value="<?php echo $personalityType['Personality_type_id'] ?>"
-                                                <?php if ($list['data']['personality_type'] == $personalityType['Personality_type_id']) {
-                                                    echo "selected";
-                                                } ?> >
-                                                <?php echo $personalityType['type'] ?>
-                                            </option>
-                                        <?php } ?>
-                                    </select>
-                                    <i class="fa fa-angle-down transition"></i>
+                                <div class="col-span-12 sm:col-span-6">
+                                    <div class="relative">
+                                        <label for="personality_type" class="block text-sm text-tolidatColor after:content-['*'] after:ml-0.5 after:text-red-500">نوع شخصیت حقوقی را انتخاب نمایید</label>
+                                        <select name="personality_type" id="personality_type" class="form-control w-full rounded-none border-r-0 border-t-0 border-l-0 mt-1" tabindex="6" oninvalid="setCustomValidity('لطفا نوع شخصیت حقوقی را انتخاب نمایید')" oninput="setCustomValidity('')">
+                                            <option value="">نوع شخصیت حقوقی</option>
+                                            <?php foreach ($list['personalityType'] as $personalityType) { ?>
+                                                <option value="<?php echo $personalityType['Personality_type_id'] ?>" <?php if ($list['data']['personality_type'] == $personalityType['Personality_type_id']) {
+                                                                                                                            echo "selected";
+                                                                                                                        } ?>>
+                                                    <?php echo $personalityType['type'] ?>
+                                                </option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- separator -->
-                            <div class="row xxxsmallSpace"></div>
-                        </div>
-                    </div>
+                            <div class="w-full flex justify-center mt-12">
+                                <div class="flex items-center">
+                                    <div class="relative flex items-center">
 
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 center-block text-center">
-                            <div class="checkbox">
-                                <label for="toggleLicense">
-                               
-                                
-                                    <input id="toggleLicense" <?php echo ($list['licence'] ? 'checked' : ''); ?> tabindex="7" type="checkbox">آیا دارای مجوز می باشید؟
-                                    
-                                </label>
-                                <i class="fa fa-question-circle" style="left: auto;" aria-hidden="true" data-placement="top" data-trigger="hover"
-                                   data-toggle="popover" title="" data-content=" اگر هر نوع مجوزی دارید تیک بزنید."
-                                   data-original-title="نام مجموعه"></i>
+                                        <label for="toggleLicense" class="mr-1 block text-sm font-medium text-gray-700 leading-3">
+                                            <input id="toggleLicense" <?php echo ($list['licence'] ? 'checked' : ''); ?> tabindex="7" type="checkbox" class=" px-3">
+                                            آیا دارای مجوز می باشید؟
+                                        </label>
+                                        <span class="text-gray-400 block px-3" data-trigger="hover" data-toggle="popover" title="اگر هر نوع مجوزی دارید تیک بزنید.">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- separator -->
-                    <div class="row xxxsmallSpace"></div>
+                        <div class="w-full flex justify-center mt-8 <?php echo ($list['licence'] ? '' : 'hidden'); ?>" data-toggle="toggleLicense">
+                            <div class="shadow rounded-md overflow-hidden w-full max-w-md      container-view">
+                                <div class="flex items-center px-4 py-2 shadow bg-gray-50 license-container">
+                                    <span class="addedLicense">مجوز ایجاد شده</span>
 
-                    <div class="row <?php echo ($list['licence'] ? '' : 'hidden'); ?>" data-toggle="toggleLicense">
-                        <div class="col-xs-12 col-sm-6 col-md-6 center-block">
-                            <div class="container-view boxBorder">
-                                <header class="license-container">
                                     <?php
-                                    if($list['licence']) {
+                                    if ($list['licence']) {
                                     ?>
-                                    <a class="btn btn-danger btn-sm pull-right center-block delete-licence" style="margin-top: 7px;">
-                                        حذف مجوز
-                                    </a>
+                                        <button type="button" class="mr-auto ml-0 flex justify-center py-1 px-3 border border-transparent text-sm font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600           delete-licence">
+                                            حذف مجوز
+                                        </button>
                                     <?php } else { ?>
-                                    <button type="button" class="btn btn-primary btn-sm pull-right center-block addLicenseCompany" style="margin-top: 7px;">
-                                        افزودن مجوز
-                                    </button>
+                                        <button type="button" id="open-btn" class="mr-auto ml-0 flex justify-center py-1 px-3 border border-transparent text-sm font-medium rounded-md text-white bg-blue-400 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600           addLicenseCompany">
+                                            افزودن مجوز
+                                        </button>
                                     <?php } ?>
 
-                                    <span class="addedLicense pull-left">مجوز ایجاد شده</span>
-                                </header>
-                                <ul class="selected-category paddingRl ptb">
-                                    <?php if ($list['licence']) { ?>
-                                    <li class="text-center">
-                                        <div class="row noMargin">
-                                            <div class="col-xs-4 col-sm-4 col-md-4 pull-right">
-                                                <img class="roundCorner fullWidth boxBorder" src="<?= $list['licence']['imageCropped']; ?>" alt="">
-                                            </div>
-                                            <div class="col-xs-8 col-sm-8 col-md-8 pull-right">
-                                                <h4 class="text-right"><?= $list['licence']['name']. " " .$list['licence']['family']; ?></h4>
-                                                <p class="text-right">به شماره جواز <?= $list['licence']['licence_number']; ?></p>
-                                                <a class="delete-licence"><span class="fa fa-trash text-danger"></span></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <?php } else {
-                                    ?>
-                                    <li class="text-center emptyLabel">هیچ آیتمی موجود نیست</li>
-                                    <?php
-                                    } ?>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- separator -->
-                    <div class="row xxxsmallSpace"></div>
-
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 mb">
-
-                        </div>
-                    </div>
-
-                    <!-- separator -->
-                    <div class="row xsmallSpace"></div>
-
-                    <button name="step_4" type="submit" class="btn btn-success btn-sm reg-btn-n">مرحله بعد<span
-                                class="fa fa-angle-left"></span>
-                    </button>
-                    <input name="step" type="hidden" value="5">
-                    <input name="company_type" type="hidden" value="1">
-                </form>
-                <form action="" method="post" name="form1" id="form1" role="form" novalidate="novalidate"
-                      data-toggle="validator">
-                    <input name="step" type="hidden" value="3">
-                    <input name="company_type" type="hidden" value="1">
-                    <button name="step2" type="submit" class="btn btn-danger btn-sm reg-btn-p">مرحله قبل<span
-                                class="fa fa-angle-right"></span>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="holder-modal modal-register modal fade container-floatinglabel crop" id="myModal3" tabindex="-1"
-         role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h5 class="modal-title roundCorner" id="myModalLabel">افزودن مجوز برای مجموعه</h5>
-                    <p id="message"></p>
-                </div>
-                <div class="modal-body">
-                    <!-- separator -->
-                    <div class="row xxxsmallSpace"></div>
-
-                    <div class="content-izi">
-                        <div class="izi-container"></div>
-                    </div>
-                    <form class="form" enctype="multipart/form-data" method="post" data-toggle="validator"
-                          novalidate="novalidate">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                                <div class="form-group">
-                                    <label for="name">نام صاحب جواز</label>
-                                    <input name="name" type="text" class="form-control" tabindex="8" id="name" required
-                                           data-error="لطفا نام صاحب جواز را وارد کنید">
                                 </div>
 
-                                <!-- separator -->
-                                <div class="row xxsmallSpace"></div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                                <div class="form-group">
-                                    <label for="family">نام خانوادگی صاحب جواز</label>
-                                    <input name="family" type="text" class="form-control" id="family" tabindex="9"
-                                           required data-error="لطفا نام خانوادگی صاحب جواز را وارد کنید">
+                                <div class="p-4">
+                                    <ul class="selected-category paddingRl ptb">
+                                        <?php if ($list['licence']) { ?>
+                                            <li class="text-center">
+
+                                                <div class="grid grid-cols-2 gap-6">
+                                                    <div class="">
+                                                        <img class="roundCorner fullWidth boxBorder" src="<?php echo  $list['licence']['imageCropped']; ?>" alt="">
+                                                    </div>
+                                                    <div class="">
+                                                        <span class="block text-right text-xl font-bold"><?php echo  $list['licence']['name'] . " " . $list['licence']['family']; ?></span>
+                                                        <p class="text-right">به شماره جواز <?php echo  $list['licence']['licence_number']; ?></p>
+                                                        <a class="delete-licence"><span class="fa fa-trash text-danger"></span></a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                        <?php } else {
+                                        ?>
+                                            <li class="text-center emptyLabel">هیچ آیتمی موجود نیست</li>
+                                        <?php
+                                        } ?>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- separator -->
-                        <div class="row xxxsmallSpace"></div>
+                        <button name="step_4" type="submit" id="test" class="absolute left-6 bottom-2 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-400 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600           btn btn-success btn-sm reg-btn-n">
+                            مرحله بعد
+                        </button>
+                        <input name="step" type="hidden" value="5">
+                        <input name="company_type" type="hidden" value="1">
+                    </form>
 
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                                <div class="form-group">
-                                    <label for="national_code">کد ملی صاحب جواز</label>
-                                    <input name="national_code"
-                                           type="text"
-                                           pattern="^[0-9۰-۹]{10,}$"
-                                           maxlength="10"
-                                           tabindex="10"
-                                           class="form-control set-font-latin"
-                                           id="national_code"
-                                           required data-error="لطفا کد ملی صاحب جواز وارد کنید">
-                                </div>
+                    <form action="/register/?step=3" method="post" name="form1" id="form1" role="form" novalidate="novalidate" data-toggle="validator">
+                        <input name="step" type="hidden" value="3">
+                        <input name="company_type" type="hidden" value="1">
 
-                                <!-- separator -->
-                                <div class="row xxsmallSpace"></div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                                <div class="form-group">
-                                    <label for="licence_number">شماره جواز</label>
-                                    <input name="licence_number" type="text" tabindex="11"
-                                           class="form-control set-font-latin" id="licence_number" required
-                                           data-error="لطفا شماره جواز را وارد کنید">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- separator -->
-                        <div class="row xxxsmallSpace"></div>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                                <div class="form-group">
-                                    <label for="licence_type">انتخاب نوع جواز</label>
-                                    <select name="licence_type" id="licence_type" tabindex="13"
-                                            class="form-control"></select>
-                                    <i class="fa fa-angle-down transition"></i>
-                                </div>
-
-                                <!-- separator -->
-                                <div class="row xxsmallSpace"></div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 pull-right" id="div-licence_type">
-                                <div class="form-group">
-                                    <label for="licence_type_name">نوع جواز</label>
-                                    <input name="licence_type_name" type="text" tabindex="12" class="form-control"
-                                           id="licence_type_name" required data-error="لطفا نوع جواز را وارد کنید">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- separator -->
-                        <div class="row xxxsmallSpace"></div>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                                <div class="form-group">
-                                    <label for="exporter_refrence">مرجع تایید جواز</label>
-                                    <input name="exporter_refrence" type="text" class="form-control" tabindex="14"
-                                           id="exporter_refrence" required
-                                           data-error="لطفا مرجع تأیید جواز را وارد کنید">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- separator -->
-                        <div class="row xxxsmallSpace"></div>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                                <div class="form-group full-date-picker">
-                                    <label for="issuence_date">تاریخ صدور جواز</label>
-                                    <input name="issuence_date" type="text" tabindex="15"
-                                           class="form-control datePicker set-font-latin" id="issuence_date" required
-                                           data-error="لطفا تاریخ صدور جواز را وارد کنید">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                                <div class="form-group full-date-picker">
-                                    <label for="expiration_date">تاریخ انقضا جواز</label>
-                                    <input name="expiration_date" type="text" tabindex="16"
-                                           class="form-control datePicker set-font-latin" id="expiration_date" required
-                                           data-error="لطفا تاریخ انقضا جواز را انتخاب کنید">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- separator -->
-                        <div class="row xxsmallSpace"></div>
-
-                        <!-- separator -->
-                        <div class="row xxxsmallSpace"></div>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <label for="description">زمینه فعالیت</label>
-                                    <textarea name="description" class="form-control" rows="3" tabindex="17"
-                                              id="description" required
-                                              data-error="لطفا زمینه فعالیت را وارد نمایید"></textarea>
-                                </div>
-
-                                <!-- separator -->
-                                <div class="row xxsmallSpace"></div>
-                            </div>
-                        </div>
-
-                        <!-- separator -->
-                        <div class="row xxxsmallSpace"></div>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-6 center-block modal-body">
-                                <div class="reg-alert-r text-center">تصویر جواز خود را انتخاب نمایید</div>
-                                <div class="row xxxsmallSpace"></div>
-                                <div class="docs-buttons">
-                                    <div class="img-container upload-msg register-crop">
-                                        <img class="width image-javaz img-cropper" id="imageLicence"
-                                             src="<?= RELA_DIR . 'templates/' . CURRENT_SKIN . '/assets/images/placeholder.png'; ?>"
-                                             alt="Picture">
-                                    </div>
-                                    <div class="btn-block mt">
-                                        <label class="btn-block btn btn-success uploud-btnProCrop pull-right mb"
-                                               for="inputImage" title="Upload image file">
-                                            <input type="file" class="sr-only" id="inputImage" name="file"
-                                                   accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
-                                            <span class="docs-tooltip" data-animation="false"
-                                                  title="Import image with Blob URLs">
-                                                <span>
-                                                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                </span>
-                                                <span>انتخاب تصویر</span>
-                                            </span>
-                                        </label>
-                                        <input class="result-crop" type="hidden" name="imageCropped" value="">
-                                    </div>
-
-
-
-                                    <!-- separator -->
-                                    <div class="row xxxsmallSpace"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer noPadding pt">
-                            <button type="button" id="addLicence" class="btn btn-success btn-sm" tabindex="18">ذخیره مجوز</button>
-                            <button type="button" class="btn btn-link text-danger btn-sm" data-dismiss="modal">انصراف
-                            </button>
-                        </div>
+                        <button name="step2" type="submit" class="absolute right-6 bottom-2 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600        btn btn-danger btn-sm reg-btn-p">
+                            مرحله قبل
+                        </button>
                     </form>
                 </div>
+
+                <div class="bg-gray-50 h-14 mt-4 sm:mt-16"></div>
+
             </div>
         </div>
+    </section>
+</div>
+
+<div class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full px-4 py-8" id="my-modal">
+    <div class="shadow rounded-md overflow-hidden max-w-2xl bg-white mx-auto                  holder-modal modal-register modal fade container-floatinglabel crop" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+        <div class="relative      modal-dialog modal-lg" role="document">
+
+            <div class="flex items-center px-6 py-2 shadow">
+                <span class="">افزودن مجوز برای مجموعه</span>
+                <p id="message"></p>
+            </div>
+
+            <div class="p-6 modal-body">
+
+                <div class="content-izi">
+                    <div class="izi-container"></div>
+                </div>
+
+                <form class="form" enctype="multipart/form-data" method="post">
+
+                    <div>
+                        <div class="grid grid-cols-12 gap-6">
+                            <div class="col-span-12 sm:col-span-6">
+                                <div class="relative">
+                                    <label for="name" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">نام صاحب جواز</label>
+                                    <input name="name" id="name" type="text" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="1" autofocus oninvalid="setCustomValidity('لطفا نام صاحب جواز را وارد کنید')" oninput="setCustomValidity('')" required>
+                                </div>
+                            </div>
+
+                            <div class="col-span-12 sm:col-span-6">
+                                <div class="relative">
+                                    <label for="family" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">نام خانوادگی صاحب جواز</label>
+                                    <input name="family" id="family" type="text" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="2" oninvalid="setCustomValidity('لطفا نام خانوادگی صاحب جواز را وارد کنید')" oninput="setCustomValidity('')" required>
+                                </div>
+                            </div>
+
+                            <div class="col-span-12 sm:col-span-6">
+                                <div class="relative">
+                                    <label for="national_code" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">کد ملی صاحب جواز</label>
+                                    <input name="national_code" id="national_code" type="text" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="3" pattern="^[0-9۰-۹]{10,}$" maxlength="10" oninvalid="setCustomValidity('لطفا کد ملی صاحب جواز وارد کنید')" oninput="setCustomValidity('')" dir="ltr" required>
+                                </div>
+                            </div>
+
+                            <div class="col-span-12 sm:col-span-6">
+                                <div class="relative">
+                                    <label for="licence_number" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">شماره جواز</label>
+                                    <input name="licence_number" id="licence_number" type="text" class="text-left pl-7 mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="4" oninvalid="setCustomValidity('لطفا شماره جواز را وارد کنید')" oninput="setCustomValidity('')" dir="ltr" required>
+                                </div>
+                            </div>
+
+                            <div class="col-span-12 sm:col-span-6">
+                                <div class="relative">
+                                    <label for="licence_type" class="block text-sm text-tolidatColor after:content-['*'] after:ml-0.5 after:text-red-500">انتخاب نوع جواز</label>
+                                    <select name="licence_type" id="licence_type" class="form-control w-full rounded-none border-r-0 border-t-0 border-l-0 mt-1" tabindex="5" required>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-span-12 sm:col-span-6" id="div-licence_type">
+                                <div class="relative">
+                                    <label for="licence_type_name" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">نوع جواز</label>
+                                    <input name="licence_type_name" id="licence_type_name" type="text" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="6" oninvalid="setCustomValidity('لطفا نوع جواز را وارد کنید')" oninput="setCustomValidity('')" required>
+                                </div>
+                            </div>
+
+                            <div class="col-span-12 sm:col-span-6">
+                                <div class="relative">
+                                    <label for="exporter_refrence" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">مرجع تایید جواز</label>
+                                    <input name="exporter_refrence" id="exporter_refrence" type="text" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="7" oninvalid="setCustomValidity('لطفا مرجع تأیید جواز را وارد کنید')" oninput="setCustomValidity('')" required>
+                                </div>
+                            </div>
+
+                            <div class="col-span-12 sm:col-span-6">
+                                <div class="relative full-date-picker">
+                                    <label for="issuence_date" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">تاریخ صدور جواز</label>
+                                    <input name="issuence_date" id="issuence_date" type="text" class="datePicker mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="8" oninvalid="setCustomValidity('لطفا تاریخ صدور جواز را وارد کنید')" oninput="setCustomValidity('')" required>
+                                </div>
+                            </div>
+
+                            <div class="col-span-12 sm:col-span-6">
+                                <div class="relative full-date-picker">
+                                    <label for="expiration_date" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">تاریخ انقضا جواز</label>
+                                    <input name="expiration_date" id="expiration_date" type="text" class="datePicker mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="9" oninvalid="setCustomValidity('لطفا تاریخ انقضا جواز را انتخاب کنید')" oninput="setCustomValidity('')" required>
+                                </div>
+                            </div>
+
+                            <div class="col-span-12">
+                                <div class="relative">
+                                    <label for="description" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">زمینه فعالیت</label>
+                                    <textarea name="description" id="description" rows="3" type="text" class="mt-1 focus:to-tolidatColor focus:border-tolidatColor focus-visible:ring-2 focus-visible:ring-tolidatColor block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md px-3 py-2                form-control set-font-latin" tabindex="10" oninvalid="setCustomValidity('لطفا زمینه فعالیت را وارد نمایید')" oninput="setCustomValidity('')" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-12      modal-body">
+
+                        <div class="reg-alert-r text-center">تصویر جواز خود را انتخاب نمایید</div>
+
+                        <div class="max-w-md mx-auto mt-2             docs-buttons">
+
+                            <div class="shadow rounded-md            img-container upload-msg register-crop">
+                                <img class="width image-javaz img-cropper" id="imageLicence" src="<?php echo  RELA_DIR . 'templates/' . CURRENT_SKIN . '/assets/image/placeholder.png'; ?>" alt="Picture">
+                            </div>
+
+                            <div class="btn-block mt">
+                                <label class="btn-block btn btn-success uploud-btnProCrop pull-right mb" for="inputImage" title="Upload image file">
+                                    <input type="file" class="sr-only" id="inputImage" name="file" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
+                                    <span class="docs-tooltip" data-animation="false" title="Import image with Blob URLs">
+                                        <span>
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </span>
+                                        <span class="mt-2 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-400 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600           btn btn-success btn-sm reg-btn-n">انتخاب تصویر</span>
+                                    </span>
+                                </label>
+                                <input class="result-crop" type="hidden" name="imageCropped" value="">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <button type="submit" id="addLicence" class="absolute right-6 bottom-2 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-400 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600           btn btn-success btn-sm reg-btn-n">
+                            ذخیره مجوز
+                        </button>
+
+                        <button type="button" id="closeModal" data-dismiss="modal" class="absolute right-32 bottom-2 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-red-300              btn btn-success btn-sm reg-btn-n">
+                            انصراف
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-gray-50 h-14 mt-4 sm:mt-16"></div>
+        </div>
     </div>
-</section>
+</div>
+
 
 <p class="error"><?php echo $list['validate']['msg'] ?></p>
 
 <script>
-    $(function () {
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
+    var test = document.getElementById("test");
+    test.onclick = function(e) {
+        //var data = document.getElementById("registration_date");
+        //console.log(data.val);
+        // $('[name=registration_date]').val('ali');
+        console.log($('[name=registration_date]').val());
+        console.log($('[name=registration_date]').validity);
+
+        $('[name=registration_date]').on('change', function(ev) {
+
+            console.log('ali ali');
+            console.log(ev);
+            //console.log('ali ali', $this.val());
+            // $this.valid();  // triggers the validation test
+            //$this.val('ali');  // triggers the validation test
+
+            // '$(this)' refers to '$("#datepicker")'
+        });
+    }
+
+
+
+
+
+    // Grabs all the Elements by their IDs which we had given them
+    let modal = document.getElementById("my-modal");
+
+    let btn = document.getElementById("open-btn");
+    let close = document.getElementById("closeModal");
+
+    // let button = document.getElementById("ok-btn");
+
+    // We want the modal to open when the Open button is clicked
+    if (btn) {
+        btn.onclick = function(e) {
+            //e.preventDefault();
+            modal.style.display = "block";
+        }
+
+
+        close.onclick = function(e) {
+            // e.preventDefault();
+            modal.style.display = "none";
+        };
+    }
+
+
+    // We want the modal to close when the OK button is clicked
+    // button.onclick = function() {
+    //     modal.style.display = "none";
+    // }
+
+    // The modal will close when the user clicks anywhere outside the modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+    $(function() {
         var $body = $('body'),
-            $delLicense = '<a class="btn btn-danger btn-sm pull-right center-block delete-licence" style="margin-top: 7px;">حذف مجوز</a>',
+            // $delLicense = '<a class="btn btn-danger btn-sm pull-right center-block delete-licence" style="margin-top: 7px;">حذف مجوز</a>',
+            $delLicense = '<button type="button" class="mr-auto ml-0 flex justify-center py-1 px-3 border border-transparent text-sm font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600           btn btn-danger btn-sm pull-right center-block delete-licence">حذف مجوز</button>',
+
             $addLicense = '<button type="button" class="btn btn-primary btn-sm pull-right center-block addLicenseCompany" style="margin-top: 7px;">افزودن مجوز</button>';
 
         $('body #div-licence_type').hide();
         $('body #licence-type-edit').hide();
 
-        $body.on('change', '#licence_type', function () {
+        $body.on('change', '#licence_type', function() {
             if ($(this).val() == 0) {
                 $('#div-licence_type').show();
             } else {
@@ -465,16 +442,16 @@
         });
 
         var cnt = 0;
-        $body.on('click', '.addLicenseCompany', function () {
+        $body.on('click', '.addLicenseCompany', function() {
 
             $('#licence_type').empty();
 
-            $.post('/register/addLicence/', function (data) {
+            $.post('/register/addLicence/', function(data) {
                 var result = $.parseJSON(data);
 
                 $body.find('#licence_type').append('<option value="">نوع جواز را انتخاب نمایید...</option>');
 
-                $.each(result.licence_list, function (key, value) {
+                $.each(result.licence_list, function(key, value) {
                     if (result.licence_prev) {
                         $('#licence_type').append('<option value="' + value.Licence_list_id + '"' + (result.licence_prev.licence_type == value.Licence_list_id ? 'selected' : '') + '>' + value.name + '</option>');
                     } else {
@@ -484,7 +461,7 @@
 
                 $body.find('#licence_type').append('<option value="0">غیره...</option>');
 
-                $.each(result.licence_prev, function (key, value) {
+                $.each(result.licence_prev, function(key, value) {
                     $('#myModal3').find('[name="' + key + '"]').val(value);
 
                     if (key == 'imageCropped') {
@@ -492,18 +469,18 @@
                     }
                 });
 
-                $('body').find('input[type="text"], input[type="email"], input[type="name"], input[type="tel"], input[type="password"], textarea').each(function () {
+                $('body').find('input[type="text"], input[type="email"], input[type="name"], input[type="tel"], input[type="password"], textarea').each(function() {
                     if ($(this).val().length != 0) {
                         $(this).parent().addClass('typing');
                     }
                 });
 
-                $('#myModal3').modal('show');
+                // $('#myModal3').modal('show');
 
             });
         });
 
-        $body.on('click', '#addLicence', function () {
+        $body.on('click', '#addLicence', function() {
             $('.image_name').val($('#img').attr('src'));
             var $this = $(this),
                 form = $('.form')[0],
@@ -522,7 +499,7 @@
                 data: formData,
                 contentType: false,
                 processData: false,
-                success: function (data) {
+                success: function(data) {
                     $this.prop('disabled', false);
 
                     var response = $.parseJSON(data);
@@ -562,25 +539,26 @@
                         $.iziToastError(validationMsg, '.content-izi .izi-container');
                     } else {
 
-                        var html = '<li class="text-center">'+
-                                        '<div class="row noMargin">'+
-                                            '<div class="col-xs-4 col-sm-4 col-md-4 pull-right">'+
-                                                '<img class="roundCorner fullWidth boxBorder" src="'+response.data.imageCropped+'" alt="">'+
-                                            '</div>'+
-                                            '<div class="col-xs-8 col-sm-8 col-md-8 pull-right">'+
-                                                '<h3 class="text-right">'+response.data.name+' '+response.data.family+'</h3>'+
-                                                '<p class="text-right">به شماره جواز '+response.data.licence_number+'</p>'+
-                                            '</div>'+
-                                        '</div>'+
-                                    '</li>';
+                        var html = '<li class="text-center">' +
+                            '<div class="row noMargin">' +
+                            '<div class="col-xs-4 col-sm-4 col-md-4 pull-right">' +
+                            '<img class="roundCorner fullWidth boxBorder" src="' + response.data.imageCropped + '" alt="">' +
+                            '</div>' +
+                            '<div class="col-xs-8 col-sm-8 col-md-8 pull-right">' +
+                            '<h3 class="text-right">' + response.data.name + ' ' + response.data.family + '</h3>' +
+                            '<p class="text-right">به شماره جواز ' + response.data.licence_number + '</p>' +
+                            '</div>' +
+                            '</div>' +
+                            '</li>';
 
                         $('.selected-category').find('.emptyLabel').remove();
                         $('.selected-category').append(html);
 
-                        $('#myModal3').modal('hide');
+                        // $('#myModal3').modal('hide');
+                        modal.style.display = "none";
 
                         $body.find('.addLicenseCompany').remove();
-                        $body.find('.license-container').prepend($delLicense);
+                        $body.find('.license-container').append($delLicense);
 
                         $.iziToastSuccess(response.msg, '.content .izi-container');
                     }
@@ -589,27 +567,27 @@
         });
 
         if ($('p.error').text().length != 0) {
-            $.iziToastError($('p.error').text(), '.content .izi-container');
+            // $.iziToastError($('p.error').text(), '.content .izi-container');
         }
 
         function emptyModal() {
-            $('#myModal3').find('input[type="text"], input[type="hidden"], input[type="file"], textarea').each(function () {
+            $('#myModal3').find('input[type="text"], input[type="hidden"], input[type="file"], textarea').each(function() {
                 $(this).val("");
                 $(this).siblings('.requiredIcon').empty().text('*');
                 $(this).parent().removeClass('has-error has-success typing');
             });
 
-            $('#myModal3').find('#imageLicence').attr("src", '<?php echo RELA_DIR . "templates/template_fa/assets/images/placeholder.png" ?>');
+            $('#myModal3').find('#imageLicence').attr("src", '<?php echo RELA_DIR . "templates/template_tailwind/assets/images/placeholder.png" ?>');
 
             $('#myModal3').find('#div-licence_type').hide();
         }
 
-        $body.on('click', '.delete-licence', function () {
+        $body.on('click', '.delete-licence', function() {
             var $this = $(this);
 
             if (confirm("از حذف مجوز اطمینان دارید")) {
 
-                $.get('/register/deleteLicenceByAjax/', function (data) {
+                $.get('/register/deleteLicenceByAjax/', function(data) {
                     var response = $.parseJSON(data);
 
                     if (response.result == -1) {
@@ -632,13 +610,13 @@
             }
         });
 
-        $body.on('click', '#toggleLicense', function () {
-            if($(this).is(':checked')) {
+        $body.on('click', '#toggleLicense', function() {
+            if ($(this).is(':checked')) {
                 $body.find('[data-toggle="toggleLicense"]').removeClass('hidden');
             } else {
                 $body.find('[data-toggle="toggleLicense"]').addClass('hidden');
             }
         });
-    });
 
+    });
 </script>

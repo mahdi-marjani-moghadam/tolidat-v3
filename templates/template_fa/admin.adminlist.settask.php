@@ -2,7 +2,7 @@
 
     function show_confirm(id, s, os) {
         if (confirm("Are you sure?")) {
-            window.location = "<?=$_SERVER['PHP_SELF']?>?action=status&id=" + id + "&status=" + s + "&os=" + os;
+            window.location = "<?php echo $_SERVER['PHP_SELF']?>?action=status&id=" + id + "&status=" + s + "&os=" + os;
         }
     }
 
@@ -58,8 +58,8 @@
 
             <form action="" method="post" enctype="multipart/form-data" data-validate="form" novalidate="novalidate">
                 <div class="panel-body">
-                    <?= showWarningMsg($message) ?>
-                    <?= showMsg($redirect) ?>
+                    <?php echo  showWarningMsg($message) ?>
+                    <?php echo  showMsg($redirect) ?>
 
                     <?php
                     $c = 0;
@@ -74,10 +74,10 @@
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
                                         <div class="nice-checkbox">
-                                            <input type="checkbox" name="check_<?= $c; ?>" id="check_<?= $c; ?>"
+                                            <input type="checkbox" name="check_<?php echo  $c; ?>" id="check_<?php echo  $c; ?>"
                                                    value="All">
-                                            <label for="check_<?= $c; ?>" class="text-success rtl">
-                                                <span class="text-inverse"><?= $pageName; ?></span>
+                                            <label for="check_<?php echo  $c; ?>" class="text-success rtl">
+                                                <span class="text-inverse"><?php echo  $pageName; ?></span>
                                             </label>
                                         </div>
                                         <!--/nice-checkbox-->
@@ -96,12 +96,12 @@
                                                 ?>
                                                 <td style="padding: 0 1em;">
                                                     <div class="nice-checkbox">
-                                                        <input type="checkbox" name="permission[<?= $codAction; ?>]"
-                                                               id="permission[<?= $codAction; ?>]"
-                                                               value="<?= $codAction; ?>" <? if ($admin_permission[$codAction - 1] == 1) {
+                                                        <input type="checkbox" name="permission[<?php echo  $codAction; ?>]"
+                                                               id="permission[<?php echo  $codAction; ?>]"
+                                                               value="<?php echo  $codAction; ?>" <? if ($admin_permission[$codAction - 1] == 1) {
                                                             print 'checked="checked"';
                                                         } ?>>
-                                                        <label for="permission[<?= $codAction; ?>]"
+                                                        <label for="permission[<?php echo  $codAction; ?>]"
                                                                class="text-success rtl">
                                                             <span
                                                                 class="text-inverse"><? echo $arrayAction['label']; ?></span>
@@ -166,8 +166,8 @@
       <!-- End .clear -->
 
 
-    <?=showWarningMsg($message)?>
-    <?=showMsg($redirect)?>
+    <?php echo showWarningMsg($message)?>
+    <?php echo showMsg($redirect)?>
     <table class="list" cellspacing="0" border="1">
       <thead>
         <tr>
@@ -189,9 +189,9 @@
 		?>
         <tr>
           <td>
-           <label for="check_<?=$c;?>" style="color: red">
-          <input name="check_<?=$c;?>" onclick="checked1(this,'c_<?=$c?>')" type="checkbox" id="check_<?=$c;?>" value="All"  />
-        <?=$pageName;?> </label>
+           <label for="check_<?php echo $c;?>" style="color: red">
+          <input name="check_<?php echo $c;?>" onclick="checked1(this,'c_<?php echo $c?>')" type="checkbox" id="check_<?php echo $c;?>" value="All"  />
+        <?php echo $pageName;?> </label>
             </td>
           <?php
 		foreach($class->action as $action=>$arrayAction):
@@ -204,7 +204,7 @@
 			  ?>
               <td>
                  <label >
-       		    <input name="permission[<?=$codAction;?>]"  value="<?=$codAction;?>" type="checkbox"  class="cc_<?=$c?>" id="check"
+       		    <input name="permission[<?php echo $codAction;?>]"  value="<?php echo $codAction;?>" type="checkbox"  class="cc_<?php echo $c?>" id="check"
                  <? if($admin_permission[$codAction-1]==1):?>
                  checked="checked"
                  <? endif?>

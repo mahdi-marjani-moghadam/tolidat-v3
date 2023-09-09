@@ -25,7 +25,7 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <strong> خطا: </strong>
                 <br>
-                <?= $message ?>
+                <?php echo  $message ?>
             </div>
 
             <?php } ?>

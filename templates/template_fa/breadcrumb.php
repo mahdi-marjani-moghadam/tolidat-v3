@@ -1,5 +1,5 @@
-<div class="row noMargin">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <?= $list['breadcrumb']?>
+<div class="bg-gray-100 text-gray-500 text-sm pt-1 pb-1">
+    <div class="container mx-auto px-4">
+        <?php echo $list['breadcrumb']?>
     </div>
 </div>

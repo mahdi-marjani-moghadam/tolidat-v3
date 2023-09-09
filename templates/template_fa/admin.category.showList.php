@@ -102,8 +102,8 @@
                                 <td><?php echo $fields['meta_description']; ?></td>
                                 <td><?php echo $fields['img_name']; ?></td>
                                 <td>
-                                    <a href="<?=RELA_DIR?>admin/?component=category&action=edit&id=<?php echo $fields['Category_id']; ?>" name="edit" title="ویرایش">ویرایش</a>
-                                    <a href="<?=RELA_DIR?>admin/?component=category&action=deleteNews&id=<?php echo $fields['Category_id']; ?>" name="delete_news" title="حذف">حذف</a>
+                                    <a href="<?php echo RELA_DIR?>admin/?component=category&action=edit&id=<?php echo $fields['Category_id']; ?>" name="edit" title="ویرایش">ویرایش</a>
+                                    <a href="<?php echo RELA_DIR?>admin/?component=category&action=deleteNews&id=<?php echo $fields['Category_id']; ?>" name="delete_news" title="حذف">حذف</a>
                                 </td>
                             </tr>
                             <?php } ?>

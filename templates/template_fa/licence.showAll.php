@@ -16,7 +16,7 @@
                             <div class="product-group transition">
                                 <a class="displayBlock pr">
                                     <div class="product-item-img pull-right">
-                                        <img class="width transition roundCorner boxBorder lazy" data-src="<?php echo(strlen($value['image']) > 0 ? COMPANY_ADDRESS . $value['company_id'] . '/licence/' . $value['image'] : DEFULT_LOGO_ADDRESS); ?>" alt="<?= ' مجوز ' . $value['title'] ?>" title="<?= $value['title'] ?>">
+                                        <img class="width transition roundCorner boxBorder lazy" data-src="<?php echo(strlen($value['image']) > 0 ? COMPANY_ADDRESS . $value['company_id'] . '/licence/' . $value['image'] : DEFULT_LOGO_ADDRESS); ?>" alt="<?php echo  ' مجوز ' . $value['title'] ?>" title="<?php echo  $value['title'] ?>">
 
                                         <span class="product-overlay transition"></span>
                                     </div>

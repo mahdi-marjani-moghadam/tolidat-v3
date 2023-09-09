@@ -14,7 +14,7 @@
                         </div>
                         <input name="company_id" type="hidden" value="<?php echo $list['company_id']; ?>">
                         <input name="token" type="hidden" value="<?php echo $list['token']; ?>">
-                        <button type="submit" class="btn btn-default btn-success text-center text-ultralight text-white  center-block mt1 roundCorner disabled">                            تایید</button>
+                        <button type="submit" class="btn btn-default btn-success text-center text-ultralight text-white  center-block mt1 roundCorner disabled"> تایید</button>
                     </form>
                 </div>
             </div>
@@ -25,7 +25,22 @@
 <div class="row smallSpace"></div>
 
 <script>
-    $(function () {
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
+    $(function() {
         if ($('.msgSuccess').text().length) {
             $.iziToastSuccess($('.msgSuccess').text());
         }
@@ -34,4 +49,3 @@
         }
     });
 </script>
-

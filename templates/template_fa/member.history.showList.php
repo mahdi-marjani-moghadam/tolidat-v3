@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="holder-title center-block">
-            <span data-intro="در این قسمت سوابق،پروژه ها،رضایت نامه مشتریان و ... را ثبت نمایید."  class="title-pro">سوابق و مشتریان</span>
+            <span data-intro="در این قسمت سوابق،پروژه ها،رضایت نامه مشتریان و ... را ثبت نمایید." class="title-pro">سوابق و مشتریان</span>
             <button data-position="right" data-intro="افزودن سوابق" type="button" class="btn btn-sm pull-left add-btnPro" data-toggle="modal" data-target="#myModal2" data-backdrop="static">
                 <i class="fa fa-plus transition bc-color-orange" aria-hidden="true"></i>
                 <span class="transition">افزودن سوابق</span>
@@ -23,20 +23,20 @@
 <!--box dynamic-->
 <div class="row xsmallSpace"></div>
 <div class="row add-history">
-    <?php if (isset($list['list']) && count($list['list'])): ?>
-        <?php foreach ($list['list'] as $id => $fields): ?>
-            <div class="col-xs-12 col-sm-6 col-md-4 pull-right mb5 remove-history" data-value="<?= $fields['History_d_id'] ?>">
+    <?php if (isset($list['list']) && count($list['list'])) : ?>
+        <?php foreach ($list['list'] as $id => $fields) : ?>
+            <div class="col-xs-12 col-sm-6 col-md-4 pull-right mb5 remove-history" data-value="<?php echo  $fields['History_d_id'] ?>">
                 <div data-intro="لیست سوابق" class="contentPro<?php echo ($fields['status'] == 1) ? '' : ' disable' ?> whiteBg roundCorner boxBorder" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">
                     <h3>
                         <div class="kebabMenu">
                             <a><i class="icon-kebab-menu" aria-hidden="true"></i></a>
                             <ul class="kebab-menu-content roundCorner boxBorder">
-                                <li><a class="link-edit" data-value="<?= $fields['History_d_id'] ?>"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a></li>
-                                <li><a class="link-trash" data-value="<?= $fields['History_d_id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a></li>
+                                <li><a class="link-edit" data-value="<?php echo  $fields['History_d_id'] ?>"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a></li>
+                                <li><a class="link-trash" data-value="<?php echo  $fields['History_d_id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a></li>
                             </ul>
                         </div>
                         <div class="logo">
-                            <img name="image_ajax" class="boxBorder lazy" data-src="<?php echo($fields['image'] ? COMPANY_ADDRESS . $this->company_info['company_id'] . "/history/" . $fields['image'] : DEFULT_LOGO_ADDRESS) ?>" alt="">
+                            <img name="image_ajax" class="boxBorder lazy" data-src="<?php echo ($fields['image'] ? COMPANY_ADDRESS . $this->company_info['company_id'] . "/history/" . $fields['image'] : DEFULT_LOGO_ADDRESS) ?>" alt="">
                         </div>
                         <span class="title"><?php echo $fields['title'] ?></span>
                         <span class="i-date"><i class="fa fa-calendar"></i><?php echo convertDate(substr($fields['date'], 0, 10)) ?></span>
@@ -47,12 +47,12 @@
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?><?php else: ?>
-        <div class="notRecord">
-            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
-            <p class="empty-text">اطلاعاتی موجود نیست!</p>
-        </div>
-    <?php endif; ?>
+            <?php endforeach; ?><?php else : ?>
+            <div class="notRecord">
+                <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
+                <p class="empty-text">اطلاعاتی موجود نیست!</p>
+            </div>
+        <?php endif; ?>
 </div>
 
 <!--Modal add-->
@@ -76,7 +76,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
                             <div class="form-group mb">
-                                <label for="title1" >عنوان را وارد نمایید</label>
+                                <label for="title1">عنوان را وارد نمایید</label>
                                 <input name="title" type="text" class="form-control" id="title1" required data-error="لطفا عنوان را وارد نمایید">
                             </div>
 
@@ -84,7 +84,7 @@
                             <div class="row xxsmallSpace"></div>
 
                             <div class="form-group mb">
-                                <label for="description1" >توضیحات مربوطه را وارد نمایید</label>
+                                <label for="description1">توضیحات مربوطه را وارد نمایید</label>
                                 <textarea name="description" class="form-control" rows="3" id="description1" required data-error="لطفا توضیحات مربوطه را وارد نمایید"></textarea>
                             </div>
 
@@ -101,14 +101,14 @@
                             </a>*/ ?>
                             <div class="docs-buttons">
                                 <div class="img-container upload-msg">
-                                    <img class="width image-crop img-cropper" src="<?php echo(isset($value['image']) ? COMPANY_ADDRESS . $value['Company_id'] . "/logo/" . $value['image'] : '/templates/' . CURRENT_SKIN . '/assets/images/placeholder.png'); ?>" alt="Picture">
+                                    <img class="width image-crop img-cropper" src="<?php echo (isset($value['image']) ? COMPANY_ADDRESS . $value['Company_id'] . "/logo/" . $value['image'] : '/templates/' . CURRENT_SKIN . '/assets/images/placeholder.png'); ?>" alt="Picture">
                                 </div>
                                 <div class="btn-block mt">
                                     <label class="btn-block btn btn-success uploud-btnProCrop pull-right" for="inputImage" title="Upload image file">
                                         <input type="file" class="sr-only" id="inputImage" name="file" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
                                         <input class="result-crop" type="hidden" name="imageCropped" value="">
 
-                                        <span class="docs-tooltip"  data-animation="false" title="Import image with Blob URLs">
+                                        <span class="docs-tooltip" data-animation="false" title="Import image with Blob URLs">
                                             <span><i class="fa fa-pencil" aria-hidden="true"></i></span> <span>انتخاب تصویر</span>
                                         </span>
                                     </label>
@@ -165,7 +165,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
                             <div class="form-group mb">
-                                <label for="title2" >عنوان را وارد نمایید</label>
+                                <label for="title2">عنوان را وارد نمایید</label>
                                 <input name="title" type="text" class="form-control" id="title2" required data-error="لطفا عنوان را وارد نمایید">
                                 <input name="History_d_id" type="hidden">
                             </div>
@@ -174,7 +174,7 @@
                             <div class="row xxsmallSpace"></div>
 
                             <div class="form-group mb">
-                                <label for="description2" >توضیحات را وارد نمایید</label>
+                                <label for="description2">توضیحات را وارد نمایید</label>
                                 <textarea name="description" class="form-control" rows="3" id="description2" required data-error="لطفا توضیحات را وارد نمایید"></textarea>
                             </div>
 
@@ -182,7 +182,7 @@
                             <div class="row xxsmallSpace"></div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6 pull-left">
-                           <!--<a class="logoNew roundCorner">
+                            <!--<a class="logoNew roundCorner">
                                 <img id="image_tmp" name="image_tmp" class="boxBorder roundCorner " src="">
                                 <label for="upload1">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -197,7 +197,7 @@
                                     <label class="btn-block btn btn-success uploud-btnProCrop pull-right" for="inputImage-edit" title="Upload image file">
                                         <input type="file" class="sr-only" id="inputImage-edit" name="file" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
                                         <input class="result-crop" type="hidden" name="imageCropped" value="">
-                                        <span class="docs-tooltip"  data-animation="false" title="Import image with Blob URLs">
+                                        <span class="docs-tooltip" data-animation="false" title="Import image with Blob URLs">
                                             <span><i class="fa fa-pencil" aria-hidden="true"></i></span> <span>ویرایش تصویر</span>
                                         </span>
                                     </label>
@@ -232,18 +232,33 @@
 
 <!--ajax-->
 <script>
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
     $(document).ready(function() {
         var modal_edit = $('#myModal1');
         var modal_add = $('#myModal2'),
-        $body = $('body');
+            $body = $('body');
 
-        $("#addHistory").on("submit", function (e) {
+        $("#addHistory").on("submit", function(e) {
             e.preventDefault();
             var form = $('.form')[0];
             var formData = new FormData(form);
             $('.errorHandler').text('');
             $.httpRequest('/member/history/add/', 'post', formData)
-                .then(function (data) {
+                .then(function(data) {
                     var response = $.parseJSON(data);
                     if (response.result == -1) {
                         $.iziToastError(response.msg, '.iziAdd-container');
@@ -260,33 +275,33 @@
                             image_name = response.fields.image,
                             defaltLogo = response.fields.defaltLogo,
                             description = response.fields['description'],
-                            html =  '<div class="col-xs-12 col-sm-6 col-md-4 pull-right mb5 remove-history" data-value="' + history_d_id + '">' +
-                                '<div class="contentPro disable whiteBg roundCorner boxBorder" ' + 'data-toggle="tooltip" data-placement="bottom" title="" ' + 'data-original-title="">' +
-                                '<h3>' +
-                                '<div class="kebabMenu">' +
-                                '<a><i class="icon-kebab-menu" aria-hidden="true"></i></a>' +
-                                '<ul class="kebab-menu-content roundCorner boxBorder">' +
-                                '<li><a class="link-edit" data-value="' + history_d_id +'"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a></li>' +
-                                '<li><a class="link-trash" data-value="' + history_d_id +'"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a></li>' +
-                                '</ul>' +
-                                '</div>' +
-                                '<div class="logo"><img name="image_ajax" class="boxBorder" src="' + (image_name != null ? image : defaltLogo) + '"' + ' alt=""></div>' +
-                                '<span class="title">' + title + '</span>' +
-                                '<span class="i-date"><i class="fa fa-calendar"></i>' + date + '</span>' +
-                                '</h3>' +
-                                '<div class="text">' +
-                                '<p>' + description + '</p>' +
-                                '<span class="submit-msg">&#10006; تایید نشده</span>' +
-                                '</div>' +
-                                '</div>' +
-                                '</div>';
+                            html = '<div class="col-xs-12 col-sm-6 col-md-4 pull-right mb5 remove-history" data-value="' + history_d_id + '">' +
+                            '<div class="contentPro disable whiteBg roundCorner boxBorder" ' + 'data-toggle="tooltip" data-placement="bottom" title="" ' + 'data-original-title="">' +
+                            '<h3>' +
+                            '<div class="kebabMenu">' +
+                            '<a><i class="icon-kebab-menu" aria-hidden="true"></i></a>' +
+                            '<ul class="kebab-menu-content roundCorner boxBorder">' +
+                            '<li><a class="link-edit" data-value="' + history_d_id + '"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a></li>' +
+                            '<li><a class="link-trash" data-value="' + history_d_id + '"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '<div class="logo"><img name="image_ajax" class="boxBorder" src="' + (image_name != null ? image : defaltLogo) + '"' + ' alt=""></div>' +
+                            '<span class="title">' + title + '</span>' +
+                            '<span class="i-date"><i class="fa fa-calendar"></i>' + date + '</span>' +
+                            '</h3>' +
+                            '<div class="text">' +
+                            '<p>' + description + '</p>' +
+                            '<span class="submit-msg">&#10006; تایید نشده</span>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
                         $('.add-history').append(html);
                         $('.notRecord').remove();
-                        $('#addHistory').find('input, textarea').each(function () {
+                        $('#addHistory').find('input, textarea').each(function() {
                             $(this).val("");
                         });
-                        $('#addHistory').find('img').each(function () {
-                            $(this).attr("src", '<?php echo RELA_DIR . "templates/template_fa/assets/images/placeholder.png" ?>');
+                        $('#addHistory').find('img').each(function() {
+                            $(this).attr("src", '<?php echo RELA_DIR . "templates/template_tailwind/assets/images/placeholder.png" ?>');
                         });
                         modal_add.modal('hide');
                         $.iziToastSuccess(response.msg, '.izi-container');
@@ -294,14 +309,14 @@
                 });
         });
 
-        $("#editHistory").on("submit", function (e) {
+        $("#editHistory").on("submit", function(e) {
             e.preventDefault();
             var form = $('.form')[1];
             var formData = new FormData(form);
             $('.errorHandler').text('');
 
             $.httpRequest('/member/history/edit/', 'post', formData)
-                .then(function (data) {
+                .then(function(data) {
                     var response = $.parseJSON(data);
 
                     if (response.result == -1) {
@@ -321,7 +336,7 @@
                         var image = response.fields.img;
                         var image_name = response.fields.image;
                         var defaltLogo = response.fields.defaltLogo;
-                        $(".remove-history").each(function () {
+                        $(".remove-history").each(function() {
                             if ($(this).data('value') == history_d_id_old || $(this).data('value') == history_d_id_oldest) {
                                 $(this).data('value', history_d_id);
                                 $(this).find('.link-trash').data('value', history_d_id);
@@ -342,7 +357,7 @@
                 });
         });
 
-        $('.link-edit').on('click', function (e) {
+        $('.link-edit').on('click', function(e) {
             e.preventDefault();
             var $this = $(this);
             var dataID = $(this).data('value');
@@ -350,7 +365,7 @@
             editItem(dataID, $this);
         });
 
-        $body.on('click', '.kebab-menu-content .link-edit', function (e) {
+        $body.on('click', '.kebab-menu-content .link-edit', function(e) {
             e.preventDefault();
             var $this = $(this);
             var dataID = $(this).data('value');
@@ -359,18 +374,20 @@
         });
 
         function editItem(dataID, $this) {
-            $this.find('input, textarea').each(function () {
+            $this.find('input, textarea').each(function() {
                 $this.val("");
             });
-            $this.find('img').each(function () {
+            $this.find('img').each(function() {
                 $this.attr("src", "");
             });
 
-            $.post('/member/history/editAjax/', {id: dataID}, function (data) {
+            $.post('/member/history/editAjax/', {
+                id: dataID
+            }, function(data) {
                 var result = $.parseJSON(data);
                 var fields = result.fields;
 
-                $.each(fields, function (key, value) {
+                $.each(fields, function(key, value) {
 
                     if (key == 'image_tmp') {
                         modal_edit.find('[name="' + key + '"]').attr('src', value);
@@ -379,8 +396,8 @@
                     }
                 });
 
-                $('body').find('input[type="text"], input[type="email"], input[type="name"], input[type="password"], textarea').each(function(){
-                    if($(this).val().length != 0) {
+                $('body').find('input[type="text"], input[type="email"], input[type="name"], input[type="password"], textarea').each(function() {
+                    if ($(this).val().length != 0) {
                         $(this).parent().addClass('typing');
                     }
                 });
@@ -416,28 +433,34 @@
                 position: 'center',
                 message: lastItem === 1 ? "با حذف کردن این آیتم امتیاز مرتبط با این موضوع از امتیاز کل شما کسر خواهد شد" : "<p></p>",
                 buttons: [
-                    ['<button class="btn btn-success btn-sm pull-right" style="margin-left: 1em;">بله</button>', function (instance, toast) {
+                    ['<button class="btn btn-success btn-sm pull-right" style="margin-left: 1em;">بله</button>', function(instance, toast) {
 
-                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        instance.hide({
+                            transitionOut: 'fadeOut'
+                        }, toast, 'button');
                         deleteItem(dataID)
 
                     }, true],
-                    ['<button class="btn btn-danger btn-sm pull-left">انصراف</button>', function (instance, toast) {
-                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                    ['<button class="btn btn-danger btn-sm pull-left">انصراف</button>', function(instance, toast) {
+                        instance.hide({
+                            transitionOut: 'fadeOut'
+                        }, toast, 'button');
                     }]
                 ]
             });
         });
 
         function deleteItem(dataID) {
-            var postData = {id: dataID};
+            var postData = {
+                id: dataID
+            };
             $.httpRequest('/member/history/delete/', 'post', postData, false)
-                .then(function (data) {
+                .then(function(data) {
                     var response = $.parseJSON(data);
                     if (response.result == 1) {
                         var history_d_id = response.fields.History_d_id;
                         var i = 0;
-                        $(".remove-history").each(function () {
+                        $(".remove-history").each(function() {
                             i++;
                             if ($(this).data('value') == history_d_id) {
                                 $(this).remove();
@@ -445,9 +468,9 @@
                             }
                         });
                         if (i == 1) {
-                            var image = "<?php echo RELA_DIR; ?>" + "templates/template_fa/assets/images/empty01.png" ;
+                            var image = "<?php echo RELA_DIR; ?>" + "templates/template_tailwind/assets/images/empty01.png";
                             var html = '<div class="notRecord">' +
-                                '<img class="empty-img center-block" src="'+image+'">' +
+                                '<img class="empty-img center-block" src="' + image + '">' +
                                 '<p class="empty-text">اطلاعاتی موجود نیست!</p>';
                             $('.add-history').append(html);
                         }

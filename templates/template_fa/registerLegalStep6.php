@@ -1,11 +1,17 @@
-<link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/bower_components/izitoast/dist/css/iziToast.min.css">
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN; ?>/bower_components/izitoast/dist/js/iziToast.min.js"></script>
-<script src="<?php echo RELA_DIR; ?>templates/template_fa/assets/js/jquery.animateNumber.min.js"></script>
-<script src="<?php echo RELA_DIR; ?>templates/template_fa/assets/js/priceList.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN; ?>/assets/js/validator.min.js"></script>
-<link rel="stylesheet" href="<?php echo RELA_DIR; ?>templates/template_fa/assets/css/styleprice.css">
+<link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/iziToast.min.css">
+<link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/styleprice.css">
+<link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/font-awesome.min.css">
 
-<div class="row">
+
+<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/priceList.js"></script>
+<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/jquery.animateNumber.min.js"></script>
+<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/iziToast.min.js"></script>
+<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/validator.min.js"></script>
+
+
+
+
+<div class="container mx-auto py-8 px-4">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="Breadcrumb">
             <a class="home-icon" href="<?php echo RELA_DIR ?>">
@@ -15,314 +21,231 @@
             <a class="container-address" href="<?php echo RELA_DIR . "register" ?>">
                 <span>ثبت نام</span></a>
             <i class="fa slash-left fa-angle-left" aria-hidden="true"></i>
-            <a class="container-destination"><span>تعرفه پکیج ها</span></a>
+            <a class="container-destination"><span>مرحله ۶ - انتخاب پکیج  </span></a>
         </div>
     </div>
 </div>
-<section class="container noPadding container-register" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-    <div class="boxContainer reg-container">
-        <div class="registerPage center-block whiteBg boxBorder roundCorner boxContainer">
-            <header>
-                <div class="">لطفا پکیج مورد نظر را انتخاب نمایید</div>
-                <span class="title-badge">مرحله</span>
-                <a class="container-badge" href="#"><div class="badge">5 از 6</div></a>
-            </header>
-            <div class="content">
-                <form action="" method="post" name="form1" id="form1" role="form" novalidate="novalidate" data-toggle="validator">
-                    <input class="packageType" name="package_type" type="hidden" value="<?php echo($list['packages'][1]['Package_id']) ?>">
-                    <input type="hidden" class="packagesList" value='<?php echo json_encode($list['packages']); ?>'>
 
-                    <?php /*<div class="container boxPriceContainer" style="max-width: 700px !important;">
-                        <div class="row xsmallSpace"></div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 pull-right mb3">
-                                <div class="boxPrice free">
-                                    <div class="box-title">
-                                        <h3 class="text-center rtl">پکیج <span>رایگان</span></h3>
-                                    </div>
-                                    <ul class="price-list">
-                                        <li class="empty"></li>
-                                        <li class="rtl text-right">
-                                            <i class="fa fa-cubes green-color pull-right text-center"></i>
-                                            محصولات / خدمات
-                                            <span class="pull-left"><i class="fa fa-times text-danger"></i></span>
-                                        </li>
-                                        <li class="rtl text-right">
-                                            <i class="fa fa-list green-color pull-right text-center"></i>
-                                            دسته بندی
-                                            <span class="pull-left"><i class="fa fa-times text-danger"></i></span>
-                                        </li>
-                                        <li class="rtl text-right">
-                                            <i class="fa fa-search-plus green-color pull-right text-center"></i>
-                                            کلمات کلیدی
-                                            <span class="pull-left text-right cat">1</span>
-                                        </li>
-                                        <li class="rtl text-right">
-                                            <i class="fa fa-sitemap green-color pull-right text-center"></i>
-                                            شعبه
-                                            <span class="pull-left"><i class="fa fa-times text-danger"></i></span>
-                                        </li>
-                                        <li class="rtl text-right">
-                                            <i class="fa fa-building green-color pull-right text-center"></i>
-                                            نمایندگی
-                                            <span class="pull-left"><i class="fa fa-times text-danger"></i></span>
-                                        </li>
-                                        <li class="rtl text-right">
-                                            <i class="fa fa-briefcase green-color pull-right text-center"></i>
-                                            فرصت های شغلی
-                                            <span class="pull-left"><i class="fa fa-times text-danger"></i></span>
-                                        </li>
-                                        <li class="rtl text-center choose-button">
-                                            <button data-id="0" type="submit" class="btn btn-default btn-block free choosePkg">انتخاب</button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 pull-right mb3">
-                                <div class="boxPrice bronze">
-                                    <div class="tab-container">
-                                        <ul></ul>
-                                    </div>
-                                    <div class="box-title">
-                                        <h3 class="white-color text-center rtl">پکیج <span class="package-type">برنز</span></h3>
+<div class="container mx-auto py-8 px-4">
+    <section class="container noPadding container-register" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+        <div class="shadow rounded-md overflow-hidden          boxContainer reg-container">
+            <div class="registerPage center-block whiteBg boxBorder roundCorner boxContainer relative">
 
-                                        <div class="white-color price-container rtl text-center"><span class="price-holder"><?php echo $list['packages'][1]['price']; ?></span> ریال / سالیانه</div>
-                                    </div>
-                                    <ul class="price-list">
-                                        <li class="counter-holder">
-                                            <div class="category pull-right">
-                                                <h6 class="text-center text-danger">دسته بندی</h6>
-                                                <span class="cat count-holder text-center pull-left"><?php echo $list['packages'][1]['category']; ?></span>
-                                                <button type="button" class="plus text-center pull-right"></button>
-                                            </div>
+                <div class="flex flex-col-reverse sm:flex-row items-center px-6 py-2 shadow">
+                    <span class="block text-center sm:text-justify">لطفا پکیج مورد نظر را انتخاب نمایید</span>
+                    <a class="justify-items-end mx-auto ml-auto sm:ml-0 mb-2 sm:mb-0 border-2 rounded-3xl border-tolidatColor px-2        container-badge" href="#">
+                        <div class="badge"><span class="title-badge">مرحله</span> 6 از 7 </div>
+                    </a>
+                </div>
 
-                                            <div class="product pull-left">
-                                                <h6 class="text-center text-danger">محصولات / خدمات</h6>
-                                                <span class="prod count-holder text-center pull-left"><?php echo $list['packages'][1]['product']; ?></span>
-                                                <button type="button" class="minus text-center pull-left" disabled></button>
-                                            </div>
-                                        </li>
-                                        <li class="rtl text-right">
-                                            <i class="fa fa-search-plus green-color pull-right text-center"></i>
-                                            کلمات کلیدی
-                                            <span class="pull-left"><i class="fa fa-check text-success"></i></span>
-                                        </li>
-                                        <li class="rtl text-right">
-                                            <i class="fa fa-sitemap green-color pull-right text-center"></i>
-                                            شعبه
-                                            <span class="pull-left"><i class="fa fa-check text-success"></i></span>
-                                        </li>
-                                        <li class="rtl text-right">
-                                            <i class="fa fa-building green-color pull-right text-center"></i>
-                                            نمایندگی
-                                            <span class="pull-left"><i class="fa fa-check text-success"></i></span>
-                                        </li>
-                                        <li class="rtl text-right">
-                                            <i class="fa fa-briefcase green-color pull-right text-center"></i>
-                                            فرصت های شغلی
-                                            <span class="pull-left"><i class="fa fa-check text-success"></i></span>
-                                        </li>
-                                        <li class="rtl text-center choose-button">
-                                            <button type="submit" data-id="<?php echo($list['packages'][1]['Package_id']) ?>" class="btn btn-default btn-block bronze white-color choosePkg">انتخاب</button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row xsmallSpace"></div>
-                    </div>*/?>
-
-                    <!-- separator -->
-                    <div class="row xxsmallSpace"></div>
+                <div class="p-3 sm:p-6         content">
+                   
 
                     <div class="packageHolder hidden">
                         <h4 class="text-center">پکیح انتخابی شما : <span></span></h4>
                         <h5 class="text-center text-danger">در صورت مورد تأیید بودن پکیج مورد نظر، بر روی دکمه انتخاب کلیک نمایید</h5>
                     </div>
 
-                    <!-- separator -->
-                    <div class="row xxsmallSpace"></div>
 
-                    <div class="table-responsive center-block paddingRl no-border" style="max-width: 950px !important;">
-                        <table class="table table-bordered table-striped table-price">
-                            <thead>
-                            <tr style="height: 70px;">
-                                <th class="package">
-                                    <span class="tablePackageNames">پکیج (سالیانه)</span>
-                                    <hr>
-                                    <span class="tableFeatures">امکانات</span>
-                                </th>
-                                <th class="package text-center free">رایگان</th>
-                                <?php
-                                foreach ($list['packages'] as $package) {
-                                    ?>
-                                    <th data-packagefa="<?php echo $package['packagetype']; ?>" data-packagename="<?php echo $package['englishTitle'] ?>" class="package text-white text-center <?php echo $package['englishTitle'] ?>"><?php echo $package['packagetype']; ?></th>
-                                    <?php
-                                }
-                                ?>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="text-right" style="width: 200px;">پروفایل شخصی</td>
-                                <td class="text-center text-danger"><i class="fa fa-times"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="text-right">دسته بندی</td>
-                                <td class="text-center text-bold text-danger">1</td>
-                                <?php
-                                foreach ($list['packages'] as $package) {
-                                    ?>
-                                    <td class="text-center text-bold text-danger"><?php echo $package['category']; ?></td>
-                                    <?php
-                                }
-                                ?>
-                            </tr>
-                            <tr>
-                                <td class="text-right">ماژول محصول / خدمات</td>
-                                <td class="text-center text-danger"><i class="fa fa-times"></i></td>
-                                <?php
-                                foreach ($list['packages'] as $package) {
-                                    ?>
-                                    <td class="text-center text-bold text-danger"><?php echo $package['product']; ?></td>
-                                    <?php
-                                }
-                                ?>
-                            </tr>
-                            <tr>
-                                <td class="text-right">ماژول سوابق و مشتریان</td>
-                                <td class="text-center text-danger"><i class="fa fa-times"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="text-right">ماژول نام تجاری</td>
-                                <td class="text-center text-danger"><i class="fa fa-times"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="text-right">ماژول افتخارات</td>
-                                <td class="text-center text-danger"><i class="fa fa-times"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="text-right">ماژول اخبار و رویداد</td>
-                                <td class="text-center text-danger"><i class="fa fa-times"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="text-right">ماژول نمایندگی / شعبه</td>
-                                <td class="text-center text-danger"><i class="fa fa-times"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="text-right">ماژول فرصت های شغلی</td>
-                                <td class="text-center text-danger"><i class="fa fa-times"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="text-right">ماژول آگهی ها</td>
-                                <td class="text-center text-danger"><i class="fa fa-times"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="text-right">ماژول فرم تماس</td>
-                                <td class="text-center text-danger"><i class="fa fa-times"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="text-right">کلمات کلیدی</td>
-                                <td class="text-center text-danger"><i class="fa fa-times"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                                <td class="text-center text-success"><i class="fa fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2" class="text-right text-danger text-bold" style="vertical-align: middle">قیمت نهایی (ریال)</td>
-                                <td class="text-center">رایگان</td>
-                                <?php
-                                foreach ($list['packages'] as $package) {
-                                    ?>
-                                    <td class="text-center text-danger text-bold"><?php echo number_format((int)$package['price'], 0); ?></td>
-                                    <?php
-                                }
-                                ?>
-                            </tr>
-                            <tr class="choose-button">
-                                <td class="text-center">
-                                    <button data-id="0" type="submit" class="btn btn-default btn-block free choosePkg">انتخاب پکیج رایگان</button>
-                                </td>
-                                <?php
-                                foreach ($list['packages'] as $package) {
-                                    ?>
-                                    <td class="text-center">
-                                        <button type="submit" data-id="<?php echo $package['Package_id']; ?>" class="btn btn-block white-color choosePkg <?php echo $package['englishTitle']; ?>">انتخاب پکیج <?php echo $package['packagetype']; ?></button>
-                                    </td>
-                                    <?php
-                                }
-                                ?>
-                            </tr>
-                            </tbody>
-                        </table>
+                    
+
+                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-<?php echo count($list['packages']) ?> items-start md:gap-y-16 gap-x-4 container mx-auto">
+
+                        <?php
+
+                        foreach ($list['packages'] as $package) {
+                            if ($package['englishTitle'] == 'bronze') {
+                                $bgColor1 = 'yellow-600';
+                                $bgColor2 = 'yellow-500';
+                            } else if ($package['englishTitle'] == 'gold') {
+                                $bgColor1 = 'yellow-300';
+                                $bgColor2 = 'yellow-100';
+                            } else if ($package['englishTitle'] == 'silver') {
+                                $bgColor1 = 'gray-300';
+                                $bgColor2 = 'gray-200';
+                            } else {
+                                $bgColor1 = 'gray-100';
+                                $bgColor2 = 'gray-50';
+                            }
+                        ?>
+                            <form action="/register/?step=7" method="post" name="form1" id="form<?php echo ($package['Package_id']) ?>" data-packagetype='<?php echo ($package['Package_id']) ?>' role="form" novalidate="novalidate" data-toggle="validator">
+                                <input type="hidden" class="packagesList" value='<?php echo json_encode($list['packages']); ?>'>
+                                <input class="packageType" name="package_type" type="hidden" value="<?php echo ($package['Package_id']) ?>">
+                                <div class="w-full px-4 py-4 mt-6 shadow-lg bg- rounded-lg bg-gradient-to-r from-<?php echo $bgColor1 ?> via-<?php echo $bgColor2 ?> to-<?php echo $bgColor1 ?>">
+                                    <div class="px-4 pt-6 pb-6">
+                                        <div class="flex justify-center">
+                                            <span class="inline-flex px-4 py-1 rounded-full text-xl leading-5 font-semibold tracking-wide uppercase">
+                                                <?php echo $package['packagetype']; ?>
+                                            </span>
+                                        </div>
+                                        <div class="mt-4 flex justify-center text-4xl leading-none font-extrabold">
+                                            <?php if ((int)$package['price']) : ?>
+                                                <?php echo number_format((int)$package['price'], 0); ?>
+                                                <span class="pt-5 text-sm leading-8 font-medium text-gray-600">
+                                                    <span>تومان / سالیانه</span>
+                                                </span>
+                                            <?php else : ?>
+
+                                            <?php endif; ?>
+
+                                        </div>
+                                    </div>
+                                    <p class="text-md mt-4">
+                                        امکانات:
+                                    </p>
+                                    <ul class="text-sm w-full mt-6 mb-6">
+                                        <li class="mb-3 flex items-center">
+                                            <svg class="h-6 w-6 ml-2" xmlns="http://www.w3.org/2000/svg" width="6" height="6" stroke="currentColor" fill="green" viewBox="0 0 1792 1792">
+                                                <path d="M1412 734q0-28-18-46l-91-90q-19-19-45-19t-45 19l-408 407-226-226q-19-19-45-19t-45 19l-91 90q-18 18-18 46 0 27 18 45l362 362q19 19 45 19 27 0 46-19l543-543q18-18 18-45zm252 162q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z">
+                                                </path>
+                                            </svg>
+                                            پروفایل شخصی
+                                        </li>
+                                        <li class="mb-3 flex items-center">
+                                            <span class="h-6 w-6 ml-2 text-center text-white  rounded-full bg-red-400 leading-7"><?php echo $package['category']; ?></span>
+                                            دسته بندی
+                                        </li>
+                                        <li class="mb-3 flex items-center ">
+                                            <span class="h-6 w-6 ml-2 text-center text-white  rounded-full bg-red-400 leading-7"><?php echo $package['product']; ?></span>
+                                            ماژول محصول / خدمات
+                                        </li>
+                                        <li class="mb-3 flex items-center">
+                                            <svg class="h-6 w-6 ml-2" xmlns="http://www.w3.org/2000/svg" width="6" height="6" stroke="currentColor" fill="green" viewBox="0 0 1792 1792">
+                                                <path d="M1412 734q0-28-18-46l-91-90q-19-19-45-19t-45 19l-408 407-226-226q-19-19-45-19t-45 19l-91 90q-18 18-18 46 0 27 18 45l362 362q19 19 45 19 27 0 46-19l543-543q18-18 18-45zm252 162q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z">
+                                                </path>
+                                            </svg>
+                                            ماژول سوابق و مشتریان
+                                        </li>
+                                        <li class="mb-3 flex items-center">
+                                            <svg class="h-6 w-6 ml-2" xmlns="http://www.w3.org/2000/svg" width="6" height="6" stroke="currentColor" fill="green" viewBox="0 0 1792 1792">
+                                                <path d="M1412 734q0-28-18-46l-91-90q-19-19-45-19t-45 19l-408 407-226-226q-19-19-45-19t-45 19l-91 90q-18 18-18 46 0 27 18 45l362 362q19 19 45 19 27 0 46-19l543-543q18-18 18-45zm252 162q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z">
+                                                </path>
+                                            </svg>
+                                            ماژول نام تجاری
+                                        </li>
+                                        <li class="mb-3 flex items-center">
+                                            <svg class="h-6 w-6 ml-2" xmlns="http://www.w3.org/2000/svg" width="6" height="6" stroke="currentColor" fill="green" viewBox="0 0 1792 1792">
+                                                <path d="M1412 734q0-28-18-46l-91-90q-19-19-45-19t-45 19l-408 407-226-226q-19-19-45-19t-45 19l-91 90q-18 18-18 46 0 27 18 45l362 362q19 19 45 19 27 0 46-19l543-543q18-18 18-45zm252 162q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z">
+                                                </path>
+                                            </svg>
+                                            ماژول افتخارات
+                                        </li>
+                                        <li class="mb-3 flex items-center">
+                                            <svg class="h-6 w-6 ml-2" xmlns="http://www.w3.org/2000/svg" width="6" height="6" stroke="currentColor" fill="green" viewBox="0 0 1792 1792">
+                                                <path d="M1412 734q0-28-18-46l-91-90q-19-19-45-19t-45 19l-408 407-226-226q-19-19-45-19t-45 19l-91 90q-18 18-18 46 0 27 18 45l362 362q19 19 45 19 27 0 46-19l543-543q18-18 18-45zm252 162q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z">
+                                                </path>
+                                            </svg>
+                                            ماژول اخبار و رویداد
+                                        </li>
+                                        <li class="mb-3 flex items-center">
+                                            <svg class="h-6 w-6 ml-2" xmlns="http://www.w3.org/2000/svg" width="6" height="6" stroke="currentColor" fill="green" viewBox="0 0 1792 1792">
+                                                <path d="M1412 734q0-28-18-46l-91-90q-19-19-45-19t-45 19l-408 407-226-226q-19-19-45-19t-45 19l-91 90q-18 18-18 46 0 27 18 45l362 362q19 19 45 19 27 0 46-19l543-543q18-18 18-45zm252 162q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z">
+                                                </path>
+                                            </svg>
+                                            ماژول نمایندگی / شعبه
+                                        </li>
+                                        <li class="mb-3 flex items-center">
+                                            <svg class="h-6 w-6 ml-2" xmlns="http://www.w3.org/2000/svg" width="6" height="6" stroke="currentColor" fill="green" viewBox="0 0 1792 1792">
+                                                <path d="M1412 734q0-28-18-46l-91-90q-19-19-45-19t-45 19l-408 407-226-226q-19-19-45-19t-45 19l-91 90q-18 18-18 46 0 27 18 45l362 362q19 19 45 19 27 0 46-19l543-543q18-18 18-45zm252 162q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z">
+                                                </path>
+                                            </svg>
+                                            ماژول فرصت های شغلی
+                                        </li>
+                                        <li class="mb-3 flex items-center">
+                                            <svg class="h-6 w-6 ml-2" xmlns="http://www.w3.org/2000/svg" width="6" height="6" stroke="currentColor" fill="green" viewBox="0 0 1792 1792">
+                                                <path d="M1412 734q0-28-18-46l-91-90q-19-19-45-19t-45 19l-408 407-226-226q-19-19-45-19t-45 19l-91 90q-18 18-18 46 0 27 18 45l362 362q19 19 45 19 27 0 46-19l543-543q18-18 18-45zm252 162q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z">
+                                                </path>
+                                            </svg>
+                                            ماژول آگهی ها
+                                        </li>
+                                        <li class="mb-3 flex items-center">
+                                            <svg class="h-6 w-6 ml-2" xmlns="http://www.w3.org/2000/svg" width="6" height="6" stroke="currentColor" fill="green" viewBox="0 0 1792 1792">
+                                                <path d="M1412 734q0-28-18-46l-91-90q-19-19-45-19t-45 19l-408 407-226-226q-19-19-45-19t-45 19l-91 90q-18 18-18 46 0 27 18 45l362 362q19 19 45 19 27 0 46-19l543-543q18-18 18-45zm252 162q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z">
+                                                </path>
+                                            </svg>
+                                            ماژول فرم تماس
+                                        </li>
+                                        <!-- <li class="mb-3 flex items-center">
+                                            <svg class="h-6 w-6 ml-2" xmlns="http://www.w3.org/2000/svg" width="6" height="6" stroke="currentColor" fill="green" viewBox="0 0 1792 1792">
+                                                <path d="M1412 734q0-28-18-46l-91-90q-19-19-45-19t-45 19l-408 407-226-226q-19-19-45-19t-45 19l-91 90q-18 18-18 46 0 27 18 45l362 362q19 19 45 19 27 0 46-19l543-543q18-18 18-45zm252 162q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z">
+                                                </path>
+                                            </svg>
+                                            کلمات کلیدی
+                                        </li> -->
+                                    </ul>
+
+                                    <button type="submit" data-id="<?php echo $package['Package_id']; ?>" class="block text-center choosePkg <?php echo $package['englishTitle']; ?> w-full px-3 py-3 text-sm shadow rounded-lg text-white bg-tolidatColor hover:bg-orange-600 transition-colors duration-700 transform">
+                                        انتخاب پکیج <?php echo $package['packagetype']; ?>
+                                    </button>
+
+
+
+
+
+                                </div>
+                                <input name="step" type="hidden" value="7">
+                                <input name="company_type" type="hidden" value="1">
+                            </form>
+                        <?php
+                        }
+                        ?>
                     </div>
 
-                    <!-- separator -->
-                    <div class="row xsmallSpace"></div>
 
-                    <input name="step" type="hidden" value="7">
-                    <input  name="company_type" type="hidden" value="1">
-                </form>
-                <form action="" method="post" name="form1" id="form1" role="form" novalidate="novalidate"
-                        data-toggle="validator">
-                    <input name="step" type="hidden" value="5">
-                    <input name="company_type" type="hidden" value="1">
-                    <button name="step2" type="submit" class="btn btn-danger btn-sm reg-btn-p">مرحله قبل
-                        <span class="fa fa-angle-right"></span>
-                    </button>
-                </form>
+
+
+                    <form action="" method="post" name="form1" id="form1" role="form" novalidate="novalidate" data-toggle="validator">
+                        <input name="step" type="hidden" value="5">
+                        <input name="company_type" type="hidden" value="1">
+                        <button name="step2" type="submit" class="absolute right-6 bottom-2 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600        btn btn-danger btn-sm reg-btn-p">
+                            مرحله قبل
+                        </button>
+                    </form>
+                </div>
+
+                <div class="bg-gray-50 h-14 mt-4 sm:mt-16"></div>
             </div>
         </div>
-    </div>
-</section>
-<p class="error"><?php echo $list['validate']['msg'] ?></p>
+    </section>
+    <p class="error"><?php echo $list['validate']['msg'] ?></p>
+</div>
+
+
+
+
+
+
 
 <script>
-    $(function () {
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
+    $(function() {
         if ($('p.error').text().length != 0) {
             $.iziToastError($('p.error').text(), '.content');
         }
+
+
+        var packageType = parseInt(window.localStorage.getItem('packageType'));
+        if(packageType != undefined & packageType != ''){
+            $("#form"+packageType).submit();
+            // console.log(packageType);
+        }
     });
 
-    $('.cart a').on('click', function () {
+    $('.cart a').on('click', function() {
         var id = $(this).data('id');
         if (id == '0') {
             $('.reg-btn-n').empty().html('ثبت<span class="fa fa-angle-left"></span>');
@@ -331,19 +254,17 @@
         }
     });
 
-    var packageType = parseInt(window.localStorage.getItem('packageType')) + 2,
-        activePackageColor = $('.table-price thead th:nth-child('+packageType+')').data('packagename'),
-        activePackagefa = $('.table-price thead th:nth-child('+packageType+')').data('packagefa');
+    // var packageType = parseInt(window.localStorage.getItem('packageType')) + 2,
+    //     activePackageColor = $('.table-price thead th:nth-child('+packageType+')').data('packagename'),
+    //     activePackagefa = $('.table-price thead th:nth-child('+packageType+')').data('packagefa');
 
-    if(packageType !== null) {
-        $('.packageHolder').removeClass('hidden');
-        $('.packageHolder').find('span').html(activePackagefa).addClass(activePackageColor);
+    // if(packageType !== null) {
+    //     $('.packageHolder').removeClass('hidden');
+    //     $('.packageHolder').find('span').html(activePackagefa).addClass(activePackageColor);
 
 
-        $('.table-price tbody tr').each(function() {
-            $(this).find('td:nth-child('+packageType+')').addClass('active '+activePackageColor);
-        });
-    }
-
+    //     $('.table-price tbody tr').each(function() {
+    //         $(this).find('td:nth-child('+packageType+')').addClass('active '+activePackageColor);
+    //     });
+    // }
 </script>
-

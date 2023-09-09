@@ -34,7 +34,7 @@
 
                                     <li class="repeat-list">
                                         <div class="product-Grouping roundCorner transition">
-                                            <a class="link-product-Grouping" href="<?= RELA_DIR . 'product/show/' . $value['Product_id'] ?>">
+                                            <a class="link-product-Grouping" href="<?php echo  RELA_DIR . 'product/show/' . $value['Product_id'] ?>">
                                                 <div class="detail-repeat-list">
                                                     <div class="logoContainer-img-detail">
                                                         <img data-title="محصولات" class="transition lazy" data-src="<?php echo(isset($value['image']) ? COMPANY_ADDRESS . $value['company_id'] . '/' . $list['export']['folder_name'] . '/' . $value['image'] : DEFULT_LOGO_ADDRESS); ?>">
@@ -60,7 +60,7 @@
                     <ul class="container-repeat-list">
                         <li class="repeat-list">
                             <div class="product-Grouping roundCorner transition">
-                                <a class="link-product-Grouping" href="<?= RELA_DIR . 'product/' . $value['Product_id'] ?>">
+                                <a class="link-product-Grouping" href="<?php echo  RELA_DIR . 'product/' . $value['Product_id'] ?>">
                                     <div class="detail-repeat-list">
                                         <div class="logoContainer-img-detail">
                                             <img data-title="گواهی ها" class="width transition roundCorner boxBorder lazy" data-src="<?php echo(isset($value['image']) ? COMPANY_ADDRESS . $list['export']['folder_name'] . '/' . $value['image'] : DEFULT_LOGO_ADDRESS);?>" alt="">
@@ -92,7 +92,7 @@
 
                         <div class="col-xs-6 col-sm-6 col-md-4 pull-right">
                             <div class="innerContent content-detailP2 mb-double">
-                                <a href="<?= RELA_DIR . "employment/" . $value['Employment_id'] ?>">
+                                <a href="<?php echo  RELA_DIR . "employment/" . $value['Employment_id'] ?>">
                                     <article
                                             class="width article-product text-right pull-right mt  whiteBg boxBorder article-employment">
                                         <span class="mt"><?php echo $value['title'] ?></span>

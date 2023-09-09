@@ -5,7 +5,7 @@
 <!-- footer of website -->
 <footer id="mainFooter" class="container copyRightContainer mt-double6">
     <a class="img-footer img-footer-profile" href="<?php echo RELA_DIR; ?>" name="<?php echo RELA_DIR; ?>" title="لوگوی سایت تولیدات">
-        <img src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN; ?>/assets/images/tolidat-logo.png" alt="لوگوی سایت تولیدات">
+        <img src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN; ?>/assets/image/tolidat-logo.png" alt="لوگوی سایت تولیدات">
     </a>
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-md-8 pull-right noPadding">
@@ -38,7 +38,7 @@
         </div>
 
         <div class="col-xs-12 col-sm-6 col-md-6 noPadding pull-left enamad mb">
-            <img id='jxlzesgtesgtfukzrgvjnbqeesgt' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1006320&p=rfthobpdobpdgvkaxlaouiwkobpd", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=1006320&p=nbpdlymalymawlbqqftiodrflyma'/>
+            <img class="pull-left" src="https://trustseal.enamad.ir/logo.aspx?id=72444&amp;p=i34DkJRZ8o96TE0S" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=72444&amp;p=i34DkJRZ8o96TE0S&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="i34DkJRZ8o96TE0S">
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 noPadding pull-right">
             <p class="text-ultralight center-block text-right">با تولیدات جهانی دیده شوید و اهداف دست نیافتنی خود را محقق کنید</p>
@@ -52,17 +52,19 @@
     </div>
 </footer><!-- /end of footer of website -->
 
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN;?>/assets/js/jquery.mmenu.all.min.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN;?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN;?>/assets/js/validator.min.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN;?>/assets/js/search.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN;?>/assets/js/bootstrap-tagsinput.min.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN;?>/assets/js/cropper.min.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN;?>/assets/js/intro.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN;?>/bower_components/izitoast/dist/js/iziToast.min.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN;?>/bower_components/highcharts/highcharts.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN;?>/assets/js/jquery.lazy.min.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN;?>/assets/js/script.js?v=13961212"></script>
+<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/jquery.mmenu.all.min.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/validator.min.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/search.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/bootstrap-tagsinput.min.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/cropper.min.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/intro.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/jquery.lazy.min.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/script.js?v=13961212"></script>
+
+
+<script src="<?php echo RELA_DIR?>templates/template_fa/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_fa/bower_components/izitoast/dist/js/iziToast.min.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_fa/bower_components/highcharts/highcharts.js"></script>
 </body>
 </html>
 

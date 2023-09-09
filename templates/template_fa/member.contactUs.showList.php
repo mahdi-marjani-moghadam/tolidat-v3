@@ -1,5 +1,6 @@
 <!-- separator -->
-<?php //print_r_debug($list); ?>
+<?php //print_r_debug($list); 
+?>
 <div class="row xxsmallSpace crop"></div>
 
 <!--container iziToast-->
@@ -21,14 +22,14 @@
 <div class="panel-body">
     <!-- separator -->
     <div class="row addContacts"></div>
-    <?php if (isset($list) && count($list)): ?>
-        <?php foreach ($list as $id => $fields): ?>
+    <?php if (isset($list) && count($list)) : ?>
+        <?php foreach ($list as $id => $fields) : ?>
             <div class="row removeNotification">
                 <div class="col-xs-12 col-sm-8 col-md-6 center-block">
                     <div data-intro="پیام های کاربران" class="row row-circle boxBorder whiteBg">
                         <a class="pull-left trash-panel deleteNotification" href="#" data-value="<?php echo $fields['Contacts_id']; ?>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                         <div class="col-xs-12 col-sm-2 col-md-2 pull-right">
-                            <img class="boxBorder  roundCornerFull image-notification center-block" src="<?php echo DEFULT_LOGO_ADDRESS ?>" alt=""/>
+                            <img class="boxBorder  roundCornerFull image-notification center-block" src="<?php echo DEFULT_LOGO_ADDRESS ?>" alt="" />
                             <div class="pull-right color-massage user-type">
                                 <i class="fa fa-user" aria-hidden="true"></i> کاربر
                             </div>
@@ -47,7 +48,7 @@
                 </div>
             </div>
         <?php endforeach; ?>
-    <?php else: ?>
+    <?php else : ?>
         <div class="notRecord">
             <div class="row xsmallSpace hidden-xs"></div>
             <div class="alert alert-success text-center" role="alert">رکوردی موجود نمی باشد.</div>
@@ -55,8 +56,23 @@
     <?php endif; ?>
 </div>
 <script>
-    $(function () {
-        $('.deleteNotification').on('click', function () {
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
+    $(function() {
+        $('.deleteNotification').on('click', function() {
             var $this = $(this);
             var notification_id = $(this).data('value');
 
@@ -79,11 +95,15 @@
                 position: 'center',
                 message: "<p></p>",
                 buttons: [
-                    ['<button class="btn btn-success btn-sm pull-right" style="margin-left: 1em;">بله</button>', function (instance, toast) {
+                    ['<button class="btn btn-success btn-sm pull-right" style="margin-left: 1em;">بله</button>', function(instance, toast) {
 
-                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        instance.hide({
+                            transitionOut: 'fadeOut'
+                        }, toast, 'button');
 
-                        $.post('/member/companyContacts/us/delete/', {id: notification_id}, function (response) {
+                        $.post('/member/companyContacts/us/delete/', {
+                            id: notification_id
+                        }, function(response) {
                             var data = $.parseJSON(response);
                             if (data.result == -1) {
                                 $.iziToastError(data.message, '.izi-container');
@@ -101,12 +121,13 @@
                         });
 
                     }, true],
-                    ['<button class="btn btn-danger btn-sm pull-left">انصراف</button>', function (instance, toast) {
-                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                    ['<button class="btn btn-danger btn-sm pull-left">انصراف</button>', function(instance, toast) {
+                        instance.hide({
+                            transitionOut: 'fadeOut'
+                        }, toast, 'button');
                     }]
                 ]
             });
         });
     });
 </script>
-

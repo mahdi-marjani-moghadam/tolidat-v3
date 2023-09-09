@@ -31,9 +31,9 @@
                     ?>
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 pull-right boxA">
                             <div class="news whiteBg boxBorder roundCorner fullWidth">
-                                <div class="item text-center" data-newsID="<?=$fields['News_id'];?>">
+                                <div class="item text-center" data-newsID="<?php echo $fields['News_id'];?>">
                                     <div class="logoContainer pull-right">
-                                        <a class="img-link" href="<?=$url;?>">
+                                        <a class="img-link" href="<?php echo $url;?>">
                                             <?php
                                                 $file = ROOT_DIR.ltrim($fields['image'], '/');
                                             ?>
@@ -42,8 +42,8 @@
                                     </div>
 
                                     <div class="content pull-right">
-                                        <h2 class="text-right fullWidth" title="<?= $fields['title']?>">
-                                            <a href="<?=$url;?>" class="displayBlock fullWidth">
+                                        <h2 class="text-right fullWidth" title="<?php echo  $fields['title']?>">
+                                            <a href="<?php echo $url;?>" class="displayBlock fullWidth">
                                                 <?php echo (strlen($fields['title']) ? $fields['title'] : "-"); ?>
                                             </a>
                                         </h2>
@@ -59,7 +59,7 @@
                                         </footer>
                                     </div>
                                 </div>
-                                <a href="<?=$url;?>" class="btn button-default">نمایش</a>
+                                <a href="<?php echo $url;?>" class="btn button-default">نمایش</a>
                             </div>
                         </div>
                     <?php
@@ -78,7 +78,7 @@
                                 {
                                     ?>
                                     <li>
-                                        <a class="transition" href="<?=RELA_DIR . $href?>"><?=$key + 1?></a>
+                                        <a class="transition" href="<?php echo RELA_DIR . $href?>"><?php echo $key + 1?></a>
                                     </li>
                                 <?php
                                 }

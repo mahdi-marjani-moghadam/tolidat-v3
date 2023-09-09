@@ -1,4 +1,3 @@
-
 <!--button-->
 <div class="row xxsmallSpace hidden-xx"></div>
 
@@ -34,7 +33,7 @@
                 </div>
                 <div class="col-xs-12 col-md-8 col-md-9 pull-right">
                     <div class="mt">
-                        <h4><?= $list['company_name'] ?></h4>
+                        <h4><?php echo  $list['company_name'] ?></h4>
                     </div>
                 </div>
             </div>
@@ -47,7 +46,7 @@
             <div class="row noMargin">
                 <div class="col-md-12 pull-right">
                     <h6 style="color: #bbb"><i class="fa fa-envelope pull-right"></i>نام نماینده: </h6>
-                    <h4 style="color: #888"><?= $list['name']. ' ' .$list['family'] ?></h4>
+                    <h4 style="color: #888"><?php echo  $list['name']. ' ' .$list['family'] ?></h4>
                 </div>
             </div>
 
@@ -63,7 +62,7 @@
             <div class="row noMargin">
                 <div class="col-md-12 pull-right">
                     <h6 style="color: #bbb"><i class="fa fa-envelope pull-right"></i>ایمیل نماینده: </h6>
-                    <h4 style="color: #888"><?= $list['email'] ?></h4>
+                    <h4 style="color: #888"><?php echo  $list['email'] ?></h4>
                 </div>
             </div>
 
@@ -79,7 +78,7 @@
             <div class="row noMargin">
                 <div class="col-md-12 pull-right">
                     <h6 style="color: #bbb"><i class="fa fa-envelope pull-right"></i>شماره تلفن نماینده: </h6>
-                    <h4 style="color: #888"><?= $list['mobile'] ?></h4>
+                    <h4 style="color: #888"><?php echo  $list['mobile'] ?></h4>
                 </div>
             </div>
 
@@ -95,7 +94,7 @@
             <div class="row noMargin">
                 <div class="col-md-12 pull-right">
                     <h6 style="color: #bbb"><i class="fa fa-globe pull-right"></i>محل استان فعالیت: </h6>
-                    <h4 style="color: #888"><?= $list['province'] ?></h4>
+                    <h4 style="color: #888"><?php echo  $list['province'] ?></h4>
                 </div>
             </div>
 
@@ -111,7 +110,7 @@
             <div class="row noMargin">
                 <div class="col-xs-12 col-sm-12 col-md-12 pull-right">
                     <h6 style="color: #bbb"><i class="fa fa-map-pin pull-right"></i>محل شهرستان فعالیت: </h6>
-                    <h4 style="color: #888"><?= $list['city'] ?></h4>
+                    <h4 style="color: #888"><?php echo  $list['city'] ?></h4>
                 </div>
             </div>
 
@@ -125,31 +124,31 @@
     <div class="col-xs-12 col-sm-8 col-md-8 pull-left" data-value="">
         <div data-position="right" data-intro="جزئیات اطلاعات" class="contentPro contentPro-profile contentPro-honour whiteBg roundCorner boxBorder" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">
             <div class="text profile-page">
-                <p class="mt noBg"><span>شناسه ملی مجموعه : </span><?= $list['national_id'] ?></p>
+                <p class="mt noBg"><span>شناسه ملی مجموعه : </span><?php echo  $list['national_id'] ?></p>
             </div>
 
             <hr>
 
             <div class="text profile-page">
-                <p class="mt noBg"><span>شماره ثبت مجموعه : </span><?= $list['registration_number'] ?></p>
+                <p class="mt noBg"><span>شماره ثبت مجموعه : </span><?php echo  $list['registration_number'] ?></p>
             </div>
 
             <hr>
 
             <div class="text profile-page">
-                <p class="mt noBg"><span>دسته بندی های مجموعه : </span><?= implode($list['category'], ' - '); ?></p>
+                <p class="mt noBg"><span>دسته بندی های مجموعه : </span><?php echo  implode($list['category'], ' - '); ?></p>
             </div>
 
             <hr>
 
             <div class="text profile-page">
-                <p class="mt noBg"><span>زمینه فعالیت : </span><?= $list['description'] ?></p>
+                <p class="mt noBg"><span>زمینه فعالیت : </span><?php echo  $list['description'] ?></p>
             </div>
 
             <hr>
 
             <div class="text profile-page">
-                <p class="mt noBg"><span>کلمات کلیدی مربوط به زمینه فعالیت : </span><?= $list['meta_keyword'] ?></p>
+                <p class="mt noBg"><span>کلمات کلیدی مربوط به زمینه فعالیت : </span><?php echo  $list['meta_keyword'] ?></p>
             </div>
 
             <hr>

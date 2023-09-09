@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 mb text-center center-block active-package">
             <?php if ($list['active-package-upgarde']) : ?>
-                <a class="single"  href="<?= RELA_DIR . "member/package/upgrade" ?>">
+                <a class="single"  href="<?php echo  RELA_DIR . "member/package/upgrade" ?>">
                     <button data-position="right" type="button" class="btn btn-success btn-md bc-color-green btn-block">
                         <span><i class="fa fa-plus transition" aria-hidden="true"></i></span>
                         <span class="transition">ارتقا پکیج</span>

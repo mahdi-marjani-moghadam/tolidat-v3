@@ -18,13 +18,13 @@
 <div class="row add-certification">
     <?php if (isset($list['list']) && count($list['list'])): ?>
         <?php foreach ($list['list'] as $id => $fields) : ?>
-            <div class="col-xs-12 col-sm-6 col-md-4 pull-right mb remove-certification" data-value="<?= $fields['Certification_d_id'] ?>">
+            <div class="col-xs-12 col-sm-6 col-md-4 pull-right mb remove-certification" data-value="<?php echo  $fields['Certification_d_id'] ?>">
                 <div data-intro="لیست گواهی ها" class="contentPro<?php echo ($fields['status'] == 1) ? '' : ' disable' ?> contentPro-cert whiteBg roundCorner" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<?php echo ($fields['status'] == 1) ? 'تایید شده' : 'تایید نشده' ?>">
                     <h3>
                         <div class="kebabMenu">
                             <a><i class="icon-kebab-menu" aria-hidden="true"></i></a>
                             <ul class="kebab-menu-content kebab-menu-content-certification roundCorner boxBorder">
-                                <li><a class="link-trash" data-value="<?= $fields['Certification_d_id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a></li>
+                                <li><a class="link-trash" data-value="<?php echo  $fields['Certification_d_id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a></li>
                             </ul>
                         </div>
                         <div class="logo">
@@ -42,7 +42,7 @@
         <?php endforeach; ?>
     <?php else: ?>
         <div class="notRecord">
-            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
+            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
             <p class="empty-text">اطلاعاتی موجود نیست!</p>
         </div>
     <?php endif; ?>

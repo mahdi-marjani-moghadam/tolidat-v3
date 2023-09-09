@@ -3,7 +3,7 @@
     <!-- separator -->
     <div class="or-spacer center-block">
         <div class="mask">
-            <span class="text-center">جستجو در <?= isset($list['type']) ? $list['type'] : 'تولیدی' ?></span>
+            <span class="text-center">جستجو در <?php echo  isset($list['type']) ? $list['type'] : 'تولیدی' ?></span>
         </div>
     </div>
 
@@ -27,7 +27,7 @@
                     </div>
                     <ul class="nav-search">
                         <?php foreach ($list['list']['city'] as $key => $value) { ?>
-                            <li><span>(<?= $value['count'] ?>)</span><label for="city-<?= $value['City_id'] ?>" class="company-name"> <?= $value['name'] ?><input type="checkbox" name="city[]" id="city-<?= $value['City_id'] ?>" value="<?= $value['name'] ?>"></label></li>
+                            <li><span>(<?php echo  $value['count'] ?>)</span><label for="city-<?php echo  $value['City_id'] ?>" class="company-name"> <?php echo  $value['name'] ?><input type="checkbox" name="city[]" id="city-<?php echo  $value['City_id'] ?>" value="<?php echo  $value['name'] ?>"></label></li>
                         <?php } ?>
                     </ul>
                 </div>
@@ -36,7 +36,7 @@
                     </div>
                     <ul class="nav-search">
                         <?php foreach ($list['list']['category'] as $key => $value) { ?>
-                            <li><span>(<?= $value['count'] ?>)</span><label for="cat-<?= $value['Category_id'] ?>" class="company-name"> <?= $value['title'] ?><input type="checkbox" name="category[]" id="cat-<?= $value['Category_id'] ?>" value="<?= $value['Category_id'] ?>"></label></li>
+                            <li><span>(<?php echo  $value['count'] ?>)</span><label for="cat-<?php echo  $value['Category_id'] ?>" class="company-name"> <?php echo  $value['title'] ?><input type="checkbox" name="category[]" id="cat-<?php echo  $value['Category_id'] ?>" value="<?php echo  $value['Category_id'] ?>"></label></li>
                         <?php } ?>
                     </ul>
                 </div>
@@ -66,8 +66,8 @@
                             <div class="col-xs-6 col-sm-6 col-md-4 gridList BoxB boxSearch">
                                 <div class="item  whiteBg boxBorder roundCorner">
                                     <div class="logoContainer pull-right">
-                                        <a href="#" name="<?= $value['company_name'] ?>" title="<?= $value['company_name'] ?>">
-                                            <img src="<?= $value['logo'] ?>" alt="<?= $value['company_name'] ?>">
+                                        <a href="#" name="<?php echo  $value['company_name'] ?>" title="<?php echo  $value['company_name'] ?>">
+                                            <img src="<?php echo  $value['logo'] ?>" alt="<?php echo  $value['company_name'] ?>">
                                         </a>
                                     </div>
                                     <div class="description1">
@@ -102,7 +102,7 @@
                                 {
 
                                     ?>
-                                    <li ><a href="<?=RELA_DIR.$link;?>"><?=$key+1?></a></li>
+                                    <li ><a href="<?php echo RELA_DIR.$link;?>"><?php echo $key+1?></a></li>
                                     <?
                                 }
                                 ?>

@@ -13,7 +13,7 @@
             <?php if (isset($message)) { ?>
                 <div class="alert alert-warning">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <strong><?= $message ?></strong>
+                    <strong><?php echo  $message ?></strong>
                 </div>
             <?php } ?>
             <div class="row">
@@ -23,21 +23,21 @@
             ?>
                         <div class="col-xs-12 col-sm-6 col-md-4 pull-right boxA">
                             <div class="news whiteBg boxBorder roundCorner fullWidth news-event">
-                                <div class="item text-center" data-newsID="<?= $event['event_id'] ?>">
+                                <div class="item text-center" data-newsID="<?php echo  $event['event_id'] ?>">
 
                                     <div class="logoContainer pull-right">
-                                        <a href="<?= $url ?>" name="<?= $url ?>" title="<?= (strlen($event['title']) ? $event['title'] : "-") ?>">
+                                        <a href="<?php echo  $url ?>" name="<?php echo  $url ?>" title="<?php echo  (strlen($event['title']) ? $event['title'] : "-") ?>">
                                             <?php $file = ROOT_DIR.ltrim($event['icon'], '/'); ?>
-                                            <img class="roundCorner fullWidth" src="<?= (strlen($event['icon'])  ? $event['icon'] : '/templates/'.CURRENT_SKIN.'/assets/images/placeholder.png') ?>" alt="<?= (strlen($event['title']) ? $event['title'] : "-") ?>">
+                                            <img class="roundCorner fullWidth" src="<?php echo  (strlen($event['icon'])  ? $event['icon'] : '/templates/'.CURRENT_SKIN.'/assets/images/placeholder.png') ?>" alt="<?php echo  (strlen($event['title']) ? $event['title'] : "-") ?>">
                                         </a>
                                     </div>
 
                                     <div class="content pull-right">
 
-                                        <a href="<?= $url ?>" class="displayBlock fullWidth">
-                                            <div class="text-right fullWidth title-event" title="<?= $event['title']?>">
+                                        <a href="<?php echo  $url ?>" class="displayBlock fullWidth">
+                                            <div class="text-right fullWidth title-event" title="<?php echo  $event['title']?>">
                                                 <span>
-                                                <?= (strlen($event['title']) ? $event['title'] : "-") ?>
+                                                <?php echo  (strlen($event['title']) ? $event['title'] : "-") ?>
                                                 </span>
                                             </div>
                                         </a>
@@ -47,7 +47,7 @@
                                         <footer class="fullWidth">
                                             <div class="fullWidth text-right text-justify article">
                                                 <span>
-                                                <?= (strlen($event['brief_description']) ? $event['brief_description'] : "-") ?>
+                                                <?php echo  (strlen($event['brief_description']) ? $event['brief_description'] : "-") ?>
                                                 </span>
                                             </div>
 
@@ -55,7 +55,7 @@
                                             <br>
                                             <div class="calender pull-left rtl">
                                                 <i class="fa fa-calendar"></i>
-                                                <?= (strlen($event['date']) ? $event['date'] : "-") ?>
+                                                <?php echo  (strlen($event['date']) ? $event['date'] : "-") ?>
                                             </div>
 
                                             <br>
@@ -81,12 +81,12 @@
                         <ul class="pagination">
                             <li>
                                 <a class="transition">موارد یافت شده:
-                                    <span class="text-ultralight text-danger"><?= $events['recordsCount']; ?></span>
+                                    <span class="text-ultralight text-danger"><?php echo  $events['recordsCount']; ?></span>
                                 </a>
                             </li>
                             <?php foreach ($events['pagination'] as $key => $href) { ?>
                                 <li>
-                                    <a class="transition" href="<?= RELA_DIR . $href ?>"><?= $key + 1 ?></a>
+                                    <a class="transition" href="<?php echo  RELA_DIR . $href ?>"><?php echo  $key + 1 ?></a>
                                 </li>
                             <?php } ?>
                         </ul>

@@ -19,13 +19,13 @@
 <div class="panel-body">
     <!-- separator -->
     <div class="row xsmallSpace"></div>
-    <?php foreach ($list as $id => $fields): ?>
+    <?php foreach ($list as $id => $fields) : ?>
         <div class="row removeNotification">
             <div class="col-xs-12 col-sm-8 col-md-6 center-block">
-                <div class="row boxBorder row-circle whiteBg <?= $fields['isRead'] ? "read" : "unread" ?>">
+                <div class="row boxBorder row-circle whiteBg <?php echo  $fields['isRead'] ? "read" : "unread" ?>">
                     <a class="trash-panel deleteNotification" href="#" data-value="<?php echo $fields['Notification_id']; ?>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                     <!--<div class="col-xs-12 col-sm-2 col-md-2 pull-right">
-                        <img class="boxBorder  roundCornerFull image-notification center-block" src="<?php /*echo DEFULT_LOGO_ADDRESS */?>" alt=""/>
+                        <img class="boxBorder  roundCornerFull image-notification center-block" src="<?php /*echo DEFULT_LOGO_ADDRESS */ ?>" alt=""/>
                     </div>-->
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="massege">
@@ -53,8 +53,23 @@
     <?php endforeach; ?>
 </div>
 <script>
-    $(function () {
-        $('.deleteNotification').on('click', function () {
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
+    $(function() {
+        $('.deleteNotification').on('click', function() {
             var $this = $(this),
                 notification_id = $this.data('value'),
                 lastItem = $body.find('.removeNotification').length;
@@ -78,11 +93,15 @@
                 position: 'center',
                 message: lastItem === 1 ? "با حذف کردن این آیتم امتیاز مرتبط با این موضوع از امتیاز کل شما کسر خواهد شد" : "<p></p>",
                 buttons: [
-                    ['<button class="btn btn-success btn-sm pull-right" style="margin-left: 1em;">بله</button>', function (instance, toast) {
+                    ['<button class="btn btn-success btn-sm pull-right" style="margin-left: 1em;">بله</button>', function(instance, toast) {
 
-                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        instance.hide({
+                            transitionOut: 'fadeOut'
+                        }, toast, 'button');
 
-                        $.post('/member/notification/delete', {id: notification_id}, function (response) {
+                        $.post('/member/notification/delete', {
+                            id: notification_id
+                        }, function(response) {
                             var data = $.parseJSON(response);
                             if (data.result == -1) {
                                 $.iziToastError(data.message, '.izi-container');
@@ -93,13 +112,13 @@
                         });
 
                     }, true],
-                    ['<button class="btn btn-danger btn-sm pull-left">انصراف</button>', function (instance, toast) {
-                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                    ['<button class="btn btn-danger btn-sm pull-left">انصراف</button>', function(instance, toast) {
+                        instance.hide({
+                            transitionOut: 'fadeOut'
+                        }, toast, 'button');
                     }]
                 ]
             });
         });
     });
 </script>
-
-

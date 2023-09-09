@@ -20,13 +20,13 @@
 <div class="panel-body">
     <!-- separator -->
     <div class="row xsmallSpace"></div>
-    <?php foreach ($list as $id => $fields): ?>
+    <?php foreach ($list as $id => $fields) : ?>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 center-block">
                 <div class="row row-circle boxBorder whiteBg">
                     <a class="trash-panel deleteNotification" href="#" data-value="<?php echo $fields['Notification_id']; ?>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                     <div class="col-xs-12 col-sm-2 col-md-2 pull-right">
-                        <img class="boxBorder  roundCornerFull image-notification pull-right" src="<?php echo DEFULT_LOGO_ADDRESS ?>" alt=""/>
+                        <img class="boxBorder  roundCornerFull image-notification pull-right" src="<?php echo DEFULT_LOGO_ADDRESS ?>" alt="" />
                         <div class="pull-right color-massage user-type">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <?php
@@ -53,8 +53,23 @@
 </div>
 
 <script>
-    $(function () {
-        $('.deleteNotification').on('click', function () {
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
+    $(function() {
+        $('.deleteNotification').on('click', function() {
             var $this = $(this);
             var notification_id = $(this).data('value');
 
@@ -77,11 +92,15 @@
                 position: 'center',
                 message: "<p></p>",
                 buttons: [
-                    ['<button class="btn btn-success btn-sm pull-right" style="margin-left: 1em;">بله</button>', function (instance, toast) {
+                    ['<button class="btn btn-success btn-sm pull-right" style="margin-left: 1em;">بله</button>', function(instance, toast) {
 
-                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        instance.hide({
+                            transitionOut: 'fadeOut'
+                        }, toast, 'button');
 
-                        $.post('/member/notification/delete', {id: notification_id}, function (response) {
+                        $.post('/member/notification/delete', {
+                            id: notification_id
+                        }, function(response) {
                             var data = $.parseJSON(response);
                             if (data.result == -1) {
                                 $.iziToastError(data.message, '.izi-container');
@@ -89,12 +108,14 @@
                             }
                             $.iziToastSuccess(data.message, '.izi-container');
                             $this.parents('.removeNotification').remove();
-                            window.location = '<?=RELA_DIR . "profile" ?>';
+                            window.location = '<?php echo RELA_DIR . "profile" ?>';
                         });
 
                     }, true],
-                    ['<button class="btn btn-danger btn-sm pull-left">انصراف</button>', function (instance, toast) {
-                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                    ['<button class="btn btn-danger btn-sm pull-left">انصراف</button>', function(instance, toast) {
+                        instance.hide({
+                            transitionOut: 'fadeOut'
+                        }, toast, 'button');
                     }]
                 ]
             });

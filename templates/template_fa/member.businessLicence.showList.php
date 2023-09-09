@@ -16,14 +16,14 @@
 <div class="row xsmallSpace"></div>
 <div class="row add-businessLicence">
     <?php if (isset($list['list']) && count($list['list'])): ?><?php foreach ($list['list'] as $id => $fields): ?>
-        <div class="col-xs-12 col-sm-6 col-md-4 pull-right mb5 remove-businessLicence" data-value="<?= $fields['Business_licence_d_id'] ?>">
+        <div class="col-xs-12 col-sm-6 col-md-4 pull-right mb5 remove-businessLicence" data-value="<?php echo  $fields['Business_licence_d_id'] ?>">
             <div data-intro="لیست پروانه کسب" class="contentPro<?php echo($fields['status'] == 0 ? ' disable' : '') ?> whiteBg roundCorner" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<?php echo($fields['status'] == 1 ? 'تایید شده' : 'تایید نشده') ?>">
                 <h3>
                     <div class="kebabMenu">
                         <a><i class="icon-kebab-menu" aria-hidden="true"></i></a>
                         <ul class="kebab-menu-content roundCorner boxBorder">
-                            <li><a class="link-edit" data-value="<?= $fields['Business_licence_d_id'] ?>"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a></li>
-                            <li><a class="link-trash" data-value="<?= $fields['Business_licence_d_id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a></li>
+                            <li><a class="link-edit" data-value="<?php echo  $fields['Business_licence_d_id'] ?>"><i class="fa fa-pencil" aria-hidden="true"></i><span>ویرایش </span></a></li>
+                            <li><a class="link-trash" data-value="<?php echo  $fields['Business_licence_d_id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i><span>حذف</span></a></li>
                         </ul>
                     </div>
                     <div class="logo">
@@ -39,7 +39,7 @@
         </div>
     <?php endforeach; ?><?php else: ?>
         <div class="notRecord">
-            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
+            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
             <p class="empty-text">اطلاعاتی موجود نیست!</p>
         </div>
     <?php endif; ?>
@@ -193,7 +193,7 @@
                             $(this).val("");
                         });
                         $('#addBusinessLicence').find('img').each(function () {
-                            $(this).attr("src", '<?php echo RELA_DIR . "templates/template_fa/assets/images/placeholder.png" ?>');
+                            $(this).attr("src", '<?php echo RELA_DIR . "templates/template_tailwind/assets/images/placeholder.png" ?>');
                         });
                         modal_add.modal('hide');
                         $.iziToastSuccess(response.msg);
@@ -337,7 +337,7 @@
                         }
                     });
                     if (i == 1) {
-                        var image = "<?php echo RELA_DIR; ?>" + "templates/template_fa/assets/images/empty01.png";
+                        var image = "<?php echo RELA_DIR; ?>" + "templates/template_tailwind/assets/images/empty01.png";
                         var html = '<div class="notRecord">' +
                             '<img class="empty-img center-block" src="'+image+'">' +
                             '<p class="empty-text">اطلاعاتی موجود نیست!</p>';

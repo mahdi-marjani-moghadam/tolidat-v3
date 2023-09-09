@@ -25,7 +25,7 @@
                                         </div>
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="phone_number"
-                                                   name="phone_number" value="<?= $list['phone_number'] ?>">
+                                                   name="phone_number" value="<?php echo  $list['phone_number'] ?>">
                                             <div class="input-group-addon">+98</div>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-3">
@@ -84,22 +84,22 @@
                                         </div>
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="phone_number"
-                                                   name="phone_number" value="<?= $list['phone_number'] ?>">
+                                                   name="phone_number" value="<?php echo  $list['phone_number'] ?>">
                                             <div class="input-group-addon">+98</div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-xs-12 col-sm-8 pull-right">
                                                 <select name="phone_state" class="select-phone-state">
                                                     <option
-                                                        value="داخلی" <?= ($list['phone_state']) == 1 ? 'selected' : '' ?>>
+                                                        value="داخلی" <?php echo  ($list['phone_state']) == 1 ? 'selected' : '' ?>>
                                                         داخلی
                                                     </option>
                                                     <option
-                                                        value="الی" <?= ($list['phone_state']) == 2 ? 'selected' : '' ?>>
+                                                        value="الی" <?php echo  ($list['phone_state']) == 2 ? 'selected' : '' ?>>
                                                         الی
                                                     </option>
                                                     <option
-                                                        value="سایر" <?= ($list['phone_state']) == 3 ? 'selected' : '' ?>>
+                                                        value="سایر" <?php echo  ($list['phone_state']) == 3 ? 'selected' : '' ?>>
                                                         سایر
                                                     </option>
                                                 </select>
@@ -148,9 +148,9 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-1 col-md-1 pull-right rtl">
-                    <a class="link-trash" data-value="<?= $fields['Phones_d_id'] ?>" href=""> <i
+                    <a class="link-trash" data-value="<?php echo  $fields['Phones_d_id'] ?>" href=""> <i
                             class="fa fa-trash-o" aria-hidden="true"></i> </a>
-                    <a class="link-edit" data-value="<?= $fields['Phones_d_id'] ?>" href=""> <i
+                    <a class="link-edit" data-value="<?php echo  $fields['Phones_d_id'] ?>" href=""> <i
                             class="fa fa-pencil-square-o" aria-hidden="true"></i> </a>
                 </div>
             </div>

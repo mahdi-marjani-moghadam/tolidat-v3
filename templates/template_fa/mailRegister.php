@@ -156,7 +156,7 @@
         <div style="padding: 10px 12px">
             <div style="width:550px;margin: 0 auto;border:#ccc solid 1px;">
                 <div style="margin: 0 auto;background:#eee;	padding:10px;color:#5117A1;	text-align:center;font-size:16px;font-weight:bold;">
-                    <?=$variable['title'];?>
+                    <?php echo $variable['title'];?>
                     <br/>
                     <div style="font-size:12px; color:#333333; padding-top:10px;">
                     </div>

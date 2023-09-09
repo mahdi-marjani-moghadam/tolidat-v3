@@ -51,21 +51,21 @@ $(document).ready(function () {
     }
     //end color profile header
 
-    if ($body.find('.lazy').length) {
-        try {
-            $('.lazy').lazy({
-                placeholder: baseURL + 'templates/template_fa/assets/images/placeholder.png',
-                visibleOnly: true,
-                onError: function (element) {
-                    element.attr('src', baseURL + 'templates/template_fa/assets/images/placeholder.png');
-                }
-            });
-        } catch(e) {}
-    }
+    // if ($body.find('.lazy').length) {
+    //     try {
+    //         $('.lazy').lazy({
+    //             placeholder: baseURL + 'templates/template_tailwind/assets/images/placeholder.png',
+    //             visibleOnly: true,
+    //             onError: function (element) {
+    //                 element.attr('src', baseURL + 'templates/template_tailwind/assets/images/placeholder.png');
+    //             }
+    //         });
+    //     } catch(e) {}
+    // }
 
-    $('.carousel-vertical, .carousel-slick, .Manufacturers').on('lazyLoadError', function(event, slick, image){
-        image.attr('src', baseURL + 'templates/template_fa/assets/images/placeholder.png');
-    });
+    // $('.carousel-vertical, .carousel-slick, .Manufacturers').on('lazyLoadError', function(event, slick, image){
+    //     image.attr('src', baseURL + 'templates/template_tailwind/assets/images/placeholder.png');
+    // });
 
     try {
         result = getCleanUrl(url);
@@ -113,6 +113,7 @@ $(document).ready(function () {
         return result;
     }
 
+
     $('.search').on('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -139,23 +140,23 @@ $(document).ready(function () {
         e.stopPropagation();
     });
 
-    $('.avatar-save').on("click", function (e) {
-        e.stopPropagation();
-        var $modalAvatarFade = $('.modal.avatar.fade'),
-            $modalOverlayModalBackdrop = $('.modal-overlay .modal-backdrop');
+    // $('.avatar-save').on("click", function (e) {
+    //     e.stopPropagation();
+    //     var $modalAvatarFade = $('.modal.avatar.fade'),
+    //         $modalOverlayModalBackdrop = $('.modal-overlay .modal-backdrop');
 
-        if ($(this).hasClass('active')) {
-            $modalAvatarFade.addClass('in');
-            $(this).removeClass('active');
-            $modalOverlayModalBackdrop.addClass('in')
-        }
+    //     if ($(this).hasClass('active')) {
+    //         $modalAvatarFade.addClass('in');
+    //         $(this).removeClass('active');
+    //         $modalOverlayModalBackdrop.addClass('in')
+    //     }
 
-        else {
-            $(this).addClass('active');
-            $modalAvatarFade.removeClass('in');
-            $modalOverlayModalBackdrop.removeClass('in')
-        }
-    });
+    //     else {
+    //         $(this).addClass('active');
+    //         $modalAvatarFade.removeClass('in');
+    //         $modalOverlayModalBackdrop.removeClass('in')
+    //     }
+    // });
 
     /*if (width < 992) {
         $cdDropdown.removeClass('dropdown-is-active');
@@ -185,17 +186,18 @@ $(document).ready(function () {
         }
     });
 
-    $body.on('focus keypress change', 'input, textarea', function () {
-        $(this).parent().addClass('typing');
-    });
 
-    $body.on('blur', 'input, textarea', function () {
-        $(this).parent().removeClass('typing');
+    // $body.on('focus keypress change', 'input, textarea', function () {
+    //     $(this).parent().addClass('typing');
+    // });
 
-        if ($(this).val().length !== 0) {
-            $(this).parent().addClass('typing');
-        }
-    });
+    // $body.on('blur', 'input, textarea', function () {
+    //     $(this).parent().removeClass('typing');
+
+    //     if ($(this).val().length !== 0) {
+    //         $(this).parent().addClass('typing');
+    //     }
+    // });
 
     var timer = setInterval(function () {
 
@@ -290,9 +292,9 @@ $(document).ready(function () {
         }
     });
 
-    $('.mm-search input')
-        .addClass('keyboard')
-        .after('<img class="icon hidden-xs hidden-sm" src="/templates/template_fa/assets/images/keyboard.png">');
+    // $('.mm-search input')
+    //     .addClass('keyboard')
+    //     .after('<img class="icon hidden-xs hidden-sm" src="/templates/template_tailwind/assets/images/keyboard.png">');
     //end of mmenu
 
     //on screen keyboard
@@ -551,12 +553,14 @@ $(document).ready(function () {
     });
 
     $body.on('submit', '#searchParam', function (e) {
+        console.log(111111);
         e.preventDefault();
         submit_search();
     });
 
     // search function
     function submit_search(id, searchType) {
+        
         var question = $q.val(),
             type = $("#type").val(),
             address_search = $searchParam.attr("action"),
@@ -586,6 +590,9 @@ $(document).ready(function () {
         .blur(function () {
             $(this).parents('.search-wrap').removeClass('active');
         });
+
+
+        
 
     $toggleNav.bind('click', function () {
         var self = $(this),
@@ -712,11 +719,28 @@ $(document).ready(function () {
                 // maxDate:new persianDatepicker().unix(),
                 selectableYears: [1410, 1409, 1408, 1407, 1406, 1405, 1404, 1403, 1402, 1401, 1400, 1399, 1398, 1397, 1396, 1395, 1394, 1393, 1392, 1391, 1390, 1389, 1388, 1387, 1386, 1385, 1384, 1383, 1382, 1381, 1380, 1379, 1378, 1377, 1376, 1375, 1374, 1373, 1372, 1371, 1370, 1369, 1368, 1367, 1366, 1365, 1364, 1363, 1362, 1361, 1360, 1359, 1358, 1357, 1356, 1355, 1354, 1353, 1352, 1351, 1350],
                 onSelect: function () {
+                    console.log('ali ali');
+                    console.log($this);
+                    console.log($this.parent());
+                    console.log($this.validity);
+
+                    // $this.prop('required',false);
+                    // $this.setCustomValidity('');$this.validity;
                     $this.parent().addClass('typing');
                     $this.parent().removeClass('has-error').addClass('has-success');
                     $this.parent().find('.errorHandler').remove();
                     $this.parent().find('.requiredIcon').html('<i class="fa fa-check"></i>');
+                    // $this.value.change;
                 }
+            });
+            $this.on('change', function(ev) {
+                console.log('ali ali');
+                console.log(ev);
+                //console.log('ali ali', $this.val());
+                // $this.valid();  // triggers the validation test
+                //$this.val('ali');  // triggers the validation test
+               
+                // '$(this)' refers to '$("#datepicker")'
             });
         });
 
@@ -737,31 +761,31 @@ $(document).ready(function () {
         $body.removeClass('fixed');
     });
 
-    if ($validationForm.length) {
-        $validationForm.validator().on('submit', function (e) {
-            var $field = $(e.relatedTarget);
+    // if ($validationForm.length) {
+    //     $validationForm.validator().on('submit', function (e) {
+    //         var $field = $(e.relatedTarget);
 
-            if (e.isDefaultPrevented()) {
-                $field.parents('.form-group').append('<div class="errorHandler">' + $field.data("error") + '</div>');
-                $field.parents('.form-group').removeClass('has-success').addClass('has-error');
-                $field.parents('.form-group').find('.requiredIcon').html('<i class="fa fa-check"></i>')
-            } else {
-                return true;
-            }
-        }).on('valid.bs.validator', function (e) {
-            var $field = $(e.relatedTarget);
+    //         if (e.isDefaultPrevented()) {
+    //             $field.parents('.form-group').append('<div class="errorHandler">' + $field.data("error") + '</div>');
+    //             $field.parents('.form-group').removeClass('has-success').addClass('has-error');
+    //             $field.parents('.form-group').find('.requiredIcon').html('<i class="fa fa-check"></i>')
+    //         } else {
+    //             return true;
+    //         }
+    //     }).on('valid.bs.validator', function (e) {
+    //         var $field = $(e.relatedTarget);
 
-            $field.parents('.form-group').find('.errorHandler').remove();
-            $field.parents('.form-group').removeClass('has-error').addClass('has-success');
-            $field.parents('.form-group').find('.requiredIcon').html('<i class="fa fa-check"></i>')
-        }).on('invalid.bs.validator', function (e) {
-            var $field = $(e.relatedTarget);
+    //         $field.parents('.form-group').find('.errorHandler').remove();
+    //         $field.parents('.form-group').removeClass('has-error').addClass('has-success');
+    //         $field.parents('.form-group').find('.requiredIcon').html('<i class="fa fa-check"></i>')
+    //     }).on('invalid.bs.validator', function (e) {
+    //         var $field = $(e.relatedTarget);
 
-            $field.parents('.form-group').append('<div class="errorHandler">' + $field.data("error") + '</div>');
-            $field.parents('.form-group').removeClass('has-success').addClass('has-error');
-            $field.parents('.form-group').find('.requiredIcon').html('*')
-        });
-    }
+    //         $field.parents('.form-group').append('<div class="errorHandler">' + $field.data("error") + '</div>');
+    //         $field.parents('.form-group').removeClass('has-success').addClass('has-error');
+    //         $field.parents('.form-group').find('.requiredIcon').html('*')
+    //     });
+    // }
 
     //scroll on detailCompany
     function smk_jump_to_it(_selector, _speed)  {
@@ -1006,9 +1030,9 @@ $(document).ready(function () {
         $('[data-toggle="popover"]').popover();
     } catch(e) {}
 
-    $('.registerPage .content input').on("focus", function () {
-        $(this).next().remove();
-    });
+    // $('.registerPage .content input').on("focus", function () {
+    //     $(this).next().remove();
+    // });
 
     $(".successClick").click(function () {
         var $activeLink = $('.active-link');
@@ -1023,6 +1047,9 @@ $(document).ready(function () {
         }
     });
 
+    
+    // register step 5
+    // select category 
     var selectedCatArr = [];
     $.fillSelectedCategories = function($obj) {
         var $maxCanSelectedInput = $body.find('.maxCanSelected'),
@@ -1051,8 +1078,10 @@ $(document).ready(function () {
                     selectedCatArr.push($obj.val);
                 } else {
                     if (iziParentModal !== undefined) {
+                        console.log(11);
                         $.iziToastError('ماکسیمم دسته بندی مجاز انتخاب شده است<br> ابتدا یکی از دسته بندی های انتخاب شده را حذف کرده سپس گزینه جدید را اضافه نمایید', iziParentModal);
                     } else {
+                        console.log(2);
                         $.iziToastError('ماکسیمم دسته بندی مجاز انتخاب شده است<br> ابتدا یکی از دسته بندی های انتخاب شده را حذف کرده سپس گزینه جدید را اضافه نمایید', '.izi-container');
                     }
 
@@ -1187,10 +1216,10 @@ $(document).ready(function () {
     });
 
     $('img').on('error', function () {
-        $(this).attr('src', baseURL + 'templates/template_fa/assets/images/placeholder.png');
+        $(this).attr('src', baseURL + 'templates/template_tailwind/assets/images/placeholder.png');
 
         if($(this).hasClass('image-banner')) {
-            $(this).attr('src', baseURL + 'templates/template_fa/assets/images/placeholder1.png');
+            $(this).attr('src', baseURL + 'templates/template_tailwind/assets/images/placeholder1.png');
         }
     });
 
@@ -1408,7 +1437,7 @@ $(document).ready(function () {
 
             options = {
                 restore: false,
-                viewMode: 3,
+                viewMode: 0,
                 preview: '.img-preview',
                 crop: function (e) {
                     $dataX.val(Math.round(e.x));
@@ -1712,10 +1741,6 @@ $(document).ready(function () {
         $('.legal[data-value="'+value+'"]').removeClass('hidden');
     });
 });
-
-// $(window).on('load', function() {
-//     $('.enamad').html('<img id=\'jxlzesgtesgtfukzrgvjnbqeesgt\' style=\'cursor:pointer\' onclick=\'window.open("https://logo.samandehi.ir/Verify.aspx?id=1006320&p=rfthobpdobpdgvkaxlaouiwkobpd", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")\' alt=\'logo-samandehi\' src=\'https://logo.samandehi.ir/logo.aspx?id=1006320&p=nbpdlymalymawlbqqftiodrflyma\'/>')
-// });
 
 $(window).on('load', function() {
     $('.enamad').html('<img class="pull-left" src="https://trustseal.enamad.ir/logo.aspx?id=72444&amp;p=i34DkJRZ8o96TE0S" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=72444&amp;p=i34DkJRZ8o96TE0S&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="i34DkJRZ8o96TE0S">')

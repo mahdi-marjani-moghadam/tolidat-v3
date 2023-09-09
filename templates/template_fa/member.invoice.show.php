@@ -1,21 +1,21 @@
 <div class="row xxsmallSpace"></div>
 <div class="row companyTable companyTable2">
     <div class="container-package-factor center-block package-border-gold roundCorner mb-double">
-        <div class="header-package-factor <?php echo $list['package_class']; ?>"  id="price">
+        <div class="header-package-factor <?php echo $list['package_class']; ?>" id="price">
             <span class="factor-type-title">پکیج</span>
             <span class="factor-package-type"><?php echo $list['packagetype']; ?></span>
-            <span class="factor-package-price price" <?php echo($list['percent'] == 0 ? '' : 'style="text-decoration: line-through"') ?>><?php echo number_format($list['price']); ?> ریال</span>
+            <span class="factor-package-price price" <?php echo ($list['percent'] == 0 ? '' : 'style="text-decoration: line-through"') ?>><?php echo number_format($list['price']); ?> ریال</span>
             <span class="package-separator-header center-block"></span>
         </div>
-        <?php if ($msg['msg']): ?>
-            <p style="display: none" class="alert alert-danger"><?php echo($msg['msg'] ? $msg['msg'] : '') ?></p>
+        <?php if ($msg['msg']) : ?>
+            <p style="display: none" class="alert alert-danger"><?php echo ($msg['msg'] ? $msg['msg'] : '') ?></p>
         <?php endif; ?>
         <div class="row xxsmallSpace"></div>
 
         <div class="row background-factor roundCorner">
             <div class="row xxxsmallSpace"></div>
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <span class="factor-status-title">وضعیت پرداخت<i class="fa <?php echo($list['status'] == '0' ? 'fa-times' : 'fa-check'); ?>" aria-hidden="true"></i></span>
+                <span class="factor-status-title">وضعیت پرداخت<i class="fa <?php echo ($list['status'] == '0' ? 'fa-times' : 'fa-check'); ?>" aria-hidden="true"></i></span>
             </div>
             <div class="row xxxsmallSpace"></div>
             <div class="row xxxsmallSpace hidden-xs"></div>
@@ -55,7 +55,7 @@
         <div class="row xxxsmallSpace"></div>
         <div class="row xxsmallSpace hidden-xs"></div>
 
-        <p class="mb-double3" style="text-align: center">کاربر گرامی در صورت داشتن کد تخفیف آن را در کادر زیر وارد کرده و  دکمه اعمال کد را بزنید و سپس عملیات پرداخت را ادامه دهید.</p>
+        <p class="mb-double3" style="text-align: center">کاربر گرامی در صورت داشتن کد تخفیف آن را در کادر زیر وارد کرده و دکمه اعمال کد را بزنید و سپس عملیات پرداخت را ادامه دهید.</p>
         <div class="col-xs-12 col-sm-6 col-md-6 center-block float-none">
             <div class="discount-container">
 
@@ -66,7 +66,7 @@
                 <div class="input-group">
                     <input type="text" name="discount_code" id="discount-code" placeholder="کد تخفیف خود را وارد کنید">
                     <span class="input-group-btn">
-                    <button class="btn btn-primary discount-code" type="button">اعمال کد</button>
+                        <button class="btn btn-primary discount-code" type="button">اعمال کد</button>
                     </span>
                 </div>
                 <!-- /input-group -->
@@ -91,14 +91,31 @@
 </div>
 
 <script>
-    $(function () {
-        $('.discount-code').on('click', function () {
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
+    $(function() {
+        $('.discount-code').on('click', function() {
             var btn_apply_discount = $(this);
             var discount_code = $('#discount-code').val();
             btn_apply_discount.attr('disabled', 'disabled');
             $('#discount-code').val('');
 
-            $.post('/discountCode/discount', {'discount_code': discount_code}, function (data) {
+            $.post('/discountCode/discount', {
+                'discount_code': discount_code
+            }, function(data) {
                 var response = $.parseJSON(data);
 
                 if (response.result == -1) {
@@ -120,4 +137,3 @@
         }
     });
 </script>
-

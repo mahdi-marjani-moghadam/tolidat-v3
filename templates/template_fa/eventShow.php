@@ -1,6 +1,4 @@
 <link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/slick.css">
-<link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/slick-theme.css">
-
 <!-- end of boxContainer -->
 <!-- boxContainer -->
 <div class="boxContainer slick-slider-new">
@@ -17,7 +15,7 @@
     <?php if (isset($event['message'])) { ?>
         <div class="alert alert-warning">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong><?= $event['message'] ?></strong>
+            <strong><?php echo  $event['message'] ?></strong>
         </div>
     <?php } ?>
 
@@ -47,11 +45,11 @@
                 <div class="slider-hover">
                     <div class="slider-for">
                         <?php foreach ($event['gallery'] as $gallery) { ?>
-                            <img class="roundCorner fullWidth boxBorder" src="<?= $gallery['image_path_crop'] ?>">
+                            <img class="roundCorner fullWidth boxBorder" src="<?php echo  $gallery['image_path_crop'] ?>">
                         <?php } ?>
                     </div>
                     <div class="hover">
-                        <?= $event['description']; ?>
+                        <?php echo  $event['description']; ?>
                     </div>
                 </div>
                 <div class="slider-nav">
@@ -59,10 +57,10 @@
                         <div class="content-sliderNav">
                             <div class="hover1">
                                 <div class="span">
-                                    <?= $gallery['image_description'] ?>
+                                    <?php echo  $gallery['image_description'] ?>
                                 </div>
                             </div>
-                            <img class="roundCorner fullWidth boxBorder" src="<?= $gallery['image_path'] ?>">
+                            <img class="roundCorner fullWidth boxBorder" src="<?php echo  $gallery['image_path'] ?>">
                         </div>
 
                     <?php } ?>
@@ -79,14 +77,14 @@
                     <!--<h2 class="text-right text-ultralight text-bold fullWidth"> <? /*= $event['title'] */ ?> </h2>-->
 
                     <header>
-                        <div class="center-block text-right text-tab"><?= $event['title'] ?></div>
+                        <div class="center-block text-right text-tab"><?php echo  $event['title'] ?></div>
                     </header>
 
                     <div class="content fullWidth">
                         <!------------------------ Event List Section ------------------------>
 
                         <article class="text-right text-justify">
-                            <b> توضیحات:</b> <span><?= $event['body'] ?></span>
+                            <b> توضیحات:</b> <span><?php echo  $event['body'] ?></span>
                         </article>
 
                     </div>

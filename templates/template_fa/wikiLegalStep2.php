@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/bower_components/izitoast/dist/css/iziToast.min.css">
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN; ?>/bower_components/izitoast/dist/js/iziToast.min.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN; ?>/assets/js/validator.min.js"></script>
+<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/bower_components/izitoast/dist/js/iziToast.min.js"></script>
+<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/validator.min.js"></script>
 
 <section class="container noPadding">
     <!-- boxContainer -->
@@ -25,7 +25,9 @@
             <header>
                 <div class="center-block">ویکی مجموعه</div>
                 <span class="title-badge">مرحله</span>
-                <a class="container-badge" href="#"><div class="badge">2 از 4</div></a>
+                <a class="container-badge" href="#">
+                    <div class="badge">2 از 4</div>
+                </a>
             </header>
             <div class="content">
                 <div class="izi-container"></div>
@@ -36,7 +38,7 @@
                         <div class="col-xs-12 col-sm-6 col-md-6 center-block no-float">
                             <div class="form-group">
                                 <label for="name">نام</label>
-                                <input value="<?= $list['name'] ?>" required name="name" type="text" class="form-control" id="name" data-error="لطفا نام را وارد نمایید">
+                                <input value="<?php echo  $list['name'] ?>" required name="name" type="text" class="form-control" id="name" data-error="لطفا نام را وارد نمایید">
                             </div>
                         </div>
                     </div>
@@ -48,7 +50,7 @@
                         <div class="col-xs-12 col-sm-6 col-md-6 center-block no-float">
                             <div class="form-group">
                                 <label for="family">نام خانوادگی</label>
-                                <input value="<?= $list['family'] ?>" required name="family" type="text" class="form-control" id="family" data-error="لطفا نام خانوادگی را وارد نمایید">
+                                <input value="<?php echo  $list['family'] ?>" required name="family" type="text" class="form-control" id="family" data-error="لطفا نام خانوادگی را وارد نمایید">
                             </div>
                         </div>
                     </div>
@@ -60,7 +62,7 @@
                         <div class="col-xs-12 col-sm-6 col-md-6 center-block no-float">
                             <div class="form-group">
                                 <label for="phone">شماره تلفن</label>
-                                <input value="<?= $list['phone'] ?>" type="text" name="phone" id="phone" class="form-control set-font" pattern="^[0-9]{11,}$" maxlength="11" required data-error="لطفا تلفن را وارد نمایید">
+                                <input value="<?php echo  $list['phone'] ?>" type="text" name="phone" id="phone" class="form-control set-font" pattern="^[0-9]{11,}$" maxlength="11" required data-error="لطفا تلفن را وارد نمایید">
                             </div>
                         </div>
                     </div>
@@ -95,7 +97,7 @@
                                 </a>
                             </div>
                         </div>
-                        <input type="hidden" name="methodType" value="<?php echo(unserialize($_SESSION['step'])->data[2]['methodType']) ?>" class="methodType" aria-label="">
+                        <input type="hidden" name="methodType" value="<?php echo (unserialize($_SESSION['step'])->data[2]['methodType']) ?>" class="methodType" aria-label="">
                     </div>
 
                     <!-- separator -->
@@ -116,8 +118,23 @@
 <p class="error"><?php echo $list['validate']['msg'] ?></p>
 
 <script>
-    $(function () {
-        $('.reg-radio a').on('click', function (e) {
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
+    $(function() {
+        $('.reg-radio a').on('click', function(e) {
             e.preventDefault();
             $('.methodType').val($(this).attr('data-type'));
             $('.reg-radio a').removeClass('reg-active');
@@ -140,11 +157,11 @@
             $("input[name='methodType']").val('1');
         }
 
-        $('.call').on('click', function () {
+        $('.call').on('click', function() {
             $("input[name='methodType']").val('0');
         });
 
-        $('.sms').on('click', function () {
+        $('.sms').on('click', function() {
             $("input[name='methodType']").val('1');
         });
 

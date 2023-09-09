@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/slick.css">
-<link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/slick-theme.css">
 <link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/persianDatepicker-default.min.css">
 <script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/persianDatepicker.min.js"></script>
 <script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/jquery.knob.min.js"></script>
@@ -59,7 +58,7 @@
 
                         <div class="mmenuHolder2">
                             <nav class="menu mm-opened" data-placeholder="جستجو در دسته بندی تولیدی ها" data-title="دسته بندی تولیدی ها">
-                                <?= $list['list']['searchCategoryUlLi'] ?>
+                                <?php echo  $list['list']['searchCategoryUlLi'] ?>
                             </nav>
                         </div>
                     </div>
@@ -95,21 +94,21 @@
                                     <?php foreach ($list['list']['searchProvince'] as $key => $value) { ?>
                                         <?php if ($value['count'] > 0) { ?>
                                             <li>
-                                                <a data-toggle="tooltip" data-placement="top" title="<?= $value['name'] ?>" class="company-name">
-                                                    <span><?= $value['count'] ?></span>
-                                                    <label for="province-<?= $value['province_id'] ?>" class="company-name"><?= $value['name'] ?>
-                                                        <input type="checkbox" name="province[]" id="province-<?= $value['province_id'] ?>" value="<?= $value['name'] ?>">
+                                                <a data-toggle="tooltip" data-placement="top" title="<?php echo  $value['name'] ?>" class="company-name">
+                                                    <span><?php echo  $value['count'] ?></span>
+                                                    <label for="province-<?php echo  $value['province_id'] ?>" class="company-name"><?php echo  $value['name'] ?>
+                                                        <input type="checkbox" name="province[]" id="province-<?php echo  $value['province_id'] ?>" value="<?php echo  $value['name'] ?>">
                                                     </label>
                                                 </a>
 
                                                 <ul>
                                                     <?php foreach ($value['cities'] as $city_id => $cityFields) { ?>
                                                         <li>
-                                                            <a data-toggle="tooltip" data-placement="top" title="<?= $cityFields['name'] ?>" class="company-name">
-                                                                <span>(<?= $cityFields['count'] ?>)</span>
-                                                                <label for="city-<?= $cityFields['City_id'] ?>" class="company-name">
-                                                                    <?= $cityFields['name'] ?>
-                                                                    <input type="checkbox" name="city[]" id="<?= $cityFields['City_id'] ?>" value="<?= $cityFields['name'] ?>">
+                                                            <a data-toggle="tooltip" data-placement="top" title="<?php echo  $cityFields['name'] ?>" class="company-name">
+                                                                <span>(<?php echo  $cityFields['count'] ?>)</span>
+                                                                <label for="city-<?php echo  $cityFields['City_id'] ?>" class="company-name">
+                                                                    <?php echo  $cityFields['name'] ?>
+                                                                    <input type="checkbox" name="city[]" id="<?php echo  $cityFields['City_id'] ?>" value="<?php echo  $cityFields['name'] ?>">
                                                                 </label>
                                                             </a>
                                                         </li>
@@ -135,7 +134,7 @@
                             <div class="row xxsmallSpace"></div>
                             <div class="row mb-double">
                                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                                    <div class="alert alert-warning"><strong>توجه! </strong><? echo $msg; ?> </div>
+                                    <div class="alert alert-warning"><strong>توجه! </strong><?php echo $msg; ?> </div>
                                 </div>
                             </div>
                         </div>
@@ -159,13 +158,13 @@
                                                 <ul class="dropdown-menu searchType">
                                                     <?php foreach ($list['list']['searchItem']['category']['list'] as $a => $b) { ?>
                                                         <li class="color-white">
-                                                            <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?= $list['list']['searchItem']['category']['list'][$a]['title'] ?>">
-                                                                <?= $list['list']['searchItem']['category']['list'][$a]['title'] ?>
+                                                            <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo  $list['list']['searchItem']['category']['list'][$a]['title'] ?>">
+                                                                <?php echo  $list['list']['searchItem']['category']['list'][$a]['title'] ?>
                                                             </span>
                                                             <span class="close-filter-container">
                                                                 <a href="#">
                                                                     <i class="fa" name="category[]"
-                                                                       id="<?= $list['list']['searchItem']['category']['list'][$a]['Category_id'] ?>"> </i>
+                                                                       id="<?php echo  $list['list']['searchItem']['category']['list'][$a]['Category_id'] ?>"> </i>
                                                                 </a>
                                                             </span>
                                                         </li>
@@ -176,13 +175,13 @@
                                     <?php } else {
                                         foreach ($list['list']['searchItem']['category']['list'] as $a => $b) { ?>
                                             <li class="product-filter roundCorner boxBorder color-silver1">
-                                                <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?= $list['list']['searchItem']['category']['list'][$a]['title'] ?>">
-                                                    <?= $list['list']['searchItem']['category']['list'][$a]['title'] ?>
+                                                <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo  $list['list']['searchItem']['category']['list'][$a]['title'] ?>">
+                                                    <?php echo  $list['list']['searchItem']['category']['list'][$a]['title'] ?>
                                                 </span>
                                                 <span class="close-filter-container">
                                                     <a href="#">
                                                         <i class="fa" name="category[]"
-                                                           id="<?= $list['list']['searchItem']['category']['list'][$a]['Category_id'] ?>"> </i>
+                                                           id="<?php echo  $list['list']['searchItem']['category']['list'][$a]['Category_id'] ?>"> </i>
                                                     </a>
                                                 </span>
                                             </li>
@@ -204,12 +203,12 @@
                                                 <ul class="dropdown-menu searchType">
                                                     <?php foreach ($list['list']['searchItem']['province']['list'] as $a => $b) { ?>
                                                         <li class="color-white">
-                                                            <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?= $list['list']['searchItem']['province']['list'][$a]['name'] ?>">
-                                                                <?= $list['list']['searchItem']['province']['list'][$a]['name'] ?>
+                                                            <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo  $list['list']['searchItem']['province']['list'][$a]['name'] ?>">
+                                                                <?php echo  $list['list']['searchItem']['province']['list'][$a]['name'] ?>
                                                             </span>
                                                             <span class="close-filter-container">
                                                                 <a href="#">
-                                                                    <i class="fa" name="province[]" id="<?= $list['list']['searchItem']['province']['list'][$a]['province_id'] ?>"> </i>
+                                                                    <i class="fa" name="province[]" id="<?php echo  $list['list']['searchItem']['province']['list'][$a]['province_id'] ?>"> </i>
                                                                 </a>
                                                             </span>
                                                         </li>
@@ -220,12 +219,12 @@
                                     <?php } else {
                                         foreach ($list['list']['searchItem']['province']['list'] as $a => $b) { ?>
                                             <li class="product-filter roundCorner boxBorder color-silver1">
-                                                <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?= $list['list']['searchItem']['province']['list'][$a]['name'] ?>">
-                                                    <?= $list['list']['searchItem']['province']['list'][$a]['name'] ?>
+                                                <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo  $list['list']['searchItem']['province']['list'][$a]['name'] ?>">
+                                                    <?php echo  $list['list']['searchItem']['province']['list'][$a]['name'] ?>
                                                 </span>
                                                 <span class="close-filter-container">
                                                     <a href="#">
-                                                        <i class="fa" name="province[]" id="<?= $list['list']['searchItem']['province']['list'][$a]['province_id'] ?>"> </i>
+                                                        <i class="fa" name="province[]" id="<?php echo  $list['list']['searchItem']['province']['list'][$a]['province_id'] ?>"> </i>
                                                     </a>
                                                 </span>
                                             </li>
@@ -246,12 +245,12 @@
                                                 <ul class="dropdown-menu searchType">
                                                     <?php foreach ($list['list']['searchItem']['city']['list'] as $a => $b) { ?>
                                                         <li class="color-white">
-                                                            <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?= $list['list']['searchItem']['city']['list'][$a]['name'] ?>">
-                                                                <?= $list['list']['searchItem']['city']['list'][$a]['name'] ?>
+                                                            <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo  $list['list']['searchItem']['city']['list'][$a]['name'] ?>">
+                                                                <?php echo  $list['list']['searchItem']['city']['list'][$a]['name'] ?>
                                                             </span>
                                                             <span class="close-filter-container">
                                                                 <a href="#">
-                                                                    <i class="fa" name="city[]" id="<?= $list['list']['searchItem']['city']['list'][$a]['City_id'] ?>"> </i>
+                                                                    <i class="fa" name="city[]" id="<?php echo  $list['list']['searchItem']['city']['list'][$a]['City_id'] ?>"> </i>
                                                                 </a>
                                                             </span>
                                                         </li>
@@ -262,12 +261,12 @@
                                     <?php } else {
                                         foreach ($list['list']['searchItem']['city']['list'] as $a => $b) { ?>
                                             <li class="product-filter roundCorner boxBorder color-silver1">
-                                                <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?= $list['list']['searchItem']['city']['list'][$a]['name'] ?>">
-                                                    <?= $list['list']['searchItem']['city']['list'][$a]['name'] ?>
+                                                <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo  $list['list']['searchItem']['city']['list'][$a]['name'] ?>">
+                                                    <?php echo  $list['list']['searchItem']['city']['list'][$a]['name'] ?>
                                                 </span>
                                                 <span class="close-filter-container">
                                                     <a href="#">
-                                                        <i class="fa" name="city[]" id="<?= $list['list']['searchItem']['city']['list'][$a]['City_id'] ?>">
+                                                        <i class="fa" name="city[]" id="<?php echo  $list['list']['searchItem']['city']['list'][$a]['City_id'] ?>">
                                                         </i>
                                                     </a>
                                                 </span>
@@ -287,11 +286,11 @@
                     <?php if (isset($list['type']) && $list['type'] == 'محصولات') { ?>
                         <?php foreach ($list['list']['c_product'] as $key => $value) { ?>
                             <div class="searchBox whiteBg boxBorder roundCorner fullWidth mb-double3 contentPro contentPro-profile">
-                                <a class="single" href="<?= RELA_DIR . 'company/Detail/' . $value['company_id'] . '/' . $value['company_name']; ?>">
+                                <a class="single" href="<?php echo  RELA_DIR . 'company/Detail/' . $value['company_id'] . '/' . $value['company_name']; ?>">
 
                                     <header>
                                         <div class="text-right text-title">
-                                            <?= ($value['title']) != "" ? $value['title'] : "-"; ?>
+                                            <?php echo  ($value['title']) != "" ? $value['title'] : "-"; ?>
                                         </div>
                                     </header>
 
@@ -310,19 +309,19 @@
 
                                                 <div class="col-xs-6 col-sm-5 col-md-3 pull-right boxA noPadding">
                                                     <div class="text pull-right">
-                                                        <p> توضیحات: <?= ($value['description']) != "" ? $value['description'] : "-" ?> </p>
+                                                        <p> توضیحات: <?php echo  ($value['description']) != "" ? $value['description'] : "-" ?> </p>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-xs-6 col-sm-5 col-md-3 pull-right boxA noPadding">
                                                     <div class="text pull-right">
-                                                        <p>نام کمپانی: <?= ($value['company_name']) != "" ? $value['company_name'] : "-" ?> </p>
+                                                        <p>نام کمپانی: <?php echo  ($value['company_name']) != "" ? $value['company_name'] : "-" ?> </p>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-xs-6 col-sm-5 col-md-3 pull-right boxA noPadding">
                                                     <div class="text pull-right">
-                                                        <p> تاریخ: <?= ($value['date']) != "" ? $value['date'] : "-" ?> </p>
+                                                        <p> تاریخ: <?php echo  ($value['date']) != "" ? $value['date'] : "-" ?> </p>
                                                     </div>
                                                 </div>
 
@@ -350,8 +349,8 @@
                                     <div class="row noMargin">
                                         <?php foreach ($list['list']['searchSuggestion']['value'] as $key => $value) { ?>
                                             <div class="col-xs-12 col-sm-4 col-md-3 pull-right">
-                                                <a class="text-right transition" href="<?= RELA_DIR ?>search/type/<?= (($list['list']['searchSuggestion']['type'] == '0') ? 'تولیدی' : 'محصولات'); ?>/q/<?= $value; ?>" name="<?= $value; ?>" title="<?= $value; ?>">
-                                                    <?= $value ?>
+                                                <a class="text-right transition" href="<?php echo  RELA_DIR ?>search/type/<?php echo  (($list['list']['searchSuggestion']['type'] == '0') ? 'تولیدی' : 'محصولات'); ?>/q/<?php echo  $value; ?>" name="<?php echo  $value; ?>" title="<?php echo  $value; ?>">
+                                                    <?php echo  $value ?>
                                                 </a>
                                             </div>
                                         <?php } ?>
@@ -376,7 +375,7 @@
                                         }
                                         ?>
                                         <li>
-                                            <a class=" transition <?= $href['activePage'] ?>" href="<?= RELA_DIR . $href['address'] ?>"><?= $href['label'] ?></a>
+                                            <a class=" transition <?php echo  $href['activePage'] ?>" href="<?php echo  RELA_DIR . $href['address'] ?>"><?php echo  $href['label'] ?></a>
                                         </li>
                                         <?php
                                     }
@@ -402,14 +401,14 @@
 
                                 <div class="jPager center-block  roundCorner border pull-left">
                                     <span>تعداد صفحه :</span>
-                                    <?= $list['pagination']['c_product']['pageCount'] . "<br>" ?>
+                                    <?php echo  $list['pagination']['c_product']['pageCount'] . "<br>" ?>
                                 </div>
 
                                 <!-------------------------------- تعداد رکورد -------------------------------->
 
                                 <div class="jPager center-block  roundCorner">
                                     <span>تعداد رکورد :</span>
-                                    <?= $list['pagination']['c_product']['rowCount'] . "<br>" ?>
+                                    <?php echo  $list['pagination']['c_product']['rowCount'] . "<br>" ?>
                                 </div>
 
                             </div>
@@ -430,7 +429,7 @@
 <!-------------------------------- Scripts -------------------------------->
 
 
-<script src="<?= RELA_DIR ?>templates/template_fa/assets/js/companyWiki.js"></script>
+<script src="<?php echo RELA_DIR ?>templates/template_tailwind/assets/js/companyWiki.js"></script>
 
 <div class="row xxsmallSpace"></div>
 

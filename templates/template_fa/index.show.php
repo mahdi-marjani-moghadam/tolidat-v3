@@ -1,668 +1,413 @@
-<link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/index.css">
-<div class="boxContainer home-page mainPage mt">
+<link rel="stylesheet" type="text/css" href="<?php   ?><?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/css/slick.css" />
+<style>
+    .slick-track {
+        display: flex !important;
+    }
 
-    <section class="row fullPadding intro">
-        <div class=" col-xs-12 col-sm-12 col-md-12 mb pull-right">
-            <div>
-                <h1>چگونه کسب و کار خود را به مشتریانتان معرفی می نمایید؟</h1>
-                <p class="bold">پلتفرم تولیدات فضای لازم و مناسبی برای صاحبان مشاغل فراهم می نماید که بتوانند خود را به بازار هدف خود معرفی کنند</p>
+    .slick-slide {
+        height: inherit !important;
+    }
 
-                <p>با وارد کردن اطلاعات محصول و یا خدمات خود(عکس، متن، ...) میتوانید علاوه بر کسب رتبه، در سایت گوگل بهتر دیده شوید</p>
-                <a href="<?php echo RELA_DIR ?>register" class="btn btn-success  register-button">همین حالا شروع کنید </a>
+    .nextArrow {
+        left: -30px;
+        font-size: 12px;
+        line-height: 0;
+        position: absolute;
+        top: calc(50% - 20px);
+        z-index: 1;
+        display: block;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        background-color: #ff710d30;
+    }
 
-            </div>
-        </div>
-    </section>
+    .prevArrow {
+        right: -30px;
+        font-size: 12px;
+        line-height: 0;
+        position: absolute;
+        top: calc(50% - 20px);
+        z-index: 1;
+        display: block;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        background-color: #ff710d30;
+    }
 
-    <div class="row xsmallSpace"></div>
+    @media screen and (max-width: 767px) {
+        .nextArrow {
+            left: -11px;
+        }
 
-    <div>
-        <div class=" col-xs-12 col-sm-12 col-md-12 mb pull-right">
-            <h2>افزایش رتبه سایت با تولیدات</h2>
-            <div>
-                اگر شما جزو کسانی هستید که سایت دارید، حتما براتون این سوال پیش اومده که چطوری می­شه تو رتبه بندی گوگل رتبه ی یک رو به دست بیارید.
-                ممکنه نرم­افزارهای بالا بردن رتبه­ی سایت رو امتحان کرده باشید و یا مبالغ نسبتا زیادی رو بابت این موضوع هزینه کرده باشید.
-                راه­های زیادی برای بالا بردن سایتتون وجود داره که ممکنه زمان بر باشه و یا هزینه ی زیادی داشته باشه.
-            </div>
-            <h3>حالا راه حل چیه؟</h3>
-            <div>
-            خیلی ساده­ست. کافیه که شما در سایت تولیدات ثبت نام کنید و اطلاعات محصول  و خدماتتون رو وارد کنید.
-            تولیدات با داشتن نیروهای متخصص سئو و استفاده از تکنیک­های خاصی رتبه ی بالایی در پیج رنک گوگل دارد و شما هم می­تونید همراه ما باشید.
-             ثبت نام در سایت تولیدات رایگان است و بعد از ثبت نام شما می­تونید
-              بر اساس هدفتون  با پرداخت هزینه­ی کمی پکیج­های تجاری تولیدات رو انتخاب کنید و از خدماتش استفاده کنید.
-            </div>
-        </div>
-    </div>
-
-    <div class="row xsmallSpace"></div>
-
-    <div class="container-slider-main whiteBg boxBorder">
-        <div class="grid-stack mb">
-            <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['0']['image_1']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['0']['image_1']; ?>">
-                    <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['0']['Category_id'] . "/level/2" ?>">
-                        <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['0']['image_1']; ?>" alt="<?php echo $list['category_list']['0']['title']; ?>">
-                        <span class="title-product">
-                            <?= $list['category_list']['0']['title'] ?>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="2" data-gs-y="0" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['1']['image_1']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['1']['image_1']; ?>">
-                    <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['1']['Category_id'] . "/level/2"  ?>">
-                        <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['1']['image_1']; ?>" alt="<?php echo $list['category_list']['1']['title']; ?>">
-                        <span class="title-product">
-                            <?= $list['category_list']['1']['title'] ?>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="4" data-gs-height="4">
-                <?php if (!isset($list['bannerExhibition'])) : ?>
-                    <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['2']['image_2']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['2']['image_4']; ?>" style="background: url('<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['2']['image_4']; ?>') right center no-repeat; background-size: cover;">
-                        <a style=" color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['2']['Category_id'] . "/level/2" ?>">
-                            <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['2']['image_4']; ?>" alt="<?php echo $list['category_list']['2']['title']; ?>">
-                            <span class="title-product">
-                                <?= $list['category_list']['2']['title'] ?>
-                            </span>
-                        </a>
-                    </div>
-                <?php else : ?>
-                    <div class="grid-stack-item-content" data-content="" data-replace="" style="background: url('<?php echo IMAGES_RELA_DIR . 'banner/exhibition/' . $list['bannerExhibition']['image']; ?>') right center no-repeat; background-size: cover;">
-                        <a style=" color: white" href="">
-                            <!--                            <img src="--><?php //echo IMAGES_RELA_DIR.'banner/exhibition/' . $list['bannerExhibition']['image'];
-                                                                            ?>
-                            <!--" alt="--><? //= $list['bannerExhibition']['description']
-                                            ?>
-                            <!--">-->
-                            <span class="title-product">
-                                <?= $list['bannerExhibition']['description'] ?>
-                            </span>
-                        </a>
-                    </div>
-                <?php endif; ?>
-            </div>
-            <div class="grid-stack-item" data-gs-x="8" data-gs-y="0" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['3']['image_1']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['3']['image_1']; ?>">
-                    <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['3']['Category_id'] . "/level/2" ?>">
-                        <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['3']['image_1']; ?>" alt="<?php echo $list['category_list']['3']['title']; ?>">
-                        <span class="title-product">
-                            <?= $list['category_list']['3']['title'] ?>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="10" data-gs-y="0" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['4']['image_1']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['4']['image_1']; ?>">
-                    <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['4']['Category_id'] . "/level/2" ?>">
-                        <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['4']['image_1']; ?>" alt="<?php echo $list['category_list']['4']['title']; ?>">
-                        <span class="title-product">
-                            <?= $list['category_list']['4']['title'] ?>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['5']['image_1']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['5']['image_1']; ?>">
-                    <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['5']['Category_id'] . "/level/2" ?>">
-                        <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['5']['image_1']; ?>" alt="<?php echo $list['category_list']['5']['title']; ?>">
-                        <span class="title-product">
-                            <?= $list['category_list']['5']['title'] ?>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="2" data-gs-y="2" data-gs-width="2" data-gs-height="4">
-                <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['6']['image_3']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['6']['image_3']; ?>">
-                    <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['6']['Category_id'] . "/level/2" ?>">
-                        <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['6']['image_3']; ?>" alt="<?php echo $list['category_list']['6']['title']; ?>">
-                        <span class="title-product">
-                            <?= $list['category_list']['6']['title'] ?>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="0" data-gs-y="4" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['7']['image_1']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['7']['image_1']; ?>">
-                    <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['7']['Category_id'] . "/level/2" ?>">
-                        <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['7']['image_1']; ?>" alt="<?php echo $list['category_list']['7']['title']; ?>">
-                        <span class="title-product">
-                            <?= $list['category_list']['7']['title'] ?>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="4" data-gs-y="4" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['8']['image_1']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['8']['image_1']; ?>">
-                    <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['8']['Category_id'] . "/level/2" ?>">
-                        <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['8']['image_1']; ?>" alt="<?php echo $list['category_list']['8']['title']; ?>">
-                        <span class="title-product">
-                            <?= $list['category_list']['8']['title'] ?>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="6" data-gs-y="4" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['9']['image_1']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['9']['image_1']; ?>">
-                    <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['9']['Category_id'] . "/level/2" ?>">
-                        <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['9']['image_1']; ?>" alt="<?php echo $list['category_list']['9']['title']; ?>">
-                        <span class="title-product">
-                            <?= $list['category_list']['9']['title'] ?>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-stack-item " data-gs-x="8" data-gs-y="2" data-gs-width="4" data-gs-height="2">
-                <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['10']['image_2']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['10']['image_2']; ?>">
-                    <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['10']['Category_id'] . "/level/2" ?>">
-                        <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['10']['image_2']; ?>" alt="<?php echo $list['category_list']['10']['title']; ?>">
-                        <span class="title-product">
-                            <?= $list['category_list']['10']['title'] ?>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="8" data-gs-y="4" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['11']['image_1']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['11']['image_1']; ?>">
-                    <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['11']['Category_id'] . "/level/2" ?>">
-                        <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['11']['image_1']; ?>" alt="<?php echo $list['category_list']['11']['title']; ?>">
-                        <span class="title-product">
-                            <?= $list['category_list']['11']['title'] ?>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-stack-item" data-gs-x="10" data-gs-y="4" data-gs-width="2" data-gs-height="2">
-                <div class="grid-stack-item-content" data-content="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['12']['image_1']; ?>" data-replace="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['12']['image_1']; ?>">
-                    <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['12']['Category_id'] . "/level/2" ?>">
-                        <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['12']['image_1']; ?>" alt="<?php echo $list['category_list']['12']['title']; ?>">
-                        <span class="title-product">
-                            <?= $list['category_list']['12']['title'] ?>
-                        </span>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-        <div class="container-show-all-category-main">
-            <a href="<?= RELA_DIR . "category/all" ?>" class="btn btn-block button-default show-more show-all-category-main text-center">نمایش همه دسته بندی ها</a>
-        </div>
-
-        <div class="row xxxsmallSpace"></div>
-
-    </div>
-
-    <!-- separator -->
-    <div class="row xsmallSpace"></div>
-
-    <div class="row fullPadding">
-        <div class="col-xs-12 col-sm-12 col-md-12 mb pull-right">
-
-            <h2> چگونه بفروشیم وقتی مشتری نیست؟</h2>
-
-            <div>
-                ممکنه شما جزو افرادی باشید که مدتیه که کسب و کار خودتون رو دارید و موفق هم بوده باشید و الان تصمیم دارید مشتری­های بیشتری رو جذب کنید
-                و یا شاید اصلا تازه کسب و کارتون رو راه انداختین ونگران این موضوع هستین
-                که چطور محصول و خدمات خودتون رو به مشتری معرفی کنید و اونهارو به سمت خودتون جذب کنید.
-                ممکنه حتی شما نسبت به بقیه رقبا مزیتی داشته باشید و دوست دارید که بقیه هم از این مساله باخبر باشند.
-            </div>
-            <div class="row xxxsmallSpace"></div>
-            <div>
-                سایت تولیدات محیطی رو براتون فراهم کرده که شما عزیزان می­تونید بدون نیاز به تخصص خاصی با عضویت در این پلتفرم،
-                با داشتن پروفایل شخصی خودتون محصولتون رو معرفی کنید. با عضویت در تولیدات محصول شما در یک نمایشگاه دائمی وجود دارد که علاوه بر دیده شدن محصولتون،
-                شرایط مقایسه­ی محصول و خدمات با محصول و خدمات دیگر همکاران شما، قدرت انتخاب بیشتری را نیز به مشتری می­دهد.
-            </div>
-        </div>
-    </div>
-
-
-    <div class="row xsmallSpace"></div>
-
-
-    <div class="row fullPadding">
-        <?php if ($list['company_list']) { ?>
-            <div class="col-xs-12 col-sm-12 col-md-12 mb pull-right">
-                <div class="text-right header-title mb-half">
-                    <span>تولیدکنندگان برتر</span><span></span>
-                </div>
-                <div id="Manufacturers" class="text-header bestProduct fullWidth new-manufacturers">
-                    <div class="content Manufacturers ltr">
-                        <?php foreach ($list['higher_company'] as $item => $value) : ?>
-                            <a class="single" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
-                                <div class="item text-center roundCorner boxBorder">
-                                    <div class="item-content whiteBg">
-                                        <div class="logoContainer pull-right">
-                                            <h2 class="text-right rtl"><?= $value['company_name'] ?></h2>
-                                        </div>
-                                        <div class="content pull-right">
-                                            <div class="item-Money">
-                                                <span class="package-silver"><i class="fa fa-trophy" aria-hidden="true"></i> </span>
-                                                <span><?= $value['information']['package_type'] ?></span>
-                                            </div>
-                                            <?php
-                                            if ((int)$value['information']['product_count']) {
-                                            ?>
-                                                <div class="item-product">
-                                                    <span><i class="fa fa-cubes" aria-hidden="true"></i> </span>
-                                                    <span>&nbsp;<?= $value['information']['product_count']; ?>&nbsp;</span>
-                                                    <span> محصول</span>
-                                                </div>
-                                            <?php
-                                            }
-                                            ?>
-                                            <div class="item-verify">
-                                                <span><i class="fa fa-check-square-o" aria-hidden="true"></i> </span>
-                                                <span>تایید شده توسط تولیدات</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="footer-Percent mt">
-                                        <ul class="">
-                                            <?php foreach ($value['company_product'] as $key => $fields) : ?>
-                                                <li>
-                                                    <img title="<?= $fields['title'] ?>" alt="<?= ' محصول ' . $fields['brif_description'] ?>" class="roundCorner fullWidth boxBorder" data-lazy="<?php echo ($fields['image'] ? COMPANY_ADDRESS . $fields['company_id'] . "/product/100.100." . $fields['image'] : DEFULT_PRODUCT_ADDRESS); ?>">
-                                                </li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                        <div class="content-circular-process center-block roundCornerFull">
-                                            <input type="text" value="<?php echo $value['priority'] ?>" class="dial"><span>%</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
-        <?php } ?>
-    </div>
-
-    <div class="row fullPadding">
-        <?php if ($list['company_list']) { ?>
-            <div class="col-xs-12 col-sm-12 col-md-12 mb pull-right">
-                <div class="text-right header-title mb-half mt">
-                    <span> تولیدکنندگان جدید</span> <span></span>
-                </div>
-                <div id="bestProduct" class="text-header bestProduct whiteBg boxBorder roundCorner fullWidth new-manufacturers new-manufacturers1 mb">
-                    <div class="content carousel-slick ltr">
-                        <?php foreach ($list['company_list'] as $item => $value) { ?>
-                            <a class="single" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
-                                <div class="item text-center">
-                                    <div class="logoContainer pull-right">
-                                        <?php
-                                        $file = ROOT_DIR . ltrim($value['image'], '/');
-                                        ?>
-                                        <img data-lazy="<?php echo (isset($value['image']) ? COMPANY_ADDRESS . $value['Company_id'] . "/logo/122.125." . $value['image'] : '/templates/' . CURRENT_SKIN . '/assets/images/placeholder-logo.png'); ?>" class="boxBorder roundCorner" alt="<?= " لوگوی " . $value['company_name'] ?>" title="<?= $value['company_name']; ?>">
-                                    </div>
-                                    <div class="content pull-right mt">
-                                        <div class="text-right header">
-                                            <h3 class="rtl">
-                                                <?php echo (strlen($value['company_name']) ? $value['company_name'] : '-'); ?>
-                                            </h3>
-                                        </div>
-                                        <footer>
-                                            <p class="text-right text-justify">
-                                                <?php echo (strlen($value['description']) ? $value['description'] : '-'); ?>
-                                            </p>
-                                        </footer>
-                                    </div>
-                                    <div class="footer-Percent">
-                                        <ul class="">
-                                            <li data-toggle="tooltip" data-placement="top" title="" data-original-title="تأیید شده توسط تولیدات"><i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                            </li>
-                                            <?php
-                                            if ((int)$value['information']['product_count']) {
-                                            ?>
-                                                <li class="<?php echo ($value['information']['product_count'] == 0 ? 'disabled' : ''); ?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="<?php echo ($value['information']['product_count'] != 0 ? $value['information']['product_count'] . ' محصول معرفی شده' : 'بدون محصول'); ?>">
-                                                    <i class="fa fa-cubes" aria-hidden="true"></i>
-                                                </li>
-                                            <?php
-                                            }
-                                            ?>
-                                            <?php
-                                            if ($value['information']['package_type'] != 'ندارد') {
-                                            ?>
-                                                <li class="<?php echo (!$value['information']['package_class'] ? 'disabled' : $value['information']['package_class']); ?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="<?php echo ($value['information']['package_type'] ? 'پکیج ' . $value['information']['package_type'] : 'رایگان'); ?>">
-                                                    <i class="fa fa-trophy" aria-hidden="true"></i>
-                                                </li>
-                                            <?php
-                                            }
-                                            ?>
-                                            <li data-toggle="tooltip" data-placement="top" title="" data-original-title="<?php echo $value['information']['personality_type'] ?>">
-                                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                            </li>
-                                        </ul>
-                                        <div class="content-circular-process center-block roundCornerFull">
-                                            <input type="text" value="<?php echo $value['priority'] ?>" class="dial"><span>%</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-        <?php } ?>
-    </div>
-
-    <div class="row xxxsmallSpace"></div>
-
-    <div class="row fullPadding">
-
-
-        <?php if (isset($list['news_list'])) { ?>
-            <div class="col-xs-12 col-sm-4 col-md-4 pull-right newsColumn">
-                <div class="text-right header-title mb-half mt">
-                    <a href="<?= RELA_DIR . "article" ?>"><span>مقالات</span></a><span></span>
-                </div>
-                <div class="text-header vertical bestProduct whiteBg boxBorder roundCorner fullWidth container-article mb">
-                    <div id="articles" class="content carousel-vertical news-tolidat content1 ltr slick-button">
-                        <?php foreach ($list['articles_list'] as $id => $field) { ?>
-                            <a class="single" href="<?php echo RELA_DIR . 'article/' . $field['Article_id'] ?>">
-                                <div class="innerContent pull-left">
-                                    <div class="logoContainer pull-right">
-                                        <img class="roundCorner fullWidth boxBorder" data-lazy="<?php echo (isset($field['image']) ? STATIC_RELA_DIR . '/images/article/90.90.' . $field['image'] : DEFULT_LOGO_ADDRESS) ?>" alt="<?= $field['brif_description'] ?>" title="<?= $field['title']; ?>">
-                                    </div>
-                                    <div class="text-right rtl text-light h2" title="<?= $field['title'] ?>">
-                                        <h4>
-                                            <?php echo (strlen($field['title']) ? $field['title'] : "") ?>
-                                        </h4>
-                                    </div>
-                                    <div class="text-right text-light rtl article">
-                                        <p>
-                                            <?php echo (strlen($field['description']) ? $field['description'] : "") ?>
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-        <?php } else { ?>
-            <div class="col-xs-12 col-sm-4 col-md-4 pull-right newsColumn">
-                <div class="supporters bestProduct Advertising newsContainer2 whiteBg boxBorder roundCorner fullWidth text-header">
-                    <header>
-                        <div class="center-block text-right">
-                            <a class="pointer" href="<?php echo RELA_DIR; ?>news"></a>مقالات
-                        </div>
-                    </header>
-                </div>
-            </div>
-        <?php } ?>
-
-        <?php if (isset($list['events_list'])) { ?>
-            <div class="col-xs-12 col-sm-4 col-md-4 pull-right newsColumn">
-                <div class="text-right header-title mb-half mt">
-                    <span><a href="/event" style="color: #555; font-weight: 400; font-size: 18px; display: block; float: right; height: 100%; line-height: 25px; padding-left: 20px;">رویدادها</a></span>
-                    <span></span>
-                </div>
-                <div class="text-header vertical bestProduct whiteBg boxBorder roundCorner fullWidth container-news">
-                    <div id="news" class="content carousel-vertical news-tolidat content1 ltr slick-button">
-                        <?php foreach ($list['events_list'] as $id => $field) { ?>
-                            <a class="single" href="<?= RELA_DIR . 'event/' . $field['event_id']; ?>">
-                                <div class="innerContent pull-left">
-                                    <div class="logoContainer pull-right">
-                                        <img class="roundCorner fullWidth boxBorder" data-lazy="<?php echo (isset($field['icon']) ? STATIC_RELA_DIR . '/images/event/90.90.' . $field['icon'] : DEFULT_LOGO_ADDRESS) ?>" alt="<?= $field['brief_description'] ?>" title="<?= $field['title']; ?>">
-                                    </div>
-                                    <div class="text-right rtl text-light h2" title="<?= $field['title'] ?>">
-                                        <h4>
-                                            <?php echo (strlen($field['title']) ? $field['title'] : "") ?>
-                                        </h4>
-                                    </div>
-                                    <div class="text-right text-light rtl article">
-                                        <p>
-                                            <?php echo (strlen($field['brief_description']) ? $field['brief_description'] : "") ?>
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-        <?php } else { ?>
-            <div class="col-xs-12 col-sm-4 col-md-4 pull-right newsColumn">
-                <div class="supporters bestProduct Advertising newsContainer2 whiteBg boxBorder roundCorner fullWidth text-header">
-                    <header>
-                        <div class="center-block text-right">
-                            <a class="pointer" href="<?php echo RELA_DIR; ?>news"></a>رویدادها
-                        </div>
-                    </header>
-                </div>
-            </div>
-        <?php } ?>
-        <div class="row xxsmallSpace"></div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12 mt">
-            <div class="text-right header-title mb">
-                <p> درباره تولیدات</p> <span></span>
-            </div>
-            <div class="text-header whiteBg boxBorder roundCorner fullWidth supporters-box mb">
-                <div class="content">
-                    <p>
-                        تولیدات مرجع جامع کلیه اصناف کشور است که چشم انداز کوتاه مدت فعالیت در عرصه بین الملل را دارد.
-                        مرجع تولیدات برای هر کسب و کار یک پلتفرم هوشمند آماده کرده است تا بتوانند کلیه اطلاعات قابل ارائه به بازار هدف خود را در آن درج نموده و از امکانات SEO این سایت بهره مند شده و در موتور های جستجو رتبه بالاتری از طریق درگاه تولیدات کسب کنند. این پلتفرم و یا همان پروفایل اختصاصی افراد اطلاعات آنان را در منوهای جداگانه به کاربران عرضه می کند.
-                        اطلاعات اعضا در دسته بندی های مجزا جهت مشاهده سایرین طبقه بندی شده است که این اطلاعات بر اساس شهر-استان و نیز زمینه فعالیت قابلیت فیلتر کردن و جستجو دارد.
-                        <a class="colorBoronz" href="<?php echo RELA_DIR; ?>aboutus" name="about" title="درباره ما">بیشتر بدانید</a>
-                    </p>
-                </div>
-
-            </div>
-            <div class="row xxsmallSpace center-block"></div>
-        </div>
-
-    </div>
-
-</div>
-<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/jquery.knob.min.js"></script>
-<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/slick.min.js"></script>
-<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/lodash.min.js"></script>
-<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/gridstack.js"></script>
-<script>
-    function changeGridImage() {
-        var windowWidth = $(window).width(),
-            $imgHolder = $(this).find('.grid-stack-item-content');
-        if (windowWidth <= 768) {
-            var imgMobile = $imgHolder.data('content');
-
-            $('.grid-stack-item').each(function() {
-                $imgHolder.css('background', 'url("' + imgMobile + '") right center no-repeat');
-            });
-        } else {
-            var imgDesktop = $imgHolder.data('replace');
-
-            $('.grid-stack-item').each(function() {
-                $imgHolder.css('background', 'url("' + imgDesktop + '") right center no-repeat');
-            });
+        .prevArrow {
+            right: -11px;
         }
     }
 
-    $(window).on('load', function() {
-        $.ajax({
-            url: "/index/event/",
-            type: 'get',
-            success: function(data) {
-                var response = $.parseJSON(data);
+    @media screen and (max-width: 767px) {
+        .nextArrow {
+            left: -11px;
+        }
 
-                if (response.title != 'no event') {
-                    var html = '';
-                    $.each(response, function(key, value) {
-                        if (value.title !== undefined) {
-                            html +=
-                                '<a class="single" href="' + value.link + '">' +
-                                '<div class="innerContent pull-left">' +
-                                '<div class="text-right rtl text-light title-event" title="' + value.title + '">' + value.title + '</div>' +
-                                '<article class="text-right text-light rtl report-event">' +
+        .prevArrow {
+            right: -11px;
+        }
 
-                                '</article>' +
-                                '</div>' +
-                                '</a>';
-                        }
-                    });
+    }
 
-                    $('#events').html(html);
-                } else {
-                    var image = '<img src="<?php echo DEFULT_LOGO_ADDRESS ?>">';
-                    $("#events").html(image);
-                }
 
-                $('#events').slick({
-                    slidesToShow: 6,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    autoplay: true,
-                    vertical: true,
-                    verticalSwiping: true,
-                    responsive: [{
-                            breakpoint: 767,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1
-                            }
-                        },
-                        {
-                            breakpoint: 560,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1
-                            }
-                        },
-                        {
-                            breakpoint: 480,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1
-                            }
-                        }
-                    ]
-                });
-            }
-        });
+    video::-webkit-media-controls-fullscreen-button {
+        display: none;
+    }
 
-        $('#articles,#news').slick({
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            autoplay: true,
-            infinite: true,
-            vertical: true,
-            verticalSwiping: true,
-            lazyLoad: 'ondemand',
-            responsive: [{
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 560,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
-        // تولیدکنندگان جدید
-        $('.carousel-slick').slick({
-            dots: false,
-            infinite: true,
-            speed: 300,
-            autoplay: true,
-            slidesToShow: 5,
-            rows: 1,
-            slidesToScroll: 1,
-            lazyLoad: 'ondemand',
-            responsive: [{
-                    breakpoint: 1115,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 560,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
+    body {
+        background-image: url('<?php echo TEMPLATE_DIR ?>assets/image/back/back2.jpg');
+        background-repeat: round;
+        background-size: contain;
+    }
 
-        // تولیدکنندگان برتر
-        $('.Manufacturers').slick({
-            dots: false,
-            infinite: true,
-            speed: 300,
-            autoplay: true,
-            slidesToShow: 4,
-            rows: 1,
-            slidesToScroll: 1,
-            lazyLoad: 'ondemand',
-            responsive: [{
-                    breakpoint: 1115,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 560,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
+    .input-register {
+        outline: turquoise !important;
+    }
 
-        $('.grid-stack').gridstack({
-            disableDrag: true,
-            disableResize: true
-        });
+    .hidden-style {
+        display: none;
+    }
 
-        changeGridImage();
-    });
+    .block-style {
+        display: block;
+    }
 
-    $(window).on('resize', function() {
-        changeGridImage();
-    });
-</script>
+    @media screen and (max-width: 568px) {
+        .hidden-style {
+            display: block !important;
+        }
+
+        .block-style {
+            display: none !important;
+        }
+    }
+</style>
+
+<!-- slider -->
+<div class="bgs-cover">
+    <div class="items-center px-5 bg-gray-500s">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5  items-center container mx-auto">
+            <h1 class="hidden-style text-2xl relative py-5 pr-4 font-semibold rounded-lg text-center md:text-right leading-relaxed after:content-[''] after:right-0 after:top-8  after:w-2 after:absolute after:bg-teal-100 after:h-52">
+                ما به کمپانی شما کمک میکنیم تا از طریق تولیدات بهتر دیده شوید
+            </h1>
+            <img class="object-center self-center rounded-md" src="<?php echo TEMPLATE_DIR ?>assets/image/template1.jpg" alt="">
+            <div class="max-w-lg mx-auto">
+                <h1 class="block-style text-5xl relative py-5 pr-4 font-semibold rounded-lg text-center md:text-right leading-relaxed after:content-[''] after:right-0 after:top-8  after:w-2 after:absolute after:bg-teal-100 after:h-52">
+                    ما به کمپانی شما کمک میکنیم تا از طریق تولیدات بهتر دیده شوید
+                </h1>
+
+                <div class="justify-center flex  md:justify-start p-1   mr-5 mt-14 h-10 relative">
+                    <?php if($information_company == null):?>
+                    <a href="<?php echo RELA_DIR ?>register" class="cta-home-register w-40 py-0 px-4 text-center border border-transparent   rounded text-white bg-tolidatColor hover:bg-orange-600 focus:outline-none">
+                        ثبت نام
+                    </a>
+                    <?php else: ?>
+                        <a href="<?php echo RELA_DIR ?>profile" class="cta-home-register w-40 py-0 px-4 text-center border border-transparent   rounded text-white bg-tolidatColor hover:bg-orange-600 focus:outline-none">
+                         حساب کاربری
+                    </a>
+                    <?php endif; ?>
+                </div>
+                <div class="grid items-center gap-y-16  grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 container mx-auto mt-9 mb-8">
+
+                    <div class="flex items-center justify-center flex-col px-2">
+                        <div class="w-full flex  sm:text-xl  justify-center md:text-3xl lg:text-3xl  font-medium text-orange-400">
+                            % 99 </div>
+                        <div class="w-full text-center text-orange-400">
+                            <h3 class="text-sm">حفظ مشتری </h3>
+                        </div>
+                    </div>
+
+                    <div class="h-full">
+                        <div class="flex items-center justify-center flex-col px-2">
+                            <div class="w-full flex  sm:text-xl  justify-center md:text-3xl lg:text-3xl  font-medium	 text-blue-300">
+                                12 +
+                            </div>
+                            <div class="w-full text-center text-blue-300">
+                                <h3 class="text-sm">سال سرویس</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-full">
+                        <div class="flex items-center justify-center flex-col px-2">
+                            <div class="w-full  sm:text-xl  justify-center md:text-3xl lg:text-3xl flex font-medium	 text-red-400">
+                                50 + </div>
+                            <div class="w-full text-center text-red-500">
+                                <h3 class="text-sm"> حرفه ای ها </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- icons -->
+<div class="relative bottom-3">
+    <div class="items-center mt-10 mb-4">
+        <div class="grid items-center gap-y-16 gap-x-8 grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-w-2xl mx-auto">
+
+            <div>
+                <div class="flex items-center justify-center flex-col px-4">
+                    <div class="w-10 flex  justify-center">
+                        <img class="object-center self-center rounded-md" src="<?php echo TEMPLATE_DIR ?>assets/image/icon_homepage/jaygah_behtar.svg" alt="">
+                    </div>
+                    <div class="w-full text-center">
+                        <h3 class="text-sm font-medium mt-5">جایگاه بهتر</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="h-full">
+                <div class="flex items-center justify-center flex-col px-4">
+                    <div class="w-10 text-center">
+                        <div class="justify-center flex">
+                            <img class="object-center self-center rounded-md" src="<?php echo TEMPLATE_DIR ?>assets/image/icon_homepage/pardakht.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="w-full text-center">
+                        <h3 class="text-sm font-medium mt-5">پرداخت های خودکار</h3>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="h-full">
+                <div class="flex items-center justify-center flex-col px-4">
+                    <div class="w-10 flex justify-center">
+                        <img class="object-center self-center rounded-md" src="<?php echo TEMPLATE_DIR ?>assets/image/icon_homepage/stratejy.svg" alt="">
+                    </div>
+
+                </div>
+                <div class="w-full text-center">
+                    <h3 class="text-sm font-medium mt-5">بهترین استراتژی</h3>
+                </div>
+
+            </div>
+
+            <div class="h-full">
+                <div class="flex items-center justify-center flex-col px-4">
+                    <div class="w-10 justify-center flex">
+                        <img class="object-center self-center rounded-md" src="<?php echo TEMPLATE_DIR ?>assets/image/icon_homepage/poshtibani.svg" alt="">
+                    </div>
+
+                </div>
+                <div class="w-full text-center">
+                    <h3 class="text-sm font-medium mt-5">پشتیبانی</h3>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- contact us -->
+<div class="relative" id="">
+    <div class="items-center">
+        <div class="grid items-center gap-x-8 grid-cols-1 md:grid-cols-2 container mx-auto px-4">
+            <div>
+                <div class="flex items-center justify-center text-slate-800">
+                    <div class="max-w-md w-full">
+                        <div class="mt-6">
+                            <h3 class="text-3xl font-semibold mb-8">چرا در تولیدات ثبت نام کنیم؟</h3>
+                            <div class="px-3 relative">
+                                <div class="text-sm font-medium	text-slate-600 leading-relaxed mb-5 after:content-[''] after:right-0 after:top-3  after:w-2 after:absolute after:bg-teal-100 after:h-10">
+                                    معرفی کسب وکار های مختلف در ابعاد وسیع و هزینه ی بهینه شده در سطح کل کشور، به گونه ایی با کمترین هزینه ی تبلیغات و سئو،مشتریان زیادی شما را خواهند شناخت
+
+                                </div>
+                            </div>
+                            <div class="px-3 relative">
+                                <div class="text-sm font-medium	text-slate-600 leading-relaxed mb-5 after:content-[''] after:right-0 after:top-3  after:w-2 after:absolute after:bg-orange-400 after:h-10">
+                                    دارا بودن پروفایل های اختصاصی و سئو شده ی هر کسب وکار در سایت تولیدات که با سرچ‌ ساده در گوگل به مخاطبان نشان داده می شود.
+                                    به نوعی که دیگر نیاز به سایت اختصاصی برای هر کسب وکار وجود ندارد، و پروفایل تجاری شما در سایت تولیدات با تمام جزئیات و شرح کامل خدمات، بارگزاری می شود
+                                </div>
+                            </div>
+                            <div class="px-3 relative">
+                                <div class="text-sm font-medium	text-slate-600 leading-relaxed mb-5 after:content-[''] after:right-0 after:top-3  after:w-2 after:absolute after:bg-red-400 after:h-10">
+                                    سایت تولیدات تنها پلتفرم اختصاصی است که تمام مشاغل ایران را در خود جای داده است، و در نتیجه مخاطبان هدفمند خود را دارد.
+                                    هدف از اینکار این است که مشتریان به طور مستقیم به تولیدکنندگان و صاحبان مشاغل وصل شوند و از مزایا و خدمات آنها استفاده کنند
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                </div>
+
+            </div>
+            <div class="mt-6">
+                <img class="object-center self-center rounded-md" src="<?php echo TEMPLATE_DIR ?>assets/image/template2.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- company -->
+    <div class="container mx-auto px-4 mt-10 ">
+        <h3 class="text-xl md:text-2xl text-center md:text-right font-extrabold tracking-tight text-gray-700">
+            کمپانی های فعال </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8 items-center mt-6">
+
+            <?php if ($list['higher_company']) : ?>
+                <?php $border_color = ['teal', 'red', 'slate', 'orange']; ?>
+                <?php foreach ($list['higher_company'] as $item => $value) : $i = random_int(0, 3); ?>
+
+                    <a href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
+                        <div class="relative">
+                            <div class="pt-3 pb-3 px-3 flex flex-col h-30 border border-slate-300 bg-white shadow-lg rounded-xl
+after:content-[''] after:-right-2 after:top-0 after:w-full  after:absolute after:rounded-xl after:-z-50
+               <?php echo 'after:bg-' . $border_color[$i] . '-400' ?> after:h-full">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 text-tolidatColor w-20">
+                                        <img class="object-center self-center rounded-md" src="<?php echo ((isset($value['image']) && file_exists(ROOT_DIR . 'statics/images/company/' . $value['Company_id'] . "/logo/" . $value['image'])) ? COMPANY_ADDRESS . $value['Company_id'] . "/logo/" . $value['image'] : DEFULT_LOGO_ADDRESS); ?>" alt="<?php echo  ' محصول ' . $fields['brif_description'] ?>">
+                                    </div>
+                                    <div class="px-3">
+                                        <div class="text-sm font-semibold text-gray-500">
+                                            <h2 class="truncate">
+                                                <?php echo $value['company_name'] ?>
+                                            </h2>
+                                            <p class="font-normal text-gray-500 mt-2 h-16	overflow-y-hidden">
+                                                <?php echo  $value['meta_keyword'] ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            <?php endif; ?>
+
+
+
+
+
+
+
+
+            <a href="<?php echo RELA_DIR ?>company">
+                <div class="relative">
+                    <div class="pt-3 pb-3  flex-row h-28  shadow-lg rounded-xl after:content-[''] after:-right-2
+                after:top-0 after:w-full  after:absolute after:rounded-xl after:-z-50
+              after:bg-slate-200 after:h-full bg-orange-400">
+                        <p class="font-normal text-white  mr-auto ml-auto mb-0 mt-0 h-full text-center">
+                            بیشتر ببینید
+                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="mr-auto ml-auto mb-0 mt-0 bi bi-plus" viewBox="0 0 16 16">
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" fill="white"></path>
+                            </svg>
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <div class="max-w-sm mx-auto shadow-lg  rounded-xl bg-teal-50 mt-10 lg:mt-32">
+        <div class="min-h-full flex items-center justify-center p-6">
+            <div class="max-w-md w-full">
+                <div class="mb-4">
+                    <h2 class="text-center text-xl md:text-2xl font-extrabold text-gray-700">
+                        ارتباط سریع با ما
+                    </h2>
+                </div>
+                <div data-class="messageStackSuccess"></div>
+                <?php
+                $msg = (strlen($messageStack->output('message')) ? $messageStack->output('message') : "");
+                if (isset($msg) && !empty($msg)) : ?>
+                    <?php echo $msg; ?>
+                <?php endif ?>
+
+                <form action="crm" method="post" class="fastform" id="fast-register" role="form">
+                    <!-- <input type="hidden" name="fastform" value="1"> -->
+                    <div class="izi-container"></div>
+
+                    <label for="name" class="block text-sm font-medium text-gray-700 after:content-['*'] after:ml-0.5 after:text-red-500">نام و نام خانوادگی</label>
+                    <input class="mt-1  block w-full shadow-sm sm:text-sm border border-gray-300 rounded px-3 py-2" type="text" name="name" required oninvalid="setCustomValidity('نام و نام خانوادگی را وارد نمایید')" oninput="setCustomValidity('')">
+
+
+                    <label for="email" class="block text-sm font-medium text-gray-700 mt-3 after:content-['*'] after:ml-0.5 after:text-red-500">ایمیل</label>
+                    <input class="mt-1  block w-full shadow-sm sm:text-sm border border-gray-300 rounded px-3 py-2" type="text" name="email" required oninvalid="setCustomValidity('ایمیل را وارد نمایید')" oninput="setCustomValidity('')">
+
+                    <label for="mobile" class="block text-sm font-medium text-gray-700 mt-3 after:content-['*'] after:ml-0.5 after:text-red-500">شماره موبایل</label>
+                    <input class="mt-1  block w-full shadow-sm sm:text-sm border border-gray-300 rounded px-3 py-2" type="text" required name="mobile" oninvalid="setCustomValidity('شماره موبایل را وارد نمایید')" oninput="setCustomValidity('')">
+
+
+                    <script src="https://www.google.com/recaptcha/api.js?render=6LdmjDsmAAAAANswKgj3737SohuPSA7AIhSxMfNm"></script>
+                        <script>
+                            $('#fast-register').submit(function(event) {
+                                event.preventDefault();
+                                grecaptcha.ready(function() {
+                                    grecaptcha.execute('6LdmjDsmAAAAANswKgj3737SohuPSA7AIhSxMfNm', {
+                                        action: 'submit'
+                                    }).then(function(token) {
+                                        // $('.recaptcha-btn').show();
+                                        $('#fast-register').prepend('<input type="hidden" name="token" value="' + token + '">');
+                                        $('#fast-register').prepend('<input type="hidden" name="fastform" value="1">');
+                                        $('#fast-register').prepend('<input type="hidden" name="action" value="submit">');
+                                        $('#fast-register').unbind('submit').submit();
+                                    });;
+                                });
+                            });
+                        </script>
+                    <button type="submit"  class="recaptcha-btn mt-4 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded text-white bg-tolidatColor hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        </span>
+                        ثبت درخواست
+                    </button>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- article -->
+<div class="container mx-auto px-4 mt-10 ">
+    <h3 class="text-xl md:text-2xl text-center md:text-center font-extrabold tracking-tight text-gray-700">
+        مقالات</h3>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-y-3 gap-x-8 items-center mt-6">
+
+
+        <?php if (isset($list['articles_list'])) : ?>
+            <?php foreach ($list['articles_list'] as $id => $field) : ?>
+                <div class="pt-3 pb-3 px-3 flex flex-col h-30 border border-slate-300 shadow-lg rounded-xl   bg-white">
+                    <div class="flex items-center">
+                        <div class="text-sm font-semibold text-gray-500 w-full">
+                            <h2 class="truncate">
+                                <?php echo $field['title'] ?>
+                            </h2>
+                            <p class="p font-normal text-gray-500 mt-2 truncate">
+                                <?php echo  $field['brif_description'] ?>
+                            </p>
+                            <a href="<?php echo RELA_DIR . 'article/' . $field['Article_id'] . '/' .  urlencode($field['title']) ?>" class="text-small font-normal text-teal-500	mt-2 block">بیشتر بخوانیم</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+
+
+
+        <a href="<?php echo RELA_DIR . 'article' ?>">
+            <div class="pt-3 pb-3  flex-row   shadow-lg rounded-xl bg-orange-400 text-sm font-semibold text-white text-center">
+                <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="80" height="100%" fill="currentColor" class=" mr-auto ml-auto mb-0 mt-0 bi bi-arrow-left-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" fill="white"></path>
+                </svg>
+
+            </div>
+        </a>
+    </div>
+
+</div>
+<div class="mt-14">
+    <img class="object-center self-center rounded-md" src="<?php echo TEMPLATE_DIR ?>assets/image/back/back1.jpg" alt="">
+</div>

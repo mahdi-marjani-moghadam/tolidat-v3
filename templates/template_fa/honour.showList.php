@@ -24,7 +24,7 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-4 col-md-4 pull-right">
                                         <a class="logoNew roundCorner" href="http://tolidi.ir/company/Detail/20957/اداره کل بنادر و دریانوردی استان خوزستان" name="detail" title="اداره کل بنادر و دریانوردی استان خوزستان">
-                                            <img id="img" class="boxBorder roundCorner " src="http://tolidi.ir/templates/template_fa/assets/images/placeholder.png">
+                                            <img id="img" class="boxBorder roundCorner " src="https://tolidi.ir/templates/template_tailwind/assets/images/placeholder.png">
                                             <label for="upload"><i class="fa fa-pencil" aria-hidden="true"></i> <span>  انتخاب تصویر</span>
                                                 <input type="file" id="upload">
                                             </label>

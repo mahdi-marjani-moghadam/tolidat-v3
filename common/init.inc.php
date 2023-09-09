@@ -49,8 +49,8 @@ $_SESSION['lang'] = 'fa'; // WEBSITE_LANGUAGE;
 
 $lang = $_SESSION['lang'];
 
-// define('CURRENT_SKIN', "template_" . $lang);
-define('CURRENT_SKIN', "template_tailwind" );
+define('CURRENT_SKIN', "template_" . $lang);
+// define('CURRENT_SKIN', "template_tailwind" );
 define('TEMPLATE_DIR', RELA_DIR . "templates/" . CURRENT_SKIN . "/");
 define('Count_Permission', '20');
 

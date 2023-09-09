@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/bower_components/izitoast/dist/css/iziToast.min.css">
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN; ?>/bower_components/izitoast/dist/js/iziToast.min.js"></script>
-<script src="<?php echo RELA_DIR.'templates/'.CURRENT_SKIN; ?>/assets/js/validator.min.js"></script>
+<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/bower_components/izitoast/dist/js/iziToast.min.js"></script>
+<script src="<?php echo RELA_DIR . 'templates/' . CURRENT_SKIN; ?>/assets/js/validator.min.js"></script>
 
 <section class="container noPadding">
     <!-- boxContainer -->
@@ -25,7 +25,9 @@
             <header>
                 <div class="center-block">ویکی مجموعه</div>
                 <span class="title-badge">مرحله</span>
-                <a class="container-badge" href="#"><div class="badge">1 از 4</div></a>
+                <a class="container-badge" href="#">
+                    <div class="badge">1 از 4</div>
+                </a>
             </header>
             <div class="content">
                 <div class="izi-container"></div>
@@ -42,7 +44,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="checkbox">
                                 <label>
-                                    <input <?= $list['approvePrivacy'] == 'on' ? 'checked' : '' ?> name="approvePrivacy" id="approvePrivacy" type="checkbox">شرایط را قبول دارم
+                                    <input <?php echo  $list['approvePrivacy'] == 'on' ? 'checked' : '' ?> name="approvePrivacy" id="approvePrivacy" type="checkbox">شرایط را قبول دارم
                                 </label>
                             </div>
                         </div>
@@ -59,7 +61,22 @@
 <p class="error"><?php echo $list['validate']['msg'] ?></p>
 
 <script>
-    $(function () {
+    $.iziToastError = function(msg) {
+        iziToast.settings({
+            onOpen: function(e) {}
+        });
+        iziToast.show({
+            title: 'خطا',
+            color: 'red',
+            icon: 'fa fa-times-circle',
+            iconColor: 'red',
+            rtl: true,
+            position: 'topCenter',
+            timeout: 10000,
+            message: msg
+        });
+    };
+    $(function() {
         if ($('p.error').text().length != 0) {
             $.iziToastError($('p.error').text(), '.content .izi-container');
         }
