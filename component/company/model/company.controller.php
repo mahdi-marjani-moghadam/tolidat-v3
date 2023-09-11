@@ -282,7 +282,8 @@ class companyController
         //                $breadcrumb->add($value['title'], 'company/' . $value['Category_id'] . '/1', true);
         //            }
         //        }
-        $breadcrumb->add('Companies ', RELA_DIR . 'company', true);
+        global $lang;
+        $breadcrumb->add(($lang=='fa')?'کمپانی ':'Companies ', RELA_DIR . 'company', true);
         if ($fields['c']) $breadcrumb->add($fields['c'], RELA_DIR . 'company/c/' . $fields['c'], true);
         if ($fields['province'] || $fields['city']) $breadcrumb->add(($fields['province'] ?? '') . ($fields['city'] ?? ''));
         if ($fields['q']) $breadcrumb->add($fields['q']);
@@ -690,8 +691,9 @@ class companyController
         foreach ($parentCategoryList as $category) {
             $export['category_title'][$category['Category_id']]['title'] = $category['title'];
             $export['category_title'][$category['Category_id']]['Category_id'] = $category['Category_id'];
+            // $export['category_title'][$category['Category_id']]['url'] = $category['url'];
         }
-        //print_r_debug($export);
+        // dd($export);
         // get company honour
         $resultHonour = c_honour::getBy_company_id($id)->getList();
         $export['honour_list'] = $resultHonour['export']['list'];

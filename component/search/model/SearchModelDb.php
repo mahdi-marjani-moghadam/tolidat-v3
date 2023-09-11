@@ -333,7 +333,9 @@ class SearchModelDb
                 //$list[$row[$id]] = companyModelDb::getContactInfo($row[$id]);
 
                 $list[$row[$id]]['cityName'] = $result['export']['city'][$list[$row[$id]]['city_id']]['name'];
-                $list[$row[$id]]['category_title'] = $this->getCategoryName($row, $categories['export']['list']);
+                // $list[$row[$id]]['category_title'] = $this->getCategoryName($row, $categories['export']['list']);
+                $list[$row[$id]]['category_title'] = $this->getCategoryName2($row, $categories['export']['list']);
+                
             }
         } else {
             while ($row = $stmt->fetch()) {
@@ -810,6 +812,18 @@ class SearchModelDb
         $categoryCompanyArray = explode(',', $categoryCompany);
         foreach ($categoryCompanyArray as $catCompArr) {
             $category[$catCompArr] = $categories[$catCompArr]['title'];
+        }
+        return $category;
+    }
+    public function getCategoryName2($company, $categories)
+    {
+        $categoryCompany = trim($company['category_id'], ',');
+        $parentCategoryCompany = trim($company['parent_category_id'], ',');
+        $categoryCompany = $categoryCompany . ',' . $parentCategoryCompany;
+        $categoryCompanyArray = explode(',', $categoryCompany);
+        foreach ($categoryCompanyArray as $catCompArr) {
+            $category[$catCompArr]['title'] = $categories[$catCompArr]['title'];
+            $category[$catCompArr]['url'] = $categories[$catCompArr]['url'];
         }
         return $category;
     }

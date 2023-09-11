@@ -17,7 +17,7 @@
             <ul>
                 <?php foreach (get_Provinces() as $key => $value) : ?>
                     <li>
-                        <a data-toggle="tooltip" data-placement="top" title="<?php echo $value['name'] ?>" href="<?php echo  RELA_DIR  . "company/type/تولیدی/province/" . $value['name'] ?>"><?php echo $value['name'] ?></a>
+                        <a data-toggle="tooltip" data-placement="top" title="<?php echo $value['name'] ?>" href="<?php echo  RELA_DIR  . "company/province/" . $value['name'] ?>"><?php echo $value['name'] ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>

@@ -752,22 +752,25 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
-                                <a class="" href="<?php echo  RELA_DIR . "search/type/تولیدی/province/" . $list['list']['searchProvince'][$value['state_id']]['name'] ?>"><?php echo  $list['list']['searchProvince'][$value['state_id']]['name'] ?></a>
+                                <a class="" href="<?php echo  RELA_DIR . "search/province/" . $list['list']['searchProvince'][$value['state_id']]['name'] ?>">
+                                    <?php echo  $list['list']['searchProvince'][$value['state_id']]['name'] ?>
+                                </a>
                             </p>
 
                             <p class="flex flex-wrap text-sm items-center justify-start">
                                 <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-tolidatColor" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                             </svg> -->
-                                <?php $count = count($value['category_title']) ?>
-                                <?php foreach ($value['category_title'] as $cat_id => $category) : ?>
-                                    <a class="border border-tolidatColor m-1 text-xs rounded-full px-3 sm:px-2 py-1" href="<?php echo  RELA_DIR . "company/type/تولیدی/category/" . $cat_id ?>">
-                                        <?php echo $category;
+                            <?php  $count = count($value['category_title']) ?>
+                                
+                                <?php foreach ($value['category_title'] as $cat_id => $category) :  ?>
+                                    <a class="border border-tolidatColor m-1 text-xs rounded-full px-3 sm:px-2 py-1" href="<?php echo  RELA_DIR . "company/c/" . $category['url'] ?>">
+                                        <?php echo $category['title'];
                                         echo ($count > 1 ? " , " : "");
                                         $count-- ?>
                                     </a>
                                 <?php endforeach; ?>
-
+                            
 
                             </p>
 
