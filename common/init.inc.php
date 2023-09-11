@@ -39,6 +39,9 @@ $breadcrumbSearch = new Breadcrumb();
 
 if (isset($_REQUEST['lang'])) {
     $_SESSION['lang'] = $_REQUEST['lang'];
+    
+    header('Location: /');
+    exit;
     //$_REQUEST['currency']==$_SESSION['currency'];
 }
 // echo $_SESSION['lang'];
