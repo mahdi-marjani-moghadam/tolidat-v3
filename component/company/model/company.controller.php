@@ -691,8 +691,9 @@ class companyController
         foreach ($parentCategoryList as $category) {
             $export['category_title'][$category['Category_id']]['title'] = $category['title'];
             $export['category_title'][$category['Category_id']]['Category_id'] = $category['Category_id'];
-            // $export['category_title'][$category['Category_id']]['url'] = $category['url'];
+            $export['category_title'][$category['Category_id']]['url'] = $category['url'];
         }
+        
         // dd($export);
         // get company honour
         $resultHonour = c_honour::getBy_company_id($id)->getList();
