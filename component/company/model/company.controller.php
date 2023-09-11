@@ -675,7 +675,7 @@ class companyController
         $i = 1;
         foreach ($meta_keyword as $keyword) {
             $export['meta_keyword'][$i]['keyword'] = $keyword;
-            $export['meta_keyword'][$i]['link'] = RELA_DIR . "search/type/تولیدی/q/" . $keyword;
+            $export['meta_keyword'][$i]['link'] = RELA_DIR . "search/q/" . $keyword;
             $i++;
         }
 

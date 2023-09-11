@@ -171,7 +171,7 @@
                         $cnt = 0;
                         foreach ($list['side']['category_title'] as $category => $v) :
                         ?>
-                            <a class="border border-tolidatColor px-1 rounded-full text-xs " href="<?php echo RELA_DIR . 'company/type/تولیدی/category/' . $v['Category_id'] ?>">
+                            <a class="border border-tolidatColor px-1 rounded-full text-xs " href="<?php echo RELA_DIR . 'company/c/' . $v['url'] ?>">
                                 <?php echo  $v['title'] . ($cnt < count($list['side']['category_title']) - 1 ? ' - ' : ''); ?>
                             </a>
                         <?php
