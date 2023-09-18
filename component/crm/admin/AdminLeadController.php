@@ -125,11 +125,14 @@ class AdminLeadController
         });
 
         $other['9'] = array('formatter' => function ($list) {
-            $st = '<a href="' . RELA_DIR . 'admin/?component=crm&action=editLead&lead_id=' . $list['lead_id'] . '">ویرایش</a>';
+            $st = '<a href="' . RELA_DIR . 'admin/?component=crm&action=editLead&lead_id=' . $list['lead_id'] . '">ویرایش</a> ';
+            $st .= '<a onclick="return confirm(\'Are you sure?\')" href="' . RELA_DIR . 'admin/?component=crm&action=deleteLead&lead_id=' . $list['lead_id'] . '">حذف</a>';
 
             if ($list['status'] == 1) {
                 $st .= '<br><a class="moveLead" data-id="'.$list['lead_id'].'">انتقال لید</a>';
             }
+
+
             return $st;
         });
 
@@ -172,6 +175,15 @@ class AdminLeadController
         }
 
         redirectPage(RELA_DIR . 'admin/?component=crm&action=leads', 'لید ویرایش شد');
+    }
+
+    public function delete($fields)
+    {
+        if (! $this->lead->delete($fields)) {
+            redirectPage(RELA_DIR . 'admin/?component=crm&action=leads', 'لید حذف نشد');
+        }
+
+        redirectPage(RELA_DIR . 'admin/?component=crm&action=leads', 'لید حذف شد');
     }
 
     public function indexComment($lead_id)

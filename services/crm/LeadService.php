@@ -137,6 +137,24 @@ class LeadService
         return true;
     }
 
+    public function delete($fields)
+    {
+        global $admin_info;
+        $lead = $this->getLead($fields['lead_id']);
+        if (!is_object($lead)) {
+            return false;
+        }
+        
+        $result = $lead->delete();
+
+        if ($result['result'] == -1) {
+            return false;
+        }
+
+        return true;
+    }
+
+
     public function getComments($searchFields, $lead_id, $admin_id = null)
     {
         $comments = LeadComment::getAll()

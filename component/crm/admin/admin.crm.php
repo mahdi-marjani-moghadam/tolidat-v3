@@ -47,11 +47,11 @@ if (isset($exportType)) {
 }
 switch ($_GET['action']) {
 
-    case 'companies' :
+    case 'companies':
         $controller->showListCompany($_GET);
         break;
 
-    case 'filterCompany' :
+    case 'filterCompany':
         $controller->filterCompany($_GET);
         break;
 }
@@ -60,7 +60,7 @@ switch ($_GET['action']) {
 
 switch ($_GET['action']) {
 
-    case 'logs' :
+    case 'logs':
         if (!empty($_POST)) {
             $_POST['admin_id'] = $admin_info['admin_id'];
             $logController->store($_POST);
@@ -69,16 +69,16 @@ switch ($_GET['action']) {
         }
         break;
 
-    case 'allLogs' :
+    case 'allLogs':
         checkPermissions('allLogs', 'crm');
         $logController->index();
         break;
 
-    case 'allLogByAdmin' :
+    case 'allLogByAdmin':
         $logController->indexByAdmin($admin_info['admin_id']);
         break;
 
-    case 'filterLog' :
+    case 'filterLog':
         $logController->filterLog($_GET);
         break;
 }
@@ -87,16 +87,16 @@ switch ($_GET['action']) {
 
 switch ($_GET['action']) {
 
-    case 'tasks' :
+    case 'tasks':
         checkPermissions('tasks', 'crm');
         $taskController->index();
         break;
 
-    case 'task' :
+    case 'task':
         $taskController->show($admin_info['admin_id']);
         break;
 
-    case 'filterTask' :
+    case 'filterTask':
         $taskController->filterTask($_GET);
         break;
 }
@@ -105,19 +105,19 @@ switch ($_GET['action']) {
 
 switch ($_GET['action']) {
 
-    case 'getActionById' :
+    case 'getActionById':
         $actionController->getActionById($_GET['action_id']);
         break;
 
-    case 'getActionsByLetterId' :
+    case 'getActionsByLetterId':
         $actionController->getActionsByLetterId($_POST['letter_id']);
         break;
 
-    case 'actions' :
+    case 'actions':
         $actionController->index();
         break;
 
-    case 'addAction' :
+    case 'addAction':
         if (!empty($_POST)) {
             $actionController->store($_POST);
         } else {
@@ -125,7 +125,7 @@ switch ($_GET['action']) {
         }
         break;
 
-    case 'editAction' :
+    case 'editAction':
         if (!empty($_POST)) {
             $actionController->update($_POST);
         } else {
@@ -133,7 +133,7 @@ switch ($_GET['action']) {
         }
         break;
 
-    case 'disableAction' :
+    case 'disableAction':
         $actionController->destroy($_GET['action_id']);
         break;
 }
@@ -142,11 +142,11 @@ switch ($_GET['action']) {
 
 switch ($_GET['action']) {
 
-    case 'letters' :
+    case 'letters':
         $letterController->index();
         break;
 
-    case 'addLetter' :
+    case 'addLetter':
         if (!empty($_POST)) {
             $letterController->store($_POST);
         } else {
@@ -154,7 +154,7 @@ switch ($_GET['action']) {
         }
         break;
 
-    case 'editLetter' :
+    case 'editLetter':
         if (!empty($_POST)) {
             $letterController->update($_POST);
         } else {
@@ -162,7 +162,7 @@ switch ($_GET['action']) {
         }
         break;
 
-    case 'disableLetter' :
+    case 'disableLetter':
         $letterController->destroy($_GET['letter_id']);
         break;
 }
@@ -171,11 +171,11 @@ switch ($_GET['action']) {
 
 switch ($_GET['action']) {
 
-    case 'filterLead' :
+    case 'filterLead':
         $leadController->filterLead($_GET);
         break;
 
-    case 'leads' :
+    case 'leads':
         if (!empty($_POST)) {
             $leadController->store($_POST);
         } else {
@@ -183,7 +183,7 @@ switch ($_GET['action']) {
         }
         break;
 
-    case 'editLead' :
+    case 'editLead':
         if (!empty($_POST)) {
             $_POST['lead_id'] = $_GET['lead_id'];
             $leadController->update($_POST);
@@ -192,23 +192,28 @@ switch ($_GET['action']) {
         }
         break;
 
-    case 'filterLeadComment' :
+    case 'deleteLead':
+        $_POST['lead_id'] = $_GET['lead_id'];
+        $leadController->delete($_POST);
+        break;
+
+    case 'filterLeadComment':
         $leadController->filterLeadComment($_GET);
         break;
 
-    case 'leadComments' :
+    case 'leadComments':
         if (!empty($_POST)) {
             $_POST['lead_id'] = $_GET['lead_id'];
             $_POST['task_id'] = $_GET['task_id'];
             $leadController->storeComment($_POST);
-        } else if (isset($_GET['task_id'])){
+        } else if (isset($_GET['task_id'])) {
             $leadController->indexCommentTask($_GET['lead_id'], $_GET['task_id']);
         } else {
             $leadController->indexComment($_GET['lead_id']);
         }
         break;
 
-    case 'moveLead' :
+    case 'moveLead':
         $leadController->moveLead($_GET);
         break;
 }
@@ -216,18 +221,16 @@ switch ($_GET['action']) {
 // Lead Task Route
 switch ($_GET['action']) {
 
-    case 'leadTasks' :
+    case 'leadTasks':
         checkPermissions('tasks', 'crm');
         $leadTaskController->index();
         break;
 
-    case 'leadTask' :
+    case 'leadTask':
         $leadTaskController->show($admin_info['admin_id']);
         break;
 
-    case 'filterLeadTask' :
+    case 'filterLeadTask':
         $leadTaskController->filterTask($_GET);
         break;
 }
-
-
