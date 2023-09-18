@@ -262,7 +262,7 @@
             </div>
 
             <div class="mmenuHolder2 hidden md:block">
-                <nav class="menu mm-opened" data-placeholder="جستجو در دسته بندی تولیدی ها" data-title="دسته بندی تولیدی ها">
+                <nav class="menu mm-opened" data-placeholder="Search" data-title="دسته بندی تولیدی ها">
                     <?php echo $list['list']['searchCategoryUlLi']; ?>
                 </nav>
             </div>

@@ -81,11 +81,11 @@
 <form class="search-bar flex flex-grow lg:w-auto items-center" method="post" id="searchParam">
 
     <div class="keyboard-container-search-bar flex-grow">
-        <input type="text" name="q" id="q" class="w-full flex-grow text-sm h-9  place keyboard q border-tolidatColor bg-gray-50 border-2 focus:outline-none rounded rounded-l-none px-3" placeholder="جست و جو در بین کسب و کارها ..." value="<?php echo isset($_GET['q']) ? $_GET['q'] : '' ?>">
+        <input type="text" name="q" id="q" class="w-full flex-grow text-sm h-9  place keyboard q border-tolidatColor bg-gray-50 border-2 focus:outline-none rounded rounded-r-none px-3" placeholder="Comapny name ..." value="<?php echo isset($_GET['q']) ? $_GET['q'] : '' ?>">
     </div>
 
 
-    <button type="submit" class="w-12 justify-center inline-flex submit text-large border-tolidatColor bg-tolidatColor border-r-0 rounded rounded-r-none items-center py-1 px-2 text-white h-9">
+    <button type="submit" class="w-12 justify-center inline-flex submit text-large border-tolidatColor bg-tolidatColor border-r-0 rounded rounded-l-none items-center py-1 px-2 text-white h-9">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>

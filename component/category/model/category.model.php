@@ -381,7 +381,8 @@ class categoryModel
         if ($root == 1) {
             $mainList = $all;
         }
-        
+        global $lang;
+        $lang = ($lang == 'fa')?'':$lang;
         $mainMenu .= "<ul>\n";
         foreach ($array as $key => $val) {
 
@@ -389,9 +390,9 @@ class categoryModel
                 $mainMenu .= '
                     <li>
                         <a 
-                        data-toggle="tooltip" data-placement="top" title="' . $val['title'] . '" 
+                        data-toggle="tooltip" data-placement="top" title="' . $val['title'.$lang] . '" 
                         class="company-name"><span>' . $val['count'] . '</span>
-                            <label for="c-' . $val['url'] . '" class="company-name">' . $val['title'] .
+                            <label for="c-' . $val['url'] . '" class="company-name">' . $val['title'.$lang] .
                     '<input type="checkbox" name="c[]" 
                         data-parentId="' . $val['parent_id'] . '" id="c-' . $val['url']
                     . '" value="' . $val['url'] . '">
@@ -404,10 +405,10 @@ class categoryModel
                      <li>
                         <a
                          
-                         data-toggle="tooltip" data-placement="top" title="' . $val['title'] . '" 
+                         data-toggle="tooltip" data-placement="top" title="' . $val['title'.$lang] . '" 
                          
                          class="company-name"><span>' . $val['count'] . '</span>
-                            <label for="c-' . $val['url'] . '" class="company-name">' . $val['title'] .
+                            <label for="c-' . $val['url'] . '" class="company-name">' . $val['title'.$lang] .
                     '<input type="checkbox" name="c[]" data-parentId="' . $val['parent_id'] . '" id="c-' . $val['url'] . '" value="' . $val['url'] . '">
                             </label> </a></li>' . "\n";
             }

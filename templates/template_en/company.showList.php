@@ -34,7 +34,6 @@
         position: relative;
         min-height: 210px;
         width: 100%;
-        direction: ltr !important;
     }
 
     header {
@@ -50,7 +49,6 @@
         border-radius: 3px 3px 0 0;
         font-size: 15px;
         text-align: right;
-        direction: rtl;
         -webkit-transition: all .4s;
         -moz-transition: all .4s;
         -ms-transition: all .4s;
@@ -108,7 +106,6 @@
     }
 
     .mmenuHolder2 a {
-        direction: rtl;
         display: block;
         height: 44px;
         line-height: 45px;
@@ -219,7 +216,6 @@
         position: absolute;
         width: 150px;
         height: 40px;
-        direction: rtl;
         top: 50%;
         right: 50%;
         margin-right: -75px;
@@ -343,7 +339,7 @@
                 </div>
 
                 <div class="mmenuHolder2 hidden md:block">
-                    <nav class="menu mm-opened" data-placeholder="جستجو در دسته بندی تولیدی ها" data-title="دسته بندی تولیدی ها">
+                    <nav class="menu mm-opened" data-placeholder="Search" data-title="  Category ">
                         <?php echo $list['list']['searchCategoryUlLi']; ?>
                     </nav>
                 </div>
@@ -418,7 +414,7 @@
         <!-------------------------------- product filter -------------------------------->
         <div>
             <?php if (count($list['list']['searchItem']['category']) == 1) : ?>
-                <h1 class="mb-1 text-lg font-bold"><?php echo $list['list']['searchItem']['category'][0]['title'] ?>
+                <h1 class="mb-1 text-lg font-bold"><?php echo $list['list']['searchItem']['category'][0]['title_en'] ?>
                     <?php if (count($list['list']['searchItem']['province']['list']) == 1) : ?>
                         در <?php echo $list['list']['searchItem']['province']['list'][0]['name'] ?>
                     <?php endif; ?>
@@ -443,12 +439,12 @@
                                     <div class="dropdown-menu searchType flex gap-2 flex-wrap my-1">
                                         <?php foreach ($list['list']['searchItem']['category'] as $a => $b) { ?>
                                             <div class="color-white rounded-md border-2 py-1 px-2 bg-white  border-gray-400">
-                                                <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo $list['list']['searchItem']['category'][$a]['title'] ?>">
-                                                    <?php echo $list['list']['searchItem']['category'][$a]['title'] ?>
+                                                <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo $list['list']['searchItem']['category'][$a]['title_en'] ?>">
+                                                    <?php echo $list['list']['searchItem']['category'][$a]['title_en'] ?>
                                                 </span>
                                                 <span class="close-filter-container">
-                                                    <a href="#" name="a_category" title="<?php echo  $list['list']['searchItem']['category'][$a]['title'] ?>">
-                                                        <i class="fa not-italic  bg-red-700 text-white inline-block w-5 h-5 rounded-full " name="category[]" id="<?php echo  $list['list']['searchItem']['category'][$a]['url'] ?>" title="<?php echo  $list['list']['searchItem']['category'][$a]['title'] ?>">X </i>
+                                                    <a href="#" name="a_category" title="<?php echo  $list['list']['searchItem']['category'][$a]['title_en'] ?>">
+                                                        <i class="fa not-italic  bg-red-700 text-white inline-block w-5 h-5 rounded-full " name="category[]" id="<?php echo  $list['list']['searchItem']['category'][$a]['url'] ?>" title="<?php echo  $list['list']['searchItem']['category'][$a]['title_en'] ?>">X </i>
                                                     </a>
                                                 </span>
                                             </div>
@@ -461,11 +457,11 @@
                                 <div class="flex gap-2 flex-wrap my-1">
                                     <div class="product-filter roundCorner color-silver1 rounded-md border-2 py-1 px-2 bg-white  border-gray-400">
                                         <span class="product-filter-container" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo  $list['list']['searchItem']['category'][$a]['title'] ?>">
-                                            <?php echo $list['list']['searchItem']['category'][$a]['title'] ?>
+                                            <?php echo $list['list']['searchItem']['category'][$a]['title_en'] ?>
                                         </span>
                                         <span class="close-filter-container">
-                                            <a href="#" name="b_category" title="<?php echo  $list['list']['searchItem']['category'][$a]['title'] ?>">
-                                                <i class="fa not-italic  bg-red-700 text-white inline-block w-5 h-5 rounded-full" name="category[]" id="<?php echo $list['list']['searchItem']['category'][$a]['url'] ?>" title="<?php echo  $list['list']['searchItem']['category'][$a]['title'] ?>"> X</i>
+                                            <a href="#" name="b_category" title="<?php echo  $list['list']['searchItem']['category'][$a]['title_en'] ?>">
+                                                <i class="fa not-italic  bg-red-700 text-white inline-block w-5 h-5 rounded-full" name="category[]" id="<?php echo $list['list']['searchItem']['category'][$a]['url'] ?>" title="<?php echo  $list['list']['searchItem']['category'][$a]['title_en'] ?>"> X</i>
                                             </a>
                                         </span>
                                     </div>
@@ -605,7 +601,7 @@
 
                                     <div class="text-center md:text-right mb-4">
                                         <a class="w-40 mt-4 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-tolidatColor hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
-                                            مشاهده بیشتر
+                                            See more
                                         </a>
 
 
@@ -662,11 +658,12 @@
 
 
                                                                 <a href="<?php echo  RELA_DIR . 'product/show/' . $fields['Product_id'] . "/" . cleanUrl($fields['title']) ?>" class="text-tolidatColor inline-flex items-center md:mb-2 lg:mb-0       ">
+                                                                    
+                                                                    Sea product
                                                                     <svg class="w-4 h-4 ml-1" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                                         <path d="M5 12h14"></path>
                                                                         <path d="M12 5l7 7-7 7"></path>
                                                                     </svg>
-                                                                    مشاهده محصول
                                                                 </a>
 
                                                                 <!-- <button class="show-more bg-tolidatColor text-white px-3 rounded-full">مشاهده بیشتر</button> -->
@@ -734,7 +731,7 @@
 
                                     <div class="text-center md:text-right mb-4">
                                         <a class="w-40 mt-4 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-tolidatColor hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" href="<?php echo RELA_DIR . 'company/Detail/' . $value['Company_id'] . '/' . cleanUrl($value['company_name']); ?>">
-                                            مشاهده بیشتر
+                                             See more
                                         </a>
                                     </div>
                                 </div>
@@ -763,7 +760,7 @@
                                 <?php $count = count($value['category_title']) ?>
                                 <?php foreach ($value['category_title'] as $cat_id => $category) : ?>
                                     <a class="border border-tolidatColor m-1 text-xs rounded-full px-3 sm:px-2 py-1" href="<?php echo  RELA_DIR . "company/c/" . $category['url'] ?>">
-                                        <?php echo $category['title'];
+                                        <?php echo $category['title_en'];
                                         echo ($count > 1 ? " , " : "");
                                         $count-- ?>
                                     </a>

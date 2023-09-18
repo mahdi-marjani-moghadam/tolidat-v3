@@ -8,7 +8,7 @@
         <a class="City pull-left"> <i class="fa fa-map-marker"></i> <span> انتخاب استان</span> <i class=" angle fa fa-angle-down angle-up-arrow" aria-hidden="true"></i></a>
     </header>
     <div class="mmenuHolder">
-        <nav class="menu mm-opened" data-placeholder="جستجو در دسته بندی تولیدی ها" data-title="دسته بندی تولیدی ها">
+        <nav class="menu mm-opened" data-placeholder="Search" data-title="Category">
             <?php echo $list['category_list']; ?>
         </nav>
     </div>
