@@ -58,6 +58,7 @@
                     <tr>
                         <th>ردیف</th>
                         <th>نام دسته بندی</th>
+                        <th>نام en </th>
                         <th>آدرس اینترنتی</th>
                         <th>کلمات کلیدی</th>
                         <th>توضیحات کلیدی</th>
@@ -73,6 +74,7 @@
                         <th><input type="text" name="search_50" value="" class="search_init form-control"/></th>
                         <th><input type="text" name="search_60" value="" class="search_init form-control"/></th>
                         <th><input type="text" name="search_70" value="" class="search_init form-control"/></th>
+                        <th><input type="text" name="search_80" value="" class="search_init form-control"/></th>
                     </tfoot>
                     <tbody>
                     <?php
@@ -81,6 +83,7 @@
                         <tr>
                             <td><?php echo $fields['dataTableCount']; ?></td>
                             <td><?php echo $fields['export']; ?></td>
+                            <td><?php echo $fields['export_en']; ?></td>
                             <td><?php echo $fields['url']; ?></td>
                             <td><?php echo $fields['meta_keyword']; ?></td>
                             <td><?php echo $fields['meta_description']; ?></td>

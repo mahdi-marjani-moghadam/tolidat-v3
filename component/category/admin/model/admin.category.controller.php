@@ -421,6 +421,7 @@ class adminCategoryController
         foreach ($this->list[$_input] as $key => $val) {
             $mainMenu[$val['Category_id']] = $val;
             $mainMenu[$val['Category_id']]['export'] = $temp . $space . $val['title'];
+            $mainMenu[$val['Category_id']]['export_en'] = $temp . $space . $val['title_en'];
             $mainMenu[$val['Category_id']]['level'] = $this->level;
             $temp = $temp . '&nbsp;&nbsp;&nbsp;&nbsp;';
             $this->level++;

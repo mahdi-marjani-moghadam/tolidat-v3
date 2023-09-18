@@ -75,6 +75,14 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
+                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="title_en">عنوان:En</label>
+                                    <div class="col-xs-12 col-sm-8 pull-right">
+                                        <input type="text" class="form-control" name="title_en" id="title_en" autocomplete="off" required value="<?php echo  $list['title_en'] ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <div class="form-group">
                                     <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="parent_id">دسته بندی والد:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <select class="valid" name="parent_id" id="parent_id">
