@@ -1007,7 +1007,7 @@ class companyController
     function newCompany()
     {
         $result = company::getAll()
-            ->where('status', '=', -1)
+            ->where('status', 'in', [-1,1])
             ->andWhere('DATE(register_date)', '>=', date('Y-m-d'))
             ->getList();
         // dd(date('Y-m-d',strtotime("-1 days")));
