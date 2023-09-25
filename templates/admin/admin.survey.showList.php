@@ -80,7 +80,7 @@
                           <td><?php echo $fields['user_email']; ?></td>
                           <td><?php echo $fields['user_name']; ?></td>
                           <td><?php echo $fields['comment']; ?></td>
-                          <td><?php echo $fields['date']; ?></td>
+                          <td><?php echo convertDAte($fields['date']); ?></td>
                           <td><?php if( $fields['type'] == 'article' ){
                                   echo "مقالات ";
                                   
