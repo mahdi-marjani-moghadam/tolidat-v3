@@ -103,7 +103,7 @@
                             </div>
                         <?php } else {
                         ?>
-                            <!-- <img class="empty-img center-block" src="< ?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png" style="position: absolute;left: 0;right: 0;top: 2px;bottom: 0;margin: 25% auto;"> -->
+                            <!-- <img class="empty-img center-block" src="< ?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png" style="position: absolute;left: 0;right: 0;top: 2px;bottom: 0;margin: 25% auto;"> -->
                         <?php
                         }
                         ?>
@@ -167,7 +167,7 @@
                             </div>
                         <?php } else {
                         ?>
-                            <!-- <img class="empty-img center-block" src="< ?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png" style="position: absolute;left: 0;right: 0;top: 2px;bottom: 0;margin: 25% auto;"> -->
+                            <!-- <img class="empty-img center-block" src="< ?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png" style="position: absolute;left: 0;right: 0;top: 2px;bottom: 0;margin: 25% auto;"> -->
                         <?php
                         }
                         ?>

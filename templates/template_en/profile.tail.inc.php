@@ -52,14 +52,14 @@
     </div>
 </footer><!-- /end of footer of website -->
 
-<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/jquery.mmenu.all.min.js"></script>
-<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/validator.min.js"></script>
-<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/search.js"></script>
-<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/bootstrap-tagsinput.min.js"></script>
-<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/cropper.min.js"></script>
-<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/intro.js"></script>
-<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/jquery.lazy.min.js"></script>
-<script src="<?php echo RELA_DIR?>templates/template_tailwind/assets/js/script.js?v=13961212"></script>
+<script src="<?php echo RELA_DIR?>templates/template_en/assets/js/jquery.mmenu.all.min.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_en/assets/js/validator.min.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_en/assets/js/search.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_en/assets/js/bootstrap-tagsinput.min.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_en/assets/js/cropper.min.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_en/assets/js/intro.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_en/assets/js/jquery.lazy.min.js"></script>
+<script src="<?php echo RELA_DIR?>templates/template_en/assets/js/script.js?v=13961212"></script>
 
 
 <script src="<?php echo RELA_DIR?>templates/template_fa/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

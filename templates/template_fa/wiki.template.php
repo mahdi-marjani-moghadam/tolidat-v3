@@ -153,7 +153,7 @@
                                             class="btn btnDisable myBtn btn-primary  dropdown-toggle reg-btn-refresh center-block text-white"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="fa fa-refresh"></span>
-                                        <img style="display: none" id="loading" src="<?php echo  RELA_DIR ?>templates/template_tailwind/assets/images/loading1.gif">ارسال دوباره
+                                        <img style="display: none" id="loading" src="<?php echo  RELA_DIR ?>templates/template_fa/assets/images/loading1.gif">ارسال دوباره
                                     </button>
                                 <div class="row xsmallSpace"></div>
                             </div>
@@ -894,5 +894,5 @@
 
 <!-------------------------------- Scripts -------------------------------->
 
-<!-- <script src="< ?php echo RELA_DIR ?>templates/template_tailwind/assets/js/companyWiki.js"></script> -->
-<!-- <script src="< ?php echo RELA_DIR?>templates/template_tailwind/assets/js/cropper.min.js"></script> -->
+<!-- <script src="< ?php echo RELA_DIR ?>templates/template_fa/assets/js/companyWiki.js"></script> -->
+<!-- <script src="< ?php echo RELA_DIR?>templates/template_fa/assets/js/cropper.min.js"></script> -->

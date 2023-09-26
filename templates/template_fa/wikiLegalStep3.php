@@ -60,7 +60,7 @@
                             <div class="reg-alert"><span class="text-danger">توجه:</span> در صورت عدم دریافت کد بر روی دکمه ارسال مجدد کلیک کنید،ارسال کد تا سه مرتبه امکان پذیر است</div>
                             <div class="row xxxsmallSpace"></div>
                             <button type="button" id="sendCodeAgain" class="btn btn-primary dropdown-toggle reg-btn-refresh center-block text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="fa fa-refresh"></span><img style="display: none" id="loading" src="<?php echo RELA_DIR ?>templates/template_tailwind/assets/images/loading1.gif"> ارسال مجدد
+                                <span class="fa fa-refresh"></span><img style="display: none" id="loading" src="<?php echo RELA_DIR ?>templates/template_fa/assets/images/loading1.gif"> ارسال مجدد
                             </button>
                         </div>
                     </div>

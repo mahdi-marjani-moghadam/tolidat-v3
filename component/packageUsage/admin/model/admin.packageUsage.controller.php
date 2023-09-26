@@ -106,6 +106,7 @@ class adminPackageUsageController
     //public static function getPackageByCompanyID($company_id)
     public function getPackageByCompanyID($company_id)
     {
+        // dd($company_id);
         $package = adminpackageusageModel::getBy_company_id($company_id)->first();
         if (is_object($package)) {
             return $package;

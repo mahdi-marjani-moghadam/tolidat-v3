@@ -165,12 +165,12 @@ if ($company_info != -1) {
 								</a>
 							</div>
 
-							<div class="relative cursor-pointer md:self-end	">
+							<div class="relative cursor-pointer 	">
 								<?php if ($information_company != null) : ?>
 
 									<div class="hidden lg:flex lg:items-center show-profile-menu lg:pt-1">
-										<span>
-											<?php echo $information_company['companyName'] ?> 
+										<span> 
+											<?php echo $information_company['companyName']  ?> 
 										</span>
 
 										<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

@@ -10,23 +10,23 @@ $banner = getBanner($information_company['companyId']);
     <title>سایت اجتماعی تولیدات</title>
     <!-- meta viewport for initial scale in all device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=1">
-    <link rel="shortcut icon" href="<?php echo RELA_DIR ?>templates/template_tailwind/assets/image/favicon.png">
-    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_tailwind/assets/css/normalize.css">
-    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_tailwind/assets/css/bootstrap-tagsinput.min.css">
-    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_tailwind/assets/css/jquery.mmenu.all.css" />
-    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_tailwind/assets/css/introjs.css">
-    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_tailwind/assets/css/introjs-rtl.css">
-    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_tailwind/assets/css/profile-style.css">
-    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_tailwind/assets/css/responsive.css">
-    <link rel="Stylesheet" href="<?php echo RELA_DIR ?>templates/template_tailwind/assets/css/main.css">
-    <link rel="Stylesheet" href="<?php echo RELA_DIR ?>templates/template_tailwind/assets/css/cropper.css">
-    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_tailwind/assets/css/styleprice.css">
+    <link rel="shortcut icon" href="<?php echo RELA_DIR ?>templates/template_fa/assets/image/favicon.png">
+    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/assets/css/normalize.css">
+    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/assets/css/bootstrap-tagsinput.min.css">
+    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/assets/css/jquery.mmenu.all.css" />
+    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/assets/css/introjs.css">
+    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/assets/css/introjs-rtl.css">
+    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/assets/css/profile-style.css">
+    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/assets/css/responsive.css">
+    <link rel="Stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/assets/css/main.css">
+    <link rel="Stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/assets/css/cropper.css">
+    <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/assets/css/styleprice.css">
     <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo RELA_DIR ?>templates/template_fa/bower_components/izitoast/dist/css/iziToast.min.css">
 
     <script src="<?php echo RELA_DIR ?>templates/template_fa/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="<?php echo RELA_DIR ?>templates/template_tailwind/assets/js/modernizr.custom.js"></script>
+    <script src="<?php echo RELA_DIR ?>templates/template_fa/assets/js/modernizr.custom.js"></script>
     <script>
         var baseURL = "<?php echo RELA_DIR; ?>";
     </script>
@@ -339,7 +339,7 @@ $banner = getBanner($information_company['companyId']);
                         if (response.result != 1) {
                             $.iziToastError('حذف بنر با مشکل مواجه شد', '.izi-container');
                         }
-                        $('.my-imgcrop-banner').attr('src', baseURL + 'templates/template_tailwind/assets/image/placeholder1.png');
+                        $('.my-imgcrop-banner').attr('src', baseURL + 'templates/template_fa/assets/image/placeholder1.png');
                         $.iziToastSuccess(response.msg, '.izi-container');
                     });
                 },

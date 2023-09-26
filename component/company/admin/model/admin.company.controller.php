@@ -8495,13 +8495,15 @@ www.tolidat.ir/c/{$fields['company_id']}";
         } else {
             //------> get Company_d_id
             $companyDraftObject = admincompany_dModel::getBy_company_id_and_status_and_isActive_and_new_register($companyObject->Company_id, 1, 1, 0)->first();
+            if (is_object($companyDraftObject)){
 
-            $memberObject = new adminEditorMemberController();
-            $resultMember = $memberObject->getMemberInformationById($companyDraftObject->Company_d_id);
-
-            $export['editorInfo']['editor_name'] = $resultMember->name;
-            $export['editorInfo']['editor_family'] = $resultMember->family;
-            $export['editorInfo']['editor_phone'] = $resultMember->phone;
+                $memberObject = new adminEditorMemberController();
+                $resultMember = $memberObject->getMemberInformationById($companyDraftObject->Company_d_id);
+                $export['editorInfo']['editor_name'] = $resultMember->name;
+                $export['editorInfo']['editor_family'] = $resultMember->family;
+                $export['editorInfo']['editor_phone'] = $resultMember->phone;
+            }
+            // dd($companyDraftObject);
         }
 
         $LicenceResult = adminc_licencesModel::getBy_company_id_and_isActive($fields['Company_id'], '1')->getList();

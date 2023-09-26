@@ -60,7 +60,7 @@ class profileController
      */
     public function template($list = [], $msg = '')
     {
-//        print_r_debug($list);
+    //    dd($list);
         switch ($this->exportType) {
             case 'html':
                 include ROOT_DIR . 'templates/' . CURRENT_SKIN . '/profile.title.inc.php';
@@ -249,7 +249,6 @@ class profileController
         $company_d = company_d::getBy_Company_d_id_and_company_id_and_isActive($fields['Company_d_id'], $this->company_info['company_id'], 1)->first();
         if (!is_object($company_d)) {
             $fields['validate']['msg'] = "این تولیدی وجود ندارد";
-            $fields = $fields;
             $this->showEditFormPrimaryInformation($fields);
         }
 
@@ -272,8 +271,8 @@ class profileController
         $fields['refresh_date'] = strftime('%Y-%m-%d %H:%M:%S', time());
         $fields['category_id'] = implode(',', $fields['category_id']);
         $fields['category_id'] = $categoryCount >= 1 ? ',' . $fields['category_id'] . ',' : '';
-        $fields['meta_keyword'] = $fields['meta_keyword'];
-        $fields['video_script'] = $fields['video_script'];
+        // $fields['meta_keyword'] = $fields['meta_keyword'];
+        // $fields['video_script'] = $fields['video_script'];
 
         if ($fields['catalog']['name'] != '' & $fields['catalog']['error'] == 0) {
             fileRemover(COMPANY_ADDRESS_ROOT . $this->company_info['company_id'] . "/catalog/", $company_d->catalog);

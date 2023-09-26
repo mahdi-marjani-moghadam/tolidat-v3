@@ -2,9 +2,9 @@
 $information_company = getInformation();
 ?>
 
-<link rel="stylesheet" href="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/css/styleprice.css">
-<script src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/js/jquery.animateNumber.min.js"></script>
-<script src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/js/priceList.js"></script>
+<link rel="stylesheet" href="<?php echo RELA_DIR; ?>templates/template_fa/assets/css/styleprice.css">
+<script src="<?php echo RELA_DIR; ?>templates/template_fa/assets/js/jquery.animateNumber.min.js"></script>
+<script src="<?php echo RELA_DIR; ?>templates/template_fa/assets/js/priceList.js"></script>
 
 <!-- separator -->
 <div class="row xxsmallSpace"></div>

@@ -47,7 +47,7 @@ $packageUsage = adminPackageUsageController::getPackageByCompanyID($company_info
 if (!is_object($packageUsage)) {
 
     if ($PARAM[0] != 'invoice' AND $PARAM[0] != 'package' AND $PARAM[0] != 'companyLogo' AND $PARAM[0] != 'companyBanner') {
-        redirectPage(RELA_DIR . "profile", 'اکانت شما غیر فعال می باشد');
+        redirectPage(RELA_DIR . "profile", 'اکانت شما پکیج فعال ندارد  ');
     } else {
         $componenetAdress = ROOT_DIR . "component/{$PARAM['0']}/member/{$PARAM['0']}.php";
     }
@@ -55,8 +55,6 @@ if (!is_object($packageUsage)) {
 } else {
     $componenetAdress = ROOT_DIR . "component/{$PARAM['0']}/member/{$PARAM['0']}.php";
 }
-
-//$componenetAdress = ROOT_DIR . "component/{$PARAM['0']}/member/{$PARAM['0']}.php";
 
 
 if (!file_exists($componenetAdress)) {

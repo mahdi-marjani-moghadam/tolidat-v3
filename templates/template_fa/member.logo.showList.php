@@ -160,7 +160,7 @@
                 $(this).find('input, textarea').each(function () {
                     $(this).val("");
                 }).find('img').each(function () {
-                    $(this).attr("src", '<?php echo RELA_DIR . "templates/template_tailwind/assets/images/placeholder.png" ?>');
+                    $(this).attr("src", '<?php echo RELA_DIR . "templates/template_fa/assets/images/placeholder.png" ?>');
                 });
 
                 var dataID = $(this).data('value');

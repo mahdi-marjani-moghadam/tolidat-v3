@@ -40,7 +40,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 boxA">
                         <div class="article whiteBg boxBorder roundCorner">
                             <div class="row xsmallSpace"></div>
-                            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
+                            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
                             <p class="empty-text">اطلاعاتی موجود نیست!</p>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-<!-- <link rel="stylesheet" href="< ?php echo RELA_DIR . 'templates/template_tailwind'; ?>/bower_components/font-awesome/css/font-awesome.min.css"> -->
+<!-- <link rel="stylesheet" href="< ?php echo RELA_DIR . 'templates/template_fa'; ?>/bower_components/font-awesome/css/font-awesome.min.css"> -->
 
 <div class="row noMargin bg-gray-100 text-gray-500 text-sm p-1">
     <div class="container mx-auto px-4">
@@ -12,9 +12,9 @@
 
 <div class="container mx-auto px-4">
 
-    <!-- <link rel="stylesheet" href="< ?php echo RELA_DIR; ?>templates/template_tailwind/assets/css/styleprice.css"> -->
-    <!-- <script src="< ?php echo RELA_DIR; ?>templates/template_tailwind/assets/js/jquery.animateNumber.min.js"></script> -->
-    <!-- <script src="< ? php echo RELA_DIR; ?>templates/template_tailwind/assets/js/priceList.js"></script> -->
+    <!-- <link rel="stylesheet" href="< ?php echo RELA_DIR; ?>templates/template_fa/assets/css/styleprice.css"> -->
+    <!-- <script src="< ?php echo RELA_DIR; ?>templates/template_fa/assets/js/jquery.animateNumber.min.js"></script> -->
+    <!-- <script src="< ? php echo RELA_DIR; ?>templates/template_fa/assets/js/priceList.js"></script> -->
     <!-- < ?php $notification = getNotification(); -->
     <!-- $information_company = getInformation(); ?> -->
 

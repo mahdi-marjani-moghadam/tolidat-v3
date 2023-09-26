@@ -43,7 +43,7 @@
                     <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['0']['Category_id'] . "/level/2" ?>">
                         <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['0']['image_1']; ?>" alt="<?php echo $list['category_list']['0']['title']; ?>">
                         <span class="title-product">
-                            <?= $list['category_list']['0']['title'] ?>
+                            <?php echo  $list['category_list']['0']['title'] ?>
                         </span>
                     </a>
                 </div>
@@ -53,7 +53,7 @@
                     <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['1']['Category_id'] . "/level/2"  ?>">
                         <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['1']['image_1']; ?>" alt="<?php echo $list['category_list']['1']['title']; ?>">
                         <span class="title-product">
-                            <?= $list['category_list']['1']['title'] ?>
+                            <?php echo  $list['category_list']['1']['title'] ?>
                         </span>
                     </a>
                 </div>
@@ -64,7 +64,7 @@
                         <a style=" color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['2']['Category_id'] . "/level/2" ?>">
                             <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['2']['image_4']; ?>" alt="<?php echo $list['category_list']['2']['title']; ?>">
                             <span class="title-product">
-                                <?= $list['category_list']['2']['title'] ?>
+                                <?php echo  $list['category_list']['2']['title'] ?>
                             </span>
                         </a>
                     </div>
@@ -77,7 +77,7 @@
                                             ?>
                             <!--">-->
                             <span class="title-product">
-                                <?= $list['bannerExhibition']['description'] ?>
+                                <?php echo  $list['bannerExhibition']['description'] ?>
                             </span>
                         </a>
                     </div>
@@ -88,7 +88,7 @@
                     <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['3']['Category_id'] . "/level/2" ?>">
                         <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['3']['image_1']; ?>" alt="<?php echo $list['category_list']['3']['title']; ?>">
                         <span class="title-product">
-                            <?= $list['category_list']['3']['title'] ?>
+                            <?php echo  $list['category_list']['3']['title'] ?>
                         </span>
                     </a>
                 </div>
@@ -98,7 +98,7 @@
                     <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['4']['Category_id'] . "/level/2" ?>">
                         <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['4']['image_1']; ?>" alt="<?php echo $list['category_list']['4']['title']; ?>">
                         <span class="title-product">
-                            <?= $list['category_list']['4']['title'] ?>
+                            <?php echo  $list['category_list']['4']['title'] ?>
                         </span>
                     </a>
                 </div>
@@ -108,7 +108,7 @@
                     <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['5']['Category_id'] . "/level/2" ?>">
                         <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['5']['image_1']; ?>" alt="<?php echo $list['category_list']['5']['title']; ?>">
                         <span class="title-product">
-                            <?= $list['category_list']['5']['title'] ?>
+                            <?php echo  $list['category_list']['5']['title'] ?>
                         </span>
                     </a>
                 </div>
@@ -118,7 +118,7 @@
                     <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['6']['Category_id'] . "/level/2" ?>">
                         <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['6']['image_3']; ?>" alt="<?php echo $list['category_list']['6']['title']; ?>">
                         <span class="title-product">
-                            <?= $list['category_list']['6']['title'] ?>
+                            <?php echo  $list['category_list']['6']['title'] ?>
                         </span>
                     </a>
                 </div>
@@ -128,7 +128,7 @@
                     <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['7']['Category_id'] . "/level/2" ?>">
                         <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['7']['image_1']; ?>" alt="<?php echo $list['category_list']['7']['title']; ?>">
                         <span class="title-product">
-                            <?= $list['category_list']['7']['title'] ?>
+                            <?php echo  $list['category_list']['7']['title'] ?>
                         </span>
                     </a>
                 </div>
@@ -138,7 +138,7 @@
                     <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['8']['Category_id'] . "/level/2" ?>">
                         <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['8']['image_1']; ?>" alt="<?php echo $list['category_list']['8']['title']; ?>">
                         <span class="title-product">
-                            <?= $list['category_list']['8']['title'] ?>
+                            <?php echo  $list['category_list']['8']['title'] ?>
                         </span>
                     </a>
                 </div>
@@ -148,7 +148,7 @@
                     <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['9']['Category_id'] . "/level/2" ?>">
                         <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['9']['image_1']; ?>" alt="<?php echo $list['category_list']['9']['title']; ?>">
                         <span class="title-product">
-                            <?= $list['category_list']['9']['title'] ?>
+                            <?php echo  $list['category_list']['9']['title'] ?>
                         </span>
                     </a>
                 </div>
@@ -158,7 +158,7 @@
                     <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['10']['Category_id'] . "/level/2" ?>">
                         <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['10']['image_2']; ?>" alt="<?php echo $list['category_list']['10']['title']; ?>">
                         <span class="title-product">
-                            <?= $list['category_list']['10']['title'] ?>
+                            <?php echo  $list['category_list']['10']['title'] ?>
                         </span>
                     </a>
                 </div>
@@ -168,7 +168,7 @@
                     <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['11']['Category_id'] . "/level/2" ?>">
                         <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['11']['image_1']; ?>" alt="<?php echo $list['category_list']['11']['title']; ?>">
                         <span class="title-product">
-                            <?= $list['category_list']['11']['title'] ?>
+                            <?php echo  $list['category_list']['11']['title'] ?>
                         </span>
                     </a>
                 </div>
@@ -178,7 +178,7 @@
                     <a style="color: white" href="<?php echo RELA_DIR . "category/all/" . $list['category_list']['12']['Category_id'] . "/level/2" ?>">
                         <img src="<?php echo RELA_DIR . 'statics/images/category/' . $list['category_list']['12']['image_1']; ?>" alt="<?php echo $list['category_list']['12']['title']; ?>">
                         <span class="title-product">
-                            <?= $list['category_list']['12']['title'] ?>
+                            <?php echo  $list['category_list']['12']['title'] ?>
                         </span>
                     </a>
                 </div>
@@ -186,7 +186,7 @@
 
         </div>
         <div class="container-show-all-category-main">
-            <a href="<?= RELA_DIR . "category/all" ?>" class="btn btn-block button-default show-more show-all-category-main text-center">نمایش همه دسته بندی ها</a>
+            <a href="<?php echo  RELA_DIR . "category/all" ?>" class="btn btn-block button-default show-more show-all-category-main text-center">نمایش همه دسته بندی ها</a>
         </div>
 
         <div class="row xxxsmallSpace"></div>
@@ -233,19 +233,19 @@
                                 <div class="item text-center roundCorner boxBorder">
                                     <div class="item-content whiteBg">
                                         <div class="logoContainer pull-right">
-                                            <h2 class="text-right rtl"><?= $value['company_name'] ?></h2>
+                                            <h2 class="text-right rtl"><?php echo  $value['company_name'] ?></h2>
                                         </div>
                                         <div class="content pull-right">
                                             <div class="item-Money">
                                                 <span class="package-silver"><i class="fa fa-trophy" aria-hidden="true"></i> </span>
-                                                <span><?= $value['information']['package_type'] ?></span>
+                                                <span><?php echo  $value['information']['package_type'] ?></span>
                                             </div>
                                             <?php
                                             if ((int)$value['information']['product_count']) {
                                             ?>
                                                 <div class="item-product">
                                                     <span><i class="fa fa-cubes" aria-hidden="true"></i> </span>
-                                                    <span>&nbsp;<?= $value['information']['product_count']; ?>&nbsp;</span>
+                                                    <span>&nbsp;<?php echo  $value['information']['product_count']; ?>&nbsp;</span>
                                                     <span> محصول</span>
                                                 </div>
                                             <?php
@@ -261,7 +261,7 @@
                                         <ul class="">
                                             <?php foreach ($value['company_product'] as $key => $fields) : ?>
                                                 <li>
-                                                    <img title="<?= $fields['title'] ?>" alt="<?= ' محصول ' . $fields['brif_description'] ?>" class="roundCorner fullWidth boxBorder" data-lazy="<?php echo ($fields['image'] ? COMPANY_ADDRESS . $fields['company_id'] . "/product/100.100." . $fields['image'] : DEFULT_PRODUCT_ADDRESS); ?>">
+                                                    <img title="<?php echo  $fields['title'] ?>" alt="<?php echo  ' محصول ' . $fields['brif_description'] ?>" class="roundCorner fullWidth boxBorder" data-lazy="<?php echo ($fields['image'] ? COMPANY_ADDRESS . $fields['company_id'] . "/product/100.100." . $fields['image'] : DEFULT_PRODUCT_ADDRESS); ?>">
                                                 </li>
                                             <?php endforeach; ?>
                                         </ul>
@@ -293,7 +293,7 @@
                                         <?php
                                         $file = ROOT_DIR . ltrim($value['image'], '/');
                                         ?>
-                                        <img data-lazy="<?php echo (isset($value['image']) ? COMPANY_ADDRESS . $value['Company_id'] . "/logo/122.125." . $value['image'] : '/templates/' . CURRENT_SKIN . '/assets/images/placeholder-logo.png'); ?>" class="boxBorder roundCorner" alt="<?= " لوگوی " . $value['company_name'] ?>" title="<?= $value['company_name']; ?>">
+                                        <img data-lazy="<?php echo (isset($value['image']) ? COMPANY_ADDRESS . $value['Company_id'] . "/logo/122.125." . $value['image'] : '/templates/' . CURRENT_SKIN . '/assets/images/placeholder-logo.png'); ?>" class="boxBorder roundCorner" alt="<?php echo  " لوگوی " . $value['company_name'] ?>" title="<?php echo  $value['company_name']; ?>">
                                     </div>
                                     <div class="content pull-right mt">
                                         <div class="text-right header">
@@ -354,7 +354,7 @@
         <?php if (isset($list['news_list'])) { ?>
             <div class="col-xs-12 col-sm-4 col-md-4 pull-right newsColumn">
                 <div class="text-right header-title mb-half mt">
-                    <a href="<?= RELA_DIR . "article" ?>"><span>مقالات</span></a><span></span>
+                    <a href="<?php echo  RELA_DIR . "article" ?>"><span>مقالات</span></a><span></span>
                 </div>
                 <div class="text-header vertical bestProduct whiteBg boxBorder roundCorner fullWidth container-article mb">
                     <div id="articles" class="content carousel-vertical news-tolidat content1 ltr slick-button">
@@ -362,9 +362,9 @@
                             <a class="single" href="<?php echo RELA_DIR . 'article/' . $field['Article_id'] ?>">
                                 <div class="innerContent pull-left">
                                     <div class="logoContainer pull-right">
-                                        <img class="roundCorner fullWidth boxBorder" data-lazy="<?php echo (isset($field['image']) ? STATIC_RELA_DIR . '/images/article/90.90.' . $field['image'] : DEFULT_LOGO_ADDRESS) ?>" alt="<?= $field['brif_description'] ?>" title="<?= $field['title']; ?>">
+                                        <img class="roundCorner fullWidth boxBorder" data-lazy="<?php echo (isset($field['image']) ? STATIC_RELA_DIR . '/images/article/90.90.' . $field['image'] : DEFULT_LOGO_ADDRESS) ?>" alt="<?php echo  $field['brif_description'] ?>" title="<?php echo  $field['title']; ?>">
                                     </div>
-                                    <div class="text-right rtl text-light h2" title="<?= $field['title'] ?>">
+                                    <div class="text-right rtl text-light h2" title="<?php echo  $field['title'] ?>">
                                         <h4>
                                             <?php echo (strlen($field['title']) ? $field['title'] : "") ?>
                                         </h4>
@@ -401,12 +401,12 @@
                 <div class="text-header vertical bestProduct whiteBg boxBorder roundCorner fullWidth container-news">
                     <div id="news" class="content carousel-vertical news-tolidat content1 ltr slick-button">
                         <?php foreach ($list['events_list'] as $id => $field) { ?>
-                            <a class="single" href="<?= RELA_DIR . 'event/' . $field['event_id']; ?>">
+                            <a class="single" href="<?php echo  RELA_DIR . 'event/' . $field['event_id']; ?>">
                                 <div class="innerContent pull-left">
                                     <div class="logoContainer pull-right">
-                                        <img class="roundCorner fullWidth boxBorder" data-lazy="<?php echo (isset($field['icon']) ? STATIC_RELA_DIR . '/images/event/90.90.' . $field['icon'] : DEFULT_LOGO_ADDRESS) ?>" alt="<?= $field['brief_description'] ?>" title="<?= $field['title']; ?>">
+                                        <img class="roundCorner fullWidth boxBorder" data-lazy="<?php echo (isset($field['icon']) ? STATIC_RELA_DIR . '/images/event/90.90.' . $field['icon'] : DEFULT_LOGO_ADDRESS) ?>" alt="<?php echo  $field['brief_description'] ?>" title="<?php echo  $field['title']; ?>">
                                     </div>
-                                    <div class="text-right rtl text-light h2" title="<?= $field['title'] ?>">
+                                    <div class="text-right rtl text-light h2" title="<?php echo  $field['title'] ?>">
                                         <h4>
                                             <?php echo (strlen($field['title']) ? $field['title'] : "") ?>
                                         </h4>

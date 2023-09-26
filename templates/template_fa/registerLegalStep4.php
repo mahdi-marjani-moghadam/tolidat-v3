@@ -577,7 +577,7 @@
                 $(this).parent().removeClass('has-error has-success typing');
             });
 
-            $('#myModal3').find('#imageLicence').attr("src", '<?php echo RELA_DIR . "templates/template_tailwind/assets/images/placeholder.png" ?>');
+            $('#myModal3').find('#imageLicence').attr("src", '<?php echo RELA_DIR . "templates/template_fa/assets/images/placeholder.png" ?>');
 
             $('#myModal3').find('#div-licence_type').hide();
         }

@@ -85,7 +85,7 @@
                             <?php else : ?>
                                 <div class="add-address"></div>
                                 <div class="notRecord">
-                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
+                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
                                     <p class="empty-text">اطلاعاتی موجود نیست!</p>
                                 </div>
                             <?php endif; ?>
@@ -122,7 +122,7 @@
                             <?php else : ?>
                                 <div class="add-email"></div>
                                 <div class="notRecord">
-                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
+                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
                                     <p class="empty-text">اطلاعاتی موجود نیست!</p>
                                 </div>
                             <?php endif; ?>
@@ -159,7 +159,7 @@
                             <?php else : ?>
                                 <div class="add-social"></div>
                                 <div class="notRecord">
-                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
+                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
                                     <p class="empty-text">اطلاعاتی موجود نیست!</p>
                                 </div>
                             <?php endif; ?>
@@ -198,7 +198,7 @@
                             <?php else : ?>
                                 <div class="add-website"></div>
                                 <div class="notRecord">
-                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
+                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
                                     <p class="empty-text">اطلاعاتی موجود نیست!</p>
                                 </div>
                             <?php endif; ?>
@@ -236,7 +236,7 @@
                             <?php else : ?>
                                 <div class="add-phone"></div>
                                 <div class="notRecord">
-                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
+                                    <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
                                     <p class="empty-text">اطلاعاتی موجود نیست!</p>
                                 </div>
                             <?php endif; ?>
@@ -945,7 +945,7 @@
     </div>
 </div>
 
-<script src="<?php echo RELA_DIR ?>templates/template_tailwind/assets/js/companyContacts.js"></script>
+<script src="<?php echo RELA_DIR ?>templates/template_fa/assets/js/companyContacts.js"></script>
 <script>
     $.iziToastError = function(msg) {
         iziToast.settings({

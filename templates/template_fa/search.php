@@ -429,7 +429,7 @@
 <!-------------------------------- Scripts -------------------------------->
 
 
-<script src="<?php echo RELA_DIR ?>templates/template_tailwind/assets/js/companyWiki.js"></script>
+<script src="<?php echo RELA_DIR ?>templates/template_fa/assets/js/companyWiki.js"></script>
 
 <div class="row xxsmallSpace"></div>
 

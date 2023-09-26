@@ -21,7 +21,7 @@
         </div><!-- /panel-heading -->
         <?php if ($msg != null) { ?>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-warning">
-                <?= $msg ?>
+                <?php echo  $msg ?>
             </div>
             <?php
         }
@@ -38,7 +38,7 @@
                                            for="title">عنوان:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control" name="title" id="title"
-                                               placeholder=" عنوان " required value="<?= $list['title'] ?>">
+                                               placeholder=" عنوان " required value="<?php echo  $list['title'] ?>">
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control" name="brif_description"
                                                id="brif_description" placeholder="خلاصه توضیحات" required
-                                               value="<?= $list['brif_description'] ?>">
+                                               value="<?php echo  $list['brif_description'] ?>">
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control" name="meta_keyword" id="meta_keyword"
                                                placeholder="کلمات کلیدی"
-                                               value="<?= $list['meta_keyword'] ?>" data-role="tagsinput">
+                                               value="<?php echo  $list['meta_keyword'] ?>" data-role="tagsinput">
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                                     <div class="col-xs-12 col-sm-8 pull-right">
                     <textarea name="description" class="form-control"
                               id="description" placeholder="توضیحات"
-                              required="required"><?= $list['description'] ?></textarea>
+                              required="required"><?php echo  $list['description'] ?></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -86,11 +86,11 @@
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <select name="priority" id="priority">
                                             <option
-                                                value="1" <?= ($list['priority'] == '1') ? 'selected="selected"' : ''; ?>>
+                                                value="1" <?php echo  ($list['priority'] == '1') ? 'selected="selected"' : ''; ?>>
                                                 1
                                             </option>
                                             <option
-                                                value="0" <?= ($list['priority'] == '0') ? 'selected="selected"' : ''; ?>>
+                                                value="0" <?php echo  ($list['priority'] == '0') ? 'selected="selected"' : ''; ?>>
                                                 0
                                             </option>
                                         </select>
@@ -106,14 +106,14 @@
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <select name="category_id[]" data-input="select2" placeholder="Multiple select"
                                                 multiple>
-                                            <?
+                                            <?php 
                                             foreach ($list['category'] as $category_id => $value) {
                                                 ?>
                                                 <option <?php echo in_array($value['Category_id'], $list['category_id']) ? 'selected' : '' ?>
-                                                    value="<?= $value['Category_id'] ?>">
-                                                    <?= $value['export'] ?>
+                                                    value="<?php echo  $value['Category_id'] ?>">
+                                                    <?php echo  $value['export'] ?>
                                                 </option>
-                                                <?
+                                                <?php 
                                             }
                                             ?>
                                         </select>
@@ -145,7 +145,7 @@
                                         <div class="col-xs-12 col-sm-12 col-md-12">
                                             <div class="docs-buttons">
                                                 <div class="img-container upload-msg">
-                                                    <img class="image-crop" src="<?= (trim($list['image'])!='')? COMPANY_ADDRESS.$list['company_id']."/product/".$list['image']:  RELA_DIR . "templates/admin/assets/img/placeholder.png" ?>" alt="Picture">
+                                                    <img class="image-crop" src="<?php echo  (trim($list['image'])!='')? COMPANY_ADDRESS.$list['company_id']."/product/".$list['image']:  RELA_DIR . "templates/admin/assets/img/placeholder.png" ?>" alt="Picture">
                                                 </div>
                                                 <div class="btn-block mt">
                                                     <label class="btn-block btn btn-success uploud-btnProCrop pull-right" for="inputImage" title="Upload image file">
@@ -195,7 +195,7 @@
                                 <p class="pull-right">
                                     <input name="action" type="hidden" id="action" value="edit"/>
                                     <input name="draft_id" type="hidden" id="draft_id"
-                                           value="<?= $list['Product_d_id'] ?>"/>
+                                           value="<?php echo  $list['Product_d_id'] ?>"/>
                                     <button type="submit" name="submit" id="submit"
                                             class="btn btn-icon btn-success rtl">
                                         <i class="fa fa-plus"></i>ثبت

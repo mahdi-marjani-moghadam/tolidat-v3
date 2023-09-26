@@ -286,7 +286,7 @@ FROM
         if ($funcName == 'draft') {
             $appendWhere = " where  `company`.`edit` <> '0000000000000000000000000' and  `company`.`edit` <> '' and `company`.`package_status` ='4' and `company`.`new_register` = '0'";
         } elseif ($funcName == 'wiki') {
-            return "select * from company_d where package_status ='1' and `new_register` = '0' and status ='-1' and isActive ='1'";
+            return "select * from company_d where package_status ='1' and `new_register` = '0' and status ='-1' and isActive ='1' order by refresh_date desc";
         } elseif ($funcName == 'expire') {
             $appendWhere = " where  `packageusage`.`expiredate`  < '" . date('Y-m-d', strtotime(COMPANY_EXPIRE_PERIOD)) . " 00:00:00' ";
         } elseif ($funcName == 'lockById') {
@@ -324,7 +324,7 @@ FROM
                         LEFT JOIN `c_addresses` ON `company`.`Company_id` =
                           `c_addresses`.`company_id`" .
             $appendWhere
-            . "GROUP BY `company`.`Company_id`";
+            . "GROUP BY `company`.`Company_id` order by company.refresh_date desc";
 
 
         return $query;

@@ -129,7 +129,7 @@
                     </div>
                     <?php if (count($list['other_product_list']) <= 0) : ?>
                         <div class="notRecord flex  items-center p-4 flex-col ">
-                            <img class=" w-20" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
+                            <img class=" w-20" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
                             <p class="empty-text">اطلاعاتی موجود نیست!</p>
                         </div>
                     <?php endif; ?>
@@ -163,7 +163,7 @@
                     </div>
                     <?php if (count($list['related_products_list']) <= 0) : ?>
                         <div class="notRecord">
-                            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
+                            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
                             <p class="empty-text">اطلاعاتی موجود نیست!</p>
                         </div>
                     <?php endif; ?>

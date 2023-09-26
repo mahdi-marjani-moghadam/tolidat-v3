@@ -22,7 +22,7 @@
         </div><!-- /panel-heading -->
         <?php if ($msg != null) { ?>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-warning">
-                <?= $msg ?>
+                <?php echo  $msg ?>
             </div>
             <?php
         }
@@ -41,14 +41,14 @@
                                            for="national_id">شناسه ملی:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control" name="national_id" id="national_id"
-                                               value="<?= $list['companyInfo']['national_id'] ?>" required>
+                                               value="<?php echo  $list['companyInfo']['national_id'] ?>" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <div class="col-xs-12 col-sm-4 pull-right control-label rtl">
-                                        <?= $list['companyData']['companyInfo']['national_id'] ?>
+                                        <?php echo  $list['companyData']['companyInfo']['national_id'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control" name="registration_number"
                                                id="registration_number"
-                                               value="<?= $list['companyInfo']['registration_number'] ?>">
+                                               value="<?php echo  $list['companyInfo']['registration_number'] ?>">
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                                 <div class="form-group">
 
                                     <div class="col-xs-12 col-sm-4 pull-right control-label rtl">
-                                        <?= $list['companyData']['companyInfo']['registration_number'] ?>
+                                        <?php echo  $list['companyData']['companyInfo']['registration_number'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -85,14 +85,14 @@
                                            for="company_name">نام تولیدی:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
                                         <input type="text" class="form-control" name="company_name" id="company_name"
-                                               required value="<?= $list['companyInfo']['company_name'] ?>">
+                                               required value="<?php echo  $list['companyInfo']['company_name'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <div class="col-xs-12 pull-right control-label rtl">
-                                        <?= $list['companyData']['companyInfo']['company_name'] ?>
+                                        <?php echo  $list['companyData']['companyInfo']['company_name'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -105,14 +105,14 @@
                                            for="description">فعالیت شرکت:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
                                         <input type="text" class="form-control" name="description" id="description"
-                                               required value="<?= $list['companyInfo']['description'] ?>">
+                                               required value="<?php echo  $list['companyInfo']['description'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <div class="col-xs-12 pull-right control-label rtl">
-                                        <?= $list['companyData']['companyInfo']['description'] ?>
+                                        <?php echo  $list['companyData']['companyInfo']['description'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -125,14 +125,14 @@
                                            for="maneger_name">نام مدیر:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
                                         <input type="text" class="form-control" name="maneger_name" id="maneger_name"
-                                               required value="<?= $list['companyInfo']['maneger_name'] ?>">
+                                               required value="<?php echo  $list['companyInfo']['maneger_name'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <div class="col-xs-12 pull-right control-label rtl">
-                                        <?= $list['companyData']['companyInfo']['maneger_name'] ?>
+                                        <?php echo  $list['companyData']['companyInfo']['maneger_name'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -146,14 +146,14 @@
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <select name="personality_type" id="personality_type" data-input="select2">
                                             <option></option>
-                                            <?
+                                            <?php 
                                             foreach ($list['personalityType'] as $key => $value) {
                                                 ?>
                                             <option
-                                                <?= $list['companyInfo']['personality_type'] == $key ? ' selected ' : '' ?>
-                                                    value="<?= $key ?>">
-                                                <?= $value['type'] ?>
-                                                </option><?
+                                                <?php echo  $list['companyInfo']['personality_type'] == $key ? ' selected ' : '' ?>
+                                                    value="<?php echo  $key ?>">
+                                                <?php echo  $value['type'] ?>
+                                                </option><?php 
                                             }
                                             ?>
                                         </select>
@@ -184,15 +184,15 @@
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
                                         <select name="state_id" id="province_id" data-input="select2">
                                             <option></option>
-                                            <?
+                                            <?php 
                                             foreach ($list['states'] as $province_id => $value) {
                                                 ?>
 
                                             <option
-                                                <?= $value['province_id'] == $list['companyInfo']['state_id'] ? 'selected' : '' ?>
-                                                    value="<?= $value['province_id'] ?>">
-                                                <?= $value['name'] ?>
-                                                </option><?
+                                                <?php echo  $value['province_id'] == $list['companyInfo']['state_id'] ? 'selected' : '' ?>
+                                                    value="<?php echo  $value['province_id'] ?>">
+                                                <?php echo  $value['name'] ?>
+                                                </option><?php 
                                             }
                                             ?>
                                         </select>
@@ -243,7 +243,7 @@
                                            for="code">کد:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control" name="code" id="code"
-                                               value="<?= $list['phoneInfo']['code'] ?>" required>
+                                               value="<?php echo  $list['phoneInfo']['code'] ?>" required>
                                     </div>
                                 </div>
 
@@ -251,7 +251,7 @@
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <div class="col-xs-12 pull-right control-label rtl">
-                                        <?= $list['companyData']['phoneInfo']['code'] ?>
+                                        <?php echo  $list['companyData']['phoneInfo']['code'] ?>
                                     </div>
                                 </div>
 
@@ -265,7 +265,7 @@
                                            for="phone">تلفن شرکت:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control" name="phone" id="phone"
-                                               value="<?= $list['phoneInfo']['number'] ?>" required>
+                                               value="<?php echo  $list['phoneInfo']['number'] ?>" required>
                                     </div>
                                 </div>
 
@@ -273,7 +273,7 @@
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <div class="col-xs-12 pull-right control-label rtl">
-                                        <?= $list['companyData']['phoneInfo']['number'] ?>
+                                        <?php echo  $list['companyData']['phoneInfo']['number'] ?>
                                     </div>
                                 </div>
 
@@ -289,14 +289,14 @@
                                            for="postal_code">کدپستی :</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control" name="postal_code"
-                                               id="postal_code" value="<?= $list['addressInfo']['postal_code'] ?>">
+                                               id="postal_code" value="<?php echo  $list['addressInfo']['postal_code'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <div class="col-xs-12 pull-right control-label rtl">
-                                        <?= $list['companyData']['addressInfo']['postal_code'] ?>
+                                        <?php echo  $list['companyData']['addressInfo']['postal_code'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -309,14 +309,14 @@
                                            for="address">آدرس شرکت:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control" name="address"
-                                               id="address" value="<?= $list['addressInfo']['address'] ?>">
+                                               id="address" value="<?php echo  $list['addressInfo']['address'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <div class="col-xs-12 pull-right control-label rtl">
-                                        <?= $list['companyData']['addressInfo']['address'] ?>
+                                        <?php echo  $list['companyData']['addressInfo']['address'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -329,14 +329,14 @@
                                            for="email">ایمیل:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="email" class="form-control" name="email"
-                                               id="email" value="<?= $list['emailInfo']['email'] ?>">
+                                               id="email" value="<?php echo  $list['emailInfo']['email'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <div class="col-xs-12 pull-right control-label rtl">
-                                        <?= $list['companyData']['emailInfo']['email'] ?>
+                                        <?php echo  $list['companyData']['emailInfo']['email'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -349,14 +349,14 @@
                                            for="url">وب سایت :</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control" name="url"
-                                               id="url" value="<?= $list['websiteInfo']['url'] ?>">
+                                               id="url" value="<?php echo  $list['websiteInfo']['url'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <div class="col-xs-12 pull-right control-label rtl">
-                                        <?= $list['companyData']['websiteInfo']['url'] ?>
+                                        <?php echo  $list['companyData']['websiteInfo']['url'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -370,14 +370,14 @@
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control date" name="register_date"
                                                id="register_date"
-                                               value="<?= $list['companyInfo']['register_date'] ?>">
+                                               value="<?php echo  $list['companyInfo']['register_date'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <div class="col-xs-12 pull-right control-label rtl">
-                                        <?= convertDate($list['companyData']['companyInfo']['register_date'] ) ?>
+                                        <?php echo  convertDate($list['companyData']['companyInfo']['register_date'] ) ?>
                                     </div>
                                 </div>
                             </div>
@@ -423,14 +423,14 @@
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control" name="reference_value"
                                                id="reference_value"
-                                               value="<?= $list['phoneInfo']['reference_value'] ?>">
+                                               value="<?php echo  $list['phoneInfo']['reference_value'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <div class="col-xs-12 pull-right control-label rtl">
-                                        <?= $list['companyData']['phoneInfo']['reference_value'] ?>
+                                        <?php echo  $list['companyData']['phoneInfo']['reference_value'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -455,13 +455,13 @@
                                         <div class="col-xs-12 col-sm-8 pull-right">
                                             <select name="licence_type" id="licence_type" data-input="select2">
                                                 <option></option>
-                                                <?
+                                                <?php 
                                                 foreach ($list['licence'] as $key => $value) {
                                                     ?>
                                                 <option
-                                                        value="<?= $key ?>" <?= ($list['licenceInfo']['licence_type'] == $key ? " selected " : "") ?>>
-                                                    <?= $value['name'] ?>
-                                                    </option><?
+                                                        value="<?php echo  $key ?>" <?php echo  ($list['licenceInfo']['licence_type'] == $key ? " selected " : "") ?>>
+                                                    <?php echo  $value['name'] ?>
+                                                    </option><?php 
                                                 }
                                                 ?>
                                                 <option value="0">غیره</option>
@@ -480,7 +480,7 @@
                                         <div class="col-xs-12 col-sm-8 pull-right">
                                             <input type="text" class="form-control" name="licence_number"
                                                    id="licence_number"
-                                                   value="<?= $list['licenceInfo']['licence_number'] ?>" required>
+                                                   value="<?php echo  $list['licenceInfo']['licence_number'] ?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -491,7 +491,7 @@
                                         <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
                                             <input type="text" class="form-control" name="licence_description"
                                                    id="licence_description"
-                                                   required value="<?= $list['licenceInfo']['description'] ?>">
+                                                   required value="<?php echo  $list['licenceInfo']['description'] ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -503,7 +503,7 @@
                                                for="name">نام صاحب جواز:</label>
                                         <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
                                             <input type="text" class="form-control" name="name" id="name"
-                                                   required value="<?= $list['licenceInfo']['name'] ?>">
+                                                   required value="<?php echo  $list['licenceInfo']['name'] ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -513,7 +513,7 @@
                                                for="family">نام خانوادگی صاحب جواز:</label>
                                         <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
                                             <input type="text" class="form-control" name="family" id="family"
-                                                   required value="<?= $list['licenceInfo']['family'] ?>">
+                                                   required value="<?php echo  $list['licenceInfo']['family'] ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -526,7 +526,7 @@
                                         <div class="col-xs-12 col-sm-8 pull-right">
                                             <input type="text" class="form-control" name="national_code"
                                                    id="national_code"
-                                                   value="<?= $list['licenceInfo']['national_code'] ?>">
+                                                   value="<?php echo  $list['licenceInfo']['national_code'] ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -537,7 +537,7 @@
                                         <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
                                             <input type="text" class="form-control" name="exporter_refrence"
                                                    id="exporter_refrence"
-                                                   required value="<?= $list['licenceInfo']['exporter_refrence'] ?>">
+                                                   required value="<?php echo  $list['licenceInfo']['exporter_refrence'] ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -550,7 +550,7 @@
                                         <div class="col-xs-12 col-sm-8 pull-right">
                                             <input type="text" class="form-control date" name="issuence_date"
                                                    id="issuence_date"
-                                                   value="<?= $list['licenceInfo']['issuence_date'] ?>">
+                                                   value="<?php echo  $list['licenceInfo']['issuence_date'] ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -561,7 +561,7 @@
                                         <div class="col-xs-12 col-sm-8 pull-right">
                                             <input type="text" class="form-control date" name="expiration_date"
                                                    id="expiration_date"
-                                                   value="<?= $list['licenceInfo']['expiration_date'] ?>">
+                                                   value="<?php echo  $list['licenceInfo']['expiration_date'] ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -570,9 +570,9 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <img
-                                            src="<?= COMPANY_ADDRESS . $list['companyInfo']['company_id'] . "/licence/" . $list['licenceInfo']['image'] ?> "
+                                            src="<?php echo  COMPANY_ADDRESS . $list['companyInfo']['company_id'] . "/licence/" . $list['licenceInfo']['image'] ?> "
                                             class="img-responsive img-thumbnail" alt="Responsive image">
-                                    <h4 style="direction:ltr"><?= $list['licenceInfo']['image'] ?></h4>
+                                    <h4 style="direction:ltr"><?php echo  $list['licenceInfo']['image'] ?></h4>
                                 </div>
                             </div>
                             <div class="row xsmallSpace hidden-xs"></div>
@@ -615,7 +615,7 @@
                                     </div>
                                     <div class="mmenuHolder active">
                                         <nav class="menu  mm-opened" data-placeholder="جستجو در دسته بندی ها"
-                                             data-title="دسته بندی تولیدی ها"><?= $list['category']; ?>
+                                             data-title="دسته بندی تولیدی ها"><?php echo  $list['category']; ?>
                                     </div>
                                 </div>
                             </div>
@@ -631,7 +631,7 @@
                                 </div>
                                 <input type="hidden" id="maxCanSelected" value="1">
                                 <input type="hidden" id="selectedCategories"
-                                       value="<?= $list['companyInfo']['category_id'] ?>">
+                                       value="<?php echo  $list['companyInfo']['category_id'] ?>">
                             </div>
                         </div>
                         <div class="row">
@@ -675,7 +675,7 @@
 <script>
     //------>state Change
     $(document).ready(function () {
-        if ("<?= isset($list['licenceInfo']['licence_number'])?>") {
+        if ("<?php echo  isset($list['licenceInfo']['licence_number'])?>") {
             $.addLicence();
         } else {
             $.removeLicence();

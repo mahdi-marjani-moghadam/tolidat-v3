@@ -63,7 +63,7 @@
         <?php endforeach; ?>
     <?php else : ?>
         <div class="notRecord">
-            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_tailwind/assets/images/empty01.png">
+            <img class="empty-img center-block" src="<?php echo RELA_DIR; ?>templates/template_fa/assets/images/empty01.png">
             <p class="empty-text">اطلاعاتی موجود نیست!</p>
         </div>
     <?php endif; ?>
@@ -497,7 +497,7 @@
                             }
                         });
                         if (i == 1) {
-                            var image = "<?php echo RELA_DIR; ?>" + "templates/template_tailwind/assets/images/empty01.png";
+                            var image = "<?php echo RELA_DIR; ?>" + "templates/template_fa/assets/images/empty01.png";
                             var html = '<div class="notRecord">' +
                                 '<img class="empty-img center-block" src="' + image + '">' +
                                 '<p class="empty-text">اطلاعاتی موجود نیست!</p>';

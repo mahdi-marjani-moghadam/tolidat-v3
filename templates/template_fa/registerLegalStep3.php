@@ -64,7 +64,7 @@
 
                             <div class="flex justify-center mt-4">
                                 <button type="button" id="sendCodeAgain" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-400 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600           reg-btn-refresh">
-                                    <img class="hidden absolute h-5" id="loading" src="<?php echo RELA_DIR ?>templates/template_tailwind/assets/images/loading1.gif">
+                                    <img class="hidden absolute h-5" id="loading" src="<?php echo RELA_DIR ?>templates/template_fa/assets/images/loading1.gif">
                                     ارسال مجدد
                                 </button>
                             </div>

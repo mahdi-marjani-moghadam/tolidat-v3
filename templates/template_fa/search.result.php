@@ -747,7 +747,7 @@
 
         // $('.mm-search input')
         //     .addClass('keyboard')
-        //     .after('<img class="icon hidden-xs hidden-sm" src="/templates/template_tailwind/assets/images/keyboard.png">');
+        //     .after('<img class="icon hidden-xs hidden-sm" src="/templates/template_fa/assets/images/keyboard.png">');
 
 
 
