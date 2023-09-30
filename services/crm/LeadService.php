@@ -90,7 +90,7 @@ class LeadService
             $fields['comment'] = ' درخواست از صفحه اصلی سایت قسمت ارتباط سریع';
         }
         if (isset($fields['register'])) {
-            $fields['comment'] = '  از صفحه ثبت نام ' . $fields['phone'];
+            $fields['comment'] = '  از صفحه ثبت نام ' . $fields['phone'] . ' ' . $fields['name'];
         }
         // dd($fields);
         $result = $lead->save();
