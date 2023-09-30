@@ -86,11 +86,12 @@ class LeadService
         $lead->date = strftime('%Y-%m-%d %H:%M:%S', time());
         $lead->status = (isset($fields['action']) && is_numeric($fields['action'])) ? $fields['action'] : 0;
         $lead->company_id = $fields['company_id'] ?? 0;
+        dd($fields);
         if (isset($fields['fastform'])) {
             $fields['comment'] = ' درخواست از صفحه اصلی سایت قسمت ارتباط سریع';
         }
         if (isset($fields['register'])) {
-            $fields['comment'] = '  از صفحه ثبت نام ' . $fields['phone'] . ' ' . $fields['name'];
+            $fields['comment'] = '  از صفحه ثبت نام ' . $fields['phone'] . ' ' . $fields['company_name'];
         }
         // dd($fields);
         $result = $lead->save();
