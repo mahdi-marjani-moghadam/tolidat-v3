@@ -1012,6 +1012,7 @@ class companyController
             ->leftJoin('c_addresses', 'company.Company_id', '=', 'c_addresses.company_id')
             ->where('status', 'in', [-1, 1])
             ->andWhere('DATE(register_date)', '>=', date('Y-m-d'))
+            ->andWhere('c_addresses.isMAin','=',1)
             ->getList();
         // dd(date('Y-m-d',strtotime("-1 days")));
         if ($result['export']['recordsCount'] == 0) {
