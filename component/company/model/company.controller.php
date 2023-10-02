@@ -1007,8 +1007,9 @@ class companyController
     function newCompany()
     {
         $result = company::getAll()
-            ->select('company.*, phone')
+            ->select('company.*, phone, address')
             ->leftJoin('send_token', 'company.Company_id', '=', 'send_token.company_id')
+            ->leftJoin('c_addresses', 'company.Company_id', '=', 'c_addresses.company_id')
             ->where('status', 'in', [-1, 1])
             ->andWhere('DATE(register_date)', '>=', date('Y-m-d'))
             ->getList();
