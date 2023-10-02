@@ -283,7 +283,7 @@ class companyController
         //            }
         //        }
         global $lang;
-        $breadcrumb->add(($lang=='fa')?'کمپانی ':'Companies ', RELA_DIR . 'company', true);
+        $breadcrumb->add(($lang == 'fa') ? 'کمپانی ' : 'Companies ', RELA_DIR . 'company', true);
         if ($fields['c']) $breadcrumb->add($fields['c'], RELA_DIR . 'company/c/' . $fields['c'], true);
         if ($fields['province'] || $fields['city']) $breadcrumb->add(($fields['province'] ?? '') . ($fields['city'] ?? ''));
         if ($fields['q']) $breadcrumb->add($fields['q']);
@@ -693,7 +693,7 @@ class companyController
             $export['category_title'][$category['Category_id']]['Category_id'] = $category['Category_id'];
             $export['category_title'][$category['Category_id']]['url'] = $category['url'];
         }
-        
+
         // dd($export);
         // get company honour
         $resultHonour = c_honour::getBy_company_id($id)->getList();
@@ -1007,7 +1007,9 @@ class companyController
     function newCompany()
     {
         $result = company::getAll()
-            ->where('status', 'in', [-1,1])
+            ->select('company.*, phone')
+            ->leftJoin('send_token', 'company.Company_id', '=', 'send_token.company_id')
+            ->where('status', 'in', [-1, 1])
             ->andWhere('DATE(register_date)', '>=', date('Y-m-d'))
             ->getList();
         // dd(date('Y-m-d',strtotime("-1 days")));
