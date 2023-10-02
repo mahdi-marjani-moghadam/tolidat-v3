@@ -15,7 +15,7 @@
         <!----------------------------- کمپانی ----------------------------->
 
         <li>
-            <a href="#">
+            <a href="#" style="background-color: #ffb3b3; color:black">
                 <i class="sidebar-icon fa fa-adn"></i>
                 <span class="sidebar-text"> کمپانی</span>
                 <b class="fa fa-angle-left"></b>
@@ -32,12 +32,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo  RELA_DIR; ?>admin/?component=company">
+                    <a href="<?php echo  RELA_DIR; ?>admin/?component=company" style="background-color: #ffb3b3;">
                         <span class="sidebar-text text-16">لیست کمپانی ها</span>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo  RELA_DIR; ?>admin/?component=company&action=showNewCompany">
+                    <a href="<?php echo  RELA_DIR; ?>admin/?component=company&action=showNewCompany" style="background-color: #ffb3b3;">
                         <span class="sidebar-text text-16">لیست کمپانی های جدید</span>
                     </a>
                 </li>
@@ -75,7 +75,73 @@
             <!--/sidebar-child-->
         </li>
         <!--/sidebar-item-->
+        <li>
+            <a href="<?php echo  RELA_DIR; ?>admin/?component=survey" style="background-color: #ffb3b3; color:black">
+                <i class="sidebar-icon fa fa-archive"></i>
+                <span class="sidebar-text text-16">مشاهده نظرات</span>
+            </a>
+        </li>
 
+        <li>
+            <a href="#" style="background-color: #ffb3b3; color:black">
+                <i class="sidebar-icon fa fa-tasks"></i>
+                <span class="sidebar-text">CRM</span>
+                <b class="fa fa-angle-left"></b>
+            </a>
+            <ul class="sidebar-child animated">
+                <li>
+                    <a  href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=leads" style="background-color: #ffb3b3;">
+                        <span class="sidebar-text text-16">لیست لیدها و افزودن لید</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=companies">
+                        <span class="sidebar-text text-16">لیست کمپانی ها</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=allLogs">
+                        <span class="sidebar-text text-16">لیست همه لاگ ها</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=allLogByAdmin">
+                        <span class="sidebar-text text-16">لیست لاگ های من</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=tasks">
+                        <span class="sidebar-text text-16">لیست همه تسک ها</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=task">
+                        <span class="sidebar-text text-16">لیست تسک های من</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=leadTasks">
+                        <span class="sidebar-text text-16">لیست همه تسک های لید</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=leadTask">
+                        <span class="sidebar-text text-16">لیست تسک های لید من</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=actions">
+                        <span class="sidebar-text text-16">لیست نحوه ارسال</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=letters">
+                        <span class="sidebar-text text-16">لیست اکشن های اصلی</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
         <!----------------------------- لیست پرداخت های آنلاین ----------------------------->
 
         <li>
@@ -326,12 +392,7 @@
 
         <!----------------------------- مقالات ----------------------------->
 
-        <li>
-            <a href="<?php echo  RELA_DIR; ?>admin/?component=survey">
-                <i class="sidebar-icon fa fa-archive"></i>
-                <span class="sidebar-text text-16">مشاهده نظرات</span>
-            </a>
-        </li>
+       
         <!--/child-item-->
 
         <li>
@@ -433,65 +494,7 @@
 
         <!----------------------------- CRM ----------------------------->
 
-        <li>
-            <a href="#">
-                <i class="sidebar-icon fa fa-tasks"></i>
-                <span class="sidebar-text">CRM</span>
-                <b class="fa fa-angle-left"></b>
-            </a>
-            <ul class="sidebar-child animated">
-                <li>
-                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=companies">
-                        <span class="sidebar-text text-16">لیست کمپانی ها</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=allLogs">
-                        <span class="sidebar-text text-16">لیست همه لاگ ها</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=allLogByAdmin">
-                        <span class="sidebar-text text-16">لیست لاگ های من</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=tasks">
-                        <span class="sidebar-text text-16">لیست همه تسک ها</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=task">
-                        <span class="sidebar-text text-16">لیست تسک های من</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=leads">
-                        <span class="sidebar-text text-16">لیست لیدها و افزودن لید</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=leadTasks">
-                        <span class="sidebar-text text-16">لیست همه تسک های لید</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=leadTask">
-                        <span class="sidebar-text text-16">لیست تسک های لید من</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=actions">
-                        <span class="sidebar-text text-16">لیست نحوه ارسال</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo  RELA_DIR; ?>admin/?component=crm&action=letters">
-                        <span class="sidebar-text text-16">لیست اکشن های اصلی</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
+        
 
         <!----------------------------- مدیر ----------------------------->
 

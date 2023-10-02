@@ -88,6 +88,7 @@ class LeadService
         $lead->company_id = $fields['company_id'] ?? 0;
         if (isset($fields['fastform'])) {
             $fields['comment'] = ' درخواست از صفحه اصلی سایت قسمت ارتباط سریع';
+            
         }
         if (isset($fields['register'])) {
             $fields['comment'] = '  از صفحه ثبت نام ' . $fields['phone'] . ' ' . $fields['company_name'];
