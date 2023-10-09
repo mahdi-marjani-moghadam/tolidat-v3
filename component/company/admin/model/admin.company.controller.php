@@ -3972,19 +3972,17 @@ class adminCompanyController
 
         if (is_object($resultCompany_d)) {
             if ($resultCompany_d->package_status == '1') {
-                $member = new adminEditorMemberController();
-                $resultMember = $member->getMemberInformationById($resultCompany_d->company_id);
-                // dd($resultMember);
+                include_once ROOT_DIR.'component/member/admin/model/admin.member.controller.php';
+                $resultMember = (new adminMemberController)->getMemberInformationByCompanyId($resultCompany_d->company_id);
+                
                 if (is_object($resultMember)) {
                     $export['editorInfo']['name'] = $resultMember->name;
                     $export['editorInfo']['family'] = $resultMember->family;
-                    $export['editorInfo']['mobile'] = $resultMember->phone;
-                    $export['editorInfo']['company_d_id'] = $resultMember->company_d_id;
+                    $export['editorInfo']['mobile'] = $resultMember->mobile;
+                    // $export['editorInfo']['company_d_id'] = $resultMember->company_d_id;
                 } else {
-                    // $member2 = new adminMemberModel;
 
                     $member2 = adminMemberModel::getBy_company_id($resultCompany_d->company_id)->first();
-
                     $export['editorInfo']['name'] = $member2->name;
                     $export['editorInfo']['family'] = $member2->family;
                     $export['editorInfo']['mobile'] = $member2->mobile;
@@ -5943,7 +5941,7 @@ www.tolidat.ir/c/{$fields['company_id']}";
         $member->password = md5($data['password']);
         $member->save();
 
-        sendSMS($member->mobile, "نام کاربری: {$data['username']}  رمز عبور: {$data['password']}");
+        sendSMS($member->mobile, "نام کاربری: {$data['username']} \n رمز عبور: {$data['password']}");
 
         //------> send email
         $path = ROOT_DIR . 'templates/' . CURRENT_SKIN . '/admin.sendPassForm.php';
@@ -5952,7 +5950,7 @@ www.tolidat.ir/c/{$fields['company_id']}";
         $result = EmailEngineController::forceSend($contacts);
 
         //        $this->sendMail($member->email, $data);
-        $msg = 'عملیات با موفقیت انجام شد' . $data['password'];
+        $msg = ' عملیات با موفقیت انجام شد ' . $data['password'];
         redirectPage(RELA_DIR . 'admin/index.php?component=company', $msg);
     }
 
@@ -8498,10 +8496,16 @@ www.tolidat.ir/c/{$fields['company_id']}";
             if (is_object($companyDraftObject)){
 
                 $memberObject = new adminEditorMemberController();
-                $resultMember = $memberObject->getMemberInformationById($companyDraftObject->Company_d_id);
-                $export['editorInfo']['editor_name'] = $resultMember->name;
-                $export['editorInfo']['editor_family'] = $resultMember->family;
-                $export['editorInfo']['editor_phone'] = $resultMember->phone;
+                // dd($companyDraftObject->company_id);
+                $resultMember = $memberObject->getMemberInformationById($companyDraftObject->company_id);
+                
+                if(is_object($resultMember)){
+                    // dd($resultMember);
+                    $export['editorInfo']['editor_name'] = $resultMember->name;
+                    $export['editorInfo']['editor_family'] = $resultMember->family;
+                    $export['editorInfo']['editor_phone'] = $resultMember->phone;
+                    $export['editorInfo']['editor_mobile'] = $resultMember->mobile;
+                }
             }
             // dd($companyDraftObject);
         }

@@ -12,37 +12,38 @@
                 <button data-expand="#panel-tablesorter" title="" class="btn-panel rtl" data-original-title="تمام صفحه">
                     <i class="fa fa-expand"></i>
                 </button>
-                <button data-collapse="#panel-tablesorter" title="" class="btn-panel rtl"
-                        data-original-title="باز و بسته شدن">
+                <button data-collapse="#panel-tablesorter" title="" class="btn-panel rtl" data-original-title="باز و بسته شدن">
                     <i class="fa fa-caret-down"></i>
                 </button>
             </div><!-- /panel-actions -->
         </div><!-- /panel-heading -->
 
         <?php if ($msg != null) {
-            ?>
+        ?>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-warning">
                 <?php echo  $msg ?>
             </div>
-            <?php
+        <?php
         }
         ?>
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-8  center-block">
-                    <form name="queue" id="queue" role="form" data-validate="form" class="form-horizontal"
-                            autocomplete="off" novalidate="novalidate" method="post" enctype="multipart/form-data">
+                    <form name="queue" id="queue" role="form" data-validate="form" class="form-horizontal" autocomplete="off" novalidate="novalidate" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <ul class="noPadding" style="list-style: none">
                                     <li>
-                                        <a href="http://www.rrk.ir/News/NewsList.aspx" target="_blank" style="text-decoration: none"><span class=""
-                                            <h4>جست وجو در روزنامه رسمی</h4></a></li>
+                                        <a href="http://www.rrk.ir/News/NewsList.aspx" target="_blank" style="text-decoration: none"><span class="" <h4>جست وجو در روزنامه رسمی</h4></a>
+                                    </li>
                                     <li><a href="http://www.ilenc.ir/" target="_blank" style="text-decoration: none">
-                                            <h4>جست وجو در سایت اسناد رسمی</h4></a></li>
+                                            <h4>جست وجو در سایت اسناد رسمی</h4>
+                                        </a></li>
                                     <li>
                                         <a href="https://www.google.com/search?q=<?php echo  $list['companyInfo']['company_name'] ?>  " target="_blank" style="text-decoration: none">
-                                            <h4>جست وجو در سایت گوگل</h4></a></li>
+                                            <h4>جست وجو در سایت گوگل</h4>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -51,21 +52,17 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl"
-                                            for="editor_name">نام نماینده:</label>
+                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl" for="editor_name">نام نماینده:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
-                                        <input type="text" class="form-control" name="editor_name" id="editor_name"
-                                                value="<?php echo  $list['editorInfo']['editor_name'] ?>">
+                                        <input type="text" class="form-control" name="editor_name" id="editor_name" value="<?php echo  $list['editorInfo']['editor_name'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl"
-                                            for="editor_family">نام خانوادگی نماینده:</label>
+                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl" for="editor_family">نام خانوادگی نماینده:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
-                                        <input type="text" class="form-control" name="editor_family" id="editor_family"
-                                                value="<?php echo  $list['editorInfo']['editor_family'] ?>">
+                                        <input type="text" class="form-control" name="editor_family" id="editor_family" value="<?php echo  $list['editorInfo']['editor_family'] ?>">
                                     </div>
                                 </div>
                             </div>
@@ -73,11 +70,17 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl"
-                                            for="editor_phone">شماره تماس نماینده:</label>
+                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl" for="editor_phone">شماره تماس نماینده:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
-                                        <input type="text" class="form-control" name="editor_phone" id="editor_phone"
-                                                value="<?php echo  $list['editorInfo']['editor_phone'] ?>">
+                                        <input type="text" class="form-control" name="editor_phone" id="editor_phone" value="<?php echo  $list['editorInfo']['editor_phone'] ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="editor_mobile">شماره موبایل نماینده:</label>
+                                    <div class="col-xs-12 col-sm-8 pull-right">
+                                        <input type="text" class="form-control" name="editor_mobile" id="editor_mobile" value="<?php echo   $list['editorInfo']['editor_mobile'] ?>">
                                     </div>
                                 </div>
                             </div>
@@ -107,21 +110,17 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl"
-                                            for="company_name">نام تولیدی:</label>
+                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl" for="company_name">نام تولیدی:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
-                                        <input type="text" class="form-control" name="company_name" id="company_name"
-                                                required value="<?php echo  $list['companyInfo']['company_name'] ?>">
+                                        <input type="text" class="form-control" name="company_name" id="company_name" required value="<?php echo  $list['companyInfo']['company_name'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl"
-                                            for="description">فعالیت شرکت:</label>
+                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl" for="description">فعالیت شرکت:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
-                                        <textarea rows="4" cols="50" class="form-control" name="description" id="description"
-                                                required><?php echo  $list['companyInfo']['description'] ?></textarea>
+                                        <textarea rows="4" cols="50" class="form-control" name="description" id="description" required><?php echo  $list['companyInfo']['description'] ?></textarea>
 
                                     </div>
                                 </div>
@@ -131,32 +130,26 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl"
-                                            for="maneger_name">نام مدیر:</label>
+                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="maneger_name">نام مدیر:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
-                                        <input type="text" class="form-control" name="maneger_name"
-                                                id="maneger_name"
-                                                value="<?php echo  $list['companyInfo']['maneger_name'] ?>">
+                                        <input type="text" class="form-control" name="maneger_name" id="maneger_name" value="<?php echo  $list['companyInfo']['maneger_name'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl"
-                                            for="personality_type">نوع شخصیت حقوقی:</label>
+                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="personality_type">نوع شخصیت حقوقی:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <select name="personality_type" id="personality_type" data-input="select2">
                                             <option></option>
-                                            <?php 
+                                            <?php
                                             foreach ($list['personalityType'] as $key => $value) {
-                                                ?>
-                                            <option
-                                                <?php echo  $list['companyInfo']['personality_type'] == $value['Personality_type_id'] ? ' selected ' : '' ?>
-                                                    value="<?php echo  $value['Personality_type_id'] ?>">
-                                                <?php echo  $value['type'] ?>
-                                                </option><?php 
-                                            }
                                             ?>
+                                                <option <?php echo  $list['companyInfo']['personality_type'] == $value['Personality_type_id'] ? ' selected ' : '' ?> value="<?php echo  $value['Personality_type_id'] ?>">
+                                                    <?php echo  $value['type'] ?>
+                                                </option><?php
+                                                        }
+                                                            ?>
 
                                         </select>
                                     </div>
@@ -168,22 +161,19 @@
                             <!-- state -->
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl"
-                                            for="city_id">انتخاب استان:</label>
+                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl" for="city_id">انتخاب استان:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
                                         <select name="state_id" id="province_id" data-input="select2">
                                             <option></option>
                                             <?php
                                             foreach ($list['states'] as $province_id => $value) {
-                                                ?>
-
-                                            <option
-                                                <?php echo  $value['province_id'] == $list['companyInfo']['state_id'] ? 'selected' : '' ?>
-                                                    value="<?php echo  $value['province_id'] ?>">
-                                                <?php echo  $value['name'] ?>
-                                                </option><?php 
-                                            }
                                             ?>
+
+                                                <option <?php echo  $value['province_id'] == $list['companyInfo']['state_id'] ? 'selected' : '' ?> value="<?php echo  $value['province_id'] ?>">
+                                                    <?php echo  $value['name'] ?>
+                                                </option><?php
+                                                        }
+                                                            ?>
                                         </select>
                                     </div>
                                 </div>
@@ -191,8 +181,7 @@
                             <!-- city -->
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl"
-                                            for="city_id">انتخاب شهر:</label>
+                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl" for="city_id">انتخاب شهر:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
                                         <select name="city_id" id="city_id" data-input="select2"> //complete with Ajax </select>
                                     </div>
@@ -230,11 +219,9 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl"
-                                            for="address">آدرس شرکت:</label>
+                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="address">آدرس شرکت:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
-                                        <textarea rows="4" cols="50" class="form-control" name="address" id="address"
-                                                required><?php echo  $list['addressInfo']['address'] ?></textarea>
+                                        <textarea rows="4" cols="50" class="form-control" name="address" id="address" required><?php echo  $list['addressInfo']['address'] ?></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -243,20 +230,18 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl"
-                                            for="reference_type">مرجع تایید تلفن :</label>
+                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="reference_type">مرجع تایید تلفن :</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <select name="reference_type" id="reference_type" data-input="select2">
-                                            <option value="1" <?php echo  $list['phoneInfo']['reference_type'] == '1' ? ' selected' : '' ?> >روزنامه رسمی</option>
-                                            <option value="2" <?php echo  $list['phoneInfo']['reference_type'] == '2' ? ' selected' : '' ?> >سایت</option>
+                                            <option value="1" <?php echo  $list['phoneInfo']['reference_type'] == '1' ? ' selected' : '' ?>>روزنامه رسمی</option>
+                                            <option value="2" <?php echo  $list['phoneInfo']['reference_type'] == '2' ? ' selected' : '' ?>>سایت</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl"
-                                            for="reference_value">توضیحات مرجع تایید تلفن:</label>
+                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="reference_value">توضیحات مرجع تایید تلفن:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <input type="text" class="form-control" name="reference_value" id="reference_value" value="<?php echo  $list['phoneInfo']['reference_value'] ?>">
                                     </div>
@@ -267,22 +252,18 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl"
-                                            for="email">ایمیل:</label>
+                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="email">ایمیل:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
-                                        <input type="email" class="form-control" name="email"
-                                                id="email" value="<?php echo  $list['emailInfo']['email'] ?>">
+                                        <input type="email" class="form-control" name="email" id="email" value="<?php echo  $list['emailInfo']['email'] ?>">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl"
-                                            for="url">وب سایت :</label>
+                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="url">وب سایت :</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
-                                        <input type="text" class="form-control" name="url"
-                                                id="url" value="<?php echo  $list['websiteInfo']['url'] ?>">
+                                        <input type="text" class="form-control" name="url" id="url" value="<?php echo  $list['websiteInfo']['url'] ?>">
                                     </div>
                                 </div>
                             </div>
@@ -296,8 +277,7 @@
                                         <p>دسته بندی ها</p>
                                     </div>
                                     <div class="mmenuHolder admin-mmenuHolder active">
-                                        <nav class="menu  mm-opened" data-placeholder="جستجو در دسته بندی ها"
-                                                data-title="دسته بندی تولیدی ها"><?php echo  $list['category']; ?>
+                                        <nav class="menu  mm-opened" data-placeholder="جستجو در دسته بندی ها" data-title="دسته بندی تولیدی ها"><?php echo  $list['category']; ?>
                                     </div>
                                 </div>
                             </div>
@@ -346,14 +326,11 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <p class="pull-right">
-                                    <button type="submit" name="update" id="submit"
-                                            class="btn btn-icon btn-success rtl">
-                                        <input name="action" type="hidden" id="action" value="edit"/>
-                                        <input type="hidden" name="company_type"
-                                                value="<?php echo $list['company_type']; ?>">
+                                    <button type="submit" name="update" id="submit" class="btn btn-icon btn-success rtl">
+                                        <input name="action" type="hidden" id="action" value="edit" />
+                                        <input type="hidden" name="company_type" value="<?php echo $list['company_type']; ?>">
                                         <input type="hidden" name="company_type" value="1">
-                                        <input type="hidden" name="company_id"
-                                                value="<?php echo $list['companyInfo']['Company_id']; ?>">
+                                        <input type="hidden" name="company_id" value="<?php echo $list['companyInfo']['Company_id']; ?>">
 
                                         <i class="fa fa-plus"></i> ثبت
                                     </button>
@@ -379,29 +356,28 @@
             </div>
             <div class="modal-body">
 
-                <table id="example" class="companyTable table table-striped table-bordered rtl" cellspacing="0"
-                        width="100%">
+                <table id="example" class="companyTable table table-striped table-bordered rtl" cellspacing="0" width="100%">
                     <thead>
-                    <tr>
-                        <th>ردیف</th>
-                        <th>نام اپراتور</th>
-                        <th>اکشن اصلی</th>
-                        <th>نحوه ارسال</th>
-                        <th>توضیحات</th>
-                        <th>تاریخ</th>
-                    </tr>
+                        <tr>
+                            <th>ردیف</th>
+                            <th>نام اپراتور</th>
+                            <th>اکشن اصلی</th>
+                            <th>نحوه ارسال</th>
+                            <th>توضیحات</th>
+                            <th>تاریخ</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($list['logInfo'] as $key => $value) { ?>
-                        <tr>
-                            <td><?php echo  $value['letter_log_id'] ?></td>
-                            <td><?php echo  $value['admin_name'] . " " . $value['admin_family'] ?></td>
-                            <td><?php echo  $value['letter_type'] ?></td>
-                            <td><?php echo  $value['letter_action'] ?></td>
-                            <td><?php echo  $value['description'] ?></td>
-                            <td><?php echo  convertDate($value['date']) ?></td>
-                        </tr>
-                    <?php } ?>
+                        <?php foreach ($list['logInfo'] as $key => $value) { ?>
+                            <tr>
+                                <td><?php echo  $value['letter_log_id'] ?></td>
+                                <td><?php echo  $value['admin_name'] . " " . $value['admin_family'] ?></td>
+                                <td><?php echo  $value['letter_type'] ?></td>
+                                <td><?php echo  $value['letter_action'] ?></td>
+                                <td><?php echo  $value['description'] ?></td>
+                                <td><?php echo  convertDate($value['date']) ?></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                     <tfoot>
                     </tfoot>
@@ -416,7 +392,7 @@
 
 <script>
     //------> Set Reference_type
-    $("#licence_type").on('change', function () {
+    $("#licence_type").on('change', function() {
         if ($(this).val() === '0') {
             $("#licence_box").html(
                 "<div class='form-group'>" +
@@ -439,7 +415,7 @@
 
 
     //------>state Change
-    $(document).ready(function () {
+    $(document).ready(function() {
         var $body = $('body'),
             windowWidth = $(window).width(),
             windowHeight = $(window).height(),
@@ -450,30 +426,34 @@
         //------> Select City & State with Jquery
         var p = document.getElementById("province_id");
         var province = p.options[p.selectedIndex].value;
-        var city = '<?php echo $list['companyInfo']['city_id']?>';
+        var city = '<?php echo $list['companyInfo']['city_id'] ?>';
 
         cityAjax(province, city);
+
         function cityAjax(province_id, city_id) {
             $.ajax({
-                url: "<?php echo RELA_DIR . 'admin/?component=company&action=getCityAjax'?>",
-                data: {province_id: province_id, city_id: city_id},
+                url: "<?php echo RELA_DIR . 'admin/?component=company&action=getCityAjax' ?>",
+                data: {
+                    province_id: province_id,
+                    city_id: city_id
+                },
                 method: 'post',
-                success: function (result) {
+                success: function(result) {
                     $('#city_id').html(result);
                     $("#city_id").select2();
                 },
-                error: function (result, status) {
+                error: function(result, status) {
                     console.log('error: ' + status);
                 }
             });
         }
 
-        $("#province_id").on("change", function () {
+        $("#province_id").on("change", function() {
             cityAjax($("#province_id").val(), city);
         });
 
 
-        if ("<?php echo  isset($list['licenceInfo']['licence_number'])?>") {
+        if ("<?php echo  isset($list['licenceInfo']['licence_number']) ?>") {
             $.addLicence();
         } else {
             $.removeLicence();
@@ -481,12 +461,12 @@
 
 
         /* ------ Responsive Menu ------*/
-        $toggleSideBar.bind('click', function () {
+        $toggleSideBar.bind('click', function() {
             $sideBar.toggleClass('active');
         });
 
         // change input date to persian date picker
-        $datePicker.each(function () {
+        $datePicker.each(function() {
             var $this = $(this);
             $this.persianDatepicker({
                 months: ["فروردین ماه", "اردیبهشت ماه", "خرداد ماه", "تیر ماه", "مرداد ماه", "شهریور ماه", "مهر ماه", "آبان ماه", "آذر ماه", "دی ماه", "بهمن ماه", "اسفند ماه"],
@@ -500,7 +480,7 @@
             });
         });
 
-        $body.find('.pdp-default').each(function (index) {
+        $body.find('.pdp-default').each(function(index) {
             $(this).insertAfter('.date:eq(' + index + ')');
             $('.date:eq(' + index + ')').parent().css('position', 'relative');
         });
