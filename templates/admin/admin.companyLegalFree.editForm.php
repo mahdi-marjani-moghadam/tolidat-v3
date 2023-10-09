@@ -52,35 +52,35 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl" for="editor_name">نام نماینده:</label>
+                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl" for="name">نام نماینده:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
-                                        <input type="text" class="form-control" name="editor_name" id="editor_name" value="<?php echo  $list['editorInfo']['editor_name'] ?>">
+                                        <input type="text" class="form-control" name="memberName" id="memberName" value="<?php echo  $list['editorInfo']['editor_name'] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl" for="editor_family">نام خانوادگی نماینده:</label>
+                                    <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl" for="family">نام خانوادگی نماینده:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
-                                        <input type="text" class="form-control" name="editor_family" id="editor_family" value="<?php echo  $list['editorInfo']['editor_family'] ?>">
+                                        <input type="text" class="form-control" name="memberFamily" id="memberFamily" value="<?php echo  $list['editorInfo']['editor_family'] ?>">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-6">
+                            <!-- <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label class="col-xs-12 col-sm-4 col-md-4 pull-right control-label rtl" for="editor_phone">شماره تماس نماینده:</label>
                                     <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
-                                        <input type="text" class="form-control" name="editor_phone" id="editor_phone" value="<?php echo  $list['editorInfo']['editor_phone'] ?>">
+                                        <input type="text" class="form-control" name="editor_phone" id="editor_phone" value="< ?php echo  $list['editorInfo']['editor_phone'] ?>">
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="editor_mobile">شماره موبایل نماینده:</label>
+                                    <label class="col-xs-12 col-sm-4 pull-right control-label rtl" for="mobile">شماره موبایل نماینده:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
-                                        <input type="text" class="form-control" name="editor_mobile" id="editor_mobile" value="<?php echo   $list['editorInfo']['editor_mobile'] ?>">
+                                        <input type="text" class="form-control" name="mobile" id="mobile" value="<?php echo   $list['editorInfo']['editor_mobile'] ?>">
                                     </div>
                                 </div>
                             </div>

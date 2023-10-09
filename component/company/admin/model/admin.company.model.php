@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: malek
@@ -80,7 +81,6 @@ FROM
             //$temp = self::tagToArray($row['certification_id']);
             //$row['certification_id'] = $temp['export']['list'];
             $list[$row['Company_id']] = $row;
-
         }
         $result['result'] = 1;
         $result['export']['list'] = $list;
@@ -94,17 +94,17 @@ FROM
 
         $company = admincompanyModel::getBy_Company_id($id)->getList();
 
-//        $conn = dbConn::getConnection();
-//        $sql = "SELECT
-//                    *
-//                FROM
-//                    company
-//                WHERE
-//                    Company_id= '$id'";
-//
-//        $stmt = $conn->prepare($sql);
-//        $stmt->execute();
-//        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        //        $conn = dbConn::getConnection();
+        //        $sql = "SELECT
+        //                    *
+        //                FROM
+        //                    company
+        //                WHERE
+        //                    Company_id= '$id'";
+        //
+        //        $stmt = $conn->prepare($sql);
+        //        $stmt->execute();
+        //        $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
         if ($company['result'] != 1) {
             $result['result'] = -1;
@@ -120,13 +120,13 @@ FROM
             return $result;
         }
 
-//        if (!$stmt->rowCount()) {
-//            $result['result'] = -1;
-//            $result['no'] = 1;
-//            $result['msg'] = 'This Record was Not Found';
-//
-//            return $result;
-//        }
+        //        if (!$stmt->rowCount()) {
+        //            $result['result'] = -1;
+        //            $result['no'] = 1;
+        //            $result['msg'] = 'This Record was Not Found';
+        //
+        //            return $result;
+        //        }
 
 
         $row = $company['export']['list']['0'];
@@ -135,16 +135,16 @@ FROM
 
         $export = explode(',', $row['category_id']);
         $export = array_filter($export, 'strlen');
-        $result ['export']['list'] = $export;
-        $result ['result'] = '1';
+        $result['export']['list'] = $export;
+        $result['result'] = '1';
         $temp = $result;
         //$temp = self::tagToArray($row['category_id']);
         $row['category_id'] = $temp['export']['list'];
 
         $export = explode(',', $row['certification_id']);
         $export = array_filter($export, 'strlen');
-        $result ['export']['list'] = $export;
-        $result ['result'] = '1';
+        $result['export']['list'] = $export;
+        $result['result'] = '1';
         $temp = $result;
 
         //$temp = self::tagToArray($row['certification_id']);
@@ -157,7 +157,7 @@ FROM
         // global $conn;
         // get company phones
         $sql = "select * from c_phones where `company_id`='$id'";
-        
+
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -294,9 +294,11 @@ FROM
         } elseif ($funcName == 'lock') {
             $appendWhere = " where  `company`.`lock`  <> '0' or `company`.`lock`  <> ''";
         } elseif ($funcName == '') {
-            $appendWhere = " where  `company`.`new_register`  <> '1' ";;
+            $appendWhere = " where  `company`.`new_register`  <> '1' ";
+
         }
 
+        
 
         $query = "SELECT `company`.*,
                         `company_d`.editor_id AS company_d_editor_id,
@@ -306,29 +308,23 @@ FROM
                         `c_websites`.`url`,
                         `c_addresses`.`address` as company_address,
                         `packageusage`.`expiredate`,
-                        `c_logo`.`image`
+                        `c_logo`.`image`    
+                        
                       FROM `company`
-                        LEFT JOIN `c_emails` ON `company`.`Company_id` =
-                          `c_emails`.`company_id`
-                        LEFT JOIN `c_logo` ON `company`.`Company_id` =
-                          `c_logo`.`company_id`
-                        LEFT JOIN `company_d` ON `company`.`Company_id` =
-                          `company_d`.`company_id`
-                        LEFT JOIN `packageusage` ON `company`.`Company_id` =
-                          `packageusage`.`company_id`
-                        LEFT JOIN `c_phones` ON `company`.`Company_id` =
-                          `c_phones`.`company_id`
-                        LEFT JOIN `c_websites` ON `company`.`Company_id` =
-                          `c_websites`.`company_id`
+                        LEFT JOIN `c_emails` ON `company`.`Company_id` =`c_emails`.`company_id`
+                        LEFT JOIN `c_logo` ON `company`.`Company_id` =`c_logo`.`company_id`
+                        LEFT JOIN `company_d` ON `company`.`Company_id` =`company_d`.`company_id`
+                        LEFT JOIN `packageusage` ON `company`.`Company_id` =`packageusage`.`company_id`
+                        LEFT JOIN `c_phones` ON `company`.`Company_id` =`c_phones`.`company_id`
+                        LEFT JOIN `c_websites` ON `company`.`Company_id` =`c_websites`.`company_id`
                         LEFT JOIN `city` ON `company`.`city_id` = `city`.`City_id`
-                        LEFT JOIN `c_addresses` ON `company`.`Company_id` =
-                          `c_addresses`.`company_id`" .
+                        LEFT JOIN `c_addresses` ON `company`.`Company_id` = `c_addresses`.`company_id`".
+                       
             $appendWhere
             . "GROUP BY `company`.`Company_id` order by company.refresh_date desc";
 
 
         return $query;
-
     }
 
     public function getLockedCompanies()
@@ -356,7 +352,7 @@ FROM
 
     public function countCompanies()
     {
-        $count = static::query( 'SELECT COUNT(`Company_id`) as `count` FROM `company`')->getList();
+        $count = static::query('SELECT COUNT(`Company_id`) as `count` FROM `company`')->getList();
 
         return $count['export']['list'][0]['count'];
     }
@@ -370,8 +366,8 @@ FROM
 
         return $categoryAttach;
     }
-
-
 }
 
-class adminmembersModel extends looeic {}
+class adminmembersModel extends looeic
+{
+}

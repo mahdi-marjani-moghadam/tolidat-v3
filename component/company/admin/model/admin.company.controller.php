@@ -661,14 +661,15 @@ class adminCompanyController
         if ($companyObject->package_status == 4) {
             $category = implode(',', $input['category_id']);
             $metaKeyWord = $input['meta_keyword'];
-            $memberEmail = $input['email'];
-            $memberMobile = $input['mobile'];
-            $memberName = $input['memberName'];
-            $memberFamily = $input['memberFamily'];
         } else {
             $category = arrayToTag($input['category_id'])['export']['list'];
             $metaKeyWord = '';
         }
+
+        $memberEmail = $input['email'];
+        $memberMobile = $input['mobile'];
+        $memberName = $input['memberName'];
+        $memberFamily = $input['memberFamily'];
 
         $registration_date = convertJToGDate($input['registration_date']);
 
@@ -933,6 +934,15 @@ class adminCompanyController
             $newAddressDraftObject->date = strftime('%Y-%m-%d %H:%M:%S', time());
             $newAddressDraftObject->admin_description = '';
             $newAddressDraftObject->save();
+
+            $memberObject = adminMembersModel::getBy_company_id($companyObject->Company_id)->first();
+            if (is_object($memberObject)) {
+                $memberObject->name = $memberName;
+                $memberObject->family = $memberFamily;
+                $memberObject->email = $memberEmail;
+                $memberObject->mobile = $memberMobile;
+                $memberObject->save();
+            }
         } else {
             $memberObject = adminMembersModel::getBy_company_id($companyObject->Company_id)->first();
             if (is_object($memberObject)) {
@@ -1864,7 +1874,6 @@ class adminCompanyController
 
         $other['2'] = [
             'formatter' => function ($list) {
-                $st = '<div data-company_id = "" class="company_phone">';
 
                 if ($list['company_type'] == '1') {
                     $st .= $list['company_type'] = 'حقوقی';
@@ -1872,22 +1881,25 @@ class adminCompanyController
                     $st .= $list['company_type'] = 'حقیقی';
                 }
 
-                $st .= '</div>';
-
                 return $st;
+            },
+        ];
+
+        include_once ROOT_DIR . 'component/member/admin/model/admin.member.controller.php';
+        $other['3'] = [
+            'formatter' => function ($list) {
+                $member = (new adminMemberController)->getMemberInformationByCompanyId($list['Company_id']);
+                return  $member->name . ' ' . $member->family . ' ' . $member->mobile;
             },
         ];
 
         $other['4'] = [
             'formatter' => function ($list) {
-                $st = '<div data-company_id="" class="company_phone">';
                 if ($list['package_status'] == '1') {
-                    $st .= $list['package_status'] = 'رایگان';
+                    $st = $list['package_status'] = 'رایگان';
                 } elseif ($list['package_status'] == '4') {
-                    $st .= $list['package_status'] = 'تجاری';
+                    $st = $list['package_status'] = 'تجاری';
                 }
-
-                $st .= '</div>';
 
                 return $st;
             },
@@ -1915,13 +1927,11 @@ class adminCompanyController
             },
         ];
 
-        $other['7'] = [
-            'formatter' => function ($list) {
-                $st = $list['editor_id'];
-
-                return $st;
-            },
-        ];
+        // $other['7'] = [
+        //     'formatter' => function ($list) {
+        //         return $list['editor_id'];
+        //     },
+        // ];
 
         $other['8'] = [
             'formatter' => function ($list) {
@@ -3972,9 +3982,9 @@ class adminCompanyController
 
         if (is_object($resultCompany_d)) {
             if ($resultCompany_d->package_status == '1') {
-                include_once ROOT_DIR.'component/member/admin/model/admin.member.controller.php';
+                include_once ROOT_DIR . 'component/member/admin/model/admin.member.controller.php';
                 $resultMember = (new adminMemberController)->getMemberInformationByCompanyId($resultCompany_d->company_id);
-                
+
                 if (is_object($resultMember)) {
                     $export['editorInfo']['name'] = $resultMember->name;
                     $export['editorInfo']['family'] = $resultMember->family;
@@ -5941,7 +5951,7 @@ www.tolidat.ir/c/{$fields['company_id']}";
         $member->password = md5($data['password']);
         $member->save();
 
-        sendSMS($member->mobile, "نام کاربری: {$data['username']} \n رمز عبور: {$data['password']}");
+        sendSMS($member->mobile,  "نام کاربری: {$data['username']}\n رمز عبور: {$data['password']}\n" . "تولیدات");
 
         //------> send email
         $path = ROOT_DIR . 'templates/' . CURRENT_SKIN . '/admin.sendPassForm.php';
@@ -8493,13 +8503,10 @@ www.tolidat.ir/c/{$fields['company_id']}";
         } else {
             //------> get Company_d_id
             $companyDraftObject = admincompany_dModel::getBy_company_id_and_status_and_isActive_and_new_register($companyObject->Company_id, 1, 1, 0)->first();
-            if (is_object($companyDraftObject)){
-
-                $memberObject = new adminEditorMemberController();
-                // dd($companyDraftObject->company_id);
-                $resultMember = $memberObject->getMemberInformationById($companyDraftObject->company_id);
-                
-                if(is_object($resultMember)){
+            if (is_object($companyDraftObject)) {
+                include_once ROOT_DIR . 'component/member/admin/model/admin.member.controller.php';
+                $resultMember = (new adminMemberController)->getMemberInformationByCompanyId($companyDraftObject->company_id);
+                if (is_object($resultMember)) {
                     // dd($resultMember);
                     $export['editorInfo']['editor_name'] = $resultMember->name;
                     $export['editorInfo']['editor_family'] = $resultMember->family;
