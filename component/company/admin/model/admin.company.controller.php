@@ -5943,7 +5943,7 @@ www.tolidat.ir/c/{$fields['company_id']}";
         $member->password = md5($data['password']);
         $member->save();
 
-        sendSMS($member->mobile, "نام کاربری: {$data['username']} \n رمز عبور: {$data['password']}");
+        sendSMS($member->mobile, "نام کاربری: {$data['username']}  رمز عبور: {$data['password']}");
 
         //------> send email
         $path = ROOT_DIR . 'templates/' . CURRENT_SKIN . '/admin.sendPassForm.php';
