@@ -41,8 +41,8 @@
         form.appendChild(RedirectURL);
         
         document.body.appendChild(form);
-        // form.submit();
-        // document.body.removeChild(form);
+        form.submit();
+        document.body.removeChild(form);
     }
 
 
