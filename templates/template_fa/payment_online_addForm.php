@@ -19,10 +19,25 @@
         RedirectURL.setAttribute("value", "<?php echo  RELA_DIR; ?>onlinePayment/returnbank");
         form.appendChild(RedirectURL);
 
-        var hiddenField = document.createElement("input");
-        hiddenField.setAttribute("name", "Token");
-        hiddenField.setAttribute("value", refIdValue);
-        form.appendChild(hiddenField);
+        // var hiddenField = document.createElement("input");
+        // hiddenField.setAttribute("name", "Token");
+        // hiddenField.setAttribute("value", refIdValue);
+        // form.appendChild(hiddenField);
+
+        var RedirectURL = document.createElement("input");
+        RedirectURL.setAttribute("name", "MID");
+        RedirectURL.setAttribute("value", "<?php echo  $mid; ?>");
+        form.appendChild(RedirectURL);
+
+        var RedirectURL = document.createElement("input");
+        RedirectURL.setAttribute("name", "Amount");
+        RedirectURL.setAttribute("value", "<?php echo $amount ; ?>");
+        form.appendChild(RedirectURL);
+
+        var RedirectURL = document.createElement("input");
+        RedirectURL.setAttribute("name", "ResNum");
+        RedirectURL.setAttribute("value", "<?php echo $ResNum ; ?>");
+        form.appendChild(RedirectURL);
 
         document.body.appendChild(form);
         form.submit();
