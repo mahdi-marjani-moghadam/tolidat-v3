@@ -354,15 +354,15 @@ www.tolidat.ir";
         $onlinePayment->addInvoiceToOnlinePayment($invoice);
 
         // token
-        $resultToken = $this->getToken($onlinePayment);
+        // $resultToken = $this->getToken($onlinePayment);
 
-        if ($resultToken['result'] == -1) {
-            redirectPage(RELA_DIR . "profile", $resultToken['msg'], true);
-            die();
-        }
+        // if ($resultToken['result'] == -1) {
+        //     redirectPage(RELA_DIR . "profile", $resultToken['msg'], true);
+        //     die();
+        // }
 
         // update online token
-        $onlinePayment->updateTokenOnlinePayment($resultToken['token']);
+        // $onlinePayment->updateTokenOnlinePayment($resultToken['token']);
 
         $bank_payment = $this->_payment;
         $mid = $this->_merchantID;
