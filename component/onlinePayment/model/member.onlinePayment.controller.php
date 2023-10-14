@@ -139,7 +139,8 @@ class onlinePaymentController
             //     $result['no'] = $tokenResult;
             //     return $result;
             // }
-
+            var_dump($response);
+            print_r($response['token']);
             dd($response->token);
 
             $result['result'] = 1;
