@@ -364,10 +364,11 @@ www.tolidat.ir";
         // update online token
         // $onlinePayment->updateTokenOnlinePayment($resultToken['token']);
 
-        $bank_payment = $this->_payment;
+        $bank_payment = 'https://sep.shaparak.ir/OnlinePG/OnlinePG'; //$this->_payment;
         $mid = $this->_merchantID;
         $amount = $onlinePayment->price;
         $ResNum = $onlinePayment->Online_payment_id;
+        $CellNumber = '';
 
         include(ROOT_DIR . "templates/" . CURRENT_SKIN . "/payment_online_addForm.php");
         die();
