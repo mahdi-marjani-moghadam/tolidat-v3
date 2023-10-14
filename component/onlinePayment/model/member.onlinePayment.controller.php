@@ -140,6 +140,8 @@ class onlinePaymentController
             //     return $result;
             // }
 
+            dd($response->token);
+
             $result['result'] = 1;
             $result['token'] = $response->token;
         } catch (Exception $e) {
