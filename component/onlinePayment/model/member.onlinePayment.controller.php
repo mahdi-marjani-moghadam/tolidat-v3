@@ -81,14 +81,7 @@ class onlinePaymentController
         $merchantID = $this->_merchantID; // test
         // $merchantPass = "5128755"; // main
         $merchantPass = $this->_merchantPass; // test
-        $context = stream_context_create([
-            'ssl' => [
-                // set some SSL/TLS specific options
-                'verify_peer' => false,
-                'verify_peer_name' => false,
-                'allow_self_signed' => true
-            ]
-        ]);
+
 
         try {
 
@@ -106,16 +99,15 @@ class onlinePaymentController
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'POST',
                 CURLOPT_POSTFIELDS => '{
-                    "Action": "Token",
-                    "TerminalId": "$merchantID",
-                    "RedirectUrl": "",
-                    "ResNum": "1002020012214334553",
-                    "Amount": 1000,
-                    "CellNumber": "9336514443"
-                    }',
+                "Action": "Token",
+                "TerminalId": "13723922",
+                "RedirectUrl": "https://tolidat.ir/onlinePayment/returnbank",
+                "ResNum": "1002020012214334553",
+                "Amount": 1000,
+                "CellNumber": "9336514443"
+                }',
                 CURLOPT_HTTPHEADER => array(
-                    'Content-Type: application/json',
-                    'Cookie: ASP.NET_SessionId=akpffcy2zfxwr2xkim5dslea; SEP01edab9f=017cb00b00b5840e694e4d7f0e0eabfd4c017f2ee5d77e8e4715e2d2183b417bc00881c496a8be62e830bfeb2f87c30fb3cba63aa072309f312c5cd58e6267e6f6f367f15e'
+                    'Content-Type: application/json'
                 ),
             ));
 
@@ -126,6 +118,15 @@ class onlinePaymentController
 
 
 
+
+            $context = stream_context_create([
+                'ssl' => [
+                    // set some SSL/TLS specific options
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                ]
+            ]);
 
             // $soapClient = new SoapClient('https://sep.shaparak.ir/Payments/InitPayment.asmx?WSDL', array('stream_context' => $context));
             $soapClient = new SoapClient($this->_initpayment, array('stream_context' => $context));
@@ -354,12 +355,12 @@ www.tolidat.ir";
         $onlinePayment->addInvoiceToOnlinePayment($invoice);
 
         // token
-        // $resultToken = $this->getToken($onlinePayment);
+        $resultToken = $this->getToken($onlinePayment);
 
-        // if ($resultToken['result'] == -1) {
-        //     redirectPage(RELA_DIR . "profile", $resultToken['msg'], true);
-        //     die();
-        // }
+        if ($resultToken['result'] == -1) {
+            redirectPage(RELA_DIR . "profile", $resultToken['msg'], true);
+            die();
+        }
 
         // update online token
         // $onlinePayment->updateTokenOnlinePayment($resultToken['token']);
