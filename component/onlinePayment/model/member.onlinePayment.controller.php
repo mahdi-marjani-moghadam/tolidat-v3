@@ -141,6 +141,8 @@ class onlinePaymentController
             // }
 
             $result['result'] = 1;
+
+            dd($response);
             $result['token'] = json_encode($response)['token'];
         } catch (Exception $e) {
             $result['result'] = -1;
