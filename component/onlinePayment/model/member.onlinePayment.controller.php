@@ -371,6 +371,7 @@ www.tolidat.ir";
         $amount = $onlinePayment->price;
         $ResNum = $onlinePayment->Online_payment_id;
         $CellNumber = '';
+        $token = $resultToken['token'];
 
         include(ROOT_DIR . "templates/" . CURRENT_SKIN . "/payment_online_addForm.php");
         die();

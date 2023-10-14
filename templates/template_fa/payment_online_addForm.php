@@ -9,33 +9,36 @@
     function postRefId (refIdValue) {
         var form = document.createElement("form");
         form.setAttribute("method", "POST");
-        // form.setAttribute("action", "https://sep.shaparak.ir/Payment.aspx");
+       
             
         form.setAttribute("action", "<?php echo $bank_payment?>");
         form.setAttribute("target", "_self");
 
 
-        var RedirectURL = document.createElement("input");
-        RedirectURL.setAttribute("name", "MID");
-        RedirectURL.setAttribute("value", "<?php echo  $mid; ?>");
-        form.appendChild(RedirectURL);
+        // var RedirectURL = document.createElement("input");
+        // RedirectURL.setAttribute("name", "MID");
+        // RedirectURL.setAttribute("value", "<?php echo  $mid; ?>");
+        // form.appendChild(RedirectURL);
 
-        var RedirectURL = document.createElement("input");
-        RedirectURL.setAttribute("name", "ResNum");
-        RedirectURL.setAttribute("value", "<?php echo $ResNum ; ?>");
-        form.appendChild(RedirectURL);
+        // var RedirectURL = document.createElement("input");
+        // RedirectURL.setAttribute("name", "ResNum");
+        // RedirectURL.setAttribute("value", "<?php echo $ResNum ; ?>");
+        // form.appendChild(RedirectURL);
 
-        var RedirectURL = document.createElement("input");
-        RedirectURL.setAttribute("name", "Amount");
-        RedirectURL.setAttribute("value", "<?php echo $amount ; ?>");
-        form.appendChild(RedirectURL);
+        // var RedirectURL = document.createElement("input");
+        // RedirectURL.setAttribute("name", "Amount");
+        // RedirectURL.setAttribute("value", "<?php echo $amount ; ?>");
+        // form.appendChild(RedirectURL);
         
         var RedirectURL = document.createElement("input");
         RedirectURL.setAttribute("name", "RedirectURL");
         RedirectURL.setAttribute("value", "<?php echo  RELA_DIR; ?>onlinePayment/returnbank");
         form.appendChild(RedirectURL);
 
-
+        var RedirectURL = document.createElement("input");
+        RedirectURL.setAttribute("name", "token");
+        RedirectURL.setAttribute("value", "<?php echo  $token; ?>");
+        form.appendChild(RedirectURL);
         
         document.body.appendChild(form);
         form.submit();
