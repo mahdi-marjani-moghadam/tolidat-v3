@@ -62,9 +62,9 @@ class onlinePaymentController
             $this->_merchantID = '13723922'; // main 
             $this->_merchantPass = '7151545';
             // $this->_initpayment = 'https://Payments/InitPayment.asmx?WSDL';
-            $this->_initpayment = 'https://sep.shaparak.ir/Payments/InitPayment.asmx';
+            $this->_initpayment = 'https://sep.shaparak.ir/Payments/InitPayment.asmx?WSDL';
             $this->_payment = 'https://sep.shaparak.ir/Payment.aspx';
-            $this->_referencepayment = 'https://acquirer.samanepay.com/payments/referencepayment.asmx?WSDL';
+            $this->_referencepayment = 'https://sep.shaparak.ir/payments/referencepayment.asmx?WSDL';
         } else {
             $this->_merchantID = 'TS9sdvlX-gtlhtZ'; // test 
             $this->_merchantPass = 'user134753457';
