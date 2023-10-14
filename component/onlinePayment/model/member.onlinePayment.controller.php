@@ -87,62 +87,62 @@ class onlinePaymentController
 
 
 
-            $curl = curl_init();
+            //     $curl = curl_init();
 
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://sep.shaparak.ir/OnlinePG/OnlinePG',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => '',
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => '{
-                "Action": "Token",
-                "TerminalId": "13723922",
-                "RedirectUrl": "https://tolidat.ir/onlinePayment/returnbank",
-                "ResNum": "1002020012214334553",
-                "Amount": 1000,
-                "CellNumber": "9336514443"
-                }',
-                CURLOPT_HTTPHEADER => array(
-                    'Content-Type: application/json'
-                ),
-            ));
+            //     curl_setopt_array($curl, array(
+            //         CURLOPT_URL => 'https://sep.shaparak.ir/OnlinePG/OnlinePG',
+            //         CURLOPT_RETURNTRANSFER => true,
+            //         CURLOPT_ENCODING => '',
+            //         CURLOPT_MAXREDIRS => 10,
+            //         CURLOPT_TIMEOUT => 0,
+            //         CURLOPT_FOLLOWLOCATION => true,
+            //         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            //         CURLOPT_CUSTOMREQUEST => 'POST',
+            //         CURLOPT_POSTFIELDS => '{
+            //         "Action": "Token",
+            //         "TerminalId": "13723922",
+            //         "RedirectUrl": "https://tolidat.ir/onlinePayment/returnbank",
+            //         "ResNum": "1002020012214334553",
+            //         "Amount": 1000,
+            //         "CellNumber": "9336514443"
+            //         }',
+            //         CURLOPT_HTTPHEADER => array(
+            //             'Content-Type: application/json'
+            //         ),
+            //     ));
 
-            $response = curl_exec($curl);
+            //     $response = curl_exec($curl);
 
-            curl_close($curl);
-            // echo $response;
-
+            //     curl_close($curl);
 
 
 
-            // $context = stream_context_create([
-            //     'ssl' => [
-            //         // set some SSL/TLS specific options
-            //         'verify_peer' => false,
-            //         'verify_peer_name' => false,
-            //         'allow_self_signed' => true
-            //     ]
-            // ]);
 
-            // $soapClient = new SoapClient('https://sep.shaparak.ir/Payments/InitPayment.asmx?WSDL', array('stream_context' => $context));
-            // $soapClient = new SoapClient($this->_initpayment, array('stream_context' => $context));
+            $context = stream_context_create([
+                'ssl' => [
+                    // set some SSL/TLS specific options
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                ]
+            ]);
 
-            // $tokenResult = $soapClient->RequestToken("$merchantID", $onlinePayment->Online_payment_id, $onlinePayment->price);
+            $soapClient = new SoapClient('https://sep.shaparak.ir/Payments/InitPayment.asmx?WSDL', array('stream_context' => $context));
+            $soapClient = new SoapClient($this->_initpayment, array('stream_context' => $context));
 
-            // if (in_array($tokenResult, array_keys($this->errorVerify))) {
-            //     $result['msg'] = $this->errorVerify[$tokenResult];
-            //     $result['result'] = -1;
-            //     $result['no'] = $tokenResult;
-            //     return $result;
-            // }
-            
+            $tokenResult = $soapClient->RequestToken("$merchantID", $onlinePayment->Online_payment_id, $onlinePayment->price);
+
+            if (in_array($tokenResult, array_keys($this->errorVerify))) {
+                $result['msg'] = $this->errorVerify[$tokenResult];
+                $result['result'] = -1;
+                $result['no'] = $tokenResult;
+                return $result;
+            }
+
 
             $result['result'] = 1;
-            $result['token'] = json_decode($response, true)['token'];
+            // $result['token'] = json_decode($response, true)['token'];
+            $result['token'] = $tokenResult;
         } catch (Exception $e) {
             $result['result'] = -1;
             // $result['msg'] =  'Caught exception: '.  $e->getMessage(). "\n";
