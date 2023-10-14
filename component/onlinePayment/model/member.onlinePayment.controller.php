@@ -59,8 +59,8 @@ class onlinePaymentController
         $this->company_info = $company_info;
         $this->exportType = 'html';
         if (RELA_DIR == 'https://tolidat.ir') {
-            // $this->_merchantID = '13723922'; // main   TermID
-            $this->_merchantID = 'TermID'; // main   TermID
+            $this->_merchantID = '13723922'; // main   
+            // $this->_merchantID = 'TermID'; // test   TermID
             $this->_merchantPass = '7151545';
             // $this->_initpayment = 'https://Payments/InitPayment.asmx?WSDL';
             $this->_initpayment = 'https://sep.shaparak.ir/Payments/InitPayment.asmx?WSDL';
