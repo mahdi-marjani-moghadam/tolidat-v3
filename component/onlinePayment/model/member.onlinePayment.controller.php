@@ -114,34 +114,34 @@ class onlinePaymentController
             $response = curl_exec($curl);
 
             curl_close($curl);
-            echo $response;
+            // echo $response;
 
 
 
 
-            $context = stream_context_create([
-                'ssl' => [
-                    // set some SSL/TLS specific options
-                    'verify_peer' => false,
-                    'verify_peer_name' => false,
-                    'allow_self_signed' => true
-                ]
-            ]);
+            // $context = stream_context_create([
+            //     'ssl' => [
+            //         // set some SSL/TLS specific options
+            //         'verify_peer' => false,
+            //         'verify_peer_name' => false,
+            //         'allow_self_signed' => true
+            //     ]
+            // ]);
 
             // $soapClient = new SoapClient('https://sep.shaparak.ir/Payments/InitPayment.asmx?WSDL', array('stream_context' => $context));
-            $soapClient = new SoapClient($this->_initpayment, array('stream_context' => $context));
+            // $soapClient = new SoapClient($this->_initpayment, array('stream_context' => $context));
 
-            $tokenResult = $soapClient->RequestToken("$merchantID", $onlinePayment->Online_payment_id, $onlinePayment->price);
+            // $tokenResult = $soapClient->RequestToken("$merchantID", $onlinePayment->Online_payment_id, $onlinePayment->price);
 
-            if (in_array($tokenResult, array_keys($this->errorVerify))) {
-                $result['msg'] = $this->errorVerify[$tokenResult];
-                $result['result'] = -1;
-                $result['no'] = $tokenResult;
-                return $result;
-            }
+            // if (in_array($tokenResult, array_keys($this->errorVerify))) {
+            //     $result['msg'] = $this->errorVerify[$tokenResult];
+            //     $result['result'] = -1;
+            //     $result['no'] = $tokenResult;
+            //     return $result;
+            // }
 
             $result['result'] = 1;
-            $result['token'] = $tokenResult;
+            $result['token'] = $response['token'];
         } catch (Exception $e) {
             $result['result'] = -1;
             // $result['msg'] =  'Caught exception: '.  $e->getMessage(). "\n";
@@ -363,9 +363,9 @@ www.tolidat.ir";
         }
 
         // update online token
-        // $onlinePayment->updateTokenOnlinePayment($resultToken['token']);
+        $onlinePayment->updateTokenOnlinePayment($resultToken['token']);
 
-        $bank_payment = 'https://sep.shaparak.ir/OnlinePG/OnlinePG'; //$this->_payment;
+        $bank_payment = $this->_payment;
         $mid = $this->_merchantID;
         $amount = $onlinePayment->price;
         $ResNum = $onlinePayment->Online_payment_id;

@@ -14,30 +14,10 @@
         form.setAttribute("action", "<?php echo $bank_payment?>");
         form.setAttribute("target", "_self");
 
-        var RedirectURL = document.createElement("input");
-        RedirectURL.setAttribute("name", "RedirectURL");
-        RedirectURL.setAttribute("value", "<?php echo  RELA_DIR; ?>onlinePayment/returnbank");
-        form.appendChild(RedirectURL);
-
-        // var hiddenField = document.createElement("input");
-        // hiddenField.setAttribute("name", "Token");
-        // hiddenField.setAttribute("value", refIdValue);
-        // form.appendChild(hiddenField);
-
-        var hiddenField = document.createElement("input");
-        hiddenField.setAttribute("name", "Action");
-        hiddenField.setAttribute("value", 'Token');
-        form.appendChild(hiddenField);
-
 
         var RedirectURL = document.createElement("input");
-        RedirectURL.setAttribute("name", "TerminalId");
+        RedirectURL.setAttribute("name", "MID");
         RedirectURL.setAttribute("value", "<?php echo  $mid; ?>");
-        form.appendChild(RedirectURL);
-
-        var RedirectURL = document.createElement("input");
-        RedirectURL.setAttribute("name", "Amount");
-        RedirectURL.setAttribute("value", "<?php echo $amount ; ?>");
         form.appendChild(RedirectURL);
 
         var RedirectURL = document.createElement("input");
@@ -46,9 +26,15 @@
         form.appendChild(RedirectURL);
 
         var RedirectURL = document.createElement("input");
-        RedirectURL.setAttribute("name", "CellNumber");
-        RedirectURL.setAttribute("value", "<?php echo $ResNum ; ?>");
+        RedirectURL.setAttribute("name", "Amount");
+        RedirectURL.setAttribute("value", "<?php echo $amount ; ?>");
         form.appendChild(RedirectURL);
+        
+        var RedirectURL = document.createElement("input");
+        RedirectURL.setAttribute("name", "RedirectURL");
+        RedirectURL.setAttribute("value", "<?php echo  RELA_DIR; ?>onlinePayment/returnbank");
+        form.appendChild(RedirectURL);
+
 
         
         document.body.appendChild(form);
