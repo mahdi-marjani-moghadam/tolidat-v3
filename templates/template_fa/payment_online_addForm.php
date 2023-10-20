@@ -54,7 +54,7 @@
         <br>
         <br>
         <br>
-        <form action="/onlinePayment/returnbank"  method='POST'>
+        <form action="/onlinePayment/returnbank" method='POST'>
             <input type="text" value="local" name='resNum'>
             <input type="text" value="-1" name='StateCode'>
             <button>failed</button>
@@ -63,11 +63,16 @@
         <br>
         <br>
         <br>
-        <form action="/onlinePayment/returnbank"  method='POST'>
+        <form action="/onlinePayment/returnbank" method='POST'>
             <input type="text" value="local" name='resNum'>
             <input type="text" value="-1" name='State'>
             <button>لغو</button>
         </form>
+    <?php else : ?>
+        <?php echo "<script language='javascript' type='text/javascript'>postRefId('" . $resultToken['token'] . "');</script>";
+        exit();
+        die();
+        ?>
     <?php endif; ?>
 
 
