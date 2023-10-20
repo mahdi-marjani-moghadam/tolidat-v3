@@ -142,7 +142,7 @@
                     <div class="mt-4 flex justify-center text-4xl leading-none font-extrabold">
                         <?php echo number_format((int)$package['price'], 0); ?>
                         <span class="pt-5 text-sm leading-8 font-medium text-gray-600">
-                            <span>تومان /  <?php echo $package['period'] ?> ماهه</span>
+                            <span>ریال /  <?php echo $package['period'] ?> ماهه</span>
                         </span>
                     </div>
                 </div>
