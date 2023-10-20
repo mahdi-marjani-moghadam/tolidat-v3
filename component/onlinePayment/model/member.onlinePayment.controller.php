@@ -100,7 +100,7 @@ class onlinePaymentController
 
                 $soapClient = new SoapClient($this->_initpayment, array('stream_context' => $context));
 
-                $tokenResult = $soapClient->RequestToken("$merchantID", $onlinePayment->Online_payment_id, $onlinePayment->price * 10);
+                $tokenResult = $soapClient->RequestToken("$merchantID", $onlinePayment->Online_payment_id, $onlinePayment->price);
 
                 if (in_array($tokenResult, array_keys($this->errorVerify))) {
                     $result['msg'] = $this->errorVerify[$tokenResult];
@@ -129,7 +129,7 @@ class onlinePaymentController
         $merchantID = $this->_merchantID;
         $context = $this->getContext();
         if ($this->_local) {
-            $result = $onlinePayment->price * 10;
+            $result = $onlinePayment->price;
         } else {
 
 
@@ -307,7 +307,7 @@ www.tolidat.ir";
             // Deduct money from user
 
             $verify = $this->verifyTrans($onlinePayment);
-            $res = $this->checkVerify($verify, $onlinePayment->price * 10);
+            $res = $this->checkVerify($verify, $onlinePayment->price);
         }
 
         if ($res['result'] == -1) {
