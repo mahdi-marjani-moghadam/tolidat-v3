@@ -1,6 +1,4 @@
 <?php
-
-
 include_once dirname(__FILE__) . '/product.model.php';
 include_once ROOT_DIR . 'component/notification/admin/model/admin.notification.controller.php';
 include_once(ROOT_DIR . "component/packageUsage/admin/model/admin.packageUsage.model.php");
@@ -115,6 +113,7 @@ class memberProductController
         $fields['image'] = $result['image'];
 
         $product = new c_product_d();
+        $fields['admin_description'] = '';
         $product->setFields($fields);
         $product->category_id = ',' . implode(',', $fields['category_id']) . ',';
  

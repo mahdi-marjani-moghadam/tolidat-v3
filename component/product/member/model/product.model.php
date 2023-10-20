@@ -60,3 +60,40 @@ class c_product_d extends looeic
         return $response;
     }
 }
+
+
+class c_product_lang extends looeic
+{
+    protected $rules = array(
+        'title' => 'required*' . PRODUCT_01,
+        'brif_description' => 'required*' . PRODUCT_02,
+    );
+
+    public static function translateProduct($product)
+    {
+        global $lang;
+
+        if (array_key_first($product) != 'Product_id') {
+            if($product['export']['recordsCount'] > 0){
+                foreach ($product['export']['list'] as $k => &$p) {
+                    $p = self::translateProduct($p);
+                }
+            }
+            return $product;
+        }
+
+        $product_lang = c_product_lang::getAll()
+            ->where('c_product_id', '=', $product['Product_id'])
+            ->andWhere('lang', '=', $lang)
+            ->first();
+        if (is_object($product_lang)) {
+            $product['title_' . $lang] = $product_lang->title;
+            $product['brief_description_' . $lang] = $product_lang->brief_description;
+            $product['description_' . $lang] = $product_lang->description;
+            $product['meta_keyword_' . $lang] = $product_lang->meta_keyword;
+            $product['meta_description_' . $lang] = $product_lang->meta_description;
+            return $product;
+        }
+        return $product;
+    }
+}

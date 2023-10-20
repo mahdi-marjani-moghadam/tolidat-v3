@@ -30,7 +30,7 @@ class Product extends looeic
         }
 
         $result = $products->getList();
-
+        $result = c_product_lang::translateProduct($result);
         return $result;
     }
 }

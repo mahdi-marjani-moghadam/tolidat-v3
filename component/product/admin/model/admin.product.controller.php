@@ -160,6 +160,7 @@ class adminProductController
     {
         $product = new adminc_productModel();
         $result = $product::getBy_company_id($fields['choose']['company_id'])->getList();
+        // dd($fields['choose']['company_id']);
         if ($result['result'] != '1') {
             $this->fileName = 'admin.product.showList.php';
             $this->template('', $result['msg']);

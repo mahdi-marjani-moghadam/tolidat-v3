@@ -149,7 +149,9 @@ class productController
             redirectPage(RELA_DIR, $msg);
         }
         $export['company_id'] = $product->company_id;
-        $export['list'] = $product->fields;
+        $fields = c_product_lang::translateProduct($product->fields);
+        $export['list'] = $fields;
+        
         $export['list']['gallery'] = $product->galleries();
         $company = company::find($product->company_id);
 
@@ -196,7 +198,7 @@ class productController
         // other products
         $resultOtherProducts = c_product::getBy_company_id_and_not_Product_id($product->fields['company_id'], $id)->getList();
         if ($resultOtherProducts['result'] == 1) {
-            $export['other_product_list'] = $resultOtherProducts['export']['list'];
+            $export['other_product_list'] = c_product_lang::translateProduct($resultOtherProducts)['export']['list'];
         }
 
         // related products
@@ -320,7 +322,7 @@ class productController
         // breadcrumb
 
         $breadcrumb->add($company->company_name, 'company/Detail/' . $company->Company_id . '/' . cleanUrl($company->company_name), true);
-        $breadcrumb->add('محصولات/خدمات');
+        $breadcrumb->add('Products/Services');
         $export['breadcrumb'] = $breadcrumb->trail();
 
         $this->fileName = "product.showAll.php";

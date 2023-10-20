@@ -52,6 +52,7 @@ class onlinePaymentController
     private $_initpayment;
     private $_payment;
     private $_referencepayment;
+    private $_local = True;
 
     public function __construct()
     {
@@ -66,6 +67,7 @@ class onlinePaymentController
             $this->_initpayment = 'https://sep.shaparak.ir/Payments/InitPayment.asmx?WSDL';
             $this->_payment = 'https://sep.shaparak.ir/Payment.aspx';
             $this->_referencepayment = 'https://sep.shaparak.ir/payments/referencepayment.asmx?WSDL';
+            $this->_local = False;
         } else {
             $this->_merchantID = 'TS9sdvlX-gtlhtZ'; // test 
             $this->_merchantPass = 'user134753457';
@@ -78,75 +80,44 @@ class onlinePaymentController
     public function getToken($onlinePayment)
     {
         // $merchantID = "10370175"; // main
-        $merchantID = $this->_merchantID; // test
-        // $merchantPass = "5128755"; // main
-        $merchantPass = $this->_merchantPass; // test
+        $merchantID = $this->_merchantID;
 
-
-        try {
-
-
-
-            //     $curl = curl_init();
-
-            //     curl_setopt_array($curl, array(
-            //         CURLOPT_URL => 'https://sep.shaparak.ir/OnlinePG/OnlinePG',
-            //         CURLOPT_RETURNTRANSFER => true,
-            //         CURLOPT_ENCODING => '',
-            //         CURLOPT_MAXREDIRS => 10,
-            //         CURLOPT_TIMEOUT => 0,
-            //         CURLOPT_FOLLOWLOCATION => true,
-            //         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            //         CURLOPT_CUSTOMREQUEST => 'POST',
-            //         CURLOPT_POSTFIELDS => '{
-            //         "Action": "Token",
-            //         "TerminalId": "13723922",
-            //         "RedirectUrl": "https://tolidat.ir/onlinePayment/returnbank",
-            //         "ResNum": "1002020012214334553",
-            //         "Amount": 1000,
-            //         "CellNumber": "9336514443"
-            //         }',
-            //         CURLOPT_HTTPHEADER => array(
-            //             'Content-Type: application/json'
-            //         ),
-            //     ));
-
-            //     $response = curl_exec($curl);
-
-            //     curl_close($curl);
-
-
-
-
-            $context = stream_context_create([
-                'ssl' => [
-                    // set some SSL/TLS specific options
-                    'verify_peer' => false,
-                    'verify_peer_name' => false,
-                    'allow_self_signed' => true
-                ]
-            ]);
-
-            $soapClient = new SoapClient('https://sep.shaparak.ir/Payments/InitPayment.asmx?WSDL', array('stream_context' => $context));
-            $soapClient = new SoapClient($this->_initpayment, array('stream_context' => $context));
-
-            $tokenResult = $soapClient->RequestToken("$merchantID", $onlinePayment->Online_payment_id, $onlinePayment->price);
-
-            if (in_array($tokenResult, array_keys($this->errorVerify))) {
-                $result['msg'] = $this->errorVerify[$tokenResult];
-                $result['result'] = -1;
-                $result['no'] = $tokenResult;
-                return $result;
-            }
-
-
+        if ($this->_local) {
             $result['result'] = 1;
-            // $result['token'] = json_decode($response, true)['token'];
-            $result['token'] = $tokenResult;
-        } catch (Exception $e) {
-            $result['result'] = -1;
-            // $result['msg'] =  'Caught exception: '.  $e->getMessage(). "\n";
-            $result['msg'] =  'ارتباط با بانک برقرار نشد' . $e->getMessage();
+            $result['token'] =  random_int(1, 1000000);
+        } else {
+
+            try {
+
+                $context = stream_context_create([
+                    'ssl' => [
+                        // set some SSL/TLS specific options
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true
+                    ]
+                ]);
+
+                $soapClient = new SoapClient($this->_initpayment, array('stream_context' => $context));
+
+                $tokenResult = $soapClient->RequestToken("$merchantID", $onlinePayment->Online_payment_id, $onlinePayment->price);
+
+                if (in_array($tokenResult, array_keys($this->errorVerify))) {
+                    $result['msg'] = $this->errorVerify[$tokenResult];
+                    $result['result'] = -1;
+                    $result['no'] = $tokenResult;
+                    return $result;
+                }
+
+
+                $result['result'] = 1;
+                // $result['token'] = json_decode($response, true)['token'];
+                $result['token'] = $tokenResult;
+            } catch (Exception $e) {
+                $result['result'] = -1;
+                // $result['msg'] =  'Caught exception: '.  $e->getMessage(). "\n";
+                $result['msg'] =  'ارتباط با بانک برقرار نشد' . $e->getMessage();
+            }
         }
 
         return $result;
@@ -157,22 +128,27 @@ class onlinePaymentController
         // $merchantID = "10370175";
         $merchantID = $this->_merchantID;
         $context = $this->getContext();
-        try {
+        if ($this->_local) {
+            $result = $onlinePayment->price;
+        } else {
 
-            // $soapClient = new SoapClient('https://acquirer.samanepay.com/payments/referencepayment.asmx?WSDL', array('stream_context' => $context));
-            $soapClient = new SoapClient($this->_referencepayment, array('stream_context' => $context));
-            $result = false;
 
-            for ($a = 1; $a < 6; ++$a) {
-                $result = $soapClient->verifyTransaction($onlinePayment->RefNum, $merchantID);
-                if ($result != false) {
-                    break;
+            try {
+
+                // $soapClient = new SoapClient('https://acquirer.samanepay.com/payments/referencepayment.asmx?WSDL', array('stream_context' => $context));
+                $soapClient = new SoapClient($this->_referencepayment, array('stream_context' => $context));
+                $result = false;
+
+                for ($a = 1; $a < 6; ++$a) {
+                    $result = $soapClient->verifyTransaction($onlinePayment->RefNum, $merchantID);
+                    if ($result != false) {
+                        break;
+                    }
                 }
+            } catch (Exception $e) {
+                return dd($e->getMessage());
             }
-        } catch (Exception $e) {
-            return dd($e->getMessage());
         }
-
 
 
         return $result;
@@ -284,22 +260,22 @@ www.tolidat.ir";
 
     public function checkReturnResult($fields)
     {
-        $onlinePayment = self::getOnlinePaymentById($fields['ResNum']);
-
+        $onlinePayment = self::getOnlinePaymentBypaymentOnlineId($fields['ResNum']);
         $invoice = invoice::find($onlinePayment->invoice_id);
         $result['invoice'] = $invoice;
+        // dd($invoice);
 
         if (!is_object($onlinePayment) || !is_object($invoice)) {
             $result['msg'] = 'فاکتوری با این شماره وجود ندارد';
             $result['result'] = -1;
             return $result;
         }
-
         if ($fields['StateCode'] == -1) {
             $result['msg'] = 'پرداخت توسط شما لغو شد';
             $result['result'] = -1;
             return $result;
         }
+        // dd($fields);
 
         if ($fields['State'] != 'OK') {
             $result['msg'] = 'پرداخت با مشکل مواجه شد';
@@ -309,22 +285,22 @@ www.tolidat.ir";
 
         $fields['status'] = 1;
 
+
         $this->updateOnlinePayment($onlinePayment, $fields);
         if ($invoice->discount_code_id != 0) {
             $discountCode = DiscountCode::find($invoice->discount_code_id);
+
+            if (is_object($discountCode)) {
+                $discount = DiscountCode::checkCode($invoice, $discountCode->code);
+
+                if (is_object($discount)) {
+                    $discount->disableDiscountCode($invoice->Discount_code_id);
+                }
+            }
         }
 
-        if (is_object($discountCode)) {
-            $discount = DiscountCode::checkCode($invoice, $discountCode->code);
-        }
-
-        if (is_object($discount)) {
-            $discount->disableDiscountCode($invoice->Discount_code_id);
-        }
-
-        if (!is_object($discount) & $invoice->discount_code_id != 0) {
+        if (!is_object($discount) && $invoice->discount_code_id != 0) {
             // Money return to user
-
             $reverse = $this->reverseTrans($onlinePayment);
             $res = $this->checkReverse($reverse, $onlinePayment->price);
         } else {
@@ -372,14 +348,28 @@ www.tolidat.ir";
         $ResNum = $onlinePayment->Online_payment_id;
         $CellNumber = '';
         $token = $resultToken['token'];
-
+        $offline = $this->_local;
+        // dd($onlinePayment);
         include(ROOT_DIR . "templates/" . CURRENT_SKIN . "/payment_online_addForm.php");
+
         die();
     }
 
     public static function getOnlinePaymentById($id)
     {
         $onlinePayment = memberonlinepaymentModel::find($id);
+        if (is_object($onlinePayment)) {
+
+            return $onlinePayment;
+        }
+
+        return false;
+    }
+
+    public static function getOnlinePaymentBypaymentOnlineId($id)
+    {
+        $onlinePayment = memberonlinepaymentModel::getBy_Online_payment_id($id)->first();
+
         if (is_object($onlinePayment)) {
 
             return $onlinePayment;

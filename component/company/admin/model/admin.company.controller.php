@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: malekloo
- * Date: 3/6/2016
- * Time: 11:21 AM.
- */
 include_once dirname(__FILE__) . '/admin.company.model.php';
 include_once dirname(__FILE__) . '/admin.companyDraft.model.php';
 include_once ROOT_DIR . 'component/companyPhones/admin/model/admin.companyPhones.controller.php';

@@ -182,7 +182,6 @@
                                            for="process">عملیات:</label>
                                     <div class="col-xs-12 col-sm-8 pull-right">
                                         <select name="process" id="process">
-                                            <option value="0" selected></option>
                                             <option value="1">تایید</option>
                                             <option value="-1">رد</option>
                                         </select>

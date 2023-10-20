@@ -1,7 +1,7 @@
 <?php include_once 'companyDetail_top.php'; ?>
 
 <div class="lg:col-span-2">
-    
+
     <div class="boxContainer breadcrumb-product">
         <div class="row fullPadding slick-slider-new">
             <div class="">
@@ -10,13 +10,13 @@
                     <div class="tab-content tabProduct text-header searchBox1 bestProduct panel-body">
                         <div class="flex flex-col sm:flex-row justify-between p-3 border-b bg-gray-200 items-center">
 
-                            <h2 class="font-bold text-lg mb-2 sm:mb-0"><?php echo $list['list']['title'] ?></h2>
+                            <h2 class="font-bold text-lg mb-2 sm:mb-0"><?php echo $list['list']['title_en'] ?? $list['list']['title'] ?></h2>
 
                             <?php if (count($list['category_list'])) : ?>
                                 <div class="text-sm">
                                     <?php $count = count($list['category_list']);
                                     $i = 0; ?>
-                                    دسته بندی:
+                                    Category :
                                     <?php foreach ($list['category_list'] as $category) {
                                         $i++ ?>
                                         <a class="link-show-category bg-white border border-tolidatColor text-xs rounded-full px-3" href="<?php echo RELA_DIR . 'company/type/تولیدی/category/' . $category['Category_id'] ?>"><?php echo ($category['title'] != "" ? $category['title'] : "-"); ?><?php echo ($i != $count ? " ," : "") ?></a>
@@ -25,22 +25,23 @@
                             <?php endif; ?>
 
                         </div>
-                        
+
                         <div role="tabpanel" class="tab-pane active" id="home">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-7 col-md-6 pull-right">
                                     <p class="product-span leading-relaxed p-4 text-justify">
-                                        <?php echo ($list['list']['description'] != "" ? $list['list']['description'] : "-"); ?>
+                                        <?php echo ($list['list']['description_en'] != "" ? $list['list']['description_en'] : "-"); ?>
                                     </p>
                                 </div>
 
                                 <div class="p-4">
-                                    
+
                                     <div class="slider-hover">
                                         <div class="slider-for">
-
-                                            <img class="mx-auto" src="<?php echo (isset($list['list']['image']) > 0 && file_exists(COMPANY_ADDRESS_ROOT . $list['list']['company_id'] . '/product/' . $list['list']['image']) ? COMPANY_ADDRESS . $list['list']['company_id'] . '/product/' . $list['list']['image'] : DEFULT_PRODUCT_ADDRESS) ?>">
-
+                                            <?php
+                                            if (isset($list['list']['image']) > 0 && file_exists(COMPANY_ADDRESS_ROOT . $list['list']['company_id'] . '/product/' . $list['list']['image'])) : ?>
+                                                <img class="mx-auto" src="<?php echo (isset($list['list']['image']) > 0 && file_exists(COMPANY_ADDRESS_ROOT . $list['list']['company_id'] . '/product/' . $list['list']['image']) ? COMPANY_ADDRESS . $list['list']['company_id'] . '/product/' . $list['list']['image'] : DEFULT_PRODUCT_ADDRESS) ?>">
+                                            <?php endif ?>
                                             <?php
                                             foreach ($list['list']['gallery'] as $item) :
                                             ?>
@@ -52,7 +53,7 @@
                                     </div>
 
                                     <?php
-                                        if (count($list['list']['gallery']) > 0) {
+                                    if (count($list['list']['gallery']) > 0) {
                                     ?>
                                         <div class="slider-nav pt" style="border-top: solid 1px #DDD;">
                                             <div class="content-sliderNav pull-right">
@@ -92,7 +93,7 @@
                 <div class="border-2 my-4 rounded bg-gray-50          text-header searchBox1 bestProduct whiteBg boxBorder roundCorner fullWidth other-products mb-double product-detail-side">
 
                     <div class="flex p-3 border-b bg-gray-200 items-center">
-                        <h2 class="">سایر محصولات/خدمات</h2>
+                        <h2 class="">Other product</h2>
                     </div>
 
                     <div class="content rtl carousel-vertical content-min-height more-product">
@@ -104,21 +105,15 @@
                                         <div class="p-2">
                                             <div class="flex gap-x-2 overflow-hidden         innerContent pull-left">
 
-                                                <!-- <div class="flex-grow         logoContainer pull-right"> -->
                                                 <img class="w-32 h-32      transition roundCorner boxBorder width" src="<?php echo (isset($fields['image']) > 0 && file_exists(COMPANY_ADDRESS_ROOT . $fields['company_id'] . '/product/90.90.' . $fields['image'])) ? COMPANY_ADDRESS . $fields['company_id'] . '/product/90.90.' . $fields['image'] : DEFULT_PRODUCT_ADDRESS ?> " alt="<?php echo  $fields['title'] ?>">
-                                                <!-- </div> -->
 
                                                 <div>
-                                                    <!-- <div class="product-title" title="<?php echo $fields['title'] ?>"> -->
-                                                        <h3><?php echo (strlen($fields['title']) ? $fields['title'] : '-'); ?></h3>
+                                                    <h3><?php echo (strlen($fields['title_en']) ? $fields['title_en'] : $fields['title']); ?></h3>
 
-                                                        <!-- <div class="        text-light pull-right article"> -->
-                                                        <!--     -->
-                                                            <p class="text-sm text-gray-700 leading-relaxed    block overflow-hidden whitespace-nowrap text-ellipsis w-full md:max-w-lg">
-                                                                <?php echo (strlen($fields['description']) ? $fields['description'] : '-'); ?>
-                                                            </p>
-                                                        <!-- </div> -->
-                                                    <!-- </div> -->
+                                                    <p class="text-sm text-gray-700 leading-relaxed    block overflow-hidden whitespace-nowrap text-ellipsis w-full md:max-w-lg">
+                                                        <?php echo (strlen($fields['description_en']) ? $fields['description_en'] : $fields['description']); ?>
+                                                    </p>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -139,7 +134,7 @@
                 <div class="border-2 my-4 rounded bg-gray-50 text-header searchBox1 bestProduct whiteBg boxBorder roundCorner fullWidth other-products mb-double product-detail-side">
 
                     <div class="flex p-3 border-b bg-gray-200 items-center">
-                        <h2 class="">محصولات/خدمات مرتبط</h2>
+                        <h2 class="">Related product </h2>
                     </div>
 
                     <div class="content rtl grid more-product">
@@ -152,9 +147,9 @@
 
                                         <div>
                                             <h3 title="<?php echo $fields['title'] ?>">
-                                                <?php echo (strlen($fields['title']) ? $fields['title'] : '-'); ?>
+                                                <?php echo (strlen($fields['title_en']) ? $fields['title_en'] : $fields['title']); ?>
                                             </h3>
-                                            <p class="text-sm text-gray-700 leading-relaxed"><?php echo (strlen($fields['description']) ? $fields['description'] : '-'); ?></p>
+                                            <p class="text-sm text-gray-700 leading-relaxed"><?php echo (strlen($fields['description_en']) ? $fields['description_en'] : $fields['description']); ?></p>
                                         </div>
                                     </div>
                                 </a>
