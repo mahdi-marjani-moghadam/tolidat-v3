@@ -6,6 +6,7 @@ class company extends looeic
     public function updatePackageStatus($id)
     {
         $company = company::find($id);
+        
         if (is_object($company)) {
             $company->package_status = 3;
             $company->save();
@@ -16,6 +17,7 @@ class company extends looeic
             if (is_object($company_d)) {
                 $company_d->package_status = 3;
                 $company_d->save();
+                // dd($company_d);
                 return true;
             }
             return false;
