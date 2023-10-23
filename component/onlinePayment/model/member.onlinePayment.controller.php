@@ -237,7 +237,7 @@ class onlinePaymentController
         
         if ($result['result'] == 1 & $invoice->type == 1) {
             $companyModel = new company();
-            $companyModel->updatePackageStatus($this->company_info['company_id']);
+            $companyModel->updatePackageStatus($invoice->company_id);
             $_SESSION['sessionMemberID'] = $_GET['token'];
             
             redirectPage(RELA_DIR . "profile");
