@@ -44,8 +44,8 @@ switch ($PARAM[1]) {
         $loginController->savePassword($_POST);
         break;
     case 'loginAs' :
-        //die('a');
-        //$loginController->LoginAs($_GET['company_id']);
+        // die('a');
+        $loginController->LoginAs($_GET['company_id']);
         break;
 
     case 'getNewPassword' :

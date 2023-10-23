@@ -9,6 +9,7 @@ class company extends looeic
         if (is_object($company)) {
             $company->package_status = 3;
             $company->save();
+            
 
             // Update company_d
             $company_d = company_d::getBy_company_id_and_isActive($company->Company_id, 1)->first();

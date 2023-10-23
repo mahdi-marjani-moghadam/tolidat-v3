@@ -222,22 +222,24 @@ class onlinePaymentController
             $msg =
                 "سلام به مرجع اطلاعات تولیدات خوش آمدید.
 با تشکر از حضور شما در تولیدات
-لطفا در انتظار تایید ثبت نام بمانید.
-www.tolidat.ir";
+لطفا در انتظار تایید ثبت نام بمانید.";
 
             if (is_object($user)) {
                 sendSMS($user->mobile, $msg);
             }
-        }
+        }   
+        
 
         // redirect to invoice public side
         if ($result['result'] == -1 & $invoice->type == 1) {
             redirectPage(RELA_DIR . "invoice/show/" . $invoice->Invoice_id);
         }
-
+        
         if ($result['result'] == 1 & $invoice->type == 1) {
             $companyModel = new company();
             $companyModel->updatePackageStatus($this->company_info['company_id']);
+            $_SESSION['sessionMemberID'] = $_GET['token'];
+            
             redirectPage(RELA_DIR . "profile");
         }
 

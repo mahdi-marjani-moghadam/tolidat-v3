@@ -22,7 +22,7 @@
 
             var RedirectURL = document.createElement("input");
             RedirectURL.setAttribute("name", "RedirectURL");
-            RedirectURL.setAttribute("value", "<?php echo  RELA_DIR; ?>onlinePayment/returnbank");
+            RedirectURL.setAttribute("value", "<?php echo  RELA_DIR; ?>onlinePayment/returnbank/?token=<?php echo $_SESSION['sessionMemberID']?>");
             form.appendChild(RedirectURL);
 
             var RedirectURL = document.createElement("input");
@@ -40,8 +40,10 @@
 </script>
 
 <body>
-    <?php if ($offline) :  ?>
-        <form action="/onlinePayment/returnbank" method='POST'>
+    <?php if ($offline) :  
+        session_destroy();
+        ?>
+        <form action="/onlinePayment/returnbank/?token=<?php echo $_SESSION['sessionMemberID']?>" method='POST'>
             <input type="text" value="<?php echo $ResNum ?>" name='ResNum'>
             <input type="text" value="1" name='status'>
             <input type="text" value="OK" name='State'>
