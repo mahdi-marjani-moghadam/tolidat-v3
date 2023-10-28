@@ -389,17 +389,17 @@
                         <?php foreach ($list['articles_list'] as $id => $field) : ?>
                             <div dir="rtl" class="items-stretch">
                                 <div class="h-full  grid grid-cols-3 rounded-lg  border-2">
-                                    <a href="<?php echo RELA_DIR . 'article/' . $field['Article_id'] . '/' .urlencode($fields['title'])?>" class="flex p-2">
+                                    <a href="<?php echo RELA_DIR . 'article/' . $field['Article_id'] . '/' .urlencode($field['title'])?>" class="flex p-2">
                                         <img class="w-28 object-center self-center rounded-md" src="<?php echo ((isset($field['image']) && file_exists(STATIC_ROOT_DIR . '/images/article/90.90.' . $field['image'])) ? STATIC_RELA_DIR . '/images/article/90.90.' . $field['image'] : DEFULT_PRODUCT_ADDRESS) ?>" alt="<?php echo  $field['brif_description'] ?>">
                                     </a>
                                     <div class="px-3 py-2 col-span-2">
                                         <div class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1"><?php echo convertDate($field['date']) ?></div>
-                                        <a href="<?php echo RELA_DIR . 'article/' . $field['Article_id'] . '/' . urlencode($fields['title']) ?>" class="">
+                                        <a href="<?php echo RELA_DIR . 'article/' . $field['Article_id'] . '/' . urlencode($field['title']) ?>" class="">
                                             <h3 class="text-md  font-semibold text-gray-900 mb-3 truncate"><?php echo $field['title'] ?></h3>
                                         </a>
                                         <p class="leading-relaxed mb-3 text-xs truncate"><?php echo  $field['brif_description'] ?></p>
                                         <div class="flex items-center flex-wrap ">
-                                            <a href="<?php echo RELA_DIR . 'article/' . $field['Article_id'] . '/' .  urlencode($fields['title']) ?>" class="text-tolidatColor inline-flex items-center md:mb-2 lg:mb-0">
+                                            <a href="<?php echo RELA_DIR . 'article/' . $field['Article_id'] . '/' .  urlencode($field['title']) ?>" class="text-tolidatColor inline-flex items-center md:mb-2 lg:mb-0">
                                                 <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                     <path d="M5 12h14"></path>
                                                     <path d="M12 5l7 7-7 7"></path>
