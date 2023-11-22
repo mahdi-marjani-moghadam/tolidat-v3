@@ -203,6 +203,7 @@
                         <th width="3%">وضعیت</th>
                         <th width="2%">کد ویرایش کننده</th>
                         <th width="15%">تاریخ ویرایش</th>
+                        <th width="15%">تاریخ ثبت</th>
                         <th width="5%">تصویر</th>
                         <th width="5%">ابزار</th>
                     </tr>
@@ -234,11 +235,12 @@
                         </th>
                         <th><input type="text" name="search_7" class="search_init form-control"/></th>
                         <th style="width: 200px;">
-                            <input type="text" class="form-control date" name="search_9" id="expiration_date"
-                                   value="<?= $list['licenceInfo']['expiration_date'] ?>">
+                            <input type="text" class="form-control date" name="search_8" id="expiration_date"
+                                   value="<?php echo $list['licenceInfo']['expiration_date'] ?>">
                         </th>
-                        <th><input type="hidden" name="search_9" class="search_init form-control"/></th>
-                        <th><input type="hidden" name="search_10" class="search_init form-control date"></th>
+                        <th name="search_9" style="width: 200px;"></th>
+                        <th><input type="hidden" name="search_10" class="search_init form-control"/></th>
+                        <th><input type="hidden" name="search_11" class="search_init form-control date"></th>
 
 
                     </tr>

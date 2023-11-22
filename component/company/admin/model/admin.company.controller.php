@@ -1905,6 +1905,8 @@ class adminCompanyController
                     $st = $list['expiredate'] ? convertDate($list['expiredate']) : '0000/00/00';
                 }
 
+                
+                  
                 return $st;
             },
         ];
@@ -1933,11 +1935,22 @@ class adminCompanyController
                     $st = $list['refresh_date'] ? convertDate($list['refresh_date']) : '0000/00/00';
                 }
 
+               
+        
+
                 return $st;
             },
         ];
 
         $other['9'] = [
+            'formatter' => function ($list) {
+                $st = !empty($list['register_date']) ? convertDate($list['register_date']) : '';
+                return $st;
+            },
+        ];
+        
+
+        $other['10'] = [
             'formatter' => function ($list) {
                 if (strlen($list['image']) > 0) {
                     $st =
@@ -1967,7 +1980,7 @@ class adminCompanyController
         ];
 
         $internalVariable['showstatus'] = $fields['status'];
-        $other['10'] = [
+        $other['11'] = [
             formatter => function ($list, $internal) {
                 $st = 'a' . $list['showstatus'];
                 global $admin_info;
